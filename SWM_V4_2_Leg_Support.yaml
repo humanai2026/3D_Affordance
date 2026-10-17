@@ -1,0 +1,78 @@
+# ==============================================================================
+# SWM STAGE 3 - SPATIAL REASONING BENCHMARK & SESSION HANDOVER (V4.1)
+# Artifact: 4D Kinematic Trajectory, Social Affordance & Open Geometric Mystery
+# ==============================================================================
+
+benchmark_metadata:
+  id: "SWM-V4.1-4D-SOCIAL-AFFORDANCE-002"
+  milestone: "4D Sequential Human Motion, Pelvic Slide & Continuous Collision Audit"
+  evaluated_model: "Gemini (Argon)"
+  human_evaluator: "Thomas (SWM Project Architect)"
+  session_status: "Quota Handover (98% used) - Ready to resolve a shared geometric thought-error in next session"
+
+# ------------------------------------------------------------------------------
+# 1. CORE BREAKTHROUGHS OF THIS SESSION
+# ------------------------------------------------------------------------------
+verified_architecture_upgrades:
+  - stateless_4d_compiler_and_renderer: >
+      Upgraded 'swm_compiler.py' and 'create_mesh.py' to evaluate 'kinematic_timeline'
+      across normalized timestamps t in [0.0, 1.0] (Frames 1..120)[cite: 1]. Parenting animated
+      instances directly to stationary 'world_ground' neutralized Blender's double
+      parent-child matrix transformation trap while preserving pure Euler XYZ world math[cite: 1, 3, 4].
+  - anatomical_torso_continuity: >
+      Shortening 'Seat_Pan' depth to 0.30m and aligning 'Seat_To_Backrest_Hinge' (y=0.02)
+      with 'Pelvis_To_Human_Torso' (y=0.17) eliminated the 'Sawed-in-Half Patient' torso
+      gap across the entire backrest recline animation[cite: 1].
+
+# ------------------------------------------------------------------------------
+# 2. PHYSICAL VS. PSYCHOLOGICAL / SOCIAL AFFORDANCE (STAGE 2 PARADIGM SHIFT)
+# ------------------------------------------------------------------------------
+affordance_taxonomy:
+  hard_mechanical_affordance: >
+    Pure CAD geometry suggests simultaneous bilateral movement, immediate pelvic
+    placement at the front seat edge (Y = -0.15m)[cite: 2], and resting arms on armrests.
+  soft_psychological_affordance (Vulnerability & Protection): >
+    In exposed medical scenarios (Göpel chair), human motion is governed by protective
+    reflexes: sitting retreated further back on the cushion (Y = -0.06m), keeping legs
+    closed initially, leaning on the upright backrest for core balance, placing legs
+    sequentially (one after another) into the shells, and keeping hands folded over the
+    lower abdomen/pelvis as a psychological shield. Only when prompted ("rutschen Sie
+    bitte noch ein Stück nach vorne") does the pelvis slide forward while the backrest reclines.
+  subversive_expressive_affordance (Rule-Breaking as Statement): >
+    Deliberately inverting mechanical affordance—such as an interrogator/policeman
+    straddling a chair backward with their chest against the backrest—is not a pose
+    estimation error, but an intentional social signal of dominance and provocation.
+
+# ------------------------------------------------------------------------------
+# 3. THE TWO KINEMATIC DELTAS DISCOVERED VIA HUMAN VISUAL QA
+# ------------------------------------------------------------------------------
+trajectory_deltas:
+  delta_1_the_diagonal_lerp_trap (Frame_25_Collision):
+    flaw: >
+      Interpolating upward hip lift (rx) and outward abduction (rz) simultaneously
+      between t=0.00 and t=0.35[cite: 1] caused the calf cylinder to slice diagonally through
+      the inner medial wall of Goepel_Shell_L/R at Frame 25[cite: 5, 6].
+    correction_law: >
+      Phase-Decoupled Clearance: Lock abduction near zero (medial corridor) during
+      the upward knee pull until Calf_Bottom_Z > Z_rim_max; abduct outward only above
+      the obstacle, then descend along the trough normal.
+
+  delta_2_retreated_pelvis_lever_drop (Frame_50_to_90_Under-Trough_Drop):
+    flaw: >
+      When the pelvis sits retreated at Y = -0.06m (Frames 54..94), pitching the thigh
+      down to rx = 1.14 rad dropped Knee_Z by 5.1cm, placing the calf cylinder ~5.8cm
+      BELOW the stationary Göpel shell until the forward pelvic slide pushed the knees up[cite: 7, 8, 9, 10].
+    attempted_fix: >
+      Keeping thigh pitch at rx = 0.96 rad and knee flexion at rx = 0.79 rad (sum = 1.75 rad)
+      to maintain Z-height prior to the pelvic slide.
+
+# ------------------------------------------------------------------------------
+# 4. NEXT SESSION BOOT HOOK: THE SHARED THOUGHT-ERROR ("DENKFEHLER")
+# ------------------------------------------------------------------------------
+next_session_mission:
+  priority_1: >
+    Thomas identified a fundamental shared thought-error ("kleiner Denkfehler") in our
+    current kinematic/geometric assumptions for the sequential Göpel chair interaction.
+  boot_instruction_for_gemini: >
+    Load 'swm-project-architect' skill[cite: 1], ingest this YAML, and immediately ask Thomas
+    to reveal the "Denkfehler" he spotted so we can analyze and resolve it together!

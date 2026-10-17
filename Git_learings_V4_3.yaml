@@ -1,0 +1,151 @@
+# ==============================================================================
+# SWM STAGE 3 - SPATIAL REASONING BENCHMARK & SESSION HANDOVER (V4.1 -> V4.3)
+# Master Artifact: 4D Kinematic Trajectory, Social Affordance, Ball-Joint
+#                  Mechanics (Kugelgelenk) & Continuous Causal Roadmap
+# ==============================================================================
+
+benchmark_metadata:
+  id: "SWM-V4.3-MASTER-CAUSAL-CHAIN-003"
+  milestone: "Complete 4D Causal Learning Chain: From Rigid Clipping to Passive Ball-Joint Adaptation"
+  evaluated_model: "Gemini (Argon)"
+  human_evaluator: "Thomas (SWM Project Architect)"
+  repository_purpose: >
+    Open-source Stage-3 training benchmark documenting how human visual QA and
+    embodied mechanical intuition resolve 3D/4D spatial reasoning blind spots
+    without hiding model flaws behind deterministic Python solver crutches.
+
+# ------------------------------------------------------------------------------
+# 1. ARCHITECTURAL LAWS & SUSTAINABILITY PRINCIPLE ("NO-PYTHON-CRUTCH LAW")
+# ------------------------------------------------------------------------------
+verified_architecture_and_philosophy:
+  no_python_crutches_law: >
+    'swm_compiler.py' and 'create_mesh.py' must remain strictly deterministic,
+    unforgiving renderers of 'pass_sensorfusion.json'. Geometric or kinematic
+    errors must NEVER be auto-corrected by Python solvers, because hiding errors
+    destroys human visual QA and prevents genuine improvement of the AI's internal
+    3D/4D mental model ("Kopfbild").
+  stateless_4d_compiler_and_renderer: >
+    Evaluates 'kinematic_timeline' across normalized timestamps t in [0.0, 1.0]
+    (Frames 1..120). Parenting animated instances directly to stationary
+    'world_ground' neutralizes Blender's double parent-child matrix transformation
+    trap while preserving pure Euler XYZ world math.
+  anatomical_torso_continuity: >
+    Shortening 'Seat_Pan' depth to 0.30m and aligning 'Seat_To_Backrest_Hinge'
+    (y=0.02) with 'Pelvis_To_Human_Torso' (y=0.08 -> 0.17) eliminates the
+    'Sawed-in-Half Patient' torso gap across the entire backrest recline animation.
+
+# ------------------------------------------------------------------------------
+# 2. PHYSICAL, MECHANICAL & PSYCHOLOGICAL AFFORDANCE TAXONOMY (STAGE 2)
+# ------------------------------------------------------------------------------
+affordance_taxonomy:
+  hard_mechanical_affordance: >
+    Pure CAD geometry suggests simultaneous bilateral movement, immediate pelvic
+    placement at the front seat edge (Y = -0.15m), and resting arms on armrests.
+  soft_psychological_affordance (Vulnerability & Protection): >
+    In exposed medical scenarios (Göpel chair), human motion is governed by protective
+    reflexes: sitting retreated further back on the cushion (Y = -0.06m), keeping legs
+    closed initially, leaning on the upright backrest for core balance, placing legs
+    sequentially (one after another) into the shells, and keeping hands folded over the
+    lower abdomen/pelvis as a psychological shield. Only when prompted ("rutschen Sie
+    bitte noch ein Stück nach vorne") does the pelvis slide forward while the backrest reclines.
+  adaptive_hardware_affordance (The Ball-Joint Epiphany): >
+    When a natural human posture shift (sitting retreated at Y = -0.06m and later
+    sliding forward to Y = -0.15m) inevitably overhangs or collides with rigid CAD
+    geometry, the world model is missing a real mechanical degree of freedom:
+    the passive spherical ball joint ("Kugelgelenk") beneath the Göpel shell that
+    tilts upon initial calf contact and accompanies the limb coaxially.
+  subversive_expressive_affordance (Rule-Breaking as Statement): >
+    Deliberately inverting mechanical affordance—such as an interrogator/policeman
+    straddling a chair backward with their chest against the backrest—is not a pose
+    estimation error, but an intentional social signal of dominance and provocation.
+
+# ------------------------------------------------------------------------------
+# 3. THE 4-STEP CAUSAL LEARNING CHAIN (DELTAS DISCOVERED VIA HUMAN VISUAL QA)
+# ------------------------------------------------------------------------------
+causal_learning_deltas:
+  delta_1_the_diagonal_lerp_trap (Frame_25_Medial_Wall_Collision):
+    flaw: >
+      Interpolating upward hip lift (rx) and outward abduction (rz) simultaneously
+      between t=0.00 and t=0.35 caused the calf cylinder to slice diagonally through
+      the inner medial wall of Goepel_Shell_L/R at Frame 25.
+    correction_law: >
+      Phase-Decoupled Clearance: Lock abduction near zero (medial corridor) during
+      the upward knee pull until Calf_Bottom_Z > Z_rim_max; abduct outward only above
+      the obstacle, then descend along the trough normal.
+
+  delta_2_retreated_pelvis_lever_drop (Frame_50_to_90_Under_Trough_Drop):
+    flaw: >
+      When the pelvis sits retreated at Y = -0.06m (Frames 54..94), pitching the thigh
+      down to rx = 1.14 rad dropped Knee_Z by 5.1cm, placing the calf cylinder ~5.8cm
+      BELOW the stationary Göpel shell until the forward pelvic slide pushed the knees up.
+    correction_law: >
+      Keep thigh pitch elevated at rx = 0.96 rad and knee flexion at rx = 0.79 rad
+      (sum = 1.75 rad) to maintain Z-height prior to the pelvic slide.
+
+  delta_3_the_collinearity_paradox (Frame_54_Medial_Overhang_in_Rigid_Shell):
+    flaw: >
+      Fixing the Z-height at Pelvis Y = -0.06m revealed a 3.2cm medial (inward) overhang
+      of the calf over the inner shell wall: shifting a 20-deg abducted leg (rz = -0.35 rad)
+      straight back along Y by 9cm shifts its axis medially by dY * sin(0.35) = 3.1cm.
+    human_insight: >
+      Thomas deduced that in a rigid shell, it is geometrically impossible to both
+      dock cleanly from a retreated pelvis AND slide straight forward without lateral
+      clipping—which is why real Göpel shells sit on an unclamped spherical ball joint
+      (Kugelgelenk) that adapts to the calf upon contact!
+
+  delta_4_additive_euler_chain_and_passive_shell_flip (V4.2 -> V4.3 Calibration):
+    flaw_in_v4_2_attempt: >
+      (1) Modifying 'Seat_To_Support_Strut_L/R' from V4.1 ground-truth broke the Frame 120
+          end alignment.
+      (2) Abducting the thigh to rz = -/+0.435 rad swung the 60cm thigh+calf lever 5.1cm
+          outward onto the outer lateral rim (Frame 48).
+      (3) Changing ball-joint yaw by only 0.085 rad with zero roll (ry = 0.0) produced
+          almost invisible shell movement ("1 pixel per frame").
+    v4_3_mathematical_solution: >
+      (1) Invariant Strut Base: Restore 'Seat_To_Support_Strut_L/R' 100% to V4.1
+          (xyz = [-/+0.1436, -0.2649, 0.0325], rpy = [1.00, 0.0, -/+0.35]). Shift
+          'Strut_To_Goepel_Shell_L/R' by +0.10m along the strut axis (z = 0.54) and
+          set the shell's Pass 2A local_offset to [0.0, 0.073, 0.0]. Under the compiler's
+          additive Euler rule (group_rot = parent_rot + joint_rpy), this places the
+          ball-joint pivot directly beneath the shell center while preserving the exact
+          V4.1 world position at Frame 120!
+      (2) Realistic 3-Phase Ball-Joint Adaptation:
+          - Pre-Docking (t=0.00..0.33 L / 0.67 R): Unclamped shell hangs visibly tilted
+            (local rx = +0.52, roll ry = +/-0.22 rad, yaw rz = -/+0.06 rad).
+          - Rim Contact & Passive Flip (t=0.33->0.45 L / 0.67->0.78 R): As the moderately
+            abducted leg (rz = -/+0.385 rad) touches the rim, the shell visibly flips
+            by ~15-20 deg around its ball joint (rx -> 0.75, ry -> 0.04, rz -> -/+0.035)
+            to cradle the calf, followed by a gentle patient micro-correction.
+          - Coaxial Pelvic Slide (t=0.78->1.00): As the pelvis slides to Y = -0.15m,
+            both leg and ball joint glide smoothly into the exact V4.1 end pose
+            (joint rpy = [0.75, 0.0, 0.0] -> global shell rpy = [1.75, 0.0, -/+0.35]).
+
+# ------------------------------------------------------------------------------
+# 4. CONTINUOUS CAUSAL SCENARIO ROADMAP (NEXT STAGES WITHIN THE GÖPEL SCENARIO)
+# ------------------------------------------------------------------------------
+scenario_expansion_roadmap:
+  step_0_next_session_execution: >
+    Synthesize 'pass_sensorfusion.json' (V4.3) implementing Delta 4 (restored V4.1
+    strut anchor + z=0.54 ball-joint pivot + visible 15-20 deg passive shell flip
+    upon calf contact + smooth coaxial pelvic slide).
+  option_a_full_body_and_unused_armrests: >
+    Add abstract geometric Head, Neck, Upper/Lower Arms, Hands, Feet, and Chair Armrests.
+    Demonstrate Soft Affordance: the armrests exist mechanically, but the patient folds
+    hands protectively over the lower abdomen/pelvis.
+  option_b_pre_sequence_ingress: >
+    Prepend the kinematic timeline: approaching the chair, sitting down retreated, and
+    crossing/closing the legs to reach our current t=0.00 initial state.
+  option_c_robotic_mta_multi_actor: >
+    Introduce a second kinematic actor (Robotic MTA) that adjusts the Göpel leg support
+    length to the patient's anatomy and locks the ball joint clamping lever after docking.
+  option_d_affective_non_verbal_contrast: >
+    Compare two distinct parameterizations of the same kinematic rig: a shy/protective
+    trajectory vs. its opposite (confident/relaxed/open) to benchmark non-verbal signal synthesis.
+
+# ------------------------------------------------------------------------------
+# 5. NEXT SESSION BOOT INSTRUCTION FOR GEMINI
+# ------------------------------------------------------------------------------
+boot_instruction_for_gemini: >
+  1. Load 'user:swm-project-architect' skill.
+  2. Ingest this Master YAML and immediately output 'pass_sensorfusion.json' (V4.3)
+     executing 'step_0_next_session_execution' / 'delta_4_additive_euler_chain_and_passive_shell_flip'.

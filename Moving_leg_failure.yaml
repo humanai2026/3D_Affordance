@@ -1,0 +1,64 @@
+# ==============================================================================
+# SWM STAGE 3 - SPATIAL REASONING BENCHMARK & CORRECTION RECORD (V4.1)
+# Scenario: 4D Kinematic Trajectory & Continuous Collision Audit (Göpel Chair)
+# ==============================================================================
+
+benchmark_metadata:
+  id: "SWM-V4.1-4D-TRAJECTORY-001"
+  milestone: "Transition from Static 3D Affordance (t=1.0) to 4D Keyframe Animation (Frames 1..120)"
+  evaluated_model: "Gemini (Argon)"
+  human_evaluator: "Thomas (SWM Project Architect)"
+  status: "Pipeline Verified / Trajectory Delta Identified at Frame 25 (t=0.20)"
+
+# ------------------------------------------------------------------------------
+# 1. ACHIEVED BREAKTHROUGHS IN THIS RUN
+# ------------------------------------------------------------------------------
+verified_successes:
+  - anatomical_continuity_fix: >
+      Shortening Seat_Pan depth to 0.30m and aligning Seat_To_Backrest_Hinge (y=0.02)
+      with Pelvis_To_Human_Torso (y=0.17) completely eliminated the 'Sawed-in-Half Patient'
+      torso gap across the entire recline animation (rx = -0.45 to -1.05 rad).
+  - stateless_4d_compiler_upgrade: >
+      Upgrading swm_compiler.py and create_mesh.py to evaluate 'kinematic_timeline'
+      and parent animated instances directly to stationary 'world_ground' prevented
+      double parent-child matrix transforms in Blender.
+
+# ------------------------------------------------------------------------------
+# 2. THE DELTA: INITIAL FLAW VS. HUMAN VISUAL AUDIT (FRAME 25 COLLISION)
+# ------------------------------------------------------------------------------
+trajectory_audit_delta:
+  llm_initial_assumption: >
+    The LLM verified collision clearance strictly at the discrete keyframe timestamps
+    t=0.00 (Frame 1) and t=0.35 (Frame 43, where calf bottom Z=1.196m > shell rim Z=1.149m).
+    It assumed that lifting (rx: 1.45 -> 0.72) and abducting outward (rz: -0.05 -> -0.22)
+    simultaneously between t=0.00 and t=0.35 would remain collision-free.
+
+  human_visual_discovery: >
+    At Frame 25 (t ≈ 0.20), the outer lateral surface of Calf_Cylinder_L/R clips
+    into the inner medial wall/rim of Goepel_Shell_L/R. The legs are not kept close
+    enough together (insufficient adduction) during the upward lift phase.
+
+  mathematical_root_cause (The_Diagonal_Lerp_Trap):
+    interpolated_state_at_frame_25:
+      t: 0.2017
+      thigh_rpy_rad: [1.032, 0.0, -0.147]
+      calf_global_rpy_rad: [2.160, 0.0, -0.147]
+      knee_world_xyz_m: [-0.165, -0.533, 1.132]
+    geometric_conflict: >
+      At t=0.20, linear interpolation has already abducted the knee/calf outward to
+      X_calf_outer = -0.165 - 0.050 = -0.215m, crossing the medial proximal shell rim
+      located at X_rim,prox = -0.196m (19mm lateral overlap). However, because the calf
+      is still angled downward at rx = 2.16 rad, its Z-height at the shell entry plane
+      is only Z ≈ 1.01m—well below the proximal rim height Z_rim,prox = 1.149m!
+
+# ------------------------------------------------------------------------------
+# 3. GENERALIZABLE RULE FOR 4D ROBOTIC / BIOMECHANICAL MOTION PLANNING
+# ------------------------------------------------------------------------------
+kinematic_decoupling_law:
+  principle: "Phase-Decoupled Clearance (Lift First along Medial Corridor, Abduct Second)"
+  rule_definition: >
+    When navigating a limb from a low medial start pose over a high lateral obstacle
+    (such as a U-trough rim), abduction (rz) MUST remain locked at zero or slight
+    adduction (rz ≈ 0.0 to -0.02 rad) during the upward lift phase (t=0.0 -> t=0.35)
+    until the lowest point of the limb cylinder clears Z_rim_max. Only after vertical
+    clearance is achieved may outward abduction (rz -> -0.35 rad) execute.
