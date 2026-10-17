@@ -1,0 +1,77 @@
+# ==============================================================================
+# SWM SPATIAL REASONING BENCHMARK & CORRECTION RECORD (STAGE 3 ARTIFACT)
+# Scenario: Medical Examination Chair with Göpel Leg Shells & Volumetric Human Rig
+# Architecture: SWM V4.0 (Z-Up, -Y Forward to Camera, +Y Backward)
+# ==============================================================================
+
+benchmark_meta:
+  scenario_id: "SWM_V4_BENCH_001_GOEPEL_AFFORDANCE"
+  domain: "Biomechanics / Robotics Affordance & Tangential Surface Alignment"
+  coordinate_convention: "Strict Z-Up | X: Left(-)/Right(+) | Y: Forward(-)/Backward(+) | Z: Bottom(0)/Top(+)"
+
+# ------------------------------------------------------------------------------
+# 1. CAUSAL & KINEMATIC CHAIN-OF-THOUGHT (THE "TEXTUAL WHY")
+# ------------------------------------------------------------------------------
+causal_affordance_reasoning:
+  two_phase_interaction_model:
+    phase_a_machine_calibration: >
+      Before the patient docks, the assistant calibrates the yellow mechanical support 
+      strut (Support_Strut_L/R) to match the patient's red thigh vector (Human_Thigh_L/R). 
+      Because the pelvis must rest at the front (-Y) edge of the seat pan while the 
+      popliteal fossa (back of the knee) lands at the rear entry of the Göpel shell, 
+      the yellow support strut and the red thigh form a geometric parallelogram in 3D space 
+      sharing the exact same Euler orientation rpy = [1.00, 0.0, -/+0.35] rad.
+    phase_b_human_gravity_settle: >
+      Once the knee joint (Knee_Joint_Sphere_L/R) docks above the Göpel shell entry at 
+      [-/+0.2412, -0.5320, 1.1569], the lower leg flexes downward by +0.75 rad (global 
+      rx = 1.75 rad) under gravity. The green calf cylinder (r = 0.050m) settles 
+      tangentially into the concave blue U-trough (TROUGH_SHELL, inner_r = 0.0546m).
+  non_clipping_trough_math: >
+    In create_mesh.py, TROUGH_SHELL generates a half-cylinder around its local Z-axis 
+    spanning angles pi to 2*pi (wall in local -Y, concave opening facing local +Y). 
+    Rotated by rx = +1.75 rad, local +Y points upward (+Z = +0.984) towards the calf. 
+    By placing the shell's center of curvature at [0.0, +0.003, +0.200] relative to the 
+    knee pivot, the inner trough surface sits at -0.0516m along the radial normal, 
+    cradling the calf bottom (-0.0500m) with a 1.6mm tangential clearance and zero clipping.
+
+# ------------------------------------------------------------------------------
+# 2. HUMAN FEEDBACK & CORRECTION DELTA (RLHF / DPO LEARNING SIGNAL)
+# ------------------------------------------------------------------------------
+correction_delta:
+  anomaly_observed_by_human: "The Sawed-in-Half Patient ('Zersägte Patientin' - 39cm gap between Pelvis and Lumbar/Torso)."
+  initial_flaw_in_llm_reasoning: >
+    The model attempted to satisfy two mutually exclusive geometric constraints simultaneously:
+    1. Placing Human_Pelvis at the front edge of a 0.50m deep seat pan (Y = -0.15m).
+    2. Hinged Chair_Backrest and Human_Torso at the rear edge of that 0.50m seat pan (Y = +0.24m).
+    This forced a relative translation of origin.xyz = [0.0, +0.39, -0.07] between Pelvis 
+    and Torso, visually severing the human dummy at the waist.
+  human_visual_and_anatomical_correction: >
+    In real gynecological/urological examination chairs (as shown in reference imagery), 
+    the seat cushion is anatomically shortened (~0.25m to 0.30m depth) so the backrest 
+    hinge sits directly behind the sacrum/pelvis at the front seat edge.
+  mathematical_fix:
+    Chair_Seat_Pan:
+      before: "scale = [0.50, 0.50, 0.04], local_offset = [0.0, 0.0, -0.02] (rear edge at Y = +0.25m)"
+      after:  "scale = [0.50, 0.30, 0.04], local_offset = [0.0, -0.10, -0.02] (front edge stays at Y = -0.25m, rear edge moves to Y = +0.05m)"
+    Seat_To_Backrest_Hinge:
+      before: "origin.xyz = [0.0, 0.24, 0.05], origin.rpy = [-1.05, 0.0, 0.0]"
+      after:  "origin.xyz = [0.0, 0.02, 0.05], origin.rpy = [-1.05, 0.0, 0.0]"
+    Pelvis_To_Human_Torso:
+      before: "origin.xyz = [0.0, 0.39, -0.07], origin.rpy = [-1.05, 0.0, 0.0]"
+      after:  "origin.xyz = [0.0, 0.17, -0.07], origin.rpy = [-1.05, 0.0, 0.0] (Seamless anatomical transition from Pelvis rear at Y=-0.04m into Lumbar sphere and Torso)"
+
+# ------------------------------------------------------------------------------
+# 3. VERIFIED GROUND-TRUTH KINEMATIC VECTORS (SUMMARY)
+# ------------------------------------------------------------------------------
+verified_kinematic_chain_summary:
+  Seat_To_Human_Pelvis:      { xyz: [0.0, -0.15, 0.12],          rpy: [0.0, 0.0, 0.0] }
+  Seat_To_Backrest_Hinge:    { xyz: [0.0, 0.02, 0.05],           rpy: [-1.05, 0.0, 0.0] }
+  Pelvis_To_Human_Torso:     { xyz: [0.0, 0.17, -0.07],          rpy: [-1.05, 0.0, 0.0] }
+  Seat_To_Support_Strut_L:   { xyz: [-0.1436, -0.2649, 0.0325],  rpy: [1.00, 0.0, -0.35] }
+  Seat_To_Support_Strut_R:   { xyz: [0.1436, -0.2649, 0.0325],   rpy: [1.00, 0.0, 0.35] }
+  Strut_To_Goepel_Shell_L:   { xyz: [0.0, 0.0, 0.44],            rpy: [0.75, 0.0, 0.0] }
+  Strut_To_Goepel_Shell_R:   { xyz: [0.0, 0.0, 0.44],            rpy: [0.75, 0.0, 0.0] }
+  Pelvis_To_Thigh_L:         { xyz: [-0.12, -0.05, 0.01],        rpy: [1.00, 0.0, -0.35] }
+  Pelvis_To_Thigh_R:         { xyz: [0.12, -0.05, 0.01],         rpy: [1.00, 0.0, 0.35] }
+  Thigh_To_Calf_Knee_L:      { xyz: [0.0, 0.0, 0.42],            rpy: [0.75, 0.0, 0.0] }
+  Thigh_To_Calf_Knee_R:      { xyz: [0.0, 0.0, 0.42],            rpy: [0.75, 0.0, 0.0] }
