@@ -1,0 +1,128 @@
+# ==============================================================================
+# SWM STAGE 3 - SPATIAL REASONING BENCHMARK & SESSION HANDOVER (V4.4 VERIFIED)
+# Artifact: The Chord-Shortcut Paradox, Tendon Invariance, Egocentric Hemispheres
+#           & Orthographic X-Ray QA Protocol
+# ==============================================================================
+
+benchmark_metadata:
+  id: "SWM-V4.4-TENDON-INVARIANCE-AND-ORTHO-QA-005"
+  milestone: "Verified Tendon Gauge Invariance (Frame 62 Ortho X-Ray), Egocentric L/R Naming & Outliner Hemisphere Collections"
+  evaluated_model: "Gemini Ultra (Thinking Mode High)"
+  human_evaluator: "Thomas (SWM Project Architect)"
+  session_status: "Handover Ready - Both Knees & Goepel Shells 100% Solved; Next Focus: Option A (Full 7-Joint Body & Unused Armrests)"
+
+# ------------------------------------------------------------------------------
+# 1. MILESTONE ACHIEVED IN V4.3.1 & V4.4
+# ------------------------------------------------------------------------------
+verified_achievements_v4_4:
+  goepel_ball_joint_docking: >
+    Restored the V4.1 strut rail clamp anchor ([-/+0.1436, -0.2649, 0.0325]),
+    placed the spherical Ball Joint directly beneath the shell midpoint (s = 0.518m,
+    rx = 1.132 rad), and locked the shell's pre-docking rest pose until the exact
+    frame of physical calf contact (t = 0.39 Right / t = 0.74 Left).
+  tendon_invariance_and_arc_subdivision: >
+    Eliminated the 33.5mm chord-shortcut impaling during rapid leg lift by subdividing
+    rotational intervals >15 deg into dt = 0.02 steps (t = 0.14..0.20 Right, t = 0.48..0.54 Left),
+    embedding explicit tendon gauge cylinders (Knee_Tendon_R/L, 60mm length), and
+    recessing the calf top cap to z = 25mm so the tendon neck remains visibly intact
+    in Right/Left Orthographic X-Ray inspection.
+  egocentric_hemisphere_and_outliner_collections: >
+    Standardized all bilateral naming to strict Egocentric Actor Perspective
+    (_R = -X hemisphere / Patient Right; _L = +X hemisphere / Patient Left) and
+    grouped objects into Outliner Collections ('Hemisphere_R_Ego', 'Hemisphere_L_Ego',
+    'Center_Axis') in 'create_mesh.py' for 1-click occlusion-free orthographic QA.
+
+# ------------------------------------------------------------------------------
+# 2. COGNITIVE FLAWS ("DENKFEHLER") & QA DISCOVERIES
+# ------------------------------------------------------------------------------
+root_cause_cognitive_analysis:
+  the_human_uncanny_valley_detector: >
+    Thomas debugs 4D animations by watching the motion loop until his biological
+    predictive-coding system triggers an "Uncanny Valley" alert (filtering out baseline
+    linear interpolation and locking onto subtle physical violations like a calf
+    pushing into a knee). Instead of debugging via abstract equations, he asks:
+    "What physical structure in reality prevents this?" -> leading directly to the
+    Tendon & Ligament Invariance architecture.
+
+  cognitive_flaw_1_snapshot_vs_chord_interpolation ("Das Sekanten-Paradoxon"):
+    what_the_ai_thought: >
+      The AI verified that the distance between Knee Sphere center and Calf Cylinder
+      center was valid at keyframe snapshots t = 0.12 and t = 0.22, assuming the limb
+      would stay intact in between.
+    why_it_failed_mathematically: >
+      Because 'create_mesh.py' parents animated objects to 'world_ground' and Blender
+      linearly interpolates world 'location' along straight Euclidean CHORDS (Sekanten),
+      a 68.2 deg single-step rotation shortcuts the circular arc by 1 - cos(1.19 / 2) = 17.2%,
+      driving the calf center 33.5mm upward through the knee sphere at the midpoint frame!
+
+  cognitive_flaw_2_missing_tendon_and_inertia_biomechanics ("Sehnen-Invarianz & Trägheit"):
+    what_the_ai_thought: >
+      The AI treated limb segments as weightless primitives that immediately extend
+      upon hip lift.
+    why_it_failed_physically: >
+      Real joints are tethered by high-stiffness tendons and ligaments. During upward
+      thigh acceleration against gravity, the heavy lower leg experiences inertial lag:
+      gravity pulls the calf slightly downward, stretching the knee tendon by ~2.0mm
+      (z: 0.420 -> 0.422m) with slight passive flexion (rx: 1.50 -> 1.54 rad).
+
+  cognitive_flaw_3_perspective_ellipse_illusion_vs_orthographic_xray:
+    discovery: >
+      In tilted 3D perspective views, the 50mm front rim of the calf cylinder projects
+      upward across the central 12mm tendon cylinder (parallax illusion), mimicking
+      joint penetration even when the joint is intact. Switching to locked Right/Left
+      Orthographic view (Numpad 3 / +X Gizmo) with X-Ray (Alt+Z) collapses the flat
+      cylinder cap into a razor-sharp horizontal line for sub-millimeter verification.
+
+# ------------------------------------------------------------------------------
+# 3. MATHEMATICAL & BIOMECHANICAL LAWS (V4.4 STANDARD)
+# ------------------------------------------------------------------------------
+v4_4_implementation_laws:
+  rule_1_the_arc_subdivision_law: >
+    Whenever a limb rotates by more than 15 degrees (0.26 rad) in a single phase,
+    insert intermediate kinematic keyframes (dt = 0.02) so the chord-to-arc error
+    L * (1 - cos(dTheta / 2)) stays <= 2.0mm.
+  rule_2_biomechanical_tendon_tether_and_inertial_lag: >
+    Recess the calf cylinder cap by 25mm (length = 0.355m, local_offset = [0, 0, 0.2025])
+    to create a clearly visible 25mm tendon neck above the orange tendon midpoint dot
+    (z = 0.030m), and include +2.0mm elastic inertial lag at lift-off.
+  rule_3_explicit_tendon_primitives_as_xray_gauges ("Sichtbare Sehnen-Seelen"): >
+    Insert thin cylinder primitives ('Knee_Tendon_R/L', diameter = 0.024m, length = 0.060m,
+    local_offset = [0.0, 0.0, 0.030]) inside each core joint. In Orthographic X-Ray (Alt+Z),
+    the recessed limb cap must hover ~5mm above the tendon's orange origin dot (z = 30mm).
+
+# ------------------------------------------------------------------------------
+# 3B. HOLISTIC 7-JOINT BIOMECHANICAL TAXONOMY (FOUNDATION FOR OPTION A)
+# ------------------------------------------------------------------------------
+biomechanical_7_joint_grammar:
+  scope_focus: >
+    Omit fingers and toes. Focus learning on the 7 expressive & load-bearing core
+    joints: Foot/Ankle (Fuß), Knee (Knie), Hip (Hüfte), Shoulder (Schulter),
+    Elbow (Ellbogen), Wrist/Hand (Hand), and Neck (Nacken).
+  class_1_ball_and_socket (Hip, Shoulder):
+    dof: "3-DoF (rx flexion, ry abduction, rz axial rotation)"
+    tendon_rule: "Deep capsular tether (Hip) vs. mobile muscular/scapular tether (Shoulder; allows protective shoulder-shrugging)."
+  class_2_hinge_and_pivot (Knee, Elbow):
+    dof: "1-DoF flexion/extension (Knee) / 2-DoF flexion + forearm pronation/supination (Elbow)"
+    tendon_rule: "Hard stop at 0.0 rad extension. Virtual tendon tether maintains constant orbital radius via Arc-Subdivision plus ~2mm inertial lag."
+  class_3_condyloid_biaxial (Wrist/Hand, Ankle/Foot):
+    dof: "2-DoF bounded tilt (rx pitch + tightly limited ry lateral deviation; axial spin rz locked)"
+    tendon_rule: "Short, high-stiffness retinaculum/ligament tether preventing translational gap."
+  class_4_elastic_bending_chain (Neck / Cervical Spine):
+    dof: "Coupled 3-DoF rotation + translational bending arc"
+    tendon_rule: "Multi-vertebra continuum: head rotation is always accompanied by a proportional tilt of the neck cylinder itself."
+
+# ------------------------------------------------------------------------------
+# 4. CONTINUOUS CAUSAL SCENARIO ROADMAP (NEXT SESSION)
+# ------------------------------------------------------------------------------
+scenario_expansion_roadmap:
+  option_a_full_body_and_unused_armrests (NEXT): >
+    Expand the V4.4 rig with Head, Neck, Shoulders, Upper/Lower Arms, Wrists/Hands,
+    Ankles/Feet (all with explicit tendon gauges and 7-Joint rules), plus Chair Armrests
+    (demonstrating Soft Affordance: folding hands protectively over the pelvis instead
+    of using armrests).
+  option_b_pre_sequence_ingress: >
+    Prepend the kinematic timeline: approaching the chair, sitting down retreated, and closing legs.
+  option_c_robotic_mta_multi_actor: >
+    Introduce a second kinematic actor (Robotic MTA) adjusting the Göpel struts and locking the ball joints.
+  option_d_affective_non_verbal_contrast: >
+    Compare shy/protective vs. confident/open kinematic parameterization across all 7 core joints.

@@ -1,0 +1,99 @@
+# ==============================================================================
+# SWM STAGE 3 - SPATIAL REASONING BENCHMARK & SESSION HANDOVER (V4.4 -> V4.5)
+# Artifact: Floating Component Blindness (L-Bracket Law) & Torso-Arm Penetration
+#           under Reclining Additive Euler Chains
+# ==============================================================================
+
+benchmark_metadata:
+  id: "SWM-V4.5-BASIS-COLLISION-AND-ATTACHMENT-LAWS-006"
+  milestone: "Full 7-Joint Volumetric Body Synthesis & Root-Cause Diagnosis of Floating Armrests and Reclining Torso Penetration"
+  evaluated_model: "Gemini Ultra (Thinking Mode High)"
+  human_evaluator: "Thomas (SWM Project Architect)"
+  session_status: "Handover Ready - Conical Limbs & Leg/Hand Clearance Verified; Next Focus: Fixing Armrest L-Brackets & Torso Surface Clearance"
+
+# ------------------------------------------------------------------------------
+# 1. MILESTONES ACHIEVED IN V4.5 (CONICAL ANATOMY & HAND-LEG CLEARANCE)
+# ------------------------------------------------------------------------------
+verified_achievements_v4_5:
+  conical_limb_frustums_and_3_band_knee: >
+    Replaced uniform stovepipe cylinders with tapered conical frustums
+    (scale = [d_proximal, d_distal, length] via primitive_cone_add in create_mesh.py)
+    and added Medial/Lateral Collateral Ligaments + Quadriceps Tendon to the knee.
+    The knee-to-thigh transition is now 100% free of rim overhang across all angles.
+  active_hand_to_leg_clearance_choreography: >
+    Successfully coordinated the folded hands over the pelvis with sequential leg
+    lifting (lifting the ipsilateral forearm at t = 0.22 Right and t = 0.56 Left
+    so the rising thigh never collides with the hands) and coupled neck/head gaze
+    toward the active Goepel shell.
+
+# ------------------------------------------------------------------------------
+# 2. THE TWO ELEMENTAL COGNITIVE FLAWS ("BASIS-DENKFEHLER") DISCOVERED BY THOMAS
+# ------------------------------------------------------------------------------
+root_cause_cognitive_analysis:
+  cognitive_flaw_1_floating_side_attachments ("Der L-Bügel-Trugschluss" / Missing L-Bracket):
+    the_human_observation: >
+      Thomas immediately spotted that both Chair Armrests ('Chair_Armrest_R/L') float
+      in mid-air beside the seat pan with no physical connection to the chair frame.
+    what_the_ai_thought: >
+      The AI placed the armrest origin at X = -/+0.27m, Z = +0.24m (to clear the
+      0.48m-wide cushion) and extended a vertical post 0.20m downward (to Z = +0.04m),
+      falsely assuming it would touch the seat pan.
+    why_it_failed_physically_and_geometrically: >
+      Two simultaneous blind spots occurred:
+      (1) Vertical Gap: 'Seat_Frame' spans Z = -0.04m to 0.00m, so a post ending at
+          Z = +0.04m stops 4cm above the frame in empty air!
+      (2) Lateral Gap: 'Seat_Frame' has width 0.50m (spanning X = -0.25m to +0.25m).
+          A vertical post at X = -/+0.27m stands 2cm outside the frame's outer edge!
+          Any lateral attachment mounted outside a parent volume's bounding box MUST
+          include a horizontal structural cantilever ('Armrest_Horizontal_Bracket_R/L')
+          bridging from inside the frame (|X| = 0.22m, Z = -0.02m) outward to the
+          vertical post base (|X| = 0.27m, Z = -0.02m).
+
+  cognitive_flaw_2_torso_arm_penetration_during_recline ("Bauchwand-Durchdringung"):
+    the_human_observation: >
+      While the folded hands and forearms clear the thighs nicely and sit in front
+      of the abdomen in the upright initial pose (Frame 1-40), the forearms sink
+      progressively deeper into the abdomen as the backrest reclines, ending up
+      almost completely buried inside 'Torso_Core' at Frame 120 (with only the
+      hand tips peeking out of the stomach).
+    why_it_failed_mathematically_and_geometrically: >
+      Two coupled errors caused the forearms to submerge into the torso:
+      (1) The Convex Chord-Across-Box Paradox (Geometric): 'Torso_Core' is a 0.34m
+          wide box whose front abdominal wall sits at local Y_front = -0.19m across
+          its entire width (X = -0.17m to +0.17m). For two forearms to angle inward
+          from the elbows (at X = -/+0.18m) to meet at the midline (X = 0.0) WITHOUT
+          cutting through the flat abdominal wall, the elbows themselves MUST sit in
+          front of or level with the anterior abdominal plane (local Y_elbow <= -0.18m),
+          meaning the upper arms must flex slightly forward (+15 to +20 deg relative
+          to the torso plane) rather than hanging straight down alongside the back of
+          the ribcage!
+      (2) Additive Euler Recline Drift in 'swm_compiler.py' (Mathematical): Because
+          'swm_compiler.py' adds parent and child Euler angles component-wise
+          (group_rot = torso_rot + shoulder_rot + elbow_rot), reclining the torso
+          from rx = -0.35 rad to -1.05 rad (-60 deg) while only increasing shoulder
+          rx from 3.22 to 3.55 rad caused the net global upper-arm angle
+          (rx_global = -1.05 + 3.55 = 2.50 rad = 143 deg) to lag 27 degrees BEHIND
+          the reclining torso plane (which tilted by 40 deg)! Worse, in XYZ Euler
+          order, applying medial forearm yaw (rz = +/-0.53 rad around the WORLD
+          vertical Z-axis) onto a 60-degree reclined torso rotates the forearms
+          downward INTO the reclined stomach rather than across its surface!
+
+# ------------------------------------------------------------------------------
+# 3. UNIVERSAL ARCHITECTURAL LAWS FOR V4.5.1 (NEXT SESSION)
+# ------------------------------------------------------------------------------
+v4_5_1_implementation_laws:
+  law_1_cantilever_l_bracket_verification ("Kein Bauteil darf im Raum schweben"): >
+    Whenever a child component's origin lies outside the 3D bounding box of its
+    parent link (such as armrests at |X| = 0.27m vs. Seat_Frame at |X| = 0.25m),
+    verify 3D bounding-box intersection along X, Y, AND Z. Extend the vertical post
+    down to Z = -0.02m and add an explicit horizontal L-bracket cylinder/bar bridging
+    X = -/+0.20m to -/+0.27m at Z = -0.02m into 'Seat_Frame'.
+  law_2_anterior_torso_envelope_and_recline_compensation ("Bauchwand-Tangenten-Gesetz"): >
+    (a) To fold hands over the abdomen without forearm-to-torso penetration, the
+        elbows must rest at the anterior ribcage margin (Y_elbow <= Y_torso_front),
+        requiring upper arms to stay ~0.25 rad (14 deg) flexed forward of the torso's
+        longitudinal axis at all times: rx_shoulder(t) = pi + |rx_torso(t)| + 0.25 rad.
+    (b) As the torso reclines from rx = -0.35 to -1.05 rad (t = 0.80..1.00), shoulder
+        rx must increase 1:1 with the torso recline (from 3.49 rad to 4.19 rad) so
+        the elbows ride ON TOP OF the reclining abdominal wall instead of sinking
+        through it!

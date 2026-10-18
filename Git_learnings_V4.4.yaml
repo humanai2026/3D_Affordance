@@ -1,0 +1,144 @@
+# ==============================================================================
+# SWM STAGE 3 - SPATIAL REASONING BENCHMARK & SESSION HANDOVER (V4.3.1 -> V4.4)
+# Artifact: The Chord-Shortcut Paradox, Tendon/Ligament Invariance & Inertia Lag
+# ==============================================================================
+
+benchmark_metadata:
+  id: "SWM-V4.3.1-TENDON-INVARIANCE-AND-CHORD-PARADOX-004"
+  milestone: "Verified Ball-Joint Shell Docking & Root-Cause Analysis of Knee Joint Impaling (Frames 1-30)"
+  evaluated_model: "Gemini (Thinking Mode High)"
+  human_evaluator: "Thomas (SWM Project Architect)"
+  session_status: "Handover Ready - Goepel Shells 100% Solved; Next Focus: Biomechanical Knee & Tendon Physics"
+
+# ------------------------------------------------------------------------------
+# 1. MILESTONE ACHIEVED IN V4.3.1 (THE BALL-JOINT VICTORY)
+# ------------------------------------------------------------------------------
+verified_achievements_v4_3_1:
+  goepel_ball_joint_docking: >
+    By restoring the V4.1 strut rail clamp anchor ([-/+0.1436, -0.2649, 0.0325]),
+    placing the spherical Ball Joint directly beneath the shell midpoint (s = 0.518m,
+    rx = 1.132 rad), aligning hip abduction to the exact retreated triangle angle
+    (rz = -/+0.301 rad at Pelvis Y = -0.06m), and locking the shell's pre-docking rest
+    pose until the exact frame of physical calf contact (t = 0.39 Left / t = 0.74 Right),
+    both legs now dock cleanly, flip the passive shells upon contact, and glide
+    coaxially into the Frame 120 end pose (Pelvis Y = -0.15m, rz = -/+0.350 rad).
+
+# ------------------------------------------------------------------------------
+# 2. THE COGNITIVE FLAW ("DENKFEHLER") BEHIND THE KNEE IMPALING (FRAMES 1 TO 30)
+# ------------------------------------------------------------------------------
+root_cause_cognitive_analysis:
+  the_human_observation: >
+    Thomas observed that while the knee looks round at Frame 1 and again after Frame 30,
+    the calf cylinder pushes slightly upward into the knee during initial lift (Frames 2-14,
+    where real physics would dictate the exact opposite: gravity + inertia slightly stretching
+    the knee tendons downward by ~1-2mm), normalizes around Frame 18, and then violently
+    bursts out through the top of the knee sphere at Frame 22 before recovering at Frame 30.
+
+  cognitive_flaw_1_snapshot_vs_chord_interpolation ("Das Sekanten-Paradoxon"):
+    what_the_ai_thought: >
+      The AI suffered from "Keyframe Snapshot Blindness": it verified that the distance
+      between the Knee Sphere center and the Calf Cylinder center was exactly 0.19m at
+      t = 0.12 (Frame 15) and t = 0.22 (Frame 27), assuming the limb would stay intact
+      in between.
+    why_it_failed_mathematically: >
+      Because 'create_mesh.py' parents animated objects directly to 'world_ground' and
+      Blender linearly interpolates world 'location' and 'rotation_euler' between keyframes,
+      both the Knee Sphere and the Calf Cylinder center travel along straight Euclidean
+      CHORDS (Sekanten) rather than circular arcs! Between t = 0.12 (Frame 15) and t = 0.22
+      (Frame 27), the thigh swings upward by 42.4 deg (rx: 1.42 -> 0.68 rad) and the calf
+      rotates by 67.6 deg (global rx: 2.92 -> 1.73 rad). At the midpoint of this huge angular
+      jump (Frame 21-22, t = 0.17), the straight chord shortcuts the circular arc by
+      1 - cos(1.18 rad / 2) = 16.9%, pulling the calf center 3.2cm to 4.2cm inside the
+      knee sphere and causing the upper calf rim to pierce out the top of the knee!
+
+  cognitive_flaw_2_missing_tendon_and_inertia_biomechanics ("Sehnen-Invarianz & Trägheit"):
+    what_the_ai_thought: >
+      The AI treated the volumetric limb segments as abstract geometric primitives that
+      immediately start extending (knee rx: 1.52 -> 1.50 rad) the instant the hip lifts
+      at t = 0.00 -> 0.12.
+    why_it_failed_physically: >
+      In human biomechanics, bones are held together by tendons and ligaments (Patellar
+      tendon, cruciate/collateral ligaments) acting as a high-stiffness elastic tether
+      between the joint pivot and the bone cap. When the hip flexors accelerate the thigh
+      upward against gravity (Frames 1-14), the heavy lower leg experiences inertial lag:
+      gravity pulls the calf slightly downward, stretching the knee tendon by ~1.5mm
+      (a micro-increase in axial offset and slight passive knee flexion rx: 1.52 -> 1.55 rad)
+      rather than compressing the tibia into the femur!
+
+  cognitive_flaw_3_zero_margin_cylinder_cap ("Flacher Zylinderdeckel im Kugelzentrum"):
+    what_the_ai_thought: >
+      Placing a flat cylinder cap of radius r_calf = 0.050m exactly at the center (z = 0.0)
+      of a knee sphere of radius r_knee = 0.055m leaves enough radial cover.
+    why_it_failed_geometrically: >
+      A flat cylinder of radius 5.0cm inside a 5.5cm sphere leaves only 5mm of radial shell
+      thickness at the cylinder's circular rim (sqrt(0^2 + 0.05^2) = 0.050m vs 0.055m).
+      Even a tiny 6mm chord-interpolation error pushes the sharp 90-degree cylinder edge
+      outside the spherical silhouette. Recessing the anatomical bone cap slightly along
+      the tendon axis (or increasing joint sphere encapsulation margin) prevents rim poke-through.
+
+# ------------------------------------------------------------------------------
+# 3. MATHEMATICAL & BIOMECHANICAL RECIPE FOR V4.4 (NEXT SESSION)
+# ------------------------------------------------------------------------------
+v4_4_implementation_plan:
+  rule_1_the_arc_subdivision_law (Preventing Chord Shortcuts): >
+    Whenever a limb rotates by more than 15 degrees (0.26 rad) in a single phase,
+    insert intermediate kinematic keyframes (e.g., at t = 0.15, t = 0.18, t = 0.20
+    for Left lift, and t = 0.49, t = 0.52, t = 0.54 for Right lift). At max 15 deg per
+    interval, the chord-to-arc error 0.19 * (1 - cos(0.13)) drops below 1.6mm (0.8%),
+    completely eliminating the Frame 22 knee impaling without touching Python!
+  rule_2_biomechanical_tendon_tether_and_inertial_lag: >
+    Model the virtual tendon between Knee Sphere center and Calf Cylinder top end:
+    (a) Set baseline calf axial offset so the flat cylinder rim sits safely inside the
+        knee capsule (local_offset = [0.0, 0.0, 0.195] with length 0.37m -> 5mm tendon gap).
+    (b) During initial upward thigh acceleration against gravity (t = 0.00 -> 0.12 Left,
+        t = 0.46 -> 0.52 Right), include inertial calf lag (knee flexes slightly from
+        1.52 to 1.55 rad and tendon stretches by +1.5mm along Z) before swinging up.
+
+# ------------------------------------------------------------------------------
+# 4. CONTINUOUS CAUSAL SCENARIO ROADMAP (STAGES WITHIN THE GÖPEL SCENARIO)
+# ------------------------------------------------------------------------------
+scenario_expansion_roadmap:
+  step_0_v4_4_next_session: >
+    Apply the Tendon Invariance & Arc-Subdivision fix to 'pass_sensorfusion.json' (V4.4)
+    so the knee joint remains 100% anatomically and mechanically intact across Frames 1-120.
+  option_a_full_body_and_unused_armrests: >
+    Add abstract geometric Head, Neck, Upper/Lower Arms, Hands, Feet, and Chair Armrests
+    (demonstrating Soft Affordance: folding hands protectively over the pelvis instead of using armrests).
+  option_b_pre_sequence_ingress: >
+    Prepend the kinematic timeline: approaching the chair, sitting down retreated, and closing legs.
+  option_c_robotic_mta_multi_actor: >
+    Introduce a second kinematic actor (Robotic MTA) adjusting the Göpel struts and locking the ball joints.
+  option_d_affective_non_verbal_contrast: >
+    Compare shy/protective vs. confident/open kinematic parameterization.
+# ------------------------------------------------------------------------------
+# 3B. HOLISTIC 7-JOINT BIOMECHANICAL TAXONOMY (PRIORITY 1 FOR V4.4 & OPTION A)
+# ------------------------------------------------------------------------------
+biomechanical_7_joint_grammar:
+  scope_focus: >
+    Omit fingers and toes. Focus learning on the 7 expressive & load-bearing core
+    joints: Foot/Ankle (Fuß), Knee (Knie), Hip (Hüfte), Shoulder (Schulter),
+    Elbow (Ellbogen), Wrist/Hand (Hand), and Neck (Nacken).
+  class_1_ball_and_socket (Hip, Shoulder):
+    dof: "3-DoF (rx flexion, ry abduction, rz axial rotation)"
+    tendon_rule: "Deep capsular tether (Hip) vs. mobile muscular/scapular tether (Shoulder; allows protective shoulder-shrugging)."
+  class_2_hinge_and_pivot (Knee, Elbow):
+    dof: "1-DoF flexion/extension (Knee) / 2-DoF flexion + forearm pronation/supination (Elbow)"
+    tendon_rule: >
+      Hard stop at 0.0 rad extension (no hyperextension). Virtual tendon tether between
+      sphere center and cylinder cap maintains constant orbital radius (via Arc-Subdivision
+      <= 15 deg per keyframe interval) plus ~1.5mm elastic inertial lag against gravity.
+  class_3_condyloid_biaxial (Wrist/Hand, Ankle/Foot):
+    dof: "2-DoF bounded tilt (rx pitch + tightly limited ry lateral deviation; axial spin rz locked)"
+    tendon_rule: "Short, high-stiffness retinaculum/ligament tether preventing translational gap."
+  class_4_elastic_bending_chain (Neck / Cervical Spine):
+    dof: "Coupled 3-DoF rotation + translational bending arc"
+    tendon_rule: "Multi-vertebra continuum: head rotation is always accompanied by a proportional tilt of the neck cylinder itself."
+rule_3_explicit_tendon_primitives_as_xray_gauges ("Sichtbare Sehnen-Seelen"): >
+    Add explicit, thin cylinder primitives (e.g., 'Scene.Human_Calf_L.Knee_Tendon_L',
+    diameter = 0.020m, length = 0.060m, local_offset = [0.0, 0.0, 0.030]) inside each
+    core joint in 'enhanced_pass_2a'. Normally concealed inside the joint sphere (r=0.055m)
+    and limb cylinder (r=0.050m), these tendon cores act as visual QA gauges:
+    (1) They remain invisible during healthy motion unless X-Ray (Alt+Z) or sphere hiding is toggled.
+    (2) Any chord-shortcut or rotational decoupling immediately exposes the tendon or creates
+        a measurable gap against the recessed cylinder cap (z_cap = 0.060m), allowing Gemini
+        to measure sub-millimeter tendon stretch and alignment errors directly from screenshots!    
