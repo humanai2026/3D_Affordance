@@ -1,0 +1,43 @@
+benchmark_id: "SWM-V4.5.4-CLASPED-HANDS-TOPOLOGY-AND-RECLINE-GRAVITY-LAW"
+project: "Small World Model (SWM) - 3D/4D Embodied Spatial Reasoning"
+date: "2026-10-19"
+version_transition: "V4.5.3 -> V4.5.4"
+human_qa_inspector: "Thomas"
+
+visual_qa_observations:
+  - observation_1_frame_22: "At Frame 22 (t=0.18, Bild 1), the lower (left) hand's fingertips slightly penetrate the rising right thigh (-21mm), whereas at Frame 26 (t=0.22, Bild 2) and Frame 36ff (t=0.30..0.39, Bild 3) the clearance and descent look natural."
+  - observation_2_frame_59_to_74: "During the left leg lift (Frame 59 to 74, t=0.49..0.62, Bild 4), the left forearm/hand tunnels upward straight through the right forearm/hand (-45mm intersection), and at Frame 94 (t=0.78, Bild 5) the hands remain slightly overlapping (-18mm)."
+  - observation_3_frame_94_to_119: "During the backrest recline (Frame 94 to 119, t=0.80..1.00, Bild 6 & Bild 7), the arms freeze rigidly relative to the thorax and float 11-15cm in mid-air above both the lower torso/abdomen and the pelvic/intimate triangle."
+
+ai_cognitive_blind_spots:
+  blind_spot_1_contralateral_fingertip_paradox:
+    symptom: "Lifting only the ipsilateral right wrist when the right thigh rises leaves the left hand's fingertips colliding with the right thigh at Frame 22."
+    root_cause: >
+      When hands are clasped across the body midline (X = 0), the wrists sit on their respective sides (X_wrist_R = -0.04m, X_wrist_L = +0.04m),
+      but the palms and fingertips project into the CONTRALATERAL hemisphere (X_tip_L = -0.04m..-0.06m over the Right thigh; X_tip_R = +0.04m..+0.06m over the Left thigh).
+      An ipsilateral clearance heuristic (lifting Wrist_R for Thigh_R) fails to lift the contralateral fingertips (Tip_L) that actually occupy the collision volume above Thigh_R.
+
+  blind_spot_2_topological_stacking_inversion:
+    symptom: "Quantum tunneling of the left hand through the right hand between Frame 59 and Frame 74."
+    root_cause: >
+      In a stacked/clasped hand posture where Hand_R rests ON TOP of Hand_L (Z_R > Z_L), applying a naive bilateral mirror formula
+      (dZ_R = +42mm * lift_R + 15mm * lift_L; dZ_L = +15mm * lift_R + 42mm * lift_L) preserves Z_R > Z_L when lift_R = 1,
+      but inverts topology when lift_L = 1 (driving the lower hand +42mm upward while the upper hand only rises +15mm, resulting in Z_L > Z_R).
+
+  blind_spot_3_rotating_frame_gravity_decoupling:
+    symptom: "Arms freeze during recline (t=0.85..1.00) and point upward into mid-air (Z_tip = 1.135m), 14cm above the pelvis/abdomen."
+    root_cause: >
+      1. Leaving the elbows at y_local = -0.144m (instead of tucking them into the new y_local = -0.075m waist indentation) pushed the wrists via the 230mm forearm hypotenuse out to y_local = -0.289m (13.4cm in front of the abdominal wall y_belly = -0.155m).
+      2. When the torso pitches backward by -60 deg (rx = -1.05 rad), the local forward axis (-Y_torso) rotates by sin(60 deg) = 86.6% into the world upward axis (+Z_world).
+      A hand vector with local forward-downward slope (uy = -0.42, uz = -0.46) rotates into a world UPWARD slope (vz_world = -0.42*sin(-1.05) - 0.46*cos(-1.05) = +0.134 > 0), pointing the hands at the ceiling instead of draping them down onto the horizontal pelvis.
+
+universal_mathematical_laws_v4_5_4:
+  law_1_coupled_stack_hierarchy: >
+    Clasped hands act as a coupled master-slave stack: for ANY leg lift (Left or Right), the lower hand (Hand_L) lifts to clear the active thigh,
+    and the upper hand (Hand_R) MUST satisfy Z_R(t) = Z_L(t) + dZ_stack and Y_R(t) = Y_L(t) + dY_stack with sqrt(dY_stack^2 + dZ_stack^2) >= r_R + r_L (48mm),
+    ensuring zero tunneling across all frames and preserving the natural 'lower-arm-leads-descent' choreography on both hemispheres.
+  law_2_recline_gravity_draping: >
+    As the backrest reclines from rx = -0.35 to -1.05 rad while the pelvis slides forward to Y = -0.15m:
+    (a) Elbows sink backward/downward into the waist corridor (y_el: -0.105m -> -0.068m),
+    (b) Wrists and hands continuously pitch downward in local torso space (uz_hand: -0.42 -> -0.82) all the way from t=0.74 to t=1.00,
+    so that in World Space the forearms and hands rest tangentially on the lower abdomen and intimate pelvic triangle (Z_world = 0.99m..1.04m).
