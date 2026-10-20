@@ -1,0 +1,88 @@
+# ==============================================================================
+# SWM EGO-PERSPECTIVE DIAGNOSTICS & CROSS-JOINT SEMANTICS RECORD (V5.2)
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Record ID: SWM-V5.2-EGOCAMERA-AND-CROSSJOINT-SEMANTIC-INVERSION
+# Date: 2026-10-20
+# ==============================================================================
+
+benchmark_record:
+  id: "SWM-V5.2-EGOCAMERA-AND-CROSSJOINT-SEMANTIC-INVERSION"
+  version: "5.2.0"
+  domain_abstraction: "First-Person Embodied Empathy QA, Anticipatory Gaze Kinematics & Multi-Joint Affective Tensor"
+
+  # ----------------------------------------------------------------------------
+  # 1. FIRST-PERSON EGO-CAMERA DIAGNOSTIC DISCOVERY (THE 'STARTLE REFLEX' BUG)
+  # ----------------------------------------------------------------------------
+  ego_camera_diagnostic_law:
+    name: "First-Person Optical-Flow QA & Anticipatory Gaze Lead Law"
+    observed_anomaly_frames_77_to_81:
+      third_person_illusion: >
+        From an external observer camera, switching Assistive_Agent_B's gaze target
+        from Seated_Agent_A's face [0.0, 0.12, 1.52] at Frame 77 (t=0.32) to the
+        lower support cradle [-0.368, -0.722, 1.002] at Frame 81 (t=0.335) appeared
+        as a minor, acceptable head tilt.
+      first_person_ego_reality: >
+        Viewed through Assistive_Agent_B's head-mounted Ego-Camera (Cam_Ego_MTA),
+        remaining locked on Agent_A's face while the limb is already elevating in
+        lower peripheral space, followed by a 4-frame (0.16s) step-function snap to
+        the foot, reads unmistakably as an involuntary 'Startle Reflex' ('being
+        shocked by an expected movement') and triggers a severe Uncanny Valley effect.
+    root_cause_in_chain_of_thought: >
+      Piecewise Constant Gaze Target Switching (Step-Function Gaze Bug) without
+      Anticipatory Hand-Eye Lead or Continuous Postural Micro-Motion.
+    mathematical_correction_laws:
+      1_anticipatory_hand_eye_lead: >
+        When an agent anticipates an upcoming manipulation on a moving target, gaze
+        transition must initiate proactively during the counterpart's approach phase
+        (t_lead = t_dock - 0.35s, spanning 20..28 frames via smoothstep S-curve)
+        rather than snapping reactively at the moment of docking.
+      2_uncanny_valley_micro_motion_invariance: >
+        Biological heads never freeze at zero angular velocity (d_rpy/dt = 0) across
+        multi-second windows. Superimpose a continuous, low-amplitude respiratory and
+        postural micro-oscillation (delta_pitch ~ 0.008 rad, delta_yaw ~ 0.010 rad)
+        so first-person optical flow remains organically alive.
+
+  # ----------------------------------------------------------------------------
+  # 2. RECLINE GAZE TAXONOMY IN FIRST-PERSON PERSPECTIVE (FRAME 204)
+  # ----------------------------------------------------------------------------
+  recline_ego_gaze_taxonomy:
+    context: "Seated_Agent_A reclined to -60 deg (backrest_rx = -1.05 rad) beneath a structured ceiling grid."
+    modes:
+      mode_A_passive_ceiling_aversion:
+        kinematics: "Minimal cervical flexion (neck_rx + head_rx ~ 0.19 rad); optical axis points straight at ceiling slats."
+        perceived_state_with_guarded_hands: "Passive dissociation, shyness, or anxious endurance ('Hoping the procedure ends quickly')."
+      mode_B_social_monitoring_check:
+        kinematics: "Active cervical flexion + lateral yaw rotation toward Assistive_Agent_B (neck_rx ~ 0.34, head_rx ~ 0.28, rz ~ +0.42 rad)."
+        perceived_state: "Vigilant social orientation ('Monitoring what the operator is doing next')."
+      mode_C_protective_anterior_body_guard:
+        kinematics: "Strong ventral chin-to-chest flexion (neck_rx ~ 0.44, head_rx ~ 0.38, rz = 0.0 rad) keeping lower torso and knees in lower viewport."
+        perceived_state: "Subconscious protective surveillance ('Monitoring exposed core zone to intervene if necessary')."
+
+  # ----------------------------------------------------------------------------
+  # 3. THE CROSS-JOINT SEMANTIC INVERSION LAW (GAZE x UPPER-LIMB TOPOLOGY)
+  # ----------------------------------------------------------------------------
+  cross_joint_semantic_inversion_law:
+    name: "Cross-Joint Affective Tensor & Contextual Polarity Inversion Law"
+    core_theorem: >
+      An isolated single-joint kinematic feature (such as upward Ceiling Gaze during
+      recline) has zero fixed affective polarity. Its non-verbal meaning is defined
+      by the tensor product of Visual Control State (Head/Neck Gaze) and Core Body
+      Shielding State (Shoulder/Elbow/Hand Topology):
+      Affect_Polarity = Gaze_Control_Vector (x) Upper_Limb_Shielding_Vector.
+    polarity_inversion_proof_at_frame_204:
+      state_negative_inhibitory_submission:
+        gaze_vector: "Upward to Ceiling (Visual room control surrendered)"
+        arm_topology: "Elbows tucked into waist indentation; hands clasped defensively over lower abdomen/pelvis (Maximum manual shielding of high-Phi_body zone)"
+        resulting_polarity: "-1.0 (Anxious Avoidance / Helpless Endurance)"
+        psychological_mechanism: >
+          The hands guard the vulnerable core while the eyes flee the situational reality.
+      state_positive_hedonic_anticipation:
+        gaze_vector: "Upward to Ceiling (Identical head/neck angles!)"
+        arm_topology: "Shoulders maximally abducted and externally rotated; elbows flared wide; hands clasped behind neck/occiput (100% voluntary abandonment of anterior body shielding)"
+        resulting_polarity: "+1.0 (Expectant Enjoyment / Sovereign Sensory Surrender)"
+        psychological_mechanism: >
+          By locking the hands behind the head and opening the thoracic ribcage, the
+          agent voluntarily surrenders all defensive readiness. Consequently, looking
+          at the ceiling inverts its meaning from 'anxious flight' to 'deliberate
+          sensory amplification' — consciously blinding the visual channel to heighten
+          the pleasurable surprise moment of upcoming physical interaction.

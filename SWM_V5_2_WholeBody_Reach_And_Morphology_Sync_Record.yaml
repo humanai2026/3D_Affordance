@@ -1,0 +1,78 @@
+# ==============================================================================
+# SWM SPATIAL REASONING & WHOLE-BODY KINEMATICS BENCHMARK RECORD (V5.1 -> V5.2)
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Record ID: SWM-V5.2-WHOLEBODY-TORSO-ALIGNMENT-AND-MORPHOLOGY-SYNC
+# Date: 2026-10-20
+# ==============================================================================
+
+benchmark_record:
+  id: "SWM-V5.2-WHOLEBODY-TORSO-ALIGNMENT-AND-MORPHOLOGY-SYNC"
+  version: "5.2.0"
+  domain_abstraction: "Multi-Agent Assistive Workstation Interaction (Seated_Agent_A, Assistive_Agent_B, Support_Cradles)"
+
+  # ----------------------------------------------------------------------------
+  # 1. COGNITIVE ERROR DIAGNOSIS (FRAMES 43, 74, 84 & BALL-JOINT PROTRUSION)
+  # ----------------------------------------------------------------------------
+  cognitive_blind_spot_diagnosis:
+    anomaly_1_unlinked_geometry_upgrade_frame_43:
+      observation: "Seated_Agent_A lower leg grazes the inner proximal lip of Support_Cradle_R during elevation at Frame 43."
+      root_cause: >
+        Decoupled Morphology-Trajectory Update. In V5.1, Support_Cradle_R was shifted
+        proximally by Δz = -0.045m and widened via a +16mm popliteal trumpet flare,
+        expanding the occupied bounding hull Omega_occ upward and medially. However,
+        Seated_Agent_A's leg elevation trajectory was left unchanged at V5.0 angles.
+    anomaly_2_ball_joint_inner_bed_protrusion:
+      observation: "Ball_Joint_Clamp sphere pokes ~16mm through the inner concave bed of Support_Cradle."
+      root_cause: >
+        Violation of Tangent Saddle-Mount Clearance. The ball joint radius (R_ball = 29mm)
+        exceeded the local inner-bed offset (cy - r_in + calf_pocket = 74mm - 57mm - 4mm = 13mm),
+        causing the spherical mount to intersect the concave support surface from below.
+    anomaly_3_self_torso_and_cradle_tunneling_frame_74_to_84:
+      observation: >
+        At Frame 84, Assistive_Agent_B's arms slice directly through their own torso
+        (Abdomen/Thorax) and the hand penetrates the underside of Support_Cradle_R.
+      root_cause: >
+        Stationary-Torso Reach Fallacy ('Solving Reach via Quantum Tunneling').
+        Assistive_Agent_B maintained the oblique social greeting torso yaw (pelvis_rz = 2.52 rad,
+        facing Seated_Agent_A's head) while attempting a bimanual manipulation on Support_Cradle_R.
+        In this orientation, Agent_B's own ribcage occluded the line-of-sight between their
+        shoulder joints and the target clamp, and the contralateral shoulder was >0.43m away.
+        Instead of rotating and translating the body so the chest faces the manipulation target,
+        the 2-Bone IK solver bridged the unreachable free-space distance by tunneling the
+        arms straight through Agent_B's own torso and the cradle wall.
+
+  # ----------------------------------------------------------------------------
+  # 2. UNIVERSAL SPATIAL & BIOMECHANICAL LAWS (V5.2)
+  # ----------------------------------------------------------------------------
+  derived_laws:
+    law_1_whole_body_torso_alignment_before_reach:
+      name: "Whole-Body Torso-to-Target Alignment Law (Körperdrehung-vor-Armgriff-Gesetz)"
+      principle: >
+        When a target manipulation point cannot be reached comfortably through open air
+        without crossing the agent's own torso sagittal/coronal planes or exceeding
+        natural flexed-arm reach (R_comfort <= 0.75 * (L_upper + L_forearm)), the agent
+        MUST first rotate and translate the pelvis/torso so the anterior chest normal
+        n_chest faces the target workspace.
+      mathematical_rule: >
+        1. Torso Yaw Alignment: Prior to bimanual grasping (Frame 74 -> 84), rotate
+           pelvis_rz from social greeting yaw (psi_greet) toward target workspace yaw
+           psi_target = atan2(P_target.x - P_pelvis.x, -(P_target.y - P_pelvis.y))
+           so both shoulders have an unobstructed anterior hemispace corridor to the target.
+        2. Whole-Body Proximity Step: Translate P_pelvis to maintain d(P_shoulder, P_target)
+           within [0.32m, 0.42m], eliminating self-torso intersection and over-extension.
+
+    law_2_morphology_trajectory_co_update:
+      name: "Morphology-Trajectory Co-Update Law (Geometrie-Trajektorien-Kopplungsgesetz)"
+      principle: >
+        Any parametric modification to an object's volumetric hull Delta_Omega_occ
+        (such as shifting a cradle by -45mm or adding a +16mm rim flare) automatically
+        invalidates adjacent motion trajectories and requires re-verifying clearance
+        margins across all transit frames (e.g., increasing hip flexion clearance at Frame 43).
+
+    law_3_tangent_saddle_mount_invariance:
+      name: "Tangent Saddle-Mount Invariance Law (Kugelgelenk-Sattel-Abstandsgesetz)"
+      principle: >
+        A concave trough mounted on a spherical ball joint of radius R_ball with wall
+        thickness d_wall must satisfy y_shell_center - r_outer_min >= R_ball + d_collar
+        at every axial cross-section z, ensuring the inner bed surface y_inner_min
+        remains strictly above R_ball + d_wall + d_collar (zero upward dome protrusion).
