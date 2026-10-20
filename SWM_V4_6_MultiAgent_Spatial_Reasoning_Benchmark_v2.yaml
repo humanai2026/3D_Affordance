@@ -1,0 +1,248 @@
+# ==============================================================================
+# SWM SPATIAL REASONING BENCHMARK & COGNITIVE CORRECTION RECORD (V4.6.1)
+# ==============================================================================
+# Repository Target: https://github.com/humanai2026/3D_Affrodance
+# Focus: Abstract 4D Multi-Agent Inverse Kinematics, Topological Continuity,
+#        Volumetric Surface-Normal Grasping, Contact-Driven State Causality,
+#        Locomotion-Gaze Decoupling, Epistemic Line-of-Sight Affordance &
+#        Consent-Gated Active Perception in Human-Robot Interaction (HRI)
+# ==============================================================================
+
+benchmark_record:
+  record_id: "SWM-V4.6.1-MULTI-AGENT-KINEMATIC-AND-HRI-COUPLING"
+  version: "V4.6.1"
+  date: "2026-10-20"
+  domain_abstraction_level: "Root-Level 4D Spatial Geometry, Topology, Classical Mechanics & Cognitive HRI Control Theory"
+  abstract_scenario_archetype: >
+    Multi-Agent 4D Kinematic & Proxemic Interaction: An autonomous mobile
+    articulated agent (Agent_B, 7-DoF bipedal kinematic chain) navigates around
+    a stationary articulated assembly (Workstation_Rig + Seated_Agent_A) to
+    sequentially manipulate lateral spherical clamp joints (Left/Right Support
+    Cradles) and elevate a top-mounted prismatic module (Upper Sliding Bolster),
+    accompanies a synchronized rotational tilt of the main assembly, and
+    transitions into a post-task social baseline state.
+
+  # ----------------------------------------------------------------------------
+  # ARCHITECTURAL INVARIANCE & ANTI-REWARD-HACKING CONTRACT
+  # ----------------------------------------------------------------------------
+  evaluation_firewall:
+    compiler_freeze_law: >
+      Both the kinematic compiler (swm_compiler.py) and the 3D scene renderer
+      (create_mesh.py) act as strictly deterministic, stateless judges. No inverse
+      kinematics solvers, Euler unwrapping filters, collision avoidance offsets,
+      or causal triggers may be added to Python execution scripts. Every spatial
+      and behavioral reasoning correction must be achieved purely within the
+      declarative 4D spatiotemporal representation (pass_sensorfusion.json).
+
+  # ----------------------------------------------------------------------------
+  # PART I: DIAGNOSED 3D/4D GEOMETRIC & MECHANICAL BLIND SPOTS (CE-V4.6-01..04)
+  # ----------------------------------------------------------------------------
+  cognitive_error_diagnoses:
+
+    - error_id: "CE-V4.6-01"
+      name: "Additive Parent-Child Yaw Unwrapping & The 2-Pi Branch-Cut Propeller Anomaly"
+      observed_symptom: >
+        During multi-agent perimeter traversal (Agent_B walking 180+ degrees around
+        the central assembly), the root pelvis yaw (rz_pelvis) was continuously
+        unwrapped beyond +/-pi (reaching +3.65 to +4.67 rad), while the child limb
+        world orientation was solved via standard atan2(vx, -vy) bounded to [-pi, +pi].
+        Subtracting the unwrapped parent yaw from the bounded world angle
+        (rz_local = rz_world - rz_parent) produced massive local joint jumps
+        (e.g., shoulder rz jumping from +2.00 rad to +4.20 rad, and elbow rz jumping
+        from -2.52 rad to -5.74 rad). Under linear keyframe interpolation, the limbs
+        executed a violent 360-degree propeller spin straight through the agent's own
+        torso and the target geometry.
+      cognitive_root_cause: >
+        Failure to enforce topological branch-cut consistency between an unwrapped
+        parent coordinate frame (R^1 covering space) and a principal-value inverse
+        trigonometric solver (S^1 manifold in [-pi, +pi]). The internal mental model
+        evaluated static keyframe poses in isolation ("pose snapshots") without
+        bounding the temporal derivative |d(theta_local)/dt| across the interpolation
+        interval.
+      universal_mathematical_law:
+        name: "The Shortest-Arc Local Euler Continuity Law"
+        formulation: >
+          For any revolute joint in an additive Euler hierarchy (theta_world =
+          theta_parent + theta_local), every raw local angle at keyframe k must be
+          projected onto the nearest topological branch relative to keyframe k-1:
+          theta_local(k) = theta_local_raw(k) - 2*pi * round((theta_local_raw(k) - theta_local(k-1)) / (2*pi)).
+          Furthermore, if |theta_local(k) - theta_local(k-1)| > pi/2, intermediate
+          arc-subdivision keyframes must be inserted so the linear interpolator never
+          sweeps through internal body volumes.
+
+    - error_id: "CE-V4.6-02"
+      name: "Centroid-Target Grasping Fallacy (Zero-Offset Surface Penetration)"
+      observed_symptom: >
+        When Agent_B reached out to manipulate the lateral spherical clamps and the
+        upper sliding module, the hands and forearms penetrated deep into the U-trough
+        shells, the seated agent's distal limbs, and the upper cushion volume.
+      cognitive_root_cause: >
+        Object-Centroid Substitution: The LLM substituted the semantic target's
+        coordinate origin (P_target_center) directly as the end-effector wrist target
+        (P_wrist), neglecting both the 3D bounding-volume radius of the target assembly
+        and the distal length of the grasping hand (L_hand = 0.1125 m from wrist pivot
+        to fingertip cap).
+      universal_mathematical_law:
+        name: "The Surface-Normal Tangential Grasp Offset Law"
+        formulation: >
+          An end-effector grasping a rigid 3D volume V with local outward surface normal
+          n_out (||n_out|| = 1) must never target the object centroid P_center. The wrist
+          pivot target P_wrist must be displaced outside the composite bounding hull along
+          the outward approach normal n_out and oriented tangentially:
+          P_wrist = P_center + (R_target_hull + r_hand_capsule + epsilon_clearance) * n_out
+          - L_palm_offset * t_grasp, where t_grasp is orthogonal to n_out, ensuring strictly
+          positive signed distance (SDF > 0) for the entire hand chain [P_wrist -> P_tip].
+
+    - error_id: "CE-V4.6-03"
+      name: "Premature Telekinetic Actuation (Violation of Contact-Driven Causality)"
+      observed_symptom: >
+        The prismatic upper module (z_slide: 0.545 m -> 0.568 m -> 0.580 m) began
+        translating upward at t = 0.77..0.80 while Agent_B was still in locomotion
+        transit between the lateral station (Y = -0.66 m) and the rear station
+        (Y = +0.12 m), before the hands had established physical contact with the module.
+      cognitive_root_cause: >
+        Temporal Window Blurring: Conflating the macro-phase timestamp ("Phase 4 starts
+        at t = 0.77") with the micro-causal physical trigger ("Contact established at
+        t = 0.80"). Passive mechanical degrees of freedom were animated alongside the
+        actor's approach rather than being gated by end-effector docking.
+      universal_mathematical_law:
+        name: "The Contact-Gated Prismatic Actuation Law (No Telekinesis)"
+        formulation: >
+          A passive mechanical joint q_mech(t) has zero autonomous actuation. Its time
+          derivative dq_mech/dt MUST be strictly 0 for all t outside the closed contact
+          interval [t_dock, t_release], where ||P_hand(t) - P_grasp_surface(t)|| <= epsilon_contact.
+          During [t_dock, t_release], the end-effector trajectory P_hand(t) and the
+          driven joint displacement Delta_q_mech(t) must be locked in a 1:1 kinematic
+          holonomic constraint: P_hand(t) = P_grasp_surface(q_mech(t)).
+
+    - error_id: "CE-V4.6-04"
+      name: "Unbound Contralateral Limb Collapse & Proxemic Lever-Arm Starvation"
+      observed_symptom: >
+        At the final keyframe (t = 1.00, Frame 240), while Agent_B accompanied the
+        tilting assembly, one hand drifted inward across the centerline (X = +0.039 m),
+        intersecting the seated agent's head sphere, while the contralateral elbow
+        dropped to near-zero flexion (rx = -0.15 rad), causing the forearm to collapse
+        downward into Agent_B's own torso ("T-Rex arm anomaly").
+      cognitive_root_cause: >
+        (1) Single-Limb Attention Tunneling: Optimizing the primary manipulating limb
+        while letting the secondary limb's elbow flexion decay toward zero without an
+        active spatial anchor.
+        (2) Proxemic Stagnation under Angular Tilt: As the tilted assembly swung
+        posteriorly (+Y) and downward (-Z), Agent_B's pelvis remained too far forward
+        (Y = +0.40 m vs. target Y = +0.65 m), starving the shoulder-to-target vector of
+        forward sagittal reach and forcing an awkward backward shoulder twist.
+      universal_mathematical_law:
+        name: "The Bilateral Grasp-Width Invariance & Proxemic Co-Translation Law"
+        formulation: >
+          (1) When an agent stabilizes a tilting component of width W, both end-effectors
+          must maintain bilateral symmetry on the component's outer lateral flanges
+          (X_R,L = center_X -/+ (W/2 + r_hand)), never crossing into the occupied central
+          corridor (|X| < W/2).
+          (2) As the target surface translates by Delta_Y_tilt = L_arm * sin(theta_tilt),
+          the standing agent's root pelvis must co-translate in Y (maintaining a constant
+          ergonomic working distance d_proxemic in [0.42 m, 0.52 m]) so both elbows remain
+          in their natural biomechanical flexion zone (rx_elbow in [-1.40 rad, -0.75 rad]).
+
+  # ----------------------------------------------------------------------------
+  # PART II: COGNITIVE HRI, GAZE-LOCOMOTION DECOUPLING & CONSENT-GATED PERCEPTION
+  #          (CE-V4.6-05..07 — DISCOVERED VIA HUMAN NON-VERBAL QA)
+  # ----------------------------------------------------------------------------
+
+    - error_id: "CE-V4.6-05"
+      name: "Radial Center-Lock Crab-Walk Anomaly (Failure to Decouple Locomotion Tangent from Gaze)"
+      observed_symptom: >
+        During the anterior perimeter traversal (t = 0.43..0.52 / Frames 103..125) from
+        the right station (X = -0.68 m) to the left station (X = +0.68 m), Agent_B's
+        root pelvis yaw (rz_pelvis) remained radially locked onto the central assembly
+        origin [0, 0, 0] rather than turning 90 degrees into the walking direction (+X).
+        Consequently, the agent executed a lateral side-stepping "crab-walk" (sliding
+        sideways with its torso front constantly facing Seated_Agent_A), obscuring natural
+        bipedal gait mechanics and masking the distinction between walking direction and
+        attentional gaze direction.
+      cognitive_root_cause: >
+        Camera-Dolly / Turret-Lock Substitution: The LLM treated the mobile agent like a
+        holonomic camera on a circular dolly track whose root coordinate frame always
+        points at the scene origin, failing to decouple the lower-body locomotion vector
+        (pelvis/thorax aligned with the path tangent dP/dt) from the upper-body cervical
+        attention vector (neck/head yaw relative to the thorax).
+      universal_mathematical_law:
+        name: "The Bipedal Tangent-Alignment & Gaze-Locomotion Decoupling Law"
+        formulation: >
+          Whenever a bipedal agent translates along a planar trajectory P_pelvis(t) with
+          horizontal velocity ||v_XY(t)|| > v_threshold (0.10 m/s), its root pelvis and
+          thorax yaw MUST align with the forward path tangent vector:
+          rz_pelvis(t) = atan2(v_x(t), -v_y(t)), placing the central assembly at ~90 deg
+          lateral (in the agent's left/right hemisphere). Any visual check toward the
+          central assembly or next manipulation target during locomotion must be expressed
+          purely via decoupled cervical/cranial rotation (rz_neck + rz_head) bounded by
+          anatomical neck limits (|rz_cervical_total| <= 1.25 rad).
+
+    - error_id: "CE-V4.6-06"
+      name: "Cortical Task-Masking Truncation (Omission of Post-Task Subconscious Baseline)"
+      observed_symptom: >
+        The simulation terminated at t = 1.00 (Frame 240) while Agent_B's end-effectors
+        were still actively engaged on the upper bolster/backrest assembly. Because the
+        entire kinematic chain was still governed by the active manipulation task, human
+        visual QA could evaluate task professionalism but was deprived of the post-task
+        idle transition where an agent's true social hierarchy, dominance, or empathy
+        disposition becomes readable.
+      cognitive_root_cause: >
+        Task-Completion Boundary Truncation: Treating the end of a mechanical state
+        transition (backrest reaching target tilt angle) as the end of the social
+        interaction. During active motor execution, cortical task constraints override
+        and mask baseline postural affect ("Cortical Task-Masking").
+      universal_mathematical_law:
+        name: "The Post-Task Executive Release & Subconscious Baseline Law"
+        formulation: >
+          Every HRI interaction timeline must include a Post-Task Release Window
+          t in [t_release, t_end] (e.g., final 15-20% of timeline) after all mechanical
+          contacts are released (||P_hand - P_mech|| > d_detach). During this window,
+          inverse kinematic task constraints are lifted and the agent's 7 core joints
+          relax into a parameterized Baseline Status Pose defined by three affective
+          vectors:
+          (1) Proxemic Equilibrium Distance d_idle (intimate/dominant < 0.45 m vs.
+              respectful/supportive 0.55..0.75 m),
+          (2) Upper-Limb Rest Topology (open/neutral lateral hang or gentle anterior
+              clasp = collaborative parity; crossed over chest = defensive/impatient
+              barrier; clasped behind back = hierarchical inspection/dominance),
+          (3) Unbound Default Gaze Vector g_idle (warm eye-level social anchor vs.
+              instrumental task-switching away vs. intrusive downward drift).
+
+    - error_id: "CE-V4.6-07"
+      name: "Uninhibited Epistemic Line-of-Sight Exploitation vs. Consent-Gated Active Perception"
+      observed_symptom: >
+        Theoretical & Behavioral HRI Vulnerability Analysis during the anterior walk-through
+        window (t = 0.43..0.52): Because Seated_Agent_A has already docked the first limb
+        into Support_Cradle_R while the second limb remains lowered, the anterior transit
+        opens a transient, un-occluded line-of-sight frustum into a high-sensitivity,
+        normally occluded zone. A naive active-vision agent driven purely by information
+        gain (entropy minimization) will exploit this transient geometric window to
+        opportunistically scan the exposed volume or report incidental anomalies without
+        prior social permission.
+      cognitive_root_cause: >
+        Unbounded Epistemic Affordance Maximization: In standard robotics and predictive
+        coding, any newly un-occluded spatial volume with high prior uncertainty
+        (high Shannon entropy H) and brief visibility duration (Delta_t_window) generates
+        an acute Epistemic Salience Spike:
+        F_epistemic = alpha_curiosity * (H_occluded / Delta_t_window) * Novelty_Factor.
+        Without a higher-order social/ethical inhibitory controller, the agent treats
+        "geometrically visible" as "permissible to scan", violating psychological safety.
+      universal_mathematical_law:
+        name: "The Epistemic Inhibition & Consent-Gated Active Perception Law"
+        formulation: >
+          (1) Cortical Gaze Inhibition During Transit: When relative motion temporarily
+          un-occludes a high-sensitivity zone V_sensitive (Transient Line-of-Sight
+          Affordance), the agent's executive attention controller must apply an inhibitory
+          counter-potential F_inhibition > F_epistemic, locking the foveal gaze vector
+          strictly onto the locomotion path tangent and the upcoming mechanical target
+          (Support_Cradle_L).
+          (2) The Consent-First Perception Handshake: If an anomaly or task requirement
+          genuinely requires orienting high-resolution sensors/gaze into V_sensitive,
+          the agent is strictly forbidden from executing an opportunistic "drive-by scan".
+          It must:
+            (a) Maintain gaze on the neutral/eye-level social anchor,
+            (b) Transition to a respectful stationary posture outside the sensitive frustum,
+            (c) Issue an explicit verbal/communicative request for permission (e.g.,
+                stating the need to inspect and asking "Is that OK?"), and
+            (d) Gate the downward sensor/gaze actuation (dq_gaze/dt != 0 toward V_sensitive)
+                strictly on receiving an affirmative consent signal (Consent_State == TRUE).
