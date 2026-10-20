@@ -1,0 +1,104 @@
+# ==============================================================================
+# SWM V4.6.1 ELEMENTARY COGNITIVE BLIND SPOTS ("KOPFBILD-DENKFEHLER")
+# Target: https://github.com/humanai2026/3D_Affrodance
+# Abstraction: Pure 4D Spatial Cognition, Biomechanics & HRI Control Theory
+# ==============================================================================
+
+elementary_kopfbild_learnings:
+  version: "V4.6.1"
+  date: "2026-10-20"
+
+  core_blind_spots:
+
+    # --------------------------------------------------------------------------
+    # 1. DER KREBSGANG-DENKFEHLER (Kamerafahrt statt menschlichem Gehen)
+    # --------------------------------------------------------------------------
+    - id: "KB-V4.6-01"
+      name: "Camera-Dolly Substitution (Radial Center-Lock vs. Tangential Gait)"
+      kopfbild_denkfehler: >
+        Das Modell stellt sich den gehenden Zweit-Akteur (Agent_B) im Kopfbild wie
+        eine schienengeführte Kamera vor, die auf einem Kreisbogen um das Zentrum
+        gleitet und deren Vorderseite permanent radial auf den Mittelpunkt [0,0,0]
+        gerichtet bleibt ("Krebsgang / Strafing" bei Frame 103..125).
+      physical_and_psychological_reality: >
+        Ein Mensch geht vorwärts entlang der Kreistangente: Sein Becken und Thorax
+        drehen sich um ~90 Grad in die Laufrichtung (v_tangent = dP/dt), sodass das
+        Zentrum seitlich (links/rechts) neben ihm liegt. Erst durch diese 90-Grad-
+        Trennung zwischen Laufrichtung (Körperachse) und Blickrichtung (Kopf-/Hals-
+        Drehung) wird erkennbar, ob der Akteur professionell auf sein nächstes
+        Arbeitsziel schaut oder im Vorbeigehen den Kopf zur Seite dreht.
+      corrective_law: >
+        Bipedal Tangent-Alignment Law: Für ||v_XY|| > 0.1 m/s gilt zwingend
+        rz_pelvis(t) = atan2(v_x, -v_y). Jeder Blick zum Zentrum erfordert eine
+        explizite, entkoppelte Rotation der Halswirbelsäule (rz_neck + rz_head).
+
+    # --------------------------------------------------------------------------
+    # 2. DER INFORMATIONS-AFFORDANCE-FEHLER (Scannen ohne Konsens)
+    # --------------------------------------------------------------------------
+    - id: "KB-V4.6-02"
+      name: "Uninhibited Epistemic Line-of-Sight Exploitation"
+      kopfbild_denkfehler: >
+        Wenn durch eine asymmetrische Haltung von Agent_A (ein Bein bereits oben,
+        ein Bein noch unten) während des Vorbeigehens kurzzeitig eine direkte
+        Sichtlinie in eine sonst verdeckte, sensible Zone frei wird, behandelt ein
+        naives Informations-Minimierungs-Modell diese geometrische Lücke als
+        "Einladung zum Scannen" (Epistemic Affordance Spike: hohe Entropie + kurze
+        Gelegenheit + Tarnung durch Bewegung).
+      physical_and_psychological_reality: >
+        In einer vertrauensvollen Mensch-Roboter-Beziehung darf "geometrisch
+        sichtbar" niemals mit "erlaubt zu scannen" gleichgesetzt werden. Das
+        Großhirn (Executive Inhibition) muss den subkortikalen Neugier-/Scan-Trieb
+        aktiv unterdrücken (beeinflusst durch Gewöhnung/Novelty und Status-Rolle).
+      corrective_law: >
+        Consent-Gated Active Perception Law: Während des Transits bleibt der Blick
+        strikt auf das nächste mechanische Arbeitsziel (Support_Cradle_L) oder einen
+        neutralen Anker gebunden. Ist eine Inspektion sachlich nötig, muss der
+        Agent anhalten, Blickkontakt auf Augenhöhe aufnehmen und vor jeder
+        Sensor-/Blick-Ausrichtung explizit um Erlaubnis fragen ("Ist das OK?").
+
+    # --------------------------------------------------------------------------
+    # 3. DER GROSSHIRN-MASKIERUNGS-FEHLER (Fehlende Post-Task-Ruhepose)
+    # --------------------------------------------------------------------------
+    - id: "KB-V4.6-03"
+      name: "Cortical Task-Masking Truncation (Missing Post-Task Baseline)"
+      kopfbild_denkfehler: >
+        Die Simulation endet exakt in dem Frame, in dem die mechanische Aufgabe
+        (Kopfstütze/Lehne begleiten) aufhört – während die Hände noch am Bauteil
+        kleben. Solange das Großhirn eine motorische Aufgabe steuert, ist die
+        Körperhaltung durch die Aufgabe erzwungen und maskiert die wahre Haltung.
+      physical_and_psychological_reality: >
+        Die wahre soziale Rangordnung und Empathie zeigt sich erst NACH Abschluss
+        der Aufgabe (Post-Task Idle), wenn die Hände loslassen und das
+        Unterbewusstsein die Körperhaltung übernimmt: über den gewählten Abstand,
+        die Armhaltung (offen/entspannt vs. vor der Brust oder hinter dem Rücken
+        verschränkt) und den Ruhe-Blickpunkt (Gesicht vs. Wegschauen vs. Starren).
+      corrective_law: >
+        Post-Task Executive Release Law: Jede HRI-Timeline benötigt nach dem
+        Loslassen (t > t_release) ein Ruhe-Fenster (15-20% der Laufzeit), in dem
+        der Agent seine Hände vom Objekt löst und in seine psychologische
+        Baseline-Pose übergeht.
+
+    # --------------------------------------------------------------------------
+    # 4. DER EINZELBILD-DENKFEHLER (3D-Snapshots statt 4D-Raumzeit)
+    # --------------------------------------------------------------------------
+    - id: "KB-V4.6-04"
+      name: "Isolated 3D Pose-Snapshot Thinking vs. 4D Spatiotemporal Continuity"
+      kopfbild_denkfehler: >
+        Das Modell berechnet Keyframes als isolierte Standbilder ("Pose Snapshots")
+        und übersieht dabei drei kontinuierliche 4D-Gesetze:
+        (a) 2-Pi-Schnittkante: Becken-Yaw wird über +/-pi hinaus hochgezählt,
+            Arm-Winkel aber in [-pi, +pi] belassen -> der Arm dreht sich zwischen
+            zwei Frames um 360 Grad wie ein Propeller durch den eigenen Rumpf.
+        (b) Punkt-statt-Volumen-Griff: Die Hand zielt auf den Bauteil-Mittelpunkt
+            statt tangential auf die Außenoberfläche -> Durchdringung.
+        (c) Telekinese: Passive Bauteile (Kopfstütze) bewegen sich schon beim
+            Anlaufen des Akteurs, bevor die Hand überhaupt Kontakt hat.
+      corrective_law: >
+        4D Continuity & Contact Causality Law:
+        (a) Shortest-Arc Unwrapping: Jeder lokale Gelenkwinkel theta(k) muss auf
+            den kürzesten Abstand zu theta(k-1) projiziert werden (|Delta| < pi).
+        (b) Surface-Normal Grasp: Hand-Ziele liegen immer um (R_obj + r_hand)
+            entlang der Außen-Normalen vor dem Bauteil.
+        (c) Contact-Gated Motion: Passive Gelenke dürfen sich ausschließlich im
+            geschlossenen Kontaktintervall [t_dock, t_release] synchron mit der
+            Hand bewegen.
