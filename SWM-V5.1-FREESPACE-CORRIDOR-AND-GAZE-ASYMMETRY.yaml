@@ -1,0 +1,109 @@
+# ==============================================================================
+# SWM SPATIAL REASONING & HRI PROXEMICS BENCHMARK RECORD (V5.0 -> V5.1)
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Record ID: SWM-V5.1-FREESPACE-CORRIDOR-AND-GAZE-ASYMMETRY
+# Date: 2026-10-20
+# ==============================================================================
+
+benchmark_record:
+  id: "SWM-V5.1-FREESPACE-CORRIDOR-AND-GAZE-ASYMMETRY"
+  version: "5.1.0"
+  domain_abstraction: "Multi-Agent Assistive Workstation Interaction (Seated_Agent_A, Assistive_Agent_B, Support_Cradles)"
+
+  # ----------------------------------------------------------------------------
+  # PART 1: COGNITIVE ERROR DIAGNOSIS (WHY THE AI TUNNELED THROUGH GEOMETRY)
+  # ----------------------------------------------------------------------------
+  cognitive_blind_spot_diagnosis:
+    observed_anomalies:
+      - frame_0_76_84: "Assistive_Agent_B forearm and elbow collide with and tunnel completely through the U-profile of Support_Cradle_R during approach."
+      - frame_93: "Simultaneous 3-body volumetric intersection between Support_Cradle, Assistive_Agent_B forearm, and Seated_Agent_A lower leg during under-cradle ball-joint clamping."
+      - frame_102_106: "During initial perimeter turn and step-off, Assistive_Agent_B hand sweeps through the Support_Cradle hull and forearm slices through Seated_Agent_A distal foot."
+    root_cause_in_chain_of_thought: >
+      Inverted Kinematic Planning Hierarchy (DoF-First instead of Free-Space-First).
+      The model computed Inverse Kinematics (IK) solely for the boundary keyframes
+      (start pose and target ball-joint grasp point) and relied on linear joint-angle
+      interpolation across intermediate frames. Because occupied 3D hulls
+      (Support_Cradle + Seated_Agent_A limb + distal foot overhang) were not
+      represented as negative-space exclusion zones prior to solving joint degrees
+      of freedom, the shortest angular path cut directly through solid matter.
+
+  # ----------------------------------------------------------------------------
+  # PART 2: THE NEW SPATIAL REASONING LAW (FREE-SPACE CORRIDOR FIRST, DOF SECOND)
+  # ----------------------------------------------------------------------------
+  spatial_reasoning_law:
+    name: "Visual Free-Space Corridor Priority Law (Luft-Korridor-vor-Freiheitsgrad-Gesetz)"
+    human_cognitive_model: >
+      Biological motor planning operates in a strict two-stage hierarchy:
+      Stage 1 (Visual Negative-Space Scan): The agent visually identifies unoccupied
+      air corridors ('Where is free space?') around the composite obstacle hull
+      and plots a collision-free spatial trajectory through open air.
+      Stage 2 (Kinematic DoF Resolution): Only after the 3D free-space corridor is
+      established does the motor cortex resolve whether and how the body's joint
+      degrees of freedom (pelvis stance offset, shoulder, elbow, wrist) can track
+      that corridor.
+    mathematical_enforcement:
+      1_composite_exclusion_hull: >
+        Define the occupied bounding union at time t:
+        Omega_occ(t) = Hull(Support_Cradle) U Hull(Agent_A_Shank) U Hull(Agent_A_Foot).
+        No limb segment of Assistive_Agent_B may enter Omega_occ(t) + r_limb + epsilon.
+      2_lateral_stance_clearance: >
+        Increase Assistive_Agent_B pelvis lateral stand offset |X_pelvis| by +0.15m..0.18m
+        outside Support_Cradle outer flange so the elbow joint hangs naturally in
+        unoccupied lateral air (|X_elbow| > |X_cradle_outer| + r_elbow + 0.04m).
+      3_L_shaped_ingress_egress_waypoints: >
+        Never interpolate diagonally from above/beside a cradle to its underside clamp.
+        Enforce strict orthogonal free-space routing:
+        - Ingress (Frame 70..88): Move hand laterally outward into open air -> descend
+          vertically below Z_cradle_bottom -> move medially inward to dock with the ball-joint.
+        - Egress prior to Locomotion (Frame 98..105): Before any pelvis yaw rotation or
+          forward step begins, retract both hands and forearms purely laterally/downward
+          into open air outside the distal foot sweep radius.
+
+  # ----------------------------------------------------------------------------
+  # PART 3: PSYCHOLOGICAL HRI PROXEMICS & GAZE-VELOCITY POWER TAXONOMY
+  # ----------------------------------------------------------------------------
+  psychological_proxemics_law:
+    name: "Gaze-Velocity Asymmetry & Baseline Nervousness Calibration Law"
+    temporal_significance: >
+      When a multi-stage assistive procedure begins with positioning Seated_Agent_A
+      into an exposed posture, the initial perimeter transit of Assistive_Agent_B
+      across the open anterior corridor acts as the foundational psychological anchor.
+      It calibrates Seated_Agent_A's baseline autonomic nervousness and defines the
+      implicit dominance/rank hierarchy ('Rangspiel') for the entire remaining session.
+    three_tier_exposure_escalation_model:
+      tier_1_peripheral_sweep:
+        label: "Ambiguous Peripheral Exposure (Latent Unease)"
+        kinematic_signature: >
+          Head yaw (psi_head) remains aligned with tangential walking vector or next
+          mechanical target; pelvis transit velocity (v_pelvis) remains constant;
+          central exposure zone falls within peripheral vision cone (30..60 deg).
+        perceived_effect_on_agent_A: >
+          Triggers cognitive ambiguity ('Did they just see that?'), subtle discomfort,
+          and elevated baseline vigilance without overt confrontation.
+      tier_2_foveal_fixation:
+        label: "Direct Foveal Intrusion (Acute Vulnerability Trigger)"
+        kinematic_signature: >
+          Active head yaw rotation (psi_head) and pitch (theta_head) orient the primary
+          foveal gaze vector directly toward the central exposure zone while walking
+          past at constant velocity (v_pelvis = const).
+        perceived_effect_on_agent_A: >
+          Triggers acute self-consciousness ('Why are they looking directly at that?'),
+          breach of protective privacy boundaries, and immediate defensive muscle tension.
+      tier_3_foveal_fixation_with_temporal_hesitation:
+        label: "Apex Velocity Deceleration + Foveal Lock (Maximum Dominance Demonstration)"
+        kinematic_signature: >
+          Direct foveal gaze lock combined with a localized minimum in pelvis transit
+          velocity (dv_pelvis/dt < 0, micro-pause of 12..18 frames) precisely at the
+          geometric apex of unobstructed line-of-sight.
+        perceived_effect_on_agent_A: >
+          Acts as an unmistakable non-verbal power demonstration ('I can inspect this
+          deliberately whenever I choose'), maximally triggering feelings of helplessness
+          and asymmetric rank subordination at the very start of the procedure.
+    protective_counter_protocol_epistemic_inhibition:
+      kinematic_rule: >
+        To actively lower Seated_Agent_A's baseline nervousness and signal respect,
+        Assistive_Agent_B must execute visible Epistemic Inhibition during transit:
+        maintain steady, predictable pelvis velocity (v_pelvis = const) while elevating
+        head pitch (theta_head) and pre-orienting head yaw (psi_head) visibly toward
+        the upper outer quadrant (opposite cradle upper rim or friendly facial check-in),
+        making the non-intrusion unmistakable to Seated_Agent_A.
