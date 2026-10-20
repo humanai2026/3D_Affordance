@@ -1,0 +1,83 @@
+# ==============================================================================
+# SWM AFFECTIVE AFFORDANCE & NON-LINEAR KINEMATIC BIFURCATION RECORD (V5.1)
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Record ID: SWM-V5.1-PROTECTION-POTENTIAL-AND-SIGN-INVERSION
+# Date: 2026-10-20
+# ==============================================================================
+
+benchmark_record:
+  id: "SWM-V5.1-PROTECTION-POTENTIAL-AND-SIGN-INVERSION"
+  version: "5.1.0"
+  domain_abstraction: "Multi-Agent Affective Proxemics, Gaze/Touch Potential Fields & Non-Linear Postural Bifurcation"
+
+  # ----------------------------------------------------------------------------
+  # 1. THE 3-COMPONENT PROTECTION POTENTIAL FIELD (GAZE & TOUCH)
+  # ----------------------------------------------------------------------------
+  protection_potential_field_model:
+    equation: "Phi_total(t) = (Phi_body(x) + Phi_counterpart(N, Volition, Persistence)) * S_context(Escape_Topology)"
+    components:
+      1_topographical_body_potential_Phi_body:
+        definition: >
+          Intrinsic anatomical sensitivity of body surface zone x to external gaze
+          vectors or physical touch.
+        observable_proxy: >
+          Directly proportional to public clothing coverage norms in everyday contexts
+          (hands/face = 0.05; forearms/shins = 0.25; torso/thighs = 0.60; core intimate
+          zones = 1.00).
+      2_relational_counterpart_potential_Phi_counterpart:
+        cognitive_insight: >
+          Counterpart tension is NOT inversely proportional to interpersonal liking
+          ('how well agents get along'). Instead, it is governed by Volition
+          (Freiwilligkeit), Institutional Role Decoupling, and Social Persistence.
+        scaling_regimes:
+          - functional_clinical_counterpart: >
+              Low Phi_counterpart (0.20..0.35). Interaction is driven by functional
+              necessity rather than personal choice, and buffered by strict institutional
+              role decoupling (zero everyday social persistence).
+          - familiar_peer_or_colleague_counterpart: >
+              High Phi_counterpart (0.75..1.00, scaling further with observer count N).
+              High mutual familiarity combined with daily social persistence ('meeting
+              again at the workplace tomorrow without role shielding') dramatically
+              amplifies exposure sensitivity.
+      3_situational_coupling_and_escape_topology_S_context:
+        regimes:
+          - regime_A_structured_functional_procedure: >
+              Moderate S_context (0.40..0.60). Predictable protocol; baseline autonomic
+              nervousness is calibrated during the initial transition phase via the
+              counterpart's gaze inhibition vs. gaze fixation and transit velocity.
+          - regime_B_accidental_unplanned_breach: >
+              High transient peak but immediate escape valve (S_context spikes to 0.85
+              then decays rapidly -> 0.10). Example: Unintentional visual encounter with
+              a familiar peer during an outdoor excursion where immediate line-of-sight
+              withdrawal is possible.
+          - regime_C_committed_social_rule_trap: >
+              Maximum S_context (1.00 -> Critical Threshold Phi_crit). Voluntary entry
+              into a peer-group rule system (e.g., losing a social game under lowered
+              cortical inhibition) followed by mandatory execution of an exposed state
+              with zero social escape valve.
+
+  # ----------------------------------------------------------------------------
+  # 2. CHAOTIC LIMBIC SIGN INVERSION (VORZEICHENUMKEHR AT PHI_CRIT)
+  # ----------------------------------------------------------------------------
+  chaotic_phase_transition_law:
+    name: "Cortical-to-Limbic Sign Inversion Law (Absolute Vorzeichenumkehr)"
+    dual_controller_dynamics:
+      sub_critical_regime_neocortical_dominance:
+        condition: "Phi_total < Phi_crit (Großhirn / Prefrontal Control dominates)"
+        polarity: "Negative / Inhibitory (-1.0)"
+        kinematic_expression_across_7_joints: >
+          Proportional increase in protective shielding: posterior pelvic retreat,
+          thoracic flexion, elbows tucked into waist indentation, forearms/hands
+          shielding high-Phi_body zones, adducted legs, and gaze aversion.
+      super_critical_bifurcation_limbic_override:
+        condition: "Phi_total >= Phi_crit (Unterbewusstsein / Subconscious overrides Neocortex)"
+        polarity: "Sudden Positive Sign Inversion (-1.0 -> +1.0)"
+        psychological_mechanism: >
+          Because human affect is a chaotic non-linear system, pushing exposure tension
+          past Phi_crit under blocked escape topology and lowered prefrontal filtering
+          triggers a sudden phase transition: acute protective inhibition collapses and
+          inverts into complete surrender, adrenaline thrill, or bold self-assertion.
+        kinematic_expression_across_7_joints: >
+          Abrupt release of virtual tendon guarding tension: opening of the anterior
+          thoracic and pelvic axes, abandonment of defensive hand/forearm shielding,
+          unhurried movement execution, and direct counter-gaze lock.
