@@ -1,0 +1,112 @@
+# ==============================================================================
+# SWM V5.7 TRIADIC LESSONS LEARNED & STATELESS-TO-STATEFUL COGNITIVE AUDIT
+# Method: Human Visual QA (Thomas) + Stateful Master Audit + Stateless Self-Audit
+# Repository Target: humanai2026 / 3D_Affrodance
+# ==============================================================================
+
+benchmark_record_metadata:
+  record_id: "SWM-V5.7-TRIADIC-LESSONS-LEARNED-014"
+  date: "2026-10-22"
+  scenario_version: "5.7-Kopfbild-StatelessContinuation-DoctorStoolRoll"
+  core_epistemic_insight: >
+    A stateless LLM instance equipped with declarative prose laws in a Skill will
+    successfully transfer high-level structural invariants (such as C0/C1 frame
+    handoff, contact-gated start times, and psychological narrative arcs), yet still
+    fall into the 'Semantic-to-Numeric Hallucination Gap' when writing 3D/4D
+    coordinates without executing an in-sandbox Forward/Inverse Kinematics Assert Gate.
+
+if_i_had_known_at_session_start_matrix:
+
+  - id: "LESSON-01-PURE-PYTHON-SANDBOX-ASSERT-GATE"
+    symptom_in_blender: >
+      The stateless generator script printed 'VERIFIED' at the end of the turn,
+      even though the Doctor walked through the stool (Frame 13), dragged the stool
+      telekinetically with a 25cm IK gap behind her back (Frame 46), and the MTA
+      walked through the Mayo tray (Frame 90).
+    why_it_happened: >
+      Because `swm_v5_blender.py` imported `bpy` and `mathutils.Vector/Euler` inside
+      the kinematic helper functions, the stateless instance could not run the actual
+      trajectory functions inside the standard Python interpreter sandbox—and instead
+      printed a superficial 'placeholder' print statement!
+    if_known_at_session_start: >
+      Write all kinematic/geometric math helpers (`rotate_euler_xyz`, `vec_to_world_rpy`,
+      `vec_to_hemisphere_rpy`, `solve_2bone_ik`) in pure standard Python `math` (zero
+      dependency on `mathutils` for trajectory evaluation) and execute a mandatory
+      240-frame numeric assert loop in the sandbox BEFORE emitting any file.
+
+  - id: "LESSON-02-ANTERIOR-PUSH-TOPOLOGY-AND-IK-REACH-ENVELOPE"
+    symptom_in_blender: >
+      Bild 1 (Frame 13) & Bild 2 (Frame 46): Doctor_C walks in front of Doc_Stool
+      (`Y_doc = -1.28..-1.00m` vs `Y_stool = -1.48..-1.26m`) while `stool_base_rz = 2.58 rad`
+      rotates the crescent push-pad to the anterior `-Y` side (`Y = -1.64m`). Her left
+      arm reaches backward through her own torso and saturates at `max_r = 0.50m`,
+      leaving a >25cm telekinetic air gap.
+    why_it_happened: >
+      Planned the actor footsteps `D0..D4` and the stool curve `stool_p0..p2` as two
+      independent 2D paths without checking (a) the vector dot product between the
+      actor's chest normal and the handle offset, or (b) the 3D shoulder-to-handle
+      Pythagorean distance (`Z_shoulder = 1.36m` vs `Z_handle = 0.70m` -> `dZ = 0.66m > 0.50m`!).
+    if_known_at_session_start: >
+      1. Anterior Manipulation Law: `dot(P_handle - P_pelvis, n_chest_fwd) >= +0.15m`
+         (a pushed object must always stay in front of the pushing agent's chest).
+      2. Vertical & 3D Reach Law: A 0.50m arm attached at `Z_shoulder = 1.36m` CANNOT
+         reach a handle at `Z = 0.70m` while standing upright (`|dZ| = 0.66m > 0.50m`)!
+         Either the push handle must be at waist/hip height (`Z >= 0.88..0.92m`) with
+         natural torso flexion (`lean_rx = 0.22..0.28 rad`), or the agent must squat.
+
+  - id: "LESSON-03-FULL-HIERARCHY-DISTAL-EXTREMITY-AND-CANTILEVER-CLEARANCE"
+    symptom_in_blender: >
+      Doctor_C walks through Patient_A's abducted right foot (`[-0.39, -0.95, 1.25]`)
+      around Frame 108; MTA_B walks straight through the cantilevered `Assist_Mayo_Tray`
+      (`[0.50..0.72, -0.25..+0.05, 0.89]`) at Frame 90 (Bild 4).
+    why_it_happened: >
+      Checked collision clearance only against root anchor points (`Workstation_Seat_Origin = [0,0]`
+      and `Assist_Mayo_Stand_Origin = [0.86, -0.14]`), forgetting that child links
+      (abducted legs/feet and cantilevered trays) project 35-95cm outward into the
+      walking corridors!
+    if_known_at_session_start: >
+      Compute the World Bounding Spheres of ALL distal child primitives (Patient toes
+      `[+/-0.39, -0.95]`, Göpel shells, armrests, and cantilevered tray polygons) and
+      enforce `min_2d_clearance >= 0.32m` across all 240 frames.
+
+  - id: "LESSON-04-RADIAL-BMESH-ROTATION-AND-VERTICAL-GROUND-CLOSURE"
+    symptom_in_blender: >
+      Bild 3: The 5 legs of `Doc_Stool_Base` (`Stool_Star_Leg_1..5`) point parallel
+      like 5 skis along the Y-axis instead of forming a radial star, and the caster
+      wheels/forks float disconnected beneath the legs.
+    why_it_happened: >
+      `get_full_scene_blueprint()` tuples `(node_id, parent_id, prim, scale, offset, bevel)`
+      only scale and translate primitives in link space without a local Euler rotation
+      parameter, and the vertical heights (`wheel Z=0.024, r=0.024` -> top `0.048`,
+      `fork Z=0.042, h=0.035`, `leg Z=0.065`) were not chained radial-coaxially.
+    if_known_at_session_start: >
+      When generating radial star bases inside a single link, explicitly rotate each
+      arm's BMesh vertices by `ang = i * 2*pi/5` around Z before translating to
+      `[rx_arm, ry_arm, z]`, and place leg, fork, and wheel on the exact same radial
+      axis `(wx, wy)` with contiguous Z-stacking from `Z = 0.000m`.
+
+  - id: "LESSON-05-EMPATHIC-TOUCH-VECTOR-AND-VESTIBULAR-GAZE-DYNAMICS"
+    symptom_in_blender: >
+      1. Bild 5 & 6 (Frame 100): MTA_B's reassuring right hand clips into `Chair_Armrest_L`
+         (`[0.27, -0.08, 1.04]`) and points inward toward Patient_A's pelvis.
+      2. Ego-Cameras (`Cam_Ego_MTA`, `Cam_Ego_Doctor`) whip rapidly between targets in
+         0.06s windows with 3Hz sine wobble, causing motion sickness.
+      3. Patient_A averts gaze to the ceiling too early instead of maintaining a natural
+         conversational/monitoring gaze toward Doctor_C during approach and seating.
+    why_it_happened: >
+      1. Placed fingertip target `pt_reassure_r` inside the armrest bounding box with an
+         inward `-X` vector (`0.33 -> 0.27`) instead of parallel `+Y` along the outer rim.
+      2. Chained 9 gaze targets with short transitions (`0.06..0.08s`) and high-frequency
+         trigonometric micro-motion (`sin(t * 6 * pi)`).
+      3. Prioritized the abstract 'Header-Decoupling' rule over the real-world clinical
+         dialogue phase between Doctor and Patient.
+    if_known_at_session_start: >
+      1. Safe-Zone Touch Law: Reassuring hand contact must rest on the top/outer surface
+         of the armrest (`X >= +0.32m, Z >= 1.09m`) or upper shoulder, oriented along `+Y`.
+      2. Vestibular Gaze Law: Cap head angular velocity at `<= 2.5 deg/frame` (`<= 60 deg/s`),
+         use minimum transition windows of `>= 0.18..0.25s`, and keep breathing micro-motion
+         at `<= 0.003 rad` and `<= 1.0 Hz`.
+      3. Clinical Dialogue Gaze Phase: Seated Agent A tracks Examining Agent C with an
+         attentive, conversational gaze during entry and stool positioning (`t = 0.08..0.72`),
+         shares a brief reassuring glance with Assistive Agent B, and transitions to
+         ceiling Header-Decoupling only in the final pre-examination phase (`t = 0.78..1.00`).

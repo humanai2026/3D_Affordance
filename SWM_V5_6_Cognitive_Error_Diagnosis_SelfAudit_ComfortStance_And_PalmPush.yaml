@@ -1,0 +1,121 @@
+# ==============================================================================
+# SWM SPATIAL REASONING & COGNITIVE ERROR DIAGNOSIS RECORD (V5.6 SELF-AUDIT)
+# Repository Target: humanai2026 / 3D_Affrodance
+# Focus: Pre-Emission Kinematic Self-Reflection, Comfort-Driven Stance Inversion,
+#        and End-Effector (Hand vs. Forearm/Elbow) Manipulation Topology
+# ==============================================================================
+
+benchmark_metadata:
+  record_id: "SWM-V5.6-COG-DIAG-012"
+  swm_version: "5.6-to-5.7-SelfAudit-And-ComfortStance-Inversion"
+  date: "2026-10-22"
+  repository: "https://github.com/humanai2026/3D_Affrodance.git"
+  scenario_archetype: "Multi-Agent 4D Assistive Workstation (Seated_Agent_A, Assistive_Agent_B, Articulated_Support_Rig)"
+  architectural_thesis: >
+    By executing an automated 3D/4D collision and joint-velocity self-audit inside
+    the model's Chain of Thought BEFORE visual inspection, the AI successfully
+    detected its own low-level kinematic anomalies (130..155 deg single-frame Euler
+    pole snaps, inner-arm sweeps through the seated agent's right foot at Frames 100..108,
+    and left-elbow backrest penetration at Frames 200..208). Combined with human
+    visual QA of Frames 78 and 204, this exposes a fundamental inversion in how AI
+    models plan full-body manipulation:
+    (1) AI models treat root stance as a fixed anchor and contort the upper body/arms
+        to reach the target (Frame 78 contortion); humans continuously adjust their
+        foot stance to keep shoulders and elbows inside their minimum-effort comfort zone.
+    (2) Solving 2-bone IK for wrist coordinates alone without constraining the elbow-to-wrist
+        approach vector above the obstacle causes the forearm and elbow to plow through
+        the backrest while the hand points upward into empty air (Frame 204 'forearm push').
+
+# ==============================================================================
+# 1. COGNITIVE ERROR DIAGNOSIS #1: ROOT-FIRST CONTORTION VS. COMFORT-DRIVEN STANCE
+# ==============================================================================
+
+cognitive_error_01_frame78_stance_contortion:
+  observed_symptom:
+    frame_window: [74, 88]
+    critical_failure_frame: 78
+    visual_anomaly: >
+      At Frame 78, Assistive_Agent_B stands at [-0.68, -0.82] with pelvis_rz = 1.62 rad
+      and contorts both shoulders and elbows awkward-sideways across the body's
+      comfort envelope to reach Support_Cradle_R, accompanied by a 138.9 deg single-frame
+      axial snap of the right upper arm at Frame 75.
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "Root-First Forward Planning without Proprioceptive Effort Feedback"
+    root_cause_mechanics:
+      - >
+        1. Fixed-Root Contortion Fallacy: The model chose an arbitrary floor coordinate
+        `S1 = [-0.68, -0.82]` first and forced the 2-bone arm IK solver to bridge the
+        resulting asymmetric gap. Because `S1` was too far anterior (-Y = -0.82m) while
+        the cradle clamp sits at Y = -0.705m, the left shoulder had to reach backward-inward
+        across the chest while the right upper arm crossed the vertical pole singularity
+        (v_x ~ 0, v_y ~ 0, triggering a 138.9 deg `atan2` snap at Frame 75).
+      - >
+        2. Missing Closed-Loop Stance Micro-Adjustment: A human never freezes their
+        feet when feeling muscular strain or awkward shoulder torque; the cerebellum
+        triggers an immediate preparatory or corrective micro-step so the mid-sagittal
+        chest plane bisects the bimanual grasp targets at comfortable 35..45 cm reach.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.7-01"
+    law_name: "Target-First Comfort-Stance Inversion & Pole-Singularity Damping Law"
+    mathematical_formulation: >
+      1. Target-to-Stance Inversion: Given bimanual grasp targets P_target_R and P_target_L
+         with centroid P_mid and bisector normal n_grasp, compute the optimal standing
+         pelvis pose FIRST from the ergonomic shoulder comfort zone:
+         P_pelvis_XY = P_mid_XY + d_comfort * n_grasp_outward (where d_comfort ~ 0.42m),
+         psi_pelvis  = atan2(-n_grasp_x, n_grasp_y).
+         If during motion execution any joint torque/angle exceeds the comfort envelope,
+         trigger a reactive foot micro-step to re-center P_pelvis_XY.
+      2. Vertical Pole Singularity Guard: Whenever a limb segment vector v = [vx, vy, vz]
+         approaches the vertical axis (hypot(vx, vy) < 0.04m), blend its azimuthal yaw
+         `rz` smoothly toward the parent link's `rz` rather than evaluating raw `atan2(vx, -vy)`,
+         eliminating 130..155 deg single-frame axial snaps.
+
+# ==============================================================================
+# 2. COGNITIVE ERROR DIAGNOSIS #2: FOREARM/ELBOW COLLISION VS. PALM PUSH VECTOR
+# ==============================================================================
+
+cognitive_error_02_frame204_forearm_backrest_push:
+  observed_symptom:
+    frame_window: [196, 215]
+    critical_failure_frame: 204
+    visual_anomaly: >
+      At Frame 204, while reclining the backrest, Assistive_Agent_B's left elbow and
+      forearm penetrate deep inside `Backrest_Cushion` (`loc = [0.148, 0.004, 0.380]`),
+      while the left hand and fingertips stick straight up above the headrest into
+      empty air—visually pushing the backrest down with the forearm/elbow instead of
+      the palm of the hand!
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "Point-Wrist IK without Elbow-Above-Surface & Palm-Downward Orientation Constraints"
+    root_cause_mechanics:
+      - >
+        1. Low-Elbow Pole Vector Trap: In `eval_mta_kopfbild`, the left arm IK pole
+        was hardcoded downward (`pole_l = rotate_euler_xyz([0.55, 0.35, -0.70], torso_rpy)`).
+        When the wrist target `wr_back_L` was placed at the top rim of the backrest
+        (`Z_local = 0.605m`), a downward elbow pole forced the elbow joint BELOW and
+        INSIDE the backrest cushion (`Z_local = 0.380m`), so the forearm pointed upward
+        from inside the cushion to the top rim, and the hand (clamped by `limit_wrist_deflection`
+        to follow the upward forearm) pointed skyward above the headrest!
+      - >
+        2. Missing Force-Direction Alignment of the Hand-Forearm Chain: To push a surface
+        DOWNWARD with the hand palm, the wrist must sit slightly ABOVE/BEHIND the rim,
+        the fingertip `pt_back_L` must lie horizontally/downward along the top surface
+        (not above the wrist!), and the elbow pole must be raised laterally-outward
+        (`pole_z >= -0.10`) so the entire forearm approaches from behind-and-above the
+        backrest without touching the cushion face.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.7-02"
+    law_name: "Palm-First Force-Vector Alignment & High-Lateral Elbow Clearance Law"
+    mathematical_formulation: >
+      When an agent applies a downward/forward pushing force F_push onto an elevated
+      rim (such as reclining a backrest at Z ~ 1.10..1.38m):
+      1. Palm-On-Rim Vector: Anchor the palm/fingertip `P_palm` directly on the top-posterior
+         rim (`Z_local = 0.585m, Y_local = +0.015m`) and place the wrist `P_wrist`
+         posterior-superior to `P_palm` (`Z_local = 0.615m, Y_local = +0.085m`) so the
+         hand vector `P_palm - P_wrist` points forward-and-downward INTO the rim (never upward!).
+      2. Lateral-Superior Elbow Pole: Set the IK pole vector outward and posterior
+         (`pole_local = [+/-0.65, +0.55, +0.15]`) so the elbow stays strictly behind
+         (`Y_local > +0.14m`) and lateral to the backrest throughout the entire recline arc.
