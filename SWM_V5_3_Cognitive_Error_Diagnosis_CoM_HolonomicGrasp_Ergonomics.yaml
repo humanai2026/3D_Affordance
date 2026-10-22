@@ -1,0 +1,166 @@
+# ==============================================================================
+# SWM SPATIAL REASONING & COGNITIVE ERROR DIAGNOSIS RECORD (V5.3 -> V5.4)
+# Repository Target: humanai2026 / 3D_Affrodance
+# Focus: Zero-Latency 3D/4D Flash Heuristics for Bipedal CoM Support Polygons,
+#        Holonomic Local-Frame Grasping, and Biomechanical Joint-Comfort Envelopes
+# ==============================================================================
+
+benchmark_metadata:
+  record_id: "SWM-V5.3-COG-DIAG-010"
+  swm_version: "5.3-to-5.4-Kopfbild-Diagnostic"
+  date: "2026-10-22"
+  repository: "https://github.com/humanai2026/3D_Affrodance.git"
+  scenario_archetype: "Multi-Agent 4D Assistive Workstation (Seated_Agent_A, Assistive_Agent_B, Articulated_Support_Rig)"
+  architectural_thesis: >
+    Switching an articulated agent from root-sliding to world-pinned foot steps
+    without updating the underlying Center-of-Mass (CoM) and lead-foot selection
+    heuristics exposes secondary topological and biomechanical failure modes:
+    (1) Cross-leg self-collision ('Riverdance crossover') when initiating a walk
+        with the trailing inner foot;
+    (2) 2-Bone IK reach detachment ('ligament tear') when the pelvis follows an
+        abstract spline that exceeds L_thigh + L_calf from the pinned stance foot;
+    (3) Telekinetic object rotation when hands remain at static world coordinates
+        during contact with a pivoting component;
+    (4) Nociceptive wrist hyper-angulation and cramped biceps flexion when grasping
+        the occupied anterior side of a reclining backrest without torso counter-rotation.
+
+# ==============================================================================
+# 1. COGNITIVE ERROR DIAGNOSIS #1: BIPEDAL LEAD-FOOT CROSSOVER & IK DETACHMENT
+# ==============================================================================
+
+cognitive_error_01_gait_crossover_and_ik_tear:
+  observed_symptom:
+    frame_windows: [[92, 101], [114, 122], [180, 188]]
+    visual_anomaly: >
+      At Frame 98..101 (departing Support_Cradle_R) and Frame 181 (stepping toward
+      the backrest from Support_Cradle_L), Assistive_Agent_B steps with the inner/trailing
+      foot across the supporting leg's sagittal plane, causing severe thigh-to-thigh
+      collision and a tripping topology. Simultaneously, at Frame 98 and Frame 114,
+      the distance between the moving pelvis and the pinned stance ankle exceeds the
+      total anatomical leg length (0.42m + 0.38m = 0.80m), visually detaching the
+      ankle joint and twisting the collateral knee ligaments.
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "Spline-Driven Pelvis Decoupling from Single-Support CoM & Wrong Lead-Foot Hemisphere"
+    root_cause_mechanics:
+      - >
+        1. Lead-Foot Hemisphere Inversion: At Support_Cradle_R (pelvis_rz = 1.88 rad),
+        the right hip [-0.60, -0.93] already lies on the open side of the anterior
+        walking arc, while the left hip [-0.68, -0.71] is tucked behind it. Initiating
+        locomotion with the left foot forced the swing leg to cross directly over the
+        pinned right stance leg. The exact mirror error occurred at Frame 180 when
+        stepping toward +Y with the anterior left leg across the posterior right leg.
+      - >
+        2. Missing CoM-over-Stance-Foot Coupling: The pelvis followed an independent
+        parametric curve while `step_bob` lifted the pelvis upward (+Z) during swing.
+        Because the pelvis was not bounded by the stance foot's kinematic reach sphere
+        (R_max = 0.775m <= L_thigh + L_calf), the hip pulled 75mm beyond the pinned ankle.
+      - >
+        3. Azimuthal Knee Torsion in 2-Bone IK: Computing independent world yaw angles
+        (`rz`) for thigh and calf vectors introduced non-physiological axial torsion
+        across the 1-DoF knee hinge whenever the knee pole was not strictly coplanar
+        with the hip-to-ankle plane.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.4-01"
+    law_name: "CoM-over-Stance-Foot Pendulum & Non-Crossing Lead-Foot Law"
+    mathematical_formulation: >
+      1. Lead-Foot Selection Rule: Given desired travel unit vector d_move and hip
+         world positions P_hip_R, P_hip_L, the first step MUST be executed by foot i*
+         maximizing (P_hip_i - P_pelvis) . d_move, guaranteeing zero cross-body swing.
+      2. CoM Support-Polygon Projection: During single-support swing of foot j while
+         foot i is world-pinned at P_stance_i, the horizontal pelvic CoM P_pelvis_XY(t)
+         must be computed as a weighted pendulum projection over the active support
+         polygon (75% stance foot i, 25% swing foot j) with a slight physiological
+         knee-flexion dip (Z_pelvis <= 0.835m), strictly enforcing:
+         ||P_hip_i(t) - P_ankle_i(t)||_3D <= 0.775m < (L_thigh + L_calf) at all frames.
+      3. Coplanar 1-DoF Knee Hinge: The knee pole vector must be projected into the
+         sagittal plane of the thigh-ankle axis so local knee rotation is pure flexion
+         (`kn_rpy = [rx, 0.0, 0.0]`, zero ligament-tearing `rz` torsion).
+
+# ==============================================================================
+# 2. COGNITIVE ERROR DIAGNOSIS #2: STATIC WORLD-COORDINATE GRASP TELEKINESIS
+# ==============================================================================
+
+cognitive_error_02_cradle_telekinesis:
+  observed_symptom:
+    frame_windows: [[83, 92], [165, 174]]
+    visual_anomaly: >
+      In Frame 83, Assistive_Agent_B's left fingertip slightly clips the outer rim
+      of Support_Cradle_R. Then, between Frame 84 and Frame 92, the cradle pivots
+      upward by +17 deg (rx: 0.32 -> 0.618 rad), while Assistive_Agent_B's hands
+      remain completely motionless in world space—creating an uncanny 'ghostly'
+      cradle movement before Seated_Agent_A's calf even touches the upholstery.
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "World-Space Target Freezing on a Rotating Kinematic Child Link"
+    root_cause_mechanics:
+      - >
+        The evaluator assigned constant world coordinates `wr_cradle_r_R/L` during
+        the contact window t in [0.345, 0.385]. Because Support_Cradle_R rotates
+        around `Ball_Joint_Clamp_R` during t in [0.35, 0.39], freezing the hands in
+        world space meant the hands pre-positioned at the final rotated pose (clipping
+        the unrotated rim at Frame 83) and stood still while the cradle rotated through
+        space by itself.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.4-02"
+    law_name: "Holonomic Local-Frame Grasp Attachment & Shared-Load Pivot Law"
+    mathematical_formulation: >
+      Whenever an agent grasps a movable child link L_child(t) during [t_dock, t_undock],
+      wrist and palm targets MUST be defined in L_child's local coordinate frame
+      (outside the outer surface normal by r_hand + epsilon) and transformed into
+      world space at every frame t via L_child's live transformation matrix T_child(t):
+      P_wrist_world(t) = P_pivot_world + R_euler(r_child(t)) * P_wrist_local.
+      Furthermore, cradle upward pivoting is synchronized with limb touchdown so the
+      hands visibly guide and lock the cradle into final alignment with the calf.
+
+# ==============================================================================
+# 3. COGNITIVE ERROR DIAGNOSIS #3: BACKREST GRASP SIDE, BICEPS CRAMP & WRIST PAIN
+# ==============================================================================
+
+cognitive_error_03_backrest_ergonomics_and_wrist_strain:
+  observed_symptom:
+    frame_windows: [[192, 218]]
+    visual_anomaly: >
+      At Frame 194..216, Assistive_Agent_B places the left hand on the anterior/inner
+      edge of the backrest right against Seated_Agent_A's left shoulder (`Shoulder_Joint_Sphere_L`),
+      stands too parallel to the chair (`pelvis_rz = 4.52..4.64 rad`) causing an
+      acutely cramped left elbow angle (excessive biceps tension unneeded for a
+      hydraulically damped backrest), and drags the left wrist along a straight line
+      that forces a painful ~90 deg ulnar/extension kink at the wrist joint.
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "Anterior-Surface Grasp Selection & Missing Nociceptive Joint-Comfort Feedback"
+    root_cause_mechanics:
+      - >
+        1. Wrong Surface Normal (Inner vs. Posterior Backrest Face): In local backrest
+        coordinates, `Y = 0.0` is the centreplane and `Y = -0.03m` is the anterior
+        cushion face occupied by Seated_Agent_A's shoulders. Placing `wr_back_L` at
+        `[0.275, 0.01, 0.47]` wedged the hand into the patient's left deltoid instead
+        of grasping the posterior structural shell (`Y_local = +0.065m`) and the
+        posterior headrest handle (`Y_local = +0.045m`) from behind.
+      - >
+        2. Missing Hydraulic-Impedance Stance Distance & Torso Counter-Rotation:
+        Because medical examination chairs use damped gas-spring/hydraulic cylinders,
+        guiding the backrest requires a relaxed, mid-range elbow flexion (100..125 deg)
+        rather than an acute emergency-catch biceps flex. Standing too close in X/Y
+        without rotating the torso (`pelvis_rz`) and abducting the elbow in tandem
+        with the pitching backrest forced the wrist joint (`wr_l_rpy`) to absorb the
+        entire angular change of the backrest, violating nociceptive comfort limits.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.4-03"
+    law_name: "Posterior Structural Grasp, Hydraulic Elbow-Comfort & Nociceptive Torso-Unloading Law"
+    mathematical_formulation: >
+      1. Posterior Surface Selection: Assistants guiding a backrest/headrest occupied
+         by a seated human MUST anchor hands on the posterior/outer normal (`Y_local > +0.045m`),
+         maintaining >60mm clearance from the seated human's shoulder spheres.
+      2. Hydraulic Impedance Elbow Envelope: Position the standing pelvis at sufficient
+         posterior-lateral distance (`X ~ 0.66..0.70m`, angled inward at `pelvis_rz ~ 4.15 -> 3.92 rad`)
+         so elbow flexion stays within the ergonomic hydraulic-guiding zone (`|el_rx| in [0.75, 1.15] rad`).
+      3. Nociceptive Wrist-to-Torso Load Transfer: To prevent painful wrist hyper-angulation
+         (`|wr_rpy| <= 0.35 rad`), any rotational arc of the grasped object (backrest
+         pitching from -0.35 to -1.05 rad) must be compensated by progressive torso
+         yaw/lean rotation and shoulder/elbow alignment so the forearm axis remains
+         collinear with the hand palm normal throughout the motion.

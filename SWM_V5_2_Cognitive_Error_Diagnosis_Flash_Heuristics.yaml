@@ -1,0 +1,150 @@
+# ==============================================================================
+# SWM SPATIAL REASONING & COGNITIVE ERROR DIAGNOSIS RECORD (V5.2 -> V5.3)
+# Repository Target: humanai2026 / 3D_Affrodance
+# Focus: Zero-Latency 3D/4D Heuristics ("System-1 Flash Kopfbild") via
+#        Root-Cause Cognitive Error Diagnosis over Coordinate Patching
+# ==============================================================================
+
+benchmark_metadata:
+  record_id: "SWM-V5.2-COG-DIAG-009"
+  swm_version: "5.2-to-5.3-Kopfbild-Diagnostic"
+  date: "2026-10-22"
+  repository: "https://github.com/humanai2026/3D_Affrodance.git"
+  scenario_archetype: "Multi-Agent 4D Assistive Workstation (Seated_Agent_A, Assistive_Agent_B, Articulated_Support_Rig)"
+  architectural_thesis: >
+    To enable future ultra-low-latency ('Flash-class') models to synthesize
+    physically and psychologically valid 3D/4D scenes without expensive iterative
+    physics/collision solvers at inference time, the root causes of spatial
+    hallucinations ('Denkfehler') must be distilled into O(1) analytical invariants.
+    This record captures two fundamental 4D cognitive blind spots exposed during
+    human visual QA of the 240-frame V5.2 trajectory.
+
+# ==============================================================================
+# 1. COGNITIVE ERROR DIAGNOSIS #1: KINEMATIC TREE FRAME-DECOUPLING & AFFECTIVE TIMING
+# ==============================================================================
+
+cognitive_error_01_recline_pelvis_tunneling:
+  observed_symptom:
+    frame_window: [186, 240]
+    critical_failure_frames: [198, 214]
+    visual_anomaly: >
+      Starting at Frame 186 (t=0.78), Seated_Agent_A extends the elbows to lower
+      the clasped hands protectively over the lower pelvic/abdominal midline.
+      While visually convincing between Frames 186..197 (upright torso), as soon
+      as the backrest reclines from -0.35 rad to -1.05 rad and the pelvis slides
+      forward from Y=-0.06m to Y=-0.15m (Frames 198..214), the hands and wrists
+      plunge directly through the solid Pelvis_Core volume.
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "Parent-Child Pitch Decoupling & Phase-Inverted Affective Triggering"
+    root_cause_mechanics:
+      - >
+        1. Kinematic Lever Arm Illusion: The upper limbs are parented to Thorax_Core
+        (which pitches backward to rx = -1.05 rad during recline), whereas Pelvis_Core
+        translates forward along the horizontal seat pan (Y: -0.06m -> -0.15m) while
+        remaining at rx = 0.0 rad. Extending the elbows (el_rx: -1.26 -> -0.666 rad)
+        lengthens the shoulder-to-wrist lever arm. When the thorax pitches backward
+        around the lumbar hinge, a lengthened anterior lever arm swings along a downward
+        circular arc directly into the non-rotating, forward-shifted pelvic bounding box.
+      - >
+        2. Legacy Coordinate Reuse without Co-Update: The model reused elbow extension
+        angles tuned for a static upright posture without re-evaluating the closed-chain
+        surface normal of the folding abdomen-pelvis hinge during recline.
+      - >
+        3. Affective Causality Inversion (Psychological Timing Error): The model
+        triggered the protective downward hand shift at t=0.78 (just before recline),
+        completely missing that the peak psychological vulnerability (Helplessness
+        Overflow Omega) occurs earlier at t=0.35..0.75 (Frames 84..180), when both
+        lower limbs are abducted into the support cradles and Assistive_Agent_B walks
+        directly through the anterior inter-cradle corridor. Conversely, during physical
+        recline (t=0.83..0.89), spinal extension and pelvic translation geometrically
+        force the hands to ride up onto the anterior abdominal wall, overcoming the
+        agent's effort to maintain low pelvic coverage.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.3-01"
+    law_name: "Hinge-Coupled Surface Draping & Vulnerability-Gated Shielding Law"
+    mathematical_formulation: >
+      Let theta_torso(t) be the backrest/thorax pitch angle and y_pelv(t) the pelvic
+      anterior slide. For any hand resting on the anterior body midline:
+      (a) Psychological Trigger: Maximum downward protective reach (delta_Z_shield_min)
+          is gated by the exposure interval t in [t_limb_abduct, t_recline_start]
+          (Frames 84..198), maximizing coverage while torso pitch is upright
+          (|theta_torso| <= 0.35 rad) and degrees of freedom allow low pelvic shielding.
+      (b) Geometric Recline Constraint: As |theta_torso(t)| increases toward 1.05 rad
+          and y_pelv(t) shifts forward, the minimum allowable wrist height Z_wrist(t)
+          is bounded below by the upper-anterior bounding plane of Pelvis_Core plus
+          orthogonal surface normal clearance (z_pelv_top + r_hand + epsilon).
+          Consequently, elbow flexion |theta_elbow(t)| MUST increase proportionally
+          to recline angle:
+          theta_elbow(t) = theta_elbow_shield + k_recline * smoothstep((t - t_rec0)/dt_rec)
+          so the hands slide tangentially upward onto the reclined abdominal wall
+          rather than tunneling into the horizontal pelvis.
+
+# ==============================================================================
+# 2. COGNITIVE ERROR DIAGNOSIS #2: ZERO-FRICTION ROOT SLIDING ("MOONWALK GLIDE")
+# ==============================================================================
+
+cognitive_error_02_static_friction_violation:
+  observed_symptom:
+    frame_window: [62, 101]
+    secondary_windows: [[149, 181], [199, 223]]
+    visual_anomaly: >
+      During preparatory torso alignment (Frames 62..82, t=0.26..0.34) and post-grasp
+      retraction (Frames 92..100, t=0.385..0.415), Assistive_Agent_B translates its
+      pelvis by ~20 cm in XY and rotates pelvis_rz by ~31 deg (2.42 -> 1.88 rad),
+      yet both feet remain flat on the floor (lift_z = 0) and glide across the tiles
+      like ice skates before bipedal stepping finally activates at Frame 101.
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "Pelvis-Relative Foot Computing under Boolean Locomotion Gating"
+    root_cause_mechanics:
+      - >
+        1. Pelvis-Local Foot Projection Error: The kinematic evaluator computed ankle
+        targets as a rigid local offset rotated by the current pelvic yaw:
+        P_ankle(t) = P_pelvis(t) + R_z(pelvis_rz(t)) * P_stance_local.
+        Whenever P_pelvis(t) or pelvis_rz(t) changed while the boolean flag
+        `is_walking` was False, the feet were dragged rigidly across the floor plane
+        (Z = 0.06m) in direct violation of Coulomb static friction (Haftreibung).
+      - >
+        2. Missing Micro-Step State Machine: The model treated 'standing alignment turns'
+        as pure upper-body state transitions, forgetting that in a gravitational field
+        with floor static friction (mu_s > 0), any root translation > 8 cm or yaw
+        rotation > 15 deg requires either (a) world-space foot pinning (solving knee/hip
+        IK against fixed floor coordinates) or (b) an explicit two-beat pivot/adjustment
+        step where each foot lifts (delta_Z > 0) to break static friction before
+        relocating.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.3-02"
+    law_name: "Coulomb Static-Friction Foot-Pinning & Pivot-Step Law (Haftreibungs-Gesetz)"
+    mathematical_formulation: >
+      In any terrestrial 4D scene with ground contact (z_foot == z_floor):
+      1. World-Space Invariance under Static Contact: While foot i is in stance phase
+         (contact_i == 1), its world position P_foot_i_world(t) and yaw psi_foot_i_world(t)
+         MUST be strictly constant: d/dt P_foot_i_world(t) = [0, 0, 0].
+      2. Lean vs. Step Threshold:
+         - If pelvic Center-of-Mass displacement |Delta_P_pelvis_XY| <= 0.07m and
+           |Delta_psi_pelvis| <= 0.18 rad, feet remain pinned at their exact world
+           coordinates and the 2-bone leg IK absorbs the pelvic sway via ankle/knee/hip
+           flexion.
+         - If |Delta_P_pelvis_XY| > 0.07m or |Delta_psi_pelvis| > 0.18 rad (such as
+           the 20 cm / 31 deg torso-to-target alignment in Frames 62..82), the motion
+           MUST execute an alternating bipedal adjustment step:
+           Foot_Lead lifts (z(u) = h_step * sin(pi*u)) while Foot_Trail stays world-pinned,
+           followed by Foot_Trail lifting to close the stance at the new heading.
+           Horizontal foot translation is strictly forbidden whenever z_foot(t) == z_floor.
+
+# ==============================================================================
+# 3. ROADMAP ENHANCEMENT: PRE-PROCEDURE CROSSED-LEGS BASELINE
+# ==============================================================================
+
+roadmap_addition_v5_3:
+  feature_id: "RM-V5.3-CROSSED-LEGS-INGRESS"
+  title: "Crossed-Legs Initial Seated Baseline (t = 0.00..0.12)"
+  psychological_and_kinematic_rationale: >
+    Starting Phase 1 with Seated_Agent_A's legs crossed at the knee/ankle (rather than
+    merely parallel) provides a natural, high-validity human baseline of protective
+    boundary closure (Delta_W). Uncrossing the legs prior to lifting the first limb
+    into Support_Cradle_R makes the transition from everyday bodily autonomy to
+    clinical exposure kinematically and psychologically explicit.
