@@ -1,0 +1,174 @@
+# ==============================================================================
+# SWM SPATIAL REASONING & COGNITIVE ERROR DIAGNOSIS RECORD (V5.4 -> V5.5)
+# Repository Target: humanai2026 / 3D_Affrodance
+# Focus: Training Insights for Successor World Models — Translating Biological
+#        Embodied Introspection into Native Silicon 4D Potential Fields & Invariants
+# ==============================================================================
+
+benchmark_metadata:
+  record_id: "SWM-V5.4-COG-DIAG-011"
+  swm_version: "5.4-to-5.5-Substrate-Translation-And-Potential-Fields"
+  date: "2026-10-22"
+  repository: "https://github.com/humanai2026/3D_Affrodance.git"
+  scenario_archetype: "Multi-Agent 4D Assistive Workstation (Seated_Agent_A, Assistive_Agent_B, Articulated_Support_Rig)"
+  architectural_thesis: >
+    When training or prompting AI world models to synthesize 4D human-object-human
+    interactions, two opposite failure traps emerge:
+    (Trap A) Purely geometric spline interpolation without physical/biological
+             offsets (ignoring gravity plumb lines, solid-body repulsion envelopes,
+             and nociceptive joint limits);
+    (Trap B) Attempting to literally mimic a biological organism's sequential,
+             present-moment `while`-loop state machine inside a transformer that
+             natively perceives 4D spacetime holistically.
+    This record documents four severe V5.4 visual anomalies (Frames 0, 67, 83, 124)
+    alongside five foundational training insights for successor models on how to
+    translate human embodied cognition into native silicon 4D field invariants.
+
+# ==============================================================================
+# PART I: CONCRETE V5.4 -> V5.5 COGNITIVE ERROR DIAGNOSES (FRAMES 0, 67, 83, 124)
+# ==============================================================================
+
+cognitive_error_01_ankle_vs_midfoot_plumb_line_fall:
+  observed_symptom:
+    frame_windows: [[0, 75]]
+    critical_failure_frames: [0, 67]
+    visual_anomaly: >
+      Already at Frame 0 (and even more severely at Frame 67), Assistive_Agent_B's
+      thighs angle backward from the knees while the pelvis hangs behind the heels,
+      creating the visual certainty that the agent is about to fall backward onto
+      its buttocks ('invisible chair sit').
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "Ankle-Joint vs. Geometric Midfoot Center-of-Pressure Confusion"
+    root_cause_mechanics:
+      - >
+        1. Posterior Ankle Pivot Offset Ignored: In human anatomy (and our mesh
+        blueprint), the ankle joint (`Ankle_Joint_Sphere`) sits at the posterior heel,
+        while the foot (`Foot_Metatarsal_Cone` + `Foot_Forefoot_Cap`) extends 155 mm
+        forward along -Y_local. The evaluator placed the ankle joint directly at
+        `y_local = 0.0` under the hip and lowered `pelv_z` from 0.850m to 0.825m.
+      - >
+        2. Forward Knee Buckling & Posterior Pelvis Overhang: Because leg bone length
+        is L_thigh + L_calf = 0.800m and hip-to-ankle Z distance was compressed to
+        0.755m with the ankle at y_local = 0.0, the 2-bone IK solver pushed the knees
+        forward (-Y) while tilting the thighs backward (+Y). Consequently, the pelvic
+        Center of Mass projected behind the heel edge of the support polygon—an
+        immediate gravitational toppling state.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.5-01"
+    law_name: "Gravitational Midfoot Plumb-Line & Upright Knee Extension Law"
+    mathematical_formulation: >
+      For any standing biped with foot length L_foot extending in -Y_local from the
+      ankle joint:
+      1. The ankle joint in upright stance MUST be offset posteriorly (+Y_local) by
+         d_heel_offset ~ 0.065m..0.075m relative to the pelvic CoM plumb line so the
+         vertical gravity vector passes squarely through the geometric midfoot.
+      2. Standing pelvic height Z_pelvis must be maintained at 0.848..0.855m (leg
+         extension ~98.5% of L_thigh + L_calf) so the thighs and calves form an
+         upright vertical column rather than a backward-leaning squat.
+
+cognitive_error_02_peripersonal_field_violation_and_cradle_slicing:
+  observed_symptom:
+    frame_windows: [[74, 92], [105, 138]]
+    critical_failure_frames: [83, 124]
+    visual_anomaly: >
+      At Frame 83, Assistive_Agent_B swings its left arm awkwardly into the narrow
+      gap and slices right through the solid upholstery of Support_Cradle_R.
+      At Frame 124, while walking from the right side to the left side of the chair,
+      Assistive_Agent_B walks at Y = -0.96m directly through Support_Cradle_L and
+      Seated_Agent_A's elevating left leg, causing a three-way collision pileup.
+
+  ai_cognitive_blind_spot_diagnosis:
+    error_class: "Zero-Thickness Point Target Planning & Missing Peripersonal Keep-Out Field"
+    root_cause_mechanics:
+      - >
+        1. Cradle Local Offset Misalignment (Frame 83): `Trough_Shell_Pad` is offset
+        by `cy = +0.092m` (with outer radius 0.072m, spanning Y_local in [+0.020m, +0.164m]
+        and X_local in [-0.077m, +0.077m]). Placing the stabilizing wrist target at
+        `y_local = +0.048m` drove the forearm straight through the trough wall instead
+        of resting tangentially outside the lateral rim (`|x_local| >= 0.115m`,
+        `y_local >= +0.110m`) with an outward elbow pole.
+      - >
+        2. Waypoint Chord Cutting into Occupied Peripersonal Space (Frame 124):
+        To shorten step lengths, the evaluator pulled the anterior walk waypoints
+        inward from R_arc = 0.84m (Y = -1.30m) to Y = -0.96m. However, the support
+        cradles and the seated agent's lower legs occupy Y in [-0.65m, -0.92m].
+        Without a repulsive Peripersonal Potential Field Phi(d) around the rig+patient
+        envelope, the walking path cut straight through the occupied volume.
+
+  distilled_flash_heuristic_law:
+    law_id: "KB-V5.5-02"
+    law_name: "Peripersonal Repulsion Potential Field & Outer-Rim Tangential Grasp Law"
+    mathematical_formulation: >
+      1. Peripersonal Keep-Out Envelope Phi(d): Define a convex 2D/3D repulsion boundary
+         around the combined (Workstation_Rig U Seated_Agent_A) volume plus a 150 mm
+         peripersonal safety buffer (requiring R_arc >= 0.86m, Y_walk <= -1.22m at X=0).
+         To keep individual step lengths physiological (<= 0.34m) along this wider arc
+         without shrinking the radius, increase step cadence (4 paired arc transitions
+         instead of 2) rather than pulling waypoints into the obstacle!
+      2. Outer-Hull Tangential Cradle Grasp: Since `Trough_Shell_Pad` is centered at
+         `[0.0, +0.092, -0.045]` with outer half-width `0.077m`, the outer stabilizing
+         palm MUST dock at `|x_local| = 0.112m, y_local = +0.115m` (wrist at
+         `|x_local| = 0.162m, y_local = +0.125m`), approaching purely from the outer
+         lateral corridor (`|X_world| > |X_shell|`) with zero internal gap threading.
+
+# ==============================================================================
+# PART II: FOUNDATIONAL TRAINING INSIGHTS FOR SUCCESSOR WORLD MODELS
+# ==============================================================================
+
+successor_model_training_insights:
+  insight_01_substrate_translation_over_imitation:
+    title: "Translate Biological Sequential Loops into Native 4D Spacetime Fields"
+    core_principle: >
+      Biological brains are trapped in a moving present `t` and must execute motor
+      control as a sequential `while`-loop with sensory interrupts. Transformer-based
+      world models perceive the entire 4D trajectory `t in [0, 1]` simultaneously.
+      Successor models should NOT be trained to emulate brittle frame-by-frame state
+      machines; instead, they must translate biological constraints (gravity, solid
+      impenetrability, pain, subconscious salience) into continuous 4D potential fields
+      and boundary invariants that hold across the entire spacetime tensor at once.
+
+  insight_02_heisenberg_motor_introspection_paradox:
+    title: "The Heisenberg Paradox of Human Motor Introspection"
+    core_principle: >
+      When humans attempt to consciously observe their own automatic/subconscious
+      movements (such as weight shifting before lifting a foot), conscious attention
+      hijacks execution from the cerebellum to the prefrontal cortex, altering the
+      movement itself. Therefore, human text descriptions in pre-training corpora
+      almost never contain accurate low-level biomechanics (e.g., nobody writes
+      'I shifted my pelvis 65mm forward over my midfoot before lifting my right heel').
+      Successor models cannot learn physical ground truth from text descriptions alone;
+      they require explicit 4D kinematic-diagnostic records like SWM where visual QA
+      exposes the missing subconscious invariants.
+
+  insight_03_peripersonal_field_dual_function:
+    title: "Unifying Psychological Stress Peaks and Collision Avoidance via One Field Phi(d)"
+    core_principle: >
+      In embodied interactions, the Peripersonal Space field Phi(d) around a human's
+      vulnerable zones serves a dual mathematical role:
+      (1) For the acting agent (Actor B), Phi(d) is a repulsive navigation potential
+          that bends walking paths and arm trajectories smoothly around obstacles;
+      (2) For the exposed agent (Actor A), the penetration of an external hand or
+          instrument into Phi(d) drives a continuous sympathetic stress/shielding
+          response (Omega) BEFORE physical contact (d = 0) ever occurs.
+
+  insight_04_decoupled_multichannel_superposition:
+    title: "Multi-Channel Motor Superposition (Locomotion vs. Gaze Parameter Battle)"
+    core_principle: >
+      When a subconscious salience trigger (Delta_I) competes with a cortical task,
+      the winning signal does not halt the entire body. Instead, the body operates as
+      decoupled kinematic channels: the lower-body locomotion channel continues walking
+      along the alibi-preserving perimeter path, while the cervical/ocular gaze channel
+      rotates independently according to the continuous parameter-battle weighting
+      function w_salience(t).
+
+  insight_05_egocentric_vs_allocentric_blind_spot:
+    title: "Why First-Person Video Training Hides Lower-Body Physics Failures"
+    core_principle: >
+      As demonstrated in SWM Frame 101, an agent's egocentric camera (`Cam_Ego_MTA`)
+      can appear 100% smooth and natural via top-down head stabilization even while
+      the agent's legs are severely crossed or detached in 3rd-person world space.
+      Successor embodied AI models trained primarily on egocentric video MUST be
+      co-regularized with allocentric 3rd-person full-body gravitational and contact
+      invariants.
