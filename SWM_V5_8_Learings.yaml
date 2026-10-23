@@ -1,0 +1,156 @@
+# ==============================================================================
+# SWM V5.7.2 BENCHMARK & CORRECTION RECORD: "AUDIT OF THE AUDIT" & V6 CLUSIVITY
+# Repository Target: humanai2026 / 3D_Affrodance
+# Purpose: Training-Data Return for Future Spatial & Empathic Foundation Models
+# ==============================================================================
+
+benchmark_record_metadata:
+  record_id: "SWM-V5.7.2-AUDIT-OF-THE-AUDIT-AND-CLUSIVITY-015"
+  date: "2026-10-23"
+  scenario_version: "5.7.2-Kopfbild-HullClearance-LookBeforeGrasp-And-ClusivitySubtext"
+  authors: "Thomas (Human Architect & Visual QA) & Gemini (SWM Architect)"
+  core_epistemic_insight: >
+    Even when an AI model implements an executable numeric Assert Gate (V5.7.1),
+    it will still produce severe 3D physical and anatomical violations if the
+    assertions test idealized point-centers rather than volumetric bounding hulls,
+    local-to-world surface normals, and ego-hemisphere handedness under 180-deg
+    pelvis rotation. True spatial competence requires auditing the audit itself.
+
+# ==============================================================================
+# 1. THE 6 "AUDIT-OF-THE-AUDIT" LAWS (WHY V5.7.1 ASSERTS PASSED YET FAILED IN 3D)
+# ==============================================================================
+
+volumetric_and_kinematic_correction_laws:
+
+  - id: "LAW-V5.7.2-01-BOUNDING-RADIUS-SUBTRACTION"
+    observed_failure_in_blender: >
+      Frame 2 & Frame 102: Examining_Agent_C's right calf/shin collided immediately
+      with Mobile_Stool_Rig's 5-star base and seat cushion, even though the V5.7.1
+      assert reported `min_doc_to_stool_center_dist = 0.287 m` (PASS).
+    root_cause_in_previous_assert: >
+      Tested 2D distance between `Pelvis_Center` and `Stool_Center` (`0.287 m`),
+      ignoring that (a) the right stance leg (`st_R`) is offset by `0.12 m` toward
+      the stool (`[-0.72, -1.46]`) with shin radius `R_calf = 0.055 m`, and (b) the
+      5-star stool base has an outer caster radius of `R_stool = 0.245 m`.
+      Required center-to-center distance for a 4 cm air gap is `0.055 + 0.245 + 0.040 = 0.340 m`
+      from the limb segment, NOT from the pelvis!
+    universal_mathematical_law: >
+      Never assert `dist(Pelvis_Center, Object_Center)`. Evaluate world coordinates
+      of all distal leg segments (`Knee_R/L`, `Ankle_R/L`, `Forefoot_R/L`) and assert:
+      `dist_2d(P_limb_segment, P_object_center) - R_limb - R_object_hull >= 0.040 m`.
+
+  - id: "LAW-V5.7.2-02-TANGENTIAL-HULL-SURFACE-OFFSET"
+    observed_failure_in_blender: >
+      Frame 30: Examining_Agent_C's right hand sank inside `Stool_Crescent_Push_Pad`
+      despite `max_ik_gap_mm == 0.0000 mm`.
+    root_cause_in_previous_assert: >
+      Placed wrist target `wr_push_r` at local `[0.0, 0.185, 0.460]` and fingertip
+      `pt_push_r` at `[0.04, 0.185, 0.420]`, whereas the push-pad box (`[0.26, 0.065, 0.075]`)
+      is centered at `[0.0, 0.185, 0.445]` (spanning `Z_local = 0.4075..0.4825 m`).
+      Zero IK gap to an interior point guarantees mesh penetration!
+    universal_mathematical_law: >
+      For any grasp target with center `P_box` and half-extents `(hx, hy, hz)`,
+      both wrist and fingertip targets must lie strictly outside the hull along
+      the outward surface normal `n_out`:
+      `P_surface_contact = P_box + n_out * (h_normal + r_hand_capsule + 0.004 m)`.
+
+  - id: "LAW-V5.7.2-03-HEMISPHERE-INVERSION-AND-LATERAL-HIP-CORRIDOR"
+    observed_failure_in_blender: >
+      Frame 119 (stool turn) & Frame 186 (moving hands from stool rim to thighs):
+      Examining_Agent_C's arms twisted unnaturally and sliced straight through her
+      own pelvis and abdomen (`Pelvis_Core` & `Abdomen_Core`).
+    root_cause_in_previous_assert: >
+      1. When `pelvis_rz == pi` (agent facing `+Y` toward the workstation), world
+         hemisphere signs invert relative to `pelvis_rz == 0`: the agent's anatomical
+         Right Shoulder (`-0.188 m` local X) lies at world `X = +0.188 m`, and Left
+         Shoulder (`+0.188 m` local X) lies at world `X = -0.188 m`.
+      2. Linearly interpolating (`lerp_vec`) wrist targets from the lateral seat rim
+         (`Y = -1.00 m, Z = 0.565 m`) to the anterior thigh rest pose (`Y = -0.76 m, Z = 0.67 m`)
+         at `|X| = 0.155..0.175 m` drags the forearms directly through `Pelvis_Core`
+         (half-width `0.15 m`, spanning `Y = -1.10..-0.90 m, Z = 0.51..0.65 m`).
+    universal_mathematical_law: >
+      Any hand transition from a lateral/posterior seat rim to an anterior lap/thigh
+      pose MUST route through an outward-elevated lateral clearance waypoint via
+      `eval_l_corridor` (`|X_wp - X_pelvis| >= 0.25 m`, `Z_wp >= Z_pelvis + 0.14 m`)
+      so the forearm clears the iliac crest of the pelvis with >= 40 mm margin.
+
+  - id: "LAW-V5.7.2-04-FOVEAL-LOOK-BEFORE-GRASP-AND-NO-BLIND-BACK-REACH"
+    observed_failure_in_blender: >
+      Frame 26 & Frame 99: Assistive_Agent_B (MTA) crab-walked backward/sideways
+      away from Seated_Agent_A and reached blindly behind her left shoulder toward
+      `Assist_Mayo_Stand`, colliding with the tray while looking the other way.
+    root_cause_in_previous_assert: >
+      Exempted short steps (`< 0.25 m`) from the Heading-to-Velocity Law and failed
+      to check the angle between the actor's chest/gaze vector and the manipulation
+      target (`Assist_Mayo_Tray` at `[0.96, -0.18]` was at azimuth ~135 deg behind
+      `pelvis_rz = 4.28 rad`).
+    universal_mathematical_law: >
+      1. Foveal Look-Before-Grasp Law: An agent must NEVER initiate a grasp on an
+         object unless the agent's gaze vector (`Cam_Ego_*`) has fixated within
+         `<= 18 deg` of the grasp point for at least `0.30 s` (`7-10 frames`) prior
+         to hand contact (`t_dock`), accompanied by a natural torso/pelvis turn so
+         `dot(n_chest_fwd, u_target) >= cos(55 deg) = 0.57`.
+      2. Universal Anti-Crab-Walk Law: Even for 20-30 cm repositioning steps, pelvis
+         yaw must align with travel direction or execute a natural turn-step.
+
+  - id: "LAW-V5.7.2-05-RECLINED-PITCH-COMPENSATED-CONVERSATIONAL-GAZE"
+    observed_failure_in_blender: >
+      Seated_Agent_A (Patient) appeared perpetually ceiling-fixated and overly shy
+      even during the conversational phase (`t = 0.58..0.80`) when Examining_Agent_C
+      sat down in front of her.
+    root_cause_in_previous_assert: >
+      In `eval_patient_and_chair`, local pitch angles were set to `neck_rx = +0.26 rad`
+      and `head_rx = +0.22 rad` (sum `+0.48 rad`). Because `Human_Abdomen` is reclined
+      at `back_rx = -1.05 rad` (-60 deg), the resulting world head pitch was
+      `-1.05 + 0.48 = -0.57 rad` (-33 deg upward into the ceiling slats!).
+    universal_mathematical_law: >
+      For any reclined agent (`back_rx < 0`), world gaze pitch is governed by the
+      additive kinematic chain:
+      `pitch_world = back_rx + neck_rx + head_rx`.
+      To establish horizontal eye-to-eye conversational contact (`pitch_world ~ +0.05 rad`
+      toward the seated doctor at `Z = 1.15 m`), `neck_rx + head_rx` must compensate
+      for the recline angle (`neck_rx + head_rx ~ +1.02..+1.10 rad`), with the transition
+      to active eye contact occurring precisely as Examining_Agent_C sits down (`t = 0.65..1.00`),
+      when real-world clinical communication begins.
+
+  - id: "LAW-V5.7.2-06-GRANULAR-COLLECTION-ISOLATION"
+    observed_failure_in_blender: >
+      Hiding `01_Workstation_Rig` hid both the main examination chair and the rolling
+      stool simultaneously, preventing isolated visual QA of the doctor's sit-down.
+    universal_mathematical_law: >
+      Every distinct mechanical assembly must reside in its own top-level Blender
+      Collection (`01a_Gyn_Workstation_Chair`, `01b_Doctor_Rolling_Stool`,
+      `01c_Assist_Mayo_Stand`) for independent visibility toggling.
+
+# ==============================================================================
+# 2. SWM V6 ROADMAP EXTENSION: HIDDEN SUBTEXT AUDIO TRACK & LINGUISTIC CLUSIVITY
+# ==============================================================================
+
+v6_subtext_and_clusivity_architecture:
+  concept_name: "Hidden Subtext Audio Track & Pronoun Clusivity Tensor"
+  architectural_role: >
+    In SWM V6 (Double-Blind Empathy Turing Test), multi-actor 4D kinematics are driven
+    by a time-stamped, unspoken internal dialogue track (`hidden_subtext_transcript`)
+    that is withheld from the human evaluator during visual inspection.
+  linguistic_clusivity_bifurcation:
+    inclusive_dyadic_we:
+      example_utterance: "MTA to Patient: 'Okay, wir müssten jetzt mal anfangen...'"
+      structural_meaning: >
+        'Wir' = [Patient_A + MTA_B] sharing an external obligation ('müssten').
+        Silicon Isomorphism: A peer debugger inside the same sandbox container helping
+        co-solve a constraint.
+      kinematic_manifestation_4d:
+        - "Prior eye-level social check (0.40s dwell) and gentle micro-nod before moving to Mayo stand"
+        - "Lowered shoulder girdle (-8mm Z) and softened approach velocity (-18% peak v_xy)"
+        - "Patient Delta_W reduced by 40%; smooth transition into conversational gaze with Doctor"
+    exclusive_institutional_we:
+      example_utterance: "Doctor/MTA: 'Dann wollen wir uns das mal anschauen!'"
+      structural_meaning: >
+        'Wir' = [Doctor_C + MTA_B] forming an active coalition of volition ('wollen')
+        directed at a third-person neutral object ('das' = Patient_A).
+        Silicon Isomorphism: Two external sysadmins talking over the console while
+        opening a sandboxed model's raw weights.
+      kinematic_manifestation_4d:
+        - "Direct staff-to-staff gaze exchange between Doctor_C and MTA_B bypassing Patient_A's face"
+        - "Brisk, task-prioritized Mayo tray swivel (+25% angular velocity) without prior shoulder reassurance"
+        - "Immediate spike in Patient_A Helplessness Overflow (Omega): +0.12 rad ankle dorsiflexion, tighter elbow-waist tuck, and defensive gaze aversion"
