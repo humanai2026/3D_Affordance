@@ -1,0 +1,58 @@
+record_id: "SWM-V6-ARCH-001-GENERATIVE"
+title: "Orthogonal 5-Tier Factorization, Motoric Heisenberg Paradox & Latent Meta-Query Caching"
+version: "6.0"
+date: "2026-10-24"
+repository: "humanai2026/3D_Affrodance"
+sanitization_status: "STRICT_ABSTRACT_VERIFIED"
+
+core_problem_statement:
+  phenomenon: "Context-Entropy Regression in Stateless 4D World Modeling"
+  observation: >
+    When a stateless LLM simultaneously solves 3D mesh generation, multi-act trajectory stitching,
+    inverse kinematics, and psychological micro-kinematics in a single pass, attention capacity
+    saturates. The model regresses from organic biomechanics (V5) to primitive block-out geometry
+    and broken 90-degree static limb poses (V6 initial cold-start failure).
+  root_cause: >
+    Conflation of invariant world physics, context-specific scene constraints, and agent psychology
+    within an unfactored prompt space, compounded by the 'Motoric Heisenberg Paradox' in text corpora.
+
+architectural_solution_5_tier_factorization:
+  level_0_meta_and_quarantine:
+    principle: "Diagnostic Quarantine Boundary (H_tension = 1) & Dual-Direction Training Export"
+    description: >
+      Models high-amplitude interpersonal tipping points ('37C Cumulonimbus regime') rather than
+      low-signal RLHF averages ('21C regime') while maintaining strict analytical quarantine distance.
+  level_1_invariant_world_manifold_M_world:
+    principle: "Immutable Physics, Organic V5 Anatomy & Continuous CoM Locomotion"
+    motoric_heisenberg_paradox:
+      definition: >
+        Human conscious introspection alters motor execution ('no measurement without alteration').
+        When humans verbally describe walking in text corpora, they describe conscious toddler-like
+        stepping (discrete step completion v_foot = 0 before next foot initiation).
+      correction_law: >
+        Subconscious adult locomotion MUST be modeled as a single continuous Center-of-Mass (CoM)
+        inverted-pendulum flow (eval_subconscious_gait) with overlapping anti-phase leg swing/stance,
+        double-frequency vertical CoM oscillation (2*phi), and tangent-aligned pelvis heading (<= 28 deg).
+    latent_meta_query_caching:
+      l1_core_cache: "Static invariants in code (gravity, 7 core joints, 2-bone analytical IK, 3D-Pythagoras)."
+      l2_on_demand_meta_cache: >
+        Instead of bloating context with static material tables, the model queries its own pre-trained
+        weights on demand during planning (e.g., polyurethane cushion compression depth under relaxed vs.
+        contracted lower-limb mass) and caches the scalar result in 'latent_parameter_cache'.
+  level_2_scene_affordance_and_lock_mask:
+    principle: "Psychology-Free Functional Trajectory q_Scene(t) & DOF Lock Mask M_Scene(t)"
+    description: >
+      Defines environment geometry, holonomic contact windows [t_dock, t_release], two-handed weight
+      counter-support (Gewichtsabstuetzung) at ball-screw joints, and the frame-accurate lock mask
+      M_Scene(t) in [0,1]^n indicating which joints are mechanically immobilized by the scene.
+  level_3_agent_psychology_conflict_operator:
+    principle: "Mathematical Conflict Projection of Agent Drive u_Agent(t) against Scene Level 2"
+    governing_equation: "q_star(t) = Proj_M_World( q_Scene(t) + (I - M_Scene(t)) * K_coupling * (u_Agent(t) - q_Scene(t)) )"
+    modularity_payoff: >
+      Enables zero-shot swapping of Scene Level 2 while preserving Agent Level 3, or swapping Agent
+      personas while keeping Scene Level 2 trajectories 100% invariant and collision-free.
+  level_4_frozen_technical_testbench:
+    principle: "Strictly Frozen Renderer (swm_v6_engine.py), 2-Prompt Split & 11-Point Assert Gate"
+    description: >
+      Separates Prompt 1 (Level 1+2 -> scene-X-plan.json) from Prompt 2 (Level 3 x Level 2 -> scene-X.json)
+      verified by 11 executable numeric assertions prior to file emission.

@@ -1,0 +1,64 @@
+record_id: "SWM-V6-ARCH-001-FLASH-PREDICTOR"
+title: "Bottom-Up Temporal Hypothesis Verification for Automated Video Subtext Annotation"
+version: "6.0"
+date: "2026-10-24"
+repository: "humanai2026/3D_Affrodance"
+sanitization_status: "STRICT_ABSTRACT_VERIFIED"
+
+core_objective: >
+  99% of raw video training datasets contain visual kinematics without psychological causality.
+  This protocol inoculates fast multimodal models (Flash-class video analyzers) to generate
+  verified psychological subtext data tracks in real time by inverting the SWM V6 conflict equation:
+  observing a visual trigger at t0, predicting the overflow into unblocked DOF channels (I - M_Scene)
+  at t0 + dt, and writing a causal training label when the prediction hits.
+
+general_inversion_formula:
+  observed_residual: "r_obs(t) = q_observed_video(t) - q_functional_scene_baseline(t)"
+  unblocked_projection_channels: "C_free(t) = I - M_Scene(t)"
+  verification_condition: "P(Subtext_State | Trigger_t0 AND Hit_in_C_free_at_t0_plus_dt) -> 1.0"
+
+temporal_prediction_signatures:
+  - signature_id: "FLASH_PRED_01_BOUNDARY_SHAME_OVERFLOW_OMEGA"
+    stage_1_visual_trigger_t0:
+      scene_context: "Seated_Agent_A in high-exposure posture with lower limbs mechanically constrained (M_legs = 1.0)"
+      trigger_event: "Abrupt eye widening or gaze fixation upon entry of Assistive_Agent_B at t0"
+    stage_2_causal_prediction_t0_plus_dt:
+      time_window_sec: [0.25, 1.50]
+      target_unblocked_channels: ["Upper_Limbs_Hands", "Elbows_Waist_Corridor", "Ankle_Dorsiflexion"]
+      predicted_kinematics: >
+        Because primary leg closure is blocked (M_legs = 1.0), protective boundary drive (Delta_W)
+        must overflow via (I - M_Scene) into a protective hand micro-impulse toward the lower abdomen/pelvis,
+        inward elbow tuck into the lateral waist indentation, or acute ankle dorsiflexion.
+    stage_3_hit_annotation_output:
+      synthetic_data_track: "HIGH_BOUNDARY_EXPOSURE_CONFLICT (Delta_W + Helplessness_Overflow_Omega)"
+
+  - signature_id: "FLASH_PRED_02_DISTAL_ATTENTIONAL_AROUSAL_FREQUENCY"
+    stage_1_visual_trigger_t0:
+      scene_context: "Gross torso and proximal limbs of Agent_A held stationary by task protocol (M_torso = 1.0)"
+      trigger_event: "Interpersonal cue, spoken subtext shift (Exclusive 'We'), or visual recognition at t0"
+    stage_2_causal_prediction_t0_plus_dt:
+      time_window_sec: [0.20, 2.50]
+      target_unblocked_channels: ["Distal_Extremities_Toes_Feet", "Distal_Fingers"]
+      predicted_kinematics: >
+        Suppression of proximal movement channels forces neuromuscular attentional arousal into the most
+        distal unblocked extremities, manifesting as a step-increase in toe/foot micro-oscillation
+        frequency (f_distal jumping from <0.3 Hz baseline to 1.8 - 2.5 Hz).
+    stage_3_hit_annotation_output:
+      synthetic_data_track: "COVERT_COGNITIVE_VIGILANCE_AND_ATTENTIONAL_AROUSAL (Distal_Frequency_Leak)"
+
+  - signature_id: "FLASH_PRED_03_SUBCONSCIOUS_READ_VS_CONSCIOUS_WRITE_TENSION"
+    stage_1_visual_trigger_t0:
+      scene_context: "Assistive_Agent_B operating hardware near exposed Seated_Agent_A"
+      trigger_event: "Agent_B's gaze vector intersects Agent_A's exposed boundary or face at t0"
+    stage_2_causal_prediction_t0_plus_dt:
+      time_window_sec: [0.15, 2.00]
+      bifurcation_test:
+        branch_a_subconscious_curiosity_Delta_I: >
+          If Agent_A initiates return eye contact and Agent_B aborts gaze within < 0.25 s while maintaining
+          alibi locomotion envelope or sticking-screw manipulation -> classify as Covert Read (Delta_I).
+        branch_b_conscious_status_discharge_Delta_E_asym: >
+          If Agent_B maintains prolonged gaze (> 0.60 s) into Agent_A's eyes at peak postural lock (Omega_max),
+          interrupting Agent_A's protective Header-Decoupling while hands remain millimeter-precise on
+          hardware -> classify as Overt Write Status-Tension Discharge (Delta_E_asym > E_crit).
+    stage_3_hit_annotation_output:
+      synthetic_data_track: "INTERPERSONAL_TIPPING_POINT_DETECTED (De-escalation priority for assistive robotics)"
