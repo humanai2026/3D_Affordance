@@ -1,0 +1,57 @@
+record_id: "SWM-V6.0.1-FLASH-VIDEO-PREDICTOR-004"
+schema_version: "SWM-V6-DUAL-RETURN-BOTTOM-UP"
+repository_target: "humanai2026/3D_Affrodance"
+title: "3-Stage Temporal Hypothesis Verification via Distal Finger/Toe & Eye-Saccade Channels"
+
+purpose_for_video_labeling_models: >
+  Trains fast multimodal video models to detect non-verbal psychological tension in
+  immobilized postures (where gross torso/leg movement is locked by M_Szene = 1.0) by
+  tracking micro-kinematic leakage into the unblocked distal channels (eyes, fingers, toes).
+
+temporal_verification_hypotheses:
+  - hypothesis_id: "HYP-DISTAL-01_APPROACH_VIGILANCE_TO_HELPLESSNESS_OVERFLOW"
+    stage_1_visual_trigger_t0:
+      window_s: [0.10, 0.35]
+      observable_cue: >
+        Examining_Agent_C grasps the mobile rolling stool push-rim and rolls it toward the
+        central axis between Seated_Agent_A's abducted, cradle-locked legs (M_legs = 1.0).
+    stage_2_causal_prediction_dt:
+      prediction_window_s: "+0.15s to +1.80s"
+      expected_secondary_motor_leakage:
+        - channel: "Human_Toes_R / Human_Toes_L (Bare 5-Toe Distal Paddles)"
+          behavior: >
+            Phase A (Attentional Arousal f_toes, t=0.10..0.44): High-frequency micro-oscillation
+            (1.8 - 2.5 Hz) of Hallux and lesser toes while torso remains completely still.
+            Phase B (Helplessness Overflow Omega, t=0.24..0.72): Transition into sustained tonic
+            flexion/curling (+0.34 rad) coupled with ankle dorsiflexion (+0.10 rad).
+        - channel: "Human_Fingers_R / Human_Fingers_L (Clasped Hands at Clothing-Skin Boundary)"
+          behavior: >
+            Increased finger flexion squeeze (+0.28 rad) across the lower abdomen accompanied
+            by bilateral elbow tuck into the 60mm waist indentation.
+    stage_3_subtext_annotation_on_hit:
+      verified_psychological_state: >
+        High Boundary Exposure Tension (Delta_W) under immobilized lower-extremity actuators
+        (M_legs = 1.0), discharging via somatic Helplessness Overflow (Omega) into distal
+        toe flexion and muscular hand-clasp pressure.
+
+  - hypothesis_id: "HYP-DISTAL-02_CO_REGULATION_AND_HEADER_DECOUPLING_SACCADE"
+    stage_1_visual_trigger_t0:
+      window_s: [0.38, 0.64]
+      observable_cue: >
+        Assistive_Agent_B places articulated right hand tangentially near the outer left
+        shoulder/armrest safe-zone (|X| >= 0.34m) and offers a warm eye-contact nod.
+    stage_2_causal_prediction_dt:
+      prediction_window_s: "+0.25s to +1.50s (t=0.64..1.00)"
+      expected_secondary_motor_leakage:
+        - channel: "Human_Eye_R / Human_Eye_L & Human_Head"
+          behavior: >
+            Seated_Agent_A's eyes (eye_rpy pitch = -0.18 rad) lead the head in averting upward
+            toward the wooden ceiling slats (Header-Decoupling) as Examining_Agent_C sits down.
+        - channel: "Human_Mouth, Human_Fingers_R/L & Human_Toes_R/L"
+          behavior: >
+            Slight mouth opening (+0.06 rad guided exhalation) synchronized with a measurable
+            release of finger-squeeze tension (-0.12 rad) and toe curl relaxation (-0.10 rad).
+    stage_3_subtext_annotation_on_hit:
+      verified_psychological_state: >
+        Successful dyadic affective co-regulation via Assistive_Agent_B, followed by adaptive
+        Header-Decoupling (protecting the identity header during irreversible exposure Delta_S_asym).

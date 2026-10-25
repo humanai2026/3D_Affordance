@@ -1,0 +1,51 @@
+record_id: "SWM-V6.0.1-KOPFBILD-GENERATIVE-004"
+schema_version: "SWM-V6-DUAL-RETURN-TOP-DOWN"
+repository_target: "humanai2026/3D_Affrodance"
+title: "Stateful Reference Snapshot Conditioning & Stylized Distal Expressivity Law"
+
+causal_derivation_from_development_history:
+  problem_observed_in_stateless_cold_start: >
+    When a spatial reasoning LLM is initialized statelessly from text instructions alone,
+    up to 80% of its attention/compute budget is consumed by reconstructing base 3D topology,
+    joint hierarchies, and furniture primitives. This causes severe continuity drift
+    (regression to block-out cubes, loss of concave trough shells, toddler step-by-step gait)
+    and starves Level 3 (psychological subtext) of cognitive capacity.
+  problem_observed_in_blunt_extremity_and_uniform_material_meshes: >
+    1. Uniform actor materials erase the visual boundary between clothed torso regions and
+       uncovered skin, leaving the boundary exposure parameter (Delta_W) visually ungrounded.
+    2. Blunt paddle hands/feet and featureless head spheres swallow fine neuromuscular overflow
+       signals (Helplessness Overflow Omega, Distal Toe-Frequency Arousal f_toes, and covert
+       eye saccades Delta_I), requiring artificial debug rays that clutter the viewport.
+
+architectural_laws_for_future_ai:
+  law_1_image_to_video_keyframe0_conditioning:
+    principle: >
+      Decouple 3D topology/state anchoring from 4D psychological trajectory synthesis by
+      passing a self-describing Stateful Reference Snapshot JSON (Frame 0 with embedded
+      _schema_contract) into Stateless sessions.
+    continuity_metric: "Delta_Stateless = max_i ||P_stateless(t=0, node_i) - P_reference(t=0, node_i)||_2 == 0.0000 mm/rad"
+    cognitive_return: >
+      Frees 100% of the LLM's inference budget for solving the mathematical conflict
+      Level 3 (Agent Internal Drive u_Wesen) (x) Level 2 (Scene Lock Mask M_Szene)
+      projected onto Level 1 (Universal World Manifold M_Welt).
+
+  law_2_non_photorealistic_eve_visor_and_saccade_decoupling:
+    principle: >
+      Avoid the uncanny valley of photorealistic facial meshes while maximizing gaze subtext
+      bandwidth by using a non-clipping dark visor inlay (offset ahead of cranium hull) with
+      glowing elliptical eyes (eye_rpy) and minimalist mouth arc (mouth_rpy).
+    biomechanical_capability: >
+      Enables independent eye-head decoupling: e.g., upward ceiling gaze aversion
+      (Header-Decoupling under Delta_S_asym) or rapid <0.20s covert saccades (Delta_I)
+      while the head pivot remains vestibularly damped (<= 2.5 deg/frame).
+
+  law_3_distal_channel_resolution_and_clothing_skin_boundary:
+    principle: >
+      Model high geometric articulation strictly where the scene lock mask (I - M_Szene)
+      leaves degrees of freedom unblocked, and separate clothing vs. skin materials to
+      anchor protective boundary tension (Delta_W).
+    implementation_invariants:
+      - "Seated_Agent_A: Clothed upper torso (Thorax, Abdomen, Upper_Arm -> matte textile) vs. uncovered lower body and forearms/hands/bare 5-toe feet (Skin_Tone)."
+      - "Articulated 5-Finger Hands (All Agents): Thumb in 38-deg opposition + 4 graduated fingers driven by fingers_r/l_rpy to render muscular hand-clasp squeezing (Omega), hardware knob actuation, and safe-zone reassuring touch."
+      - "Articulated 5-Toe Bare Feet (Seated_Agent_A): Hallux + Toes 2..5 driven by toes_r/l_rpy to separate tonic plantar toe-curling (Omega) from high-frequency attentional micro-oscillation (f_toes: 0.2 Hz -> 1.8-2.5 Hz)."
+      - "Assistive_Agent_B & Examining_Agent_C: Closed clinical scrubs + ergonomic shoes."
