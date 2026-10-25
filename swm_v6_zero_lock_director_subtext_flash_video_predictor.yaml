@@ -1,0 +1,29 @@
+record_type: "SWM_V6_Flash_Video_Temporal_Predictor"
+milestone_id: "MS_V6_04_OCULAR_DUEL_AND_SMIRK_CAUSALITY"
+version: "6.0"
+purpose: "Inoculate multimodal video models to detect non-verbal status transitions between a walking and a stationary agent via [Trigger(t0) -> Prediction(t0+dt) -> Hit_Validation]"
+sanitization_status: "STRICT_ABSTRACT_VERIFIED"
+
+temporal_prediction_rules:
+  - rule_id: "PRED_04A_OCULAR_GAZE_BREAK_TRIGGERS_OBSERVER_SMIRK"
+    visual_anchor_t0:
+      observation: >
+        Walking Agent_A and stationary Agent_B (M_Scene == 0) hold mutual eye contact for >1.0 s;
+        Agent_B exhibits chin elevation (-4 deg) and tracks Agent_A predominantly via eye rotation
+        rather than head turn. At t0, Agent_A's eyes dart downward/aside prior to head flexion.
+    causal_predictions_t0_plus_dt:
+      window_seconds: [0.15, 1.50]
+      predicted_markers:
+        - actor: "Agent_A"
+          channel: "Cervical_Pitch_And_Upper_Limb_Shield"
+          signature: "Delayed cervical head drop (+0.20 to +0.30 s after eye break) coupled with bilateral hand trajectory toward lower abdomen and increased finger flexion"
+        - actor: "Agent_B"
+          channel: "Oral_Labial_Roll_Asymmetry"
+          signature: "Transition from symmetrical labial curve to unilateral mouth-corner elevation (roll >= +0.12 rad) within 0.40 s of Agent_A's gaze aversion"
+        - actor: "Agent_A"
+          channel: "Distal_Toes_Post_Seating"
+          signature: "Once seated, tonic toe flexion followed by 1.8-2.5 Hz micro-oscillation"
+    validation_payoff:
+      if_prediction_hits: >
+        Confirm asymmetric status-rank inversion (Delta_E_asym > E_crit) and transition from
+        conscious facade to subconscious self-protection under social role constraints.

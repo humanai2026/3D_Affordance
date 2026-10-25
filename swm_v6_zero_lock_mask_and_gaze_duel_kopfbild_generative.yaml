@@ -1,0 +1,55 @@
+record_type: "SWM_V6_Generative_Kopfbild_Law"
+milestone_id: "MS_V6_02_ZERO_LOCK_MASK_AND_SUBCONSCIOUS_TAKEOVER"
+version: "6.0"
+sanitization_status: "STRICT_ABSTRACT_VERIFIED"
+
+core_discovery:
+  title: "The Zero-Lock-Mask Inversion (M_Scene = 0 != Idle) & 3-Phase Subconscious Takeover"
+  ai_blind_spot_corrected: >
+    Without directorial subtext, task-oriented LLMs equate zero functional task load in Level 2
+    (M_Scene = 0) with zero kinematic output (dq/dt = 0, 'parked mannequin' artifact).
+    Mathematically, M_Scene = 0 yields (I - M_Scene) = I, granting 100% unblocked actuator
+    bandwidth for Level 3 status projection and micro-expressive dominance.
+
+architecture_layers:
+  level_1_world_invariants:
+    - "Continuous CoM-flow adult locomotion (eval_subconscious_gait; overlapping anti-phase swing)"
+    - "Ocular-Before-Cervical Gaze-Break Lead: Under subconscious submission, eye_rpy breaks 5-8 frames (0.20-0.33s) prior to neck_head_rpy pitch drop"
+    - "Distal Extremity Micro-Frequency Law: Postural immobilization routes attentional arousal into 5 articulated toes (f_toes: 0.2 Hz -> 2.1 Hz)"
+
+  level_2_scene_constraints:
+    scene_id: "Room_Entry_And_Seating_Transition"
+    environment_topology: "4-wall closed room + articulated door leaf (door_rz) + exterior hallway privacy screen wall"
+    dof_lock_mask:
+      Stationary_Agent_B:
+        mechanical_task_load: 0.0
+        free_expressive_bandwidth: 1.0
+      Entering_Agent_A:
+        phase_1_2_locomotion_mask: {lower_limbs: 0.75, upper_limbs: 0.0, cervical_ocular: 0.0}
+        phase_3_seated_mask: {lower_limbs: 0.85, upper_limbs: 0.0, distal_digits: 0.0}
+      Exterior_Agent_C:
+        waiting_in_hallway_behind_closed_door: true
+
+  level_3_conflict_operators:
+    equation: "q_star(t) = Proj_Level1( q_Scene(t) + (I - M_Scene(t)) * K * (u_Agent(t) - q_Scene(t)) )"
+    stationary_agent_b_status_projection:
+      chin_elevation_pitch_rad: -0.07
+      head_to_eye_azimuth_tracking_ratio: 0.25
+      ocular_dominance: "Sharp eye_rpy tracking without eager cervical head-following"
+      asymmetric_mouth_roll_smirk_rad: 0.15
+      trigger_condition: "Fires at exact frame Entering_Agent_A breaks eye contact (t_norm = 0.45)"
+      arm_posture: "Transition from neutral readiness to calm, territorial solar-plexus hand clasp"
+    entering_agent_a_blind_shackles_transition:
+      phase_1_conscious_cool_facade:
+        t_window: [0.00, 0.26]
+        kinematics: "Upright head pitch (+0.02 rad), relaxed finger curl (0.20 rad)"
+      phase_2_recognition_and_gaze_duel:
+        t_window: [0.26, 0.45]
+        kinematics: "Mutual eye-lock; realization of socially sanctioned role inevitability ('blind shackles')"
+      phase_3_subconscious_takeover:
+        t_window: [0.45, 1.00]
+        kinematics:
+          - "Ocular gaze-break downward/aside at t=0.45, followed by cervical head drop at t=0.48"
+          - "Protective upper-limb routing via eval_l_corridor to lower abdomen shield"
+          - "5-finger muscular interlacing (fingers_rpy curl: 0.20 -> 0.88 rad)"
+          - "5-toe tonic curling (0.32 rad) + 2.1 Hz attentional micro-oscillation upon seating"
