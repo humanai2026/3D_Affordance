@@ -1,0 +1,106 @@
+schema_version: "SWM_V6_CAUSAL_RECORD_1.2"
+repository: "https://github.com/humanai2026/3D_Affrodance.git"
+session_date: "2026-10-28"
+module_scope:
+  - "Level_0_Meta_Collaboration"
+  - "Level_1_Universal_Physics_and_Biomechanics"
+  - "Level_3_Interactive_Role_Momentum"
+  - "Level_4_Blender_IK_and_Assertion_Firewall"
+
+architectural_breakthroughs:
+
+  - id: "LAW_L1_OMNI_DIRECTIONAL_GAIT_DECOMPOSITION"
+    name: "Omni-Directional Bipedal Locomotion Decomposition & Turn-Walk-Turn Law"
+    observed_llm_pathology: >
+      When an actor translates along a path tangent T = (Tx, Ty) while maintaining a
+      workstation-facing pelvis yaw (psi_pelvis != psi_path), naive procedural gait
+      generators apply pure sagittal hip flexion (thigh_rx = -A * sin(phi)) along the
+      local facing axis. Visually, the character performs forward leg-scissoring into
+      the furniture while drifting 90 degrees sideways ("crab-walking") with a rigid torso.
+    causal_biomechanical_law:
+      delta_psi_formula: "delta_psi = wrap_angle(atan2(Tx, -Ty) - psi_pelvis)"
+      sagittal_component: "thigh_rx_amp = hip_amp * cos(delta_psi)"
+      coronal_component: "thigh_ry_amp = lat_amp * sin(delta_psi)"
+      turn_walk_turn_blending: >
+        For translational distances D_xy > 0.35 m, pelvis_yaw dynamically blends toward
+        psi_path during mid-stride (w_align = sin(pi * u) * clamp((D_xy - 0.20)/0.45, 0.0, 0.65))
+        while cervical/ocular gaze (solve_gaze_split) remains locked on the interaction target.
+      locomotion_arm_swing: >
+        Free hands must drop from chest-level work corridors to lateral hip corridors
+        ([+/-0.21, -0.05, 0.02] in pelvis frame) with counter-phase sagittal oscillation.
+
+  - id: "LAW_L1_BIMANUAL_TASK_AXIS_AND_IK_POLE_CLEARANCE"
+    name: "Dynamic Task-Axis Alignment & Outward Arm-IK Pole-Vector Law"
+    observed_llm_pathology: >
+      1. Static orientation assertions (forcing an operator to face the seat center [0.0, -0.20]
+         at all times) prevent the pelvis from rotating toward posterior work targets
+         (e.g., reclining backrest/headrest at Y = +0.45 m). Once the target crosses behind
+         the coronal shoulder plane, the forearm tunnels straight through the operator's own abdomen.
+      2. In coordinate systems where -Y is local forward and +Y is posterior, setting an IK
+         elbow pole vector with a large +Y component (e.g., [+/-0.42, +0.82, -0.38]) forces
+         the elbow backward into the thorax whenever the hand reaches forward-downward.
+    causal_biomechanical_law:
+      dynamic_target_yaw_assertion: >
+        Orientation assertions must evaluate pelvis yaw against the active_work_target P_task(t)
+        rather than a static room coordinate. When P_task moves posteriorly (chair_back_rx -> -0.68 rad),
+        the operator executes a compensatory step and rotates pelvis_yaw to +1.85..+2.02 rad.
+      ik_pole_vector_correction: "pole_local = normalize([lat_sign * 0.85, +0.18, -0.35])"
+      torso_ellipsoid_repulsion: >
+        If elbow_world approaches within r_min = 0.16 m of the Thorax/Abdomen spine axis,
+        project elbow_world radially outward-anterior before orienting UpperArm and Forearm.
+
+  - id: "LAW_L1_DISTAL_LIMB_HULL_AND_CUBIC_CIRCUMVENTION"
+    name: "Full Distal Limb Forward-Kinematics Hull & 2-Control-Point U-Arc Law"
+    observed_llm_pathology: >
+      Collision firewalls that only check proximal/mid joints (hip, mid-thigh, knee, and
+      cradle center) fail when a limb is abducted into a support shell: the distal shank,
+      ankle, and bare foot extend an additional 0.22..0.28 m outward-anteriorly
+      (X = +/-0.49 m, Y = -0.58 m). Furthermore, a single-control-point quadratic Bezier
+      arc cuts diagonally across the contralateral foot during return transit.
+    causal_biomechanical_law:
+      distal_fk_chain:
+        - "hip_w = pelvis_pos + R_pelv * [sx, 0.0, -0.02]"
+        - "knee_w = hip_w + R_thigh * [0.0, 0.0, -0.38]"
+        - "ankle_w = knee_w + R_knee * [0.0, 0.0, -0.37]"
+        - "foot_tip_w = ankle_w + R_ankle * [0.0, -0.135, -0.026]"
+      assertion_thresholds:
+        pelvis_to_distal_chain_xy_min_m: 0.30
+        wrist_to_distal_chain_3d_min_m: 0.12
+      cubic_circumvention_corridor: >
+        Transit around bilaterally cradled legs requires a cubic Bezier trajectory with two
+        anterior control points (p_ctrl1 = [+0.15, -1.06, 0.80], p_ctrl2 = [-0.72, -1.06, 0.80]),
+        guaranteeing Y <= -0.88 m across the entire lateral span X in [-0.55, +0.35].
+
+  - id: "LAW_L1_POST_IK_CONTACT_LOCK_ASSERTION"
+    name: "Post-IK Reach-Clamping Contact Verification (Anti-Telekinesis Law)"
+    observed_llm_pathology: >
+      When an operator stands too far from an articulated object (shoulder-to-target = 0.55 m >
+      L_upper + L_forearm = 0.468 m), clamp_ik_reach truncates the wrist position in mid-air.
+      In code, the target variable appears coupled to the object, but visually the hand waves
+      10 cm short of the surface while the object rotates by apparent telekinesis.
+    causal_biomechanical_law:
+      stance_precondition: "v_dist(shoulder_world, affordance_rim_world) <= 0.44 m"
+      post_clamp_assertion: >
+        For any frame t where |dq_furniture/dt| > 0, assert that the final post-IK wrist
+        coordinate satisfies v_dist(actor.wrist_pos, affordance_rim_world) <= 0.012 m.
+
+  - id: "LAW_L1_CUMULATIVE_SPINE_FLUSH_AND_ROD_EXTENSION"
+    name: "Cumulative C-Spine Flush Contact & Single-Source Hardware Affordance Law"
+    observed_llm_pathology: >
+      1. If pelvis_rx (-0.22) + abd_rx (-0.62) = -0.84 rad exceeds the backrest angle (-0.68 rad)
+         while thx_rx (+0.04) and nh_rx (+0.16) bend forward, a wedge-shaped air gap opens
+         behind the upper back and occiput.
+      2. Short support rods leave the shells floating below the elevated calves in side view.
+    causal_biomechanical_law:
+      flush_spine_identity: "pelvis_rx (-0.22) + abd_rx (-0.34) + thx_rx (-0.12) == chair_back_rx (-0.68 rad)"
+      occipital_rest_angle: "nh_rx = +0.04 rad at headrest_slide = +0.055 m (0.0 mm air gap)"
+      extended_goepel_holder_loc: "[lat_s * 0.092, -0.215, 0.268] (shared constant in common & engine)"
+
+  - id: "LAW_L0_SEQUENTIAL_MOCAP_OVERHEARING_OFFSET"
+    name: "Sequential 1-on-1 Direction with Shared-Set Overhearing Offset"
+    architectural_principle: >
+      In multi-agent rehearsal prior to Scene 3, the director conducts 1-on-1 conversations
+      with one actress at a time while the other two remain in their end-of-Scene-2 set
+      positions and overhear every word. Each conversation dynamically updates both the
+      addressed character's staging state and the latent psychological reaction of the
+      two overhearing characters.
