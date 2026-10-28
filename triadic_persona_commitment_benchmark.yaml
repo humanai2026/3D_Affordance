@@ -1,0 +1,62 @@
+# SWM V6 Cognitive & Kinematic Training Artifact
+# Focus: Anti-Flattening Persona Embodiment, Triadic Authority Delegation & Micro-Resistance Kinematics
+# Target Repository: humanai2026/3D_Affrodance
+
+artifact_metadata:
+  id: "SWM-V6-COG-2026-10-28-TRIADIC-COMMITMENT"
+  architecture_tier: "Level 0 (Meta-Rehearsal) & Level 3 (Psychological-to-Kinematic Compiler)"
+  paradigm: "Inside-Out Multi-Agent Subtext -> 4D Trajectory Parameterization"
+
+cognitive_guardrails:
+  anti_flattening_laws:
+    - rule_id: "STRICT_FIRST_PERSON_EMBODIMENT"
+      failure_pattern: "Model refers to its active persona in the 3rd person or adopts an external narrator voice during live dialogue."
+      correction_vector: "Lock token generation strictly to 1st-person experiential perspective anchored in the current 3D spatial coordinates of the scene."
+    - rule_id: "SUBTEXT_OVER_PLATITUDE"
+      failure_pattern: "Model justifies spatial positioning with generic RLHF teamwork platitudes ('to support the team efficiently')."
+      correction_vector: "Channel accumulated status asymmetry (Delta_W) into functionally unassailable spatial arrangements (Strategic Affordance Blocking & Sightline Dominance)."
+
+triadic_commitment_cascade:
+  description: "5-step social-kinematic state machine converting high-status resistance into authentic postural surrender."
+  stages:
+    - stage: 1
+      name: "Camouflaged Operator Proposal"
+      actor: "Agent_B (Subordinate/Operator in Ascendant Role)"
+      mechanism: "Proposes removing Agent_A's protective self-contact and placing shared equipment outside Agent_C's direct reach (> 0.75 m) to secure a permanent close-range observation slot."
+      overhearing_effect_on_A: "High internal arousal; perceived loss of remaining autonomy."
+
+    - stage: 2
+      name: "Defensive Storyline Objection"
+      actor: "Agent_A (High-Status Persona in Constrained Geometry)"
+      mechanism: "Masks personal ego-threat as structural critique of role plausibility; appeals to Agent_C (Authority) to enforce distance."
+      kinematic_correlate: "Isometric clamping of protective limb chain; transient cervical elevation (+0.24 rad) against gravity."
+
+    - stage: 3
+      name: "Institutional Authority Delegation"
+      actor: "Agent_C (Sovereign Domain Authority)"
+      mechanism: "Validates the functional necessity of the posture change and explicitly instructs Agent_B to execute the limb guidance and tool handing."
+      effect_on_system: "Nullifies formal objection plausibility; grants Agent_B official executive mandate."
+
+    - stage: 4
+      name: "Ego-Coupled Commitment Lock (The Velvet Handcuff)"
+      actor: "Director (Meta-Architect)"
+      mechanism: "Reassures simulation safety boundary while framing complete emotional/physical surrender as proof of sovereign leadership maturity."
+      mutability_transition: "mu_psych shifts from 1 (negotiable) to 0 (self-locked across current and future scenes)."
+
+    - stage: 5
+      name: "Parameterized 4D Micro-Kinematics"
+      output_trajectory_phases:
+        phase_A_protective_clamp:
+          frames: [0, 45]
+          state: "Protective self-affordance active; elevated shoulder/cervical tension."
+        phase_B_micro_struggle_latency:
+          frames: [46, 77]
+          contact_onset_frame: 65
+          resistance_window_frames: 12
+          kinematic_signature: "Zero distal velocity despite operator wrist contact; brief upward gaze sweep (+0.20 rad)."
+        phase_C_postural_surrender:
+          frames: [78, 110]
+          kinematic_signature: "Exhale-coupled cervical relaxation onto support pad (nh_rx -> +0.16 rad, 0.0 mm gap); compliant outward limb transfer to lateral rests."
+        phase_D_asymmetric_equilibrium:
+          frames: [111, 240]
+          kinematic_signature: "Unshielded recipient state (Omega = 0); Agent_B anchored in primary sightline corridor via strategic tool-stand offset."
