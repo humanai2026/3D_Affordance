@@ -2,7 +2,7 @@
 # SWM STAGE 3 - SPATIAL REASONING BENCHMARK & CORRECTION RECORD (V4.5.1 -> V4.5.3)
 # Repository: https://github.com/humanai2026/3D_Affrodance.git
 # Artifact: Root-Cause Cognitive Analysis of Additive Euler Sign-Inversion
-#           ("The BDSM Bug"), Cumulative Origin-to-CoM Offset Blindness
+#           ("The Posterior-Arm-Inversion Bug"), Cumulative Origin-to-CoM Offset Blindness
 #           ("Neck Bolster vs. Headrest"), & The Two-Part Torso Waist-Clearance Law
 # ==============================================================================
 
@@ -23,7 +23,7 @@ cognitive_blind_spots_diagnosed:
     visual_symptom_in_blender: >
       At Frame 120 (t = 1.00, backrest reclined to rx = -1.05 rad / -60 deg), the
       patient dummy's upper arms swung backward through the backrest cushion and
-      folded behind the spine ("BDSM posture" in image_21a35f.png) instead of
+      folded behind the spine ("BD posture" in image_21a35f.png) instead of
       resting protectively over the lower abdomen.
     what_the_model_thought: >
       In V4.5.1, the model reasoned: "Because the torso reclines by 0.70 rad
