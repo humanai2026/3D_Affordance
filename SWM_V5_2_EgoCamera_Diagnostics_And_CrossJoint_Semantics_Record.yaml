@@ -76,7 +76,7 @@ benchmark_record:
         resulting_polarity: "-1.0 (Anxious Avoidance / Helpless Endurance)"
         psychological_mechanism: >
           The hands guard the vulnerable core while the eyes flee the situational reality.
-      state_positive_hedonic_anticipation:
+      relaxed_open_trust:
         gaze_vector: "Upward to Ceiling (Identical head/neck angles!)"
         arm_topology: "Shoulders maximally abducted and externally rotated; elbows flared wide; hands clasped behind neck/occiput (100% voluntary abandonment of anterior body shielding)"
         resulting_polarity: "+1.0 (Expectant Enjoyment / Sovereign Sensory Surrender)"
