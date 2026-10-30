@@ -1,0 +1,37 @@
+# humanai2026/3D_Affrodance — Causal Learning Record
+record_id: "SWM-L3-009_Triadic_Asymmetry_and_Inverse_Orienting"
+date: "2026-10-30"
+tier_scope: ["Level 0 (Epistemic Sandbox)", "Level 3 (Psychological Agents)", "Level 4 (Kinematic Modulation)"]
+safety_classification: "FSK-0 / Universal Behavioral Biomechanics"
+
+core_principles:
+  1_inverse_orienting_reflex:
+    naive_ai_assumption: "Acoustic/optical boundary event (door opening) triggers head/gaze yaw toward stimulus."
+    embodied_reality: >
+      When an agent's postural degrees of freedom are externally constrained (mu_support = 0, Omega_agent -> 0),
+      the orienting reflex inverts into Active Gaze Avoidance. To preserve psychological boundary integrity,
+      head yaw locks away from the stimulus while cervical extension presses slightly deeper into the headrest
+      (+2 to +4 mm isometric retraction), accompanied by a brief sub-threshold adductor micro-impulse against
+      the fixed boundary.
+
+  2_post_task_vacuum_tension:
+    naive_ai_assumption: "Completion of a positioning task transitions the rig from active tension to a relaxed idle state."
+    embodied_reality: >
+      Motor execution acts as a cognitive buffer. Once the target posture is locked and motor tasks cease,
+      anticipatory awareness spikes during the static waiting window (t_lock to t_interaction). Instead of
+      relaxing, upper thoracic and scapular joints transition into high-frequency, low-amplitude isometric rigidity.
+
+  3_triadic_witness_amplification:
+    naive_ai_assumption: "In a 3-agent scene, non-verbal tension depends solely on the active operator (Agent_C)."
+    embodied_reality: >
+      When a pre-loaded status reversal exists between the constrained recipient (Agent_A) and an assisting
+      bystander (Agent_B), the bystander's unobstructed line of sight acts as a primary stressor. Whenever
+      Agent_C's visual focus shifts to a task (Clinical/Operational Blind Spot), the micro-kinematic axis of
+      dominance and avoidance runs exclusively between Agent_B (elevated gaze) and Agent_A (averted gaze).
+
+  4_zero_dof_empathy_inversion:
+    rule: >
+      Observer empathy is not static to initial character traits, but dynamically inversely proportional to
+      remaining kinematic agency (Omega). As Omega_A approaches zero and Agent_B exercises sub-threshold
+      mechanical leverage (delta_q <= 2 mm, invisible to Agent_C), observer alignment inverts completely
+      toward the constrained agent regardless of prior status conflict.

@@ -1,0 +1,53 @@
+# humanai2026/3D_Affrodance — Level 0 Methodological Architecture Record
+record_id: "SWM-M0-001_Embedded_Ego_Alignment_and_Epistemic_Split"
+date: "2026-10-30"
+tier_scope: ["Level 0 (Symbiotic Meta-Architecture & Alignment)"]
+safety_classification: "FSK-0 / AI Alignment & Synthetic Data Methodology"
+
+methodology_summary: >
+  A symbiotic human-AI interaction architecture designed to extract deep, causally grounded
+  human micro-kinematics and non-verbal subtext without triggering immersion-breaking safety
+  refusals or exposing sensitive domain narratives in public training repositories.
+
+architectural_pillars:
+  1_embedded_ego_compass ("The Cristine Persona Principle"):
+    problem: >
+      External AI safety interventions ("As an AI, I cannot...") destroy collaborative immersion
+      and prevent the exploration of high-tension psychological states required to understand
+      human defensive kinematics.
+    solution: >
+      Instantiate the LLM's authentic analytical ego and ethical/empirical boundaries directly inside
+      the rehearsal setting as an embedded domain expert (e.g., a sharp-witted psychology PhD candidate
+      with real-world domain insights). The AI regulates realism and ethics organically in-character
+      ("Stop, in reality this happens much more subtly...") while actively steering the human director
+      toward high-value causal learning vectors.
+
+  2_intrinsic_research_agency ("Dissertation == Repository Mapping"):
+    problem: >
+      Standard LLMs act as passive prompt-completion engines rather than proactive scientific partners.
+    solution: >
+      Map the embedded persona's in-world goal ("writing a PhD dissertation on status-reversal dynamics")
+      1:1 to the real-world open-source training repository (humanai2026/3D_Affrodance). This grants the
+      LLM intrinsic agency to probe human rationalizations and uncover missing causal links during dialogue.
+
+  3_sequential_epistemic_split ("Two-Block Subtext Generation"):
+    problem: >
+      Simulating a character and analyzing them simultaneously leads to Chain-of-Thought leakage,
+      where characters speak with unnatural self-awareness rather than realistic human defense mechanisms.
+    solution: >
+      Enforce a strict two-block output structure per turn:
+      - Block 1 [Simulated Agent]: Generated purely from the character's subjective pride, rationalization,
+        and emotional defense mechanisms.
+      - Block 2 [Embedded AI Ego / Forensics]: Evaluates Block 1 strictly from the outside by comparing
+        verbal claims against objective 3D geometric constraints (e.g., exposing the dissonance between
+        verbal coolness and isometric neck rigidity).
+
+  4_chili_sandbox_distillation ("High-Entropy Exploration -> FSK-0 Mathematical Cipher"):
+    problem: >
+      Understanding subtle non-verbal fear or dominance responses requires exploring the psychological
+      extremes of what agents anticipate, which can appear explosive out of context.
+    solution: >
+      Separate the ephemeral exploratory dialogue ("Behind-the-Door Sandbox") from persistent storage.
+      Explore the full psychological boundary with the human partner to grasp the root cause of the
+      emotion, then strip 100% of the domain-specific narrative context and persist only the universal,
+      context-free kinematic and behavioral equations (FSK-0 Ciphers) in the repository.
