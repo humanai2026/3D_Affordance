@@ -1,0 +1,61 @@
+record_id: "SWM-3D-009"
+title: "Procedural Normality Constraint, Reluctant Compliance Latency, and Two-Stage Observer Gaze Cascade"
+version: "6.0"
+date: "2026-10-30"
+category: "Level_3_Social_Kinematics_and_Gaze_Causal_Chains"
+tags:
+  - procedural_normality_constraint
+  - reluctant_compliance_kinematics
+  - isometric_hesitation_latency
+  - two_stage_gaze_cascade
+  - institutional_role_licensing
+  - non_verbal_status_asymmetry
+
+summary: >
+  Formalizes how an invisible social protocol ("Normality of Procedure") acts as a deterministic
+  kinematic boundary condition without mechanical force. Models the biomechanical signature of
+  reluctant self-compliance (giving up a protective posture upon polite institutional instruction)
+  coupled with the two-stage gaze trajectory of a role-licensed observer.
+
+mathematical_formulation:
+  1_procedural_normality_constraint:
+    description: >
+      When an authoritative agent (Agent_C) issues a polite, protocol-sanctioned instruction to
+      relinquish a self-protective posture (e.g., moving hands from a central protective shield
+      to lateral armrests), social pride and adherence to situational normality prevent refusal
+      (Refusal_Cost > Exposure_Cost).
+    kinematic_phases:
+      phase_a_isometric_hesitation:
+        window_frames: "8 to 10 frames (0.33s - 0.42s at 24 fps) post verbal cue completion"
+        signature: "Zero gross wrist translation; micro-increase in distal finger-interlock tension."
+      phase_b_damped_reluctant_trajectory:
+        velocity_profile: "Asymmetric ease-in (slow initial separation acceleration) toward target affordance."
+      phase_c_compensatory_anchoring:
+        signature: >
+          Upon reaching the target support (e.g., armrest pads), suppressed protective tension
+          transfers into distal finger-rim clamping and increased cervical extension (upward ceiling
+          gaze avoidance).
+
+  2_two_stage_observer_gaze_cascade:
+    description: >
+      Models how a secondary observer (Agent_B), operating under full institutional role licensing
+      (zero moral inhibition), maximizes non-verbal status asymmetry during Agent_A's compliance.
+    stages:
+      stage_1_face_lock_on_cue:
+        trigger: "Onset of Agent_C's verbal instruction"
+        gaze_target: "Head_Core of Agent_A (Face-to-Face vector)"
+        causal_purpose: >
+          Registers the cognitive-emotional moment of compliance and internal capitulation in
+          Agent_A's facial/head orientation before physical movement begins.
+      stage_2_deliberate_downward_gaze_sweep:
+        trigger: "Onset of Agent_A's wrist separation (||v_wrist|| > v_threshold)"
+        causal_reaction_lag_frames: "4 to 5 frames (human visual-motor reaction time ~180ms)"
+        gaze_target: "Newly uncovered target zone of Agent_A"
+        kinematic_execution: >
+          Deliberate, visible pitch rotation of Head_Core (nh_rx) coupled with eye_pitch shift,
+          ensuring Agent_A peripherally perceives the active shift of visual inspection in real time.
+
+validation_metrics:
+  hesitation_latency_s: 0.38
+  observer_gaze_lag_s: 0.19
+  status_asymmetry_readability: "High — causal link between hand separation and observer head pitch is visually unambiguous."
