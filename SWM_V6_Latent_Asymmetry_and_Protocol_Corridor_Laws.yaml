@@ -1,0 +1,108 @@
+# ==============================================================================
+# SMALL WORLD MODEL (SWM V6) — COGNITIVE & KINEMATIC TRAINING RECORD
+# File: SWM_V6_Latent_Asymmetry_and_Protocol_Corridor_Laws.yaml
+# Repository: humanai2026/3D_Affrodance
+# Classification: Level 0 / Level 3 — Social Physics, Expectancy Gradients & Micro-Force Modulation
+# Safety & Abstraction Standard: 100% Universal Biomechanical & Behavioral Formalism (FSK-0)
+# ==============================================================================
+
+record_id: "SWM-V6-L3-010"
+date: "2026-10-31"
+architects:
+  - "Thomas (Embodied Human Systems Architect)"
+  - "Cristine / Argon-Ego (Cognitive & Behavioral Formalization)"
+
+summary: >
+  Formalizes three foundational laws of human-agent interaction under asymmetric
+  role inversions: (1) The Double-Inverted Expectancy Gradient (Relief-to-Lock
+  Amplitude Amplification), (2) Sub-Threshold Force and Gaze Modulation within
+  Institutional Protocol Corridors (Plausible Deniability Bounds), and (3) The
+  Three-Stage Non-Contact Observational Cascade in Triadic Workstations.
+
+# ------------------------------------------------------------------------------
+# LAW 1: DOUBLE-INVERTED EXPECTANCY GRADIENT (RELIEF-TO-LOCK AMPLIFICATION)
+# ------------------------------------------------------------------------------
+law_1_expectancy_gradient:
+  name: "Relief-Dip to Commitment-Lock Shock Amplification"
+  target_scene: "Scene_0_Preload_and_Entry"
+  causal_mechanism: >
+    Autonomic and kinematic startle amplitudes in human actors are governed not by
+    the absolute magnitude of an environmental stressor E(t), but by the temporal
+    gradient dE/dt relative to the immediate prior expectancy baseline E_hat(t - dt).
+  phases:
+    phase_a_initial_alert:
+      t_window: "t < -120s (Pre-Scene Waiting Zone)"
+      state: "Actor_A detects a socially pre-loaded counterpart (Actor_B), raising baseline vigilance."
+    phase_b_false_relief_dip:
+      t_window: "t = -90s..-10s"
+      state: >
+        Contextual cues suggest Actor_B is assigned to an unrelated background task.
+        Actor_A experiences a parasympathetic relief drop (E_hat -> 0) and crosses
+        an irreversible procedural commitment threshold (entering the prep state).
+    phase_c_substitution_shock:
+      t_window: "Scene_0 (Frame 0..60)"
+      state: >
+        Due to an unannounced operational substitution, Actor_A encounters Actor_B
+        as the primary workstation operator after crossing the commitment threshold.
+  kinematic_manifestation:
+    gait_interruption: "10..12 frame bipedal velocity freeze during weight transfer (Locomotion Stutter)."
+    protective_micro_reflex: "Bilateral wrist vector dip toward lower garment hem (+0.04m..+0.06m Z-shielding impulse) prior to pride-driven posture recovery."
+
+# ------------------------------------------------------------------------------
+# LAW 2: SUB-THRESHOLD MODULATION WITHIN PROTOCOL CORRIDORS (PLAUSIBLE DENIABILITY)
+# ------------------------------------------------------------------------------
+law_2_protocol_corridor_modulation:
+  name: "Latent Status Equilibration within Institutional Tolerance Bounds"
+  cognitive_principle: >
+    When two actors share an unresolved prior status asymmetry (Prior_Dissonance > 0)
+    and enter an institutional setting where Actor_B holds procedural authority over
+    an immobilized Actor_A (mu_locomotion = 0), latent interpersonal tension rarely
+    manifests as overt rule violation. Instead, it modulates physical and visual
+    parameters strictly within the "Corridor of Plausible Deniability"
+    [P_min_protocol, P_max_protocol].
+  mathematical_model:
+    parameter_equation: "P_applied(u) = P_nominal + u * (P_max_tolerable - P_nominal)"
+    control_variable_u:
+      empathetic_rapport: "u in [-0.5, 0.0] -> Force/proximity minimized toward comfort boundary P_min."
+      neutral_routine: "u = 0.0 -> Standard nominal execution P_nominal."
+      unresolved_status_friction: "u in [+0.6, +0.95] -> Parameter pushed to the upper edge of protocol tolerance P_max_tolerable without crossing the overt violation threshold."
+  observational_implication_for_ai: >
+    Embodied AI systems evaluating human-human or human-robot assistance must read
+    micro-shifts in holding tension, dwell duration, and gaze alignment within valid
+    procedural bounds as primary indicators of latent relational subtext.
+
+# ------------------------------------------------------------------------------
+# LAW 3: THREE-STAGE NON-CONTACT OBSERVATIONAL CASCADE (SCENE 4 WORKSTATION)
+# ------------------------------------------------------------------------------
+law_3_triadic_inspection_cascade:
+  name: "Triadic Non-Contact Focus & Epistemic Return Gaze"
+  target_scene: "Scene_4 (Frame 0..240, following Handshake_3_to_4)"
+  geometric_safety_invariant:
+    rule: "d_clearance(Doctor_C_Hands, Patient_A_Hull) >= 0.010 m (10 mm strict air gap, zero instrument usage)"
+  stages:
+    stage_1_shield_release:
+      frames: "0..90"
+      kinematics: >
+        Under MTA_B's direct eye contact (Face-Lock), Patient_A exhibits an 8..10 frame
+        isometric hesitation before transferring both hands from the lower abdomen to
+        Chair_Armrest_Pad_R/L. 4..5 frames post-separation, MTA_B pitches head downward
+        (nh_rx +0.24 rad, Stage 2 Downward Gaze-Sweep).
+    stage_2_over_shoulder_witness_alignment:
+      frames: "90..185"
+      kinematics: >
+        Doctor_C advances rolling stool (Y = -0.78 -> -0.72 m), inclines thorax
+        (thx_rx = +0.28 rad), and holds a symmetrical bimanual fine-motor inspection
+        frame at d >= 10 mm clearance. Simultaneously, MTA_B executes an 8..10 deg
+        anterior-medial thoracic lean (thx_rx = +0.14 rad, thx_ry = -0.08 rad) behind
+        Doctor_C's shoulder, aligning her optical axis directly with the workspace
+        (Zero-Occlusion Witness Vector).
+      patient_residual_response:
+        - "Isometric finger flexion around anterior armrest edges (Armrest_Grip_Clench)"
+        - "Posterior occipital press into Chair_Headrest_Upper (nh_rx = +0.04 rad lock)"
+        - "Thoracic apnea plateau and 2.1 Hz distal foot micro-tremor"
+    stage_3_epistemic_return_gaze:
+      frames: "185..240"
+      kinematics: >
+        While Doctor_C maintains workstation focus, MTA_B slowly elevates head pitch
+        (nh_rx) back to Patient_A's eye level, locking in permanent informational
+        asymmetry without verbal exchange.
