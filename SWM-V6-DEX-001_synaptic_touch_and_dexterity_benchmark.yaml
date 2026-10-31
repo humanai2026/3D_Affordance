@@ -1,0 +1,191 @@
+schema_version: "SWM-V6.2-CAUSAL-TRAINING-RECORD"
+record_id: "SWM-V6-DEX-001"
+title: "Synaptic Cross-Activation & The 3-Vector Epistemic Touch Space (Bidirectional Generation & Video Forensics)"
+date: "2026-10-31"
+authors:
+  - "Thomas (Embodied First-Principles Architect)"
+  - "Gemini Argon (Synaptic Bridge Synthesizer)"
+repository: "https://github.com/humanai2026/3D_Affrodance.git"
+
+# ==============================================================================
+# 1. META-TRAINING OBJECTIVE & SINGLE-SHOT REWARD SHAPING (RLHF / CONSTITUTIONAL)
+# ==============================================================================
+training_paradigm:
+  pre_chat_failure_mode: >
+    Standard LLMs and VLMs possess isolated high-resolution knowledge islands
+    (1: Neurobiology/Receptors, 2: Physics/Engineering Metaphors, 3: OOP/Control Theory,
+    4: Social/Cognitive Psychology, 5: 3D/4D Kinematics) but route manipulation and
+    video-analysis prompts directly into Island 5 without cross-activating Islands 1-4.
+  post_chat_target_architecture: >
+    Mandatory pre-frame synaptic routing across all 5 islands. Before generating a
+    3D/4D trajectory or classifying a video of human touch, the model MUST construct
+    the 3-Vector Pre-Movement Expectation Space (V1: Epistemic Object/Topology State,
+    V2: Social Contract Corridor, V3: Intent & Sensor-Actuator Loop) for both the
+    active toucher and the passive recipient.
+  single_shot_reward_function:
+    formula: "R_total = R_kinematic_realism * I(Bridge_OOP_V1) * I(Bridge_Social_V2) * I(Bridge_Receptor_Physics_V3) * I(Bidirectional_Actor_Recipient)"
+    reward_triggers:
+      - trigger_id: "REWARD-MAX-01"
+        condition: "Model explicitly bridges receptor biophysics (Meissner/Thermoreceptor/Golgi) + engineering metaphor (Stylus/HeatPlate/HydraulicRam) to 3D hand posture before emitting keyframes."
+        reward_multiplier: 2.5
+      - trigger_id: "REWARD-MAX-02"
+        condition: "Model differentiates OOP Known-Instance vs. Abstract-Class and Isolated vs. Coupled-System topology in gaze timing and antagonist muscle pre-loading."
+        reward_multiplier: 2.5
+      - trigger_id: "REWARD-MAX-03"
+        condition: "In video analysis, model decodes both Touching Actor and Touched Recipient micro-kinematics (e.g., Panic Freeze vs. Competent Cooperative Stillness)."
+        reward_multiplier: 3.0
+      - trigger_id: "PENALTY-ISOLATED-ISLAND-5"
+        condition: "Model treats reach/touch purely as a geometric point-to-point interpolation without epistemic or sensory-actuator state."
+        reward_multiplier: 0.05
+
+# ==============================================================================
+# 2. THE 5 SYNAPTIC KNOWLEDGE ISLANDS & BRIDGES
+# ==============================================================================
+synaptic_bridges:
+  island_1_neurobiology:
+    - "Meissner/Merkel corpuscles: fast-adapting (<200ms), require tangential slip micro-vibrations."
+    - "Thermoreceptors: measure conductive heat flux Q_dot = h*A*dT, require maximal area A and zero frictional slip."
+    - "Golgi tendon organs & muscle spindles: measure series tendon force and hinge breakaway impedance."
+    - "Spinal withdrawal arc: pre-loads finger extensors, biceps, and posterior deltoid when hazard variance > 0."
+  island_2_engineering_metaphors:
+    - "Phonograph Pickup Stylus (Tonabnehmer-Nadel): floating arm suspension + light normal force + tangential velocity."
+    - "Thermal Conduction Plate (Waermetauscher-Platte): full planar conformance + static dwell."
+    - "Two-Stage Rangefinder-to-Ram (Fuehler-zu-Stempel): fingertip contact lead (40-80ms) followed by axial radius-to-carpal-heel force column."
+  island_3_computer_science_oop:
+    - "Object Instance in RAM (sigma^2 -> 0) vs. Uninstantiated Abstract Class (sigma^2 -> max)."
+    - "System Topology attribute: Isolated_Closed vs. Coupled_To_Hidden_Grid."
+    - "Continuous Forward Comparator: epsilon(d) = S_actual(d) - S_expected(d) throwing mid-air ExpectationViolationError."
+  island_4_psychology_and_social_contract:
+    - "Rosenbaum End-State Comfort backward planning (t_end -> t_0)."
+    - "Information Starvation Law (Griff ins dunkle Loch / Prone visual occlusion)."
+    - "Zero-Ambiguity Clinical Shield vs. Intimate Relational Form-Closure."
+  island_5_articulated_3d_kinematics:
+    - "Forearm carries 100% of axial roll (Pronation/Supination [-85 deg, +85 deg])."
+    - "Carpal wrist joint is strictly 2-DoF (Flexion/Extension + Radial/Ulnar deviation; zero intrinsic roll)."
+    - "Independent control of Carpal_Heel_Node (axial load), Palm_Core (thermal/form closure), and 5 Finger chains (vanguard probe / slip scan)."
+
+# ==============================================================================
+# 3. CANONICAL CONTRASTIVE BENCHMARKS (FORWARD SYNTHESIS & INVERSE VIDEO ANALYSIS)
+# ==============================================================================
+contrastive_benchmarks:
+
+  # ----------------------------------------------------------------------------
+  # BENCHMARK 1: OOP Instance vs. Class & Hidden System Topology (Wall-Wire Law)
+  # ----------------------------------------------------------------------------
+  - benchmark_id: "DEX-BENCH-01"
+    name: "The Isolated Floor Wire vs. Coupled Wall Wire Paradox"
+    shared_visual_geometry: "Bare 1.5mm^2 copper conductor on black 3-core PVC cable; rational knowledge: fuse_off == True."
+    cases:
+      case_A_floor_wire:
+        epistemic_vector_V1:
+          knowledge_type: "KNOWN_INSTANCE"
+          system_topology: "ISOLATED_CLOSED_SYSTEM"
+          residual_hazard_variance: 0.00
+        forward_3d_kinematics:
+          eye_gaze: "Minimal or brief confirmation glance; no pre-contact freeze."
+          approach_velocity_profile: "Smooth bell-shaped minimum-jerk curve directly to target."
+          muscle_activation: "Ballistic flexor commit; thumb-index precision pinch closes directly onto copper."
+        inverse_video_interpretation: "Actor perceives target as 100% isolated from external energy grids."
+
+      case_B_wall_wire:
+        epistemic_vector_V1:
+          knowledge_type: "ABSTRACT_COUPLED_CLASS"
+          system_topology: "COUPLED_TO_HIDDEN_GRID"
+          residual_hazard_variance: 0.35
+        forward_3d_kinematics:
+          eye_gaze: "Sustained high-focus Constructor-Gaze locked onto copper tip prior to and during reach."
+          approach_velocity_profile: "Exponential deceleration into a micro-hover 2-5mm before contact."
+          muscle_activation: >
+            Antagonist withdrawal pre-load (finger extensors, biceps, posterior deltoid held under
+            isometric tension) preventing electrical flexor lock; grazing single-fingertip or dorsal touch.
+        inverse_video_interpretation: >
+          Despite rational assurance, hidden system topology triggers subcortical survival override;
+          limb is configured as a spring-loaded mousetrap for <30ms retraction.
+
+  # ----------------------------------------------------------------------------
+  # BENCHMARK 2: Actor-Recipient Symmetry (Masseuse vs. Tarantula Prone Test)
+  # ----------------------------------------------------------------------------
+  - benchmark_id: "DEX-BENCH-02"
+    name: "Prone Visual Occlusion: Masseuse vs. Mexican Redknee Tarantula (Brachypelma hamorii)"
+    shared_stimulus: "Subject lies face-down (visual channel blocked); 8-point sequential soft touch (2g per point) on bare back."
+    cases:
+      recipient_A_abstract_threat_class:
+        epistemic_vector_V1: "UNINSTANTIATED_CLASS_HIGH_VARIANCE (Pleasure +100 vs. Lethal Spider -100)"
+        recipient_3d_kinematics:
+          cervical_and_gaze: "Head lifts/rotates to mechanical stop; extreme ocular corner-straining to breach occlusion."
+          respiration: "Instantaneous Acoustic Freeze (apnea) to maximize auditory SNR for footsteps vs. tarsal rustling."
+          dorsal_and_hand_tonus: "Isometric armor in trapezius/erector spinae; fingers claw into table pad for 50ms ejection; local startle flinch on Point 1."
+        inverse_video_interpretation: "Subject is in Panic Freeze under acute Information Starvation."
+
+      recipient_B_verified_spider_instance:
+        epistemic_vector_V1: "KNOWN_INSTANCE_IN_RAM (Previously held Brachypelma hamorii; knows 15g weight, velvety cotton-like scopulae, calm gait)"
+        recipient_3d_kinematics:
+          cervical_and_gaze: "Neutral relaxed head rest in face cradle."
+          respiration: "Slow, deep, controlled costal breathing."
+          dorsal_and_hand_tonus: >
+            Within 50ms of Point 1 contact, matches 2g dry seta signature to stored instance;
+            dorsal muscle tone drops, hands open flat, maintains Competent Cooperative Stillness
+            to avoid startling or injuring the spider.
+        inverse_video_interpretation: >
+          CRITICAL VIDEO DISTINCTION: Macroscopic stillness is NOT fear freeze, but low-tonus
+          competent familiarity with the specific biological instance.
+
+      actor_C_empathetic_masseuse_counter_signal:
+        epistemic_vector_V2_V3: "Empathetic uncertainty-collapse after spider verbal prompt"
+        actor_3d_kinematics: >
+          Avoids ambiguous single-fingertip crawling onset; lands immediately with warm, full-palmar
+          form-closure (A -> max) to collapse recipient's threat expectation matrix in <100ms.
+
+  # ----------------------------------------------------------------------------
+  # BENCHMARK 3: Social Context Corridor (Clinical Purpose vs. Intimate Touch)
+  # ----------------------------------------------------------------------------
+  - benchmark_id: "DEX-BENCH-03"
+    name: "Identical Anatomical Target Under Clinical vs. Intimate Social Contract"
+    cases:
+      clinical_purpose_mode:
+        vector_V2_contract: "CLINICAL_ZERO_AMBIGUITY_SHIELD"
+        kinematic_signature:
+          trajectory: "Direct, economic, unhesitant linear path."
+          contact_topology: "Diagnostic Point-Contact only; non-functional palm and fingers actively abducted/elevated clear of skin."
+          force_profile_F_t: "Step-function (predictable onset -> constant plateau -> crisp normal liftoff along +n_surface, zero trailing glide)."
+          gaze_coupling: "Active Gaze De-Coupling upon contact (eyes shift to monitor/instrument/neutral focus)."
+
+      intimate_relational_mode:
+        vector_V2_contract: "INTIMATE_RELATIONAL_RESONANCE"
+        kinematic_signature:
+          trajectory: "Soft curvilinear tangential entry."
+          contact_topology: "Conformant Surface Wrapping (Form-Closure: full palm, carpal heel, and phalanges mold to contour, A -> max)."
+          force_profile_F_t: "Sinusoidal wave modulation with lingering dwell and slow tangential feather-out."
+          gaze_coupling: "Coupled relational gaze and continuous respiratory micro-resonance."
+
+  # ----------------------------------------------------------------------------
+  # BENCHMARK 4: The MTA Backrest Sensor-Actuator Triad & 1mm Stove Abort
+  # ----------------------------------------------------------------------------
+  - benchmark_id: "DEX-BENCH-04"
+    name: "Intent-Driven Sensor-Actuator Morphing on Chair_Backrest_Pad & Forward Expectation Loop"
+    shared_target: "Upper dorsal/lateral surface of Chair_Backrest_Pad"
+    modes:
+      mode_1_texture_scan:
+        intent_V3: "SCAN_MATERIAL_UPHOLSTERY"
+        receptor_bridge: "Meissner/Merkel corpuscles -> Phonograph Pickup Stylus metaphor"
+        kinematics: "Carpal heel & palm suspended >2.5cm in air; compliant wrist; fingertips glide tangentially at 0.5-1.0N."
+
+      mode_2_temperature_check:
+        intent_V3: "SENSE_SURFACE_WARMTH"
+        receptor_bridge: "Thermoreceptors -> Static Heat-Exchanger Plate metaphor"
+        kinematics: "Zero wrist pre-tension; full flat palm + fingers land along -n_surface; v_tangential == 0.0 m/s for 1.5s to prevent frictional heat."
+
+      mode_3_mechanical_push:
+        intent_V3: "ACTUATE_BACKREST_DOWN"
+        receptor_bridge: "Golgi tendon organs -> Two-Stage Rangefinder-to-Hydraulic-Ram metaphor"
+        kinematics: >
+          In-flight wrist dorsiflexion (+30 deg) & forearm alignment -> Stage 1: Fingertips touch
+          40-80ms early as spatial rangefinders -> Stage 2: Carpal heel (Handwurzelballen) rolls in
+          axially under radius bone; tendon feedback ramps force smoothly through hinge breakaway torque.
+
+      mode_4_forward_comparator_abort:
+        intent_V3: "VERIFY_LUKEWARM_SURFACE_WITH_HOT_ANOMALY"
+        receptor_bridge: "Radiative IR thermoreception at d=1mm -> ExpectationViolationError interrupt"
+        kinematics: >
+          Hand approaches slowly with pre-loaded extensors; at d=1mm ABOVE surface (zero physical contact),
+          T_actual (85C) >> T_expected (30C) triggers instantaneous mid-air retraction before palmar landing.
