@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this benchmark dataset, spatial reasoning architecture, or verification pipeline in your research or model training, please cite it using the metadata from this file."
+title: "3D Affordance & Small World Model (SWM) Benchmark"
+abstract: "Human-verified 3D/4D spatial reasoning, biomechanical joint constraints, URDF kinematic timelines, and physical/social affordance trajectories paired with deterministic Blender Python verification pipelines to resolve spatial blind spots in AI World Models."
+type: dataset
+authors:
+  - alias: "humanai2026"
+    name: "Human-AI Embodied Reasoning Project"
+repository-code: "https://github.com/humanai2026/3D_Affrodance"
+url: "https://github.com/humanai2026/3D_Affrodance"
+license: MIT
+version: "6.0.0"
+date-released: "2026-10-31"
+keywords:
+  - 3d-reasoning
+  - affordance
+  - ai-benchmark
+  - biomechanics
+  - blender-python
+  - embodied-ai
+  - kinematics
+  - spatial-reasoning
+  - urdf
+  - world-models
+  - synthetic-ground-truth
