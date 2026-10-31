@@ -1,0 +1,126 @@
+schema_version: "SWM-V6.2-CAUSAL-TRAINING-RECORD"
+record_id: "SWM-V6-DEX-002"
+title: "6-Zone Muscle/Tendon Heatmap, 40-lb Real-Photo Calibration Laws & Bidirectional Force Forecasting"
+date: "2026-10-31"
+authors:
+  - "Thomas (Embodied First-Principles Architect & Real-Arm Benchmark Reference)"
+  - "Gemini Argon (Kopfbild Heatmap Synthesizer)"
+repository: "https://github.com/humanai2026/3D_Affrodance.git"
+
+# ==============================================================================
+# 1. METHODOLOGY: KOPFBILD-HEATMAP <-> REAL-PHOTO CLOSED-LOOP CALIBRATION
+# ==============================================================================
+calibration_methodology:
+  core_principle: >
+    Isolate the 5-finger hand, 2-DoF carpal wrist, and radioulnar forearm on a
+    zero-bloat Blender workbench against parameterized primitives (Plane with F_n,
+    Disc with T_surface, Ring with 40lb resistance). Express the AI's internal mental
+    model (Kopfbild) as an explicit 6-Zone Color-and-Bulge Heatmap (Grey -> Yellow ->
+    Red -> Purple) and validate it directly against real dorsal/volar photographs
+    and multi-phase video snippings of the human forearm.
+  anti_timeout_isolation: >
+    Decoupled from the multi-character clinical room to prevent token/compute timeouts
+    and permit millisecond-level myological and phalangeal verification.
+  validation_channels:
+    - "Paired Dorsal & Volar High-Load Reference Photographs (e.g., 40-lb climbing ring)."
+    - "4-Phase Temporal Video Snippings (Phase 1: In-Flight Pre-Load, Phase 2: Vanguard Contact & Wrist Lock, Phase 3: Peak Isometric Crush, Phase 4: Unloading & Re-Perfusion)."
+    - "Real-Time Gemini Live Camera Sparring on the live forearm."
+
+# ==============================================================================
+# 2. EMPIRICAL LAWS FROM THE 40-LB CLIMBING RING EXPERIMENT (DORSAL & VOLAR)
+# ==============================================================================
+empirical_myology_laws:
+  - law_id: "LAW-MYO-01"
+    name: "Dorsal Antagonist Co-Contraction & Longitudinal Sulcus Law"
+    reference_source: "20261031_081550.jpg (Left Forearm Dorsal View at 40 lb)"
+    pre_chat_ai_misconception: "Squeezing an object with the fingers only activates volar flexors; dorsal forearm remains smooth and passive."
+    post_chat_ground_truth: >
+      Because finger flexors cross the wrist joint, a 40-lb volar grip requires equal
+      isometric counter-torque from the dorsal wrist extensors (Extensor carpi ulnaris,
+      Extensor digitorum) to lock the wrist in +15 to +20 deg dorsiflexion (Power-Grip
+      Wrist Lock). Visually, the dorsal-ulnar muscle belly bulges hard, carving a sharp
+      longitudinal sulcus along the outer forearm, while the extensor tendon fan and veins
+      pop out across the back of the hand and the distal forearm necks down behind the wrist.
+
+  - law_id: "LAW-MYO-02"
+    name: "Volar Steel-Cable Tendon Pop & Carpal Fissure Law"
+    reference_source: "20261031_082115.jpg (Left Forearm Volar View at 40 lb)"
+    post_chat_ground_truth: >
+      Under 40-lb flexion load, the distal tendons of Palmaris longus and Flexor carpi
+      radialis directly proximal to the wrist crease protrude by 2-3.5mm like taut steel
+      cables casting sharp shadows, flanked by a deep longitudinal skin fissure while the
+      proximal-middle flexor belly swells radially.
+
+  - law_id: "LAW-MYO-03"
+    name: "Thenar Wedge Compression Law"
+    reference_source: "20261031_082115.jpg"
+    post_chat_ground_truth: >
+      The Thenar eminence (thumb base pad) contracts and flattens against the inner wall
+      of the gripped object as the mandatory oppositional counter-bearing to the four fingers.
+
+  - law_id: "LAW-MYO-04"
+    name: "Capillary Pressure Blanching (Optical Force Gauge Law)"
+    reference_source: "20261031_082115.jpg"
+    post_chat_ground_truth: >
+      High normal force (40 lb) evacuates blood from the capillary beds of the distal
+      phalanges and nail beds, shifting skin color from pink-rose to blanched pale
+      white-yellow. In video analysis, this provides an exact optical force gauge even
+      when skeletal displacement dx == 0.0 mm.
+
+# ==============================================================================
+# 3. THE 6-ZONE HEATMAP SPECIFICATION (GREY -> YELLOW -> RED -> PURPLE)
+# ==============================================================================
+heatmap_color_scale:
+  a_0_00_grey:   {hex: "#7A7F85", meaning: "Zero active tension / passive thermal contact"}
+  a_0_30_yellow: {hex: "#F5D142", meaning: "Pre-contact expectation pre-load / extensor withdrawal guard"}
+  a_0_70_red:    {hex: "#E62E25", meaning: "Active working force (30-40 lb) / antagonist wrist-lock co-contraction"}
+  a_1_00_purple: {hex: "#9B1FE8", meaning: "Peak isometric crush (40-50 lb) / maximal wrist tendon pop"}
+
+forearm_hand_zones:
+  Z1_volar_flexor_and_cables:
+    anatomy: "Flexor digitorum superficialis/profundus belly + distal Palmaris longus / FCR wrist cables"
+    mesh_deformation: "Mid-upper belly radial scale +18%; distal wrist cables +3.0mm normal elevation"
+  Z2_dorsal_extensor_and_fan:
+    anatomy: "Extensor digitorum / ECU belly + ulnar longitudinal sulcus + dorsal hand tendon fan"
+    mesh_deformation: "Dorsal-ulnar bulge +15%; sulcus indentation -2.5mm; dorsal hand cords +2.0mm"
+  Z3_brachioradialis_crest:
+    anatomy: "Radial upper-forearm stabilizer crest"
+    mesh_deformation: "Proximal radial ridge elevation +15%"
+  Z4_ulnar_carpal_stempel:
+    anatomy: "Flexor carpi ulnaris ridge + pisiform/carpal heel load pad"
+    mesh_deformation: "Ulnar edge firming + axial carpal heel pad compression"
+  Z5_thenar_opposition_pad:
+    anatomy: "Thenar eminence at thumb base"
+    mesh_deformation: "Swelling + planar contact flattening against thumb counter-load"
+  Z6_pronator_and_blanching:
+    anatomy: "Radioulnar pronator/supinator cuff + distal phalangeal capillary beds"
+    mesh_deformation: "Axial forearm roll [-85 deg, +85 deg] + fingertip shader blanching (#F7E8D0)"
+
+# ==============================================================================
+# 4. BIDIRECTIONAL VIDEO FORECASTING & RETRO-ANALYSIS MATRIX (4 PHASES)
+# ==============================================================================
+temporal_video_forensics:
+  - phase: "PHASE_1_IN_FLIGHT_PRELOAD (t = -150ms to 0ms)"
+    observed_myology: "Z2_dorsal_extensor turns Yellow (0.35), wrist dorsiflexes +30 deg, Z1_volar remains Grey (0.0)."
+    forecast_prediction: >
+      FORECAST: Actor intends heavy planar downward actuation (e.g., pushing backrest)
+      using the carpal heel stempel, NOT a light texture scan or thermal check.
+
+  - phase: "PHASE_1_HAZARD_PROBE (t = -200ms to 0ms)"
+    observed_myology: "Z2_dorsal_extensor turns Yellow-Red (0.55) + biceps tense while approach decelerates; Z1_volar stays strictly Grey (0.0)."
+    forecast_prediction: >
+      FORECAST (Wall-Wire Law): Actor distrusts hidden system topology; antagonist withdrawal
+      muscles are cocked to snap the arm backward in <30ms upon slightest sensory anomaly.
+
+  - phase: "PHASE_2_WRIST_LOCK_ONSET (t = 0ms to +60ms)"
+    observed_myology: "Fingers contact ring/handle; Z2_dorsal sulcus and Z5_thenar pad jump to Red (0.70) 40ms BEFORE Z1_volar cables peak."
+    forecast_prediction: >
+      FORECAST: Actor is locking the carpal arch into the +15 deg power-grip position
+      in preparation for a high-force crush (>30 lb).
+
+  - phase: "PHASE_3_ISOMETRIC_PEAK (dx == 0.0 mm)"
+    observed_myology: "Z1 wrist cables Purple (1.0), Z2 dorsal sulcus Red (0.75), Z6 fingertips blanched pale-white."
+    retro_and_current_state: >
+      DIAGNOSIS: Despite zero skeletal motion (dx=0), actor is applying maximum isometric
+      crush force (40-50 lb). Both agonist flexors and antagonist wrist-stabilizing extensors
+      are simultaneously at high tension.
