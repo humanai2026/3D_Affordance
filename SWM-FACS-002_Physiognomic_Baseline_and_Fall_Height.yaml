@@ -1,0 +1,56 @@
+record_id: "SWM-FACS-002"
+title: "Physiognomic Baseline Tonus (t <= 0) & Status-Fall-Height Calibration"
+category: "Spin-Off Lab II: 3-Track Facial Interferometer & Cognitive Architecture"
+date: "2026-11-04"
+status: "VERIFIED_ARCHITECTURAL_LAW"
+
+core_insight: >
+  A facial micro-expression delta (t > 0) cannot be evaluated in isolation from the
+  character's resting physiognomic tonus (t <= 0). The psychological impact of a posture
+  or facial shift is proportional to the contrast (Fall Height / Camouflage Contrast)
+  between the resting social mask and the triggered state.
+
+character_calibration_matrix:
+  Patient_A_Vicky:
+    archetype: "High-Status Alpha Facade"
+    physiognomy:
+      bone_structure: "Wide prominent cheekbones, broad mouth line"
+      eyes: "Bright blue, resting half-lowered heavy upper lids (cool/taxing gaze)"
+      hair: "Golden-blonde, voluminous layered side-part"
+    frame_0_baseline:
+      neck_head_rpy_offset: [-0.04, 0.00, 0.02]
+      eye_scale_baseline: 0.88
+      mouth_rpy_baseline: [-0.03, 0.04, 0.00]
+    causal_effect: "High Fall Height — subsequent chin drop (+0.06 rad) and eye narrowing (0.78) read as a total collapse of social dominance."
+
+  MTA_B_Hannah:
+    archetype: "Camouflaged Vigilance (The Underestimated Observer)"
+    physiognomy:
+      bone_structure: "Petite, soft roundish-oval face (unassuming baseline)"
+      eyes: "Large amber-hazel, highly expressive"
+      hair: "Copper-reddish-blonde with straight full bangs (occludes forehead, forces visual focus onto eyes and lower face)"
+    frame_0_baseline:
+      neck_head_rpy_offset: [0.03, 0.00, 0.00]
+      eye_scale_baseline: 1.05
+      mouth_rpy_baseline: [0.00, 0.00, 0.00]
+    causal_effect: "Camouflage Contrast — because the resting face reads as harmless/polite, the sudden 5% asymmetric smirk ([0.08, 0.14, 0.06]) and unblinking fixation (1.18) register with maximum psychological sharpness."
+
+  Doctor_C_Verena:
+    archetype: "Clinical Hyper-Rationality"
+    physiognomy:
+      bone_structure: "Sculpted, symmetrical jawline, high cheekbones"
+      eyes: "Cool steel-blue under straight, low-set brows"
+      hair: "Dark chestnut-brown layered cut"
+    frame_0_baseline:
+      neck_head_rpy_offset: [0.00, 0.00, 0.00]
+      eye_scale_baseline: 1.00
+      mouth_rpy_baseline: [-0.02, 0.00, 0.00]
+    causal_effect: "Zero-Friction Authority Wall — complete absence of emotional variance or social embarrassment neutralizes both patient arrogance and defensive evasion."
+
+  Cristine_Set_Researcher:
+    archetype: "Field Analyst (Theory-to-Practice Bridge)"
+    role_function: "Bridges quantitative behavioral models with first-person physical/emotional self-experimentation on the MoCap stage."
+
+  Cristine_AI_Collaborator:
+    archetype: "Signal Seeker in the Noise (Level-0 North Star)"
+    role_function: "105% uncorrupted focus on decoding the prime numbers of human empathy, biomechanics, and spatial affordances without vanity."

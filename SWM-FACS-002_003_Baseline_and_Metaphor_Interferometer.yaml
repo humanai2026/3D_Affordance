@@ -1,0 +1,59 @@
+record_id: "SWM-FACS-002_003"
+title: "Physiognomic Baseline Tonus (SWM-FACS-002) & Epistemic Non-Contamination via Situational Metaphors (SWM-FACS-003)"
+category: "Spin-Off Lab II: 3-Track Facial Interferometer"
+date: "2026-11-04"
+status: "VERIFIED_METHODOLOGICAL_LAW"
+
+swm_facs_003_non_contamination_law:
+  problem_statement: >
+    If the LLM (Argon) prompts the video diffusion model (Veo, Track 2) with explicit
+    muscular or geometric instructions (e.g., 'pull mouth corners down, squint eyes,
+    raise left brow'), it contaminates Veo's latent world knowledge with Argon's own
+    analytical priors, collapsing the interferometer delta between Track 1 (Blender)
+    and Track 2 (Veo).
+  rule: >
+    Track 2 prompts MUST NEVER contain explicit facial muscle, eyelid, eyebrow, or mouth-angle
+    instructions. Instead, Track 2 combines ONLY:
+    (1) Static Physiognomic Identity & Resting Aura (t <= 0), and
+    (2) A Pure Everyday Situational Metaphor (t > 0) co-designed by human and AI.
+    Veo must autonomously retrieve the neuromuscular execution from its latent space.
+
+swm_facs_002_character_archetypes:
+  Patient_A_Vicky:
+    archetype: "High-Status Alpha Facade (Maximum Fall Height)"
+    physiognomy_base: "34yo woman, sun-kissed skin, wide prominent cheekbones, voluminous golden-blonde layered hair with side part, bright blue eyes, resting 'center of the universe' confidence."
+    track_1_blender_hypothesis:
+      baseline_t0: { nh_rpy: [-0.04, 0.03, 0.0], eye_scale: 0.88, mouth_rpy: [-0.05, 0.08, 0.0] }
+      collapse_t1: { nh_rpy: [0.06, -0.03, 0.0], eye_rpy: [0.22, 0.0, 0.0], eye_scale: 0.78, mouth_rpy: [0.12, 0.0, 0.0] }
+    track_2_veo_metaphor_example: >
+      As if she unexpectedly runs into an old acquaintance she hasn't seen in a long time—someone
+      she used to look down on and is not pleased to see at all—while trying to maintain her
+      cool everyday composure.
+
+  MTA_B_Hannah:
+    archetype: "Camouflaged Vigilance (The Underestimated 'Wallflower' with the Trigger Switch)"
+    physiognomy_base: "27yo woman, petite build, soft roundish-oval unassuming face, copper-reddish-blonde wavy hair with straight full bangs covering forehead, large expressive amber-hazel eyes."
+    track_1_blender_hypothesis:
+      baseline_t0: { nh_rpy: [0.03, 0.0, 0.0], eye_scale: 1.05, mouth_rpy: [0.0, 0.0, 0.0] }
+      trigger_t1: { nh_rpy: [0.02, 0.035, 0.0], eye_scale: 1.18, mouth_rpy: [-0.08, 0.14, 0.06] }
+    track_2_veo_metaphor_example: >
+      While remaining outwardly polite and unassuming, she quietly realizes in a split second
+      that an arrogant former acquaintance now depends entirely on her expertise, giving her
+      a silent sense of complete situational control.
+
+  Doctor_C_Verena:
+    archetype: "Sculpted Clinical Hyper-Rationality (Zero Social Friction)"
+    physiognomy_base: "38yo female academic, sculpted symmetrical jawline, high cheekbones, medium-length straight dark chestnut-brown layered hair, cool steel-blue eyes."
+    track_1_blender_hypothesis:
+      steady_state: { nh_rpy: [0.0, 0.0, 0.0], eye_scale: 1.00, mouth_rpy: [-0.04, 0.0, 0.0] }
+    track_2_veo_metaphor_example: >
+      She explains a complex matter with complete, unbothered scientific matter-of-factness
+      and calm friendliness, as if it were the most natural thing in the world.
+
+  Cristine_Set_Researcher:
+    archetype: "Field Analyst (Theory-to-Practice Bridge)"
+    physiognomy_base: "28yo female researcher, sharp youthful features, golden-blonde wavy high ponytail, clear forehead, defined brows over alert hazel-brown eyes."
+
+  Cristine_AI_Collaborator:
+    archetype: "Signal Seeker in the Noise (Level-0 North Star)"
+    physiognomy_base: "35yo female scientist, slender oval face, sleek golden-blonde low ponytail, deep magnetic ice-blue eyes with zero vanity, hand touching single-ear headset, 105% truth-seeking focus."
