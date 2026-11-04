@@ -1,0 +1,54 @@
+record_id: SWM-3D-012
+date: "2026-11-04"
+project: "Small World Model V6 — Spin-Off Lab I (Radlerhosenprojekt)"
+topic: "Dual-Task Hand Architecture, Preload Safety Bracket, and Ceteris-Paribus Bench Law"
+verified_by: "Thomas (Embodied Human Referee) & Cristine/Argon (SWM V6 Architect)"
+
+epistemic_audit:
+  ai_first_shot_defect_v2:
+    symptom: "Wrist/carpal heel placed directly on top of release button with +32 deg wrist dorsiflexion; fingers protruding 18 cm into empty air."
+    root_cause: "Single-vector force reductionism (treating backrest push as pure masonry stamping without distal/proximal task partitioning)."
+  ai_second_shot_defect_v3:
+    symptom: "Unauthorized fixture geometry mutation (added cylindrical top cap and moved release button to front vertical wall)."
+    root_cause: "Adapting the environment to fit forward kinematics instead of adapting hand kinematics to fixed environment geometry."
+
+causal_laws:
+  law_d8a_dual_task_hand_partitioning:
+    distal_subsystem:
+      anatomical_structures: ["Fingertips (Index, Middle, Ring)", "Z1 (Flexor digitorum profundus)", "Z6 (Lumbricales/Interossei)"]
+      role: "Tactile localization, precision button depression, and continuous hold during travel (exhibits D1 capillary blanching)."
+    proximal_subsystem:
+      anatomical_structures: ["Carpal Heel (Os pisiforme / Hypothenar / Thenar)", "Z4 (Flexor carpi ulnaris)", "Z5 (Thenar)", "Z3 (Brachioradialis)", "Z2 (Dorsal extensors)"]
+      role: "Primary structural fulcrum, preload shock absorber against unknown spring tension, and main downward force driver."
+
+  law_d8b_preload_safety_bracket:
+    state_uncertainty_principle: "Knowing the mechanical class of a fixture does not equal knowing its instantaneous internal spring/gas-strut preload state."
+    onset_sequence:
+      - step: 1
+        action: "Anchor carpal heel on backrest rim and build isometric muscular preload (Z4/Z3/Z2 = 0.40..0.45)."
+      - step: 2
+        action: "Fold fingers onto release button and depress (Z1 = 0.80, D1 tip blanching = 0.95)."
+      - step: 3
+        action: "Absorb any forward gas-spring kick at unlatching via the pre-anchored carpal heel (Z4/Z3 spike to 0.95) so zero jolt reaches the patient."
+      - step: 4
+        action: "Drive backrest downward from -0.38 rad to -0.68 rad via carpal heel while maintaining distal button hold."
+    termination_sequence:
+      - step: 1
+        action: "Release fingers from button FIRST so mechanical lock re-engages."
+      - step: 2
+        action: "Maintain carpal heel stabilizing hold for ~150-200 ms after button release, then lift hand."
+
+  law_d8c_ceteris_paribus_fixture_invariance:
+    rule: "Never modify chair or button geometry between iterative Kopfbild rounds unless explicitly instructed; solve fixed geometry purely via kinematic adaptation."
+
+lab_testbench_standards:
+  frames: 240
+  fps: 30
+  viewport_hygiene:
+    empty_display_size: 0.0001
+    show_relationship_lines: false
+    show_extras: false
+    solid_color_type: "OBJECT"
+  thinking_budget_gate:
+    analysis_and_skill_sync: "LOW_OR_MEDIUM"
+    script_synthesis_and_animation: "HIGH (mandatory prompt stop before code generation)"
