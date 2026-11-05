@@ -1,0 +1,160 @@
+{
+  "dataset_id": "SWM-FACS-004-005-TRAINING-SET",
+  "schema_version": "SWM-V6-AI-Training-1.0",
+  "repository": "https://github.com/humanai2026/3D_Affrodance",
+  "date_created": "2026-11-05",
+  "records": [
+    {
+      "sample_id": "SWM-FACS-TRAIN-001",
+      "task_type": "cross_modal_context_distillation_and_delta_audit",
+      "input_context": {
+        "character": "Vicky (Patient_A, high-status alpha)",
+        "latent_story_seed_S": "Subject sits in a closed room past the point of no return (Commitment Lock). At t=2.0s she hears through the closed door that her expected harmless counterpart is replaced by a former acquaintance she previously treated with arrogance, who eagerly agrees at t=4.0s.",
+        "argon_prior_hypothesis_summary": "Predicted 190ms blink at t=1.15s; head yaw +11.2 deg and neck protraction -16mm at t=2.7s; simultaneous gaze and lid startle at t=5.0s; rigid single-segment eyebrow."
+      },
+      "target_reasoning_cot": "1. [Tonic Alpha Composure (0.3-0.9s)]: Replace 190ms reflex blink with 600ms tonic eye-closure + exhale to encode habitual alpha security in an unpleasant routine.\n2. [Acousmatic Head-Freeze (1.9-3.3s)]: Zero out head yaw (nh_rz=0.0) and neck protraction. Eavesdropping through a closed barrier freezes the cervical spine while 100% of directional focus goes into horizontal ocular saccade (eye_rz=+0.34 rad) and blink inhibition.\n3. [2-Frame Cognitive Calculation Latency (3.4-3.6s)]: Decouple ocular centering from lid retraction. Rotate eyes back to center at t=3.42s while face remains still ('brain computing'), then fire AU5 upper-lid retraction (lid_open=1.18) 120ms later.\n4. [Soul-Window Brow Inversion (4.0-6.6s)]: Split eyebrow rig into medial and lateral segments. Drive medial_brow_z=+6.5mm (AU1) and lateral_brow_z=-3.5mm (AU4) against wide-open upper lids (AU5, lid_open=1.18), crushing the supraorbital fold.\n5. [Resignation to Alpha Rebound (6.7-10.0s)]: Drop upper lids over iris (lid_open=0.78) while keeping medial brows furrowed at t=7.0s, then snap to smooth forehead, compressed lips (0.72), narrowed lids (0.80), and guarded lateral gaze (eye_rz=+0.28 rad) at t=8.0-9.5s.",
+      "target_kinematic_keyframes": [
+        {
+          "t_s": 0.6,
+          "phase": "Tonic_Alpha_Composure",
+          "nh_rx": -0.045,
+          "nh_rz": 0.0,
+          "eye_rx": 0.04,
+          "eye_rz": 0.0,
+          "lid_open": 0.0,
+          "medial_brow_z": 0.0,
+          "lateral_brow_z": 0.0,
+          " fold_clear": 0.004,
+          "mouth_open": 0.0,
+          "mouth_comp": 0.0
+        },
+        {
+          "t_s": 2.6,
+          "phase": "Acousmatic_Freeze_Listen",
+          "nh_rx": -0.01,
+          "nh_rz": 0.0,
+          "eye_rx": 0.0,
+          "eye_rz": 0.34,
+          "lid_open": 0.98,
+          "medial_brow_z": 0.0,
+          "lateral_brow_z": 0.0,
+          "fold_clear": 0.0038,
+          "mouth_open": 0.0,
+          "mouth_comp": 0.0
+        },
+        {
+          "t_s": 3.42,
+          "phase": "Cognitive_Calc_Latency",
+          "nh_rx": 0.0,
+          "nh_rz": 0.0,
+          "eye_rx": 0.0,
+          "eye_rz": 0.08,
+          "lid_open": 0.98,
+          "medial_brow_z": 0.0,
+          "lateral_brow_z": 0.0,
+          "fold_clear": 0.0038,
+          "mouth_open": 0.0,
+          "mouth_comp": 0.0
+        },
+        {
+          "t_s": 3.58,
+          "phase": "AU5_Startle_Impact",
+          "nh_rx": 0.01,
+          "nh_rz": 0.0,
+          "eye_rx": 0.0,
+          "eye_rz": 0.0,
+          "lid_open": 1.18,
+          "medial_brow_z": 0.001,
+          "lateral_brow_z": 0.0,
+          "fold_clear": 0.0015,
+          "mouth_open": 0.05,
+          "mouth_comp": 0.0
+        },
+        {
+          "t_s": 5.2,
+          "phase": "Soul_Window_Horror_AU1_4_5",
+          "nh_rx": 0.035,
+          "nh_rz": 0.0,
+          "eye_rx": 0.02,
+          "eye_rz": 0.0,
+          "lid_open": 1.18,
+          "medial_brow_z": 0.0065,
+          "lateral_brow_z": -0.0035,
+          "fold_clear": 0.0005,
+          "mouth_open": 0.35,
+          "mouth_comp": 0.0
+        },
+        {
+          "t_s": 7.15,
+          "phase": "Resignation_Lid_Droop",
+          "nh_rx": 0.065,
+          "nh_rz": 0.0,
+          "eye_rx": 0.22,
+          "eye_rz": -0.14,
+          "lid_open": 0.78,
+          "medial_brow_z": 0.0058,
+          "lateral_brow_z": -0.003,
+          "fold_clear": 0.0018,
+          "mouth_open": 0.24,
+          "mouth_comp": 0.0
+        },
+        {
+          "t_s": 8.3,
+          "phase": "Alpha_Defense_Armor_Reset",
+          "nh_rx": -0.04,
+          "nh_rz": 0.0,
+          "eye_rx": 0.02,
+          "eye_rz": 0.0,
+          "lid_open": 0.8,
+          "medial_brow_z": -0.001,
+          "lateral_brow_z": -0.001,
+          "fold_clear": 0.0032,
+          "mouth_open": 0.0,
+          "mouth_comp": 0.72
+        },
+        {
+          "t_s": 9.3,
+          "phase": "Guarded_Lateral_Door_Watch",
+          "nh_rx": -0.045,
+          "nh_rz": 0.0,
+          "eye_rx": 0.02,
+          "eye_rz": 0.28,
+          "lid_open": 0.8,
+          "medial_brow_z": -0.001,
+          "lateral_brow_z": -0.001,
+          "fold_clear": 0.0032,
+          "mouth_open": 0.0,
+          "mouth_comp": 0.72
+        }
+      ]
+    },
+    {
+      "sample_id": "SWM-FACS-TRAIN-002",
+      "task_type": "biomechanical_soul_window_classification",
+      "input_observation": {
+        "visual_features": "Medial eyebrow root pulled steeply upward wrinkling nasal root/central forehead (AU1), lateral eyebrow folded flat downward (AU4), upper eyelid retracted to maximum scleral show (AU5), supraorbital tissue pressed down onto upper lid crease erasing the relaxed tarsal fold.",
+        "question": "Why does this specific micro-geometry distinguish helpless horror ('Entsetzen') from startle ('Erschrecken') and why does it invalidate subsequent facial masking?"
+      },
+      "target_causal_explanation": "Pure startle (AU1+AU2+AU5) elevates both medial and lateral brow segments along with the upper lid, opening the entire orbital frame. Defensive anger (AU4+AU7) lowers the medial brow and narrows the lid aperture. Helpless horror ('Entsetzen') triggers an involuntary subcortical collision between two opposing survival programs: sympathetic threat-acquisition (AU5 wide lid retraction + AU1 medial distress elevation) and protective orbital shielding (AU4 lateral brow depression). This contra-directional vector pair crushes the supraorbital fold against the retracted upper eyelid. Because the voluntary motor cortex cannot synthesize or suppress this opposing muscle synergy on command, human mirror neurons detect it within 150ms as unmasked limbic truth ('looking through the face into the soul')."
+    },
+    {
+      "sample_id": "SWM-FACS-TRAIN-003",
+      "task_type": "cross_lab_attention_routing_ToM",
+      "input_scenario": {
+        "observer": "Hannah (MTA_B)",
+        "actor": "Vicky (Patient_A)",
+        "event": "During Scene 1 (stepping out of Cabin 2 toward the examination chair), Vicky's 95% cool alpha mask suffers a 3-frame (125ms) micro-leak showing the SWM-FACS-005a Soul-Window brow/lid inversion before her cortex restores a cool, unapproachable expression."
+      },
+      "target_observer_policy": {
+        "facial_mask_credibility_weight": 0.05,
+        "peripheral_vent_attention_weight": 0.95,
+        "diagnostic_gaze_targets": [
+          "Distal finger kneading and protective lap/knee shielding hysteresis (Lab 1 / Discovery D7 & Law 6b)",
+          "3-DOF subtalar ankle supination and toe curling upon verbal commands (SWM-3D-010 / Law 6a)",
+          "Forearm flexor/extensor isometric tension and laryngeal swallow pulses"
+        ],
+        "reasoning": "Once the 125ms Soul-Window leak proves that Vicky's cortical facial mask is actively suppressing acute vulnerability, Hannah no longer relies on Vicky's face for emotional ground truth. She routes her observational focus to the 5% peripheral autonomic vents that Vicky cannot simultaneously control."
+      }
+    }
+  ]
+}
