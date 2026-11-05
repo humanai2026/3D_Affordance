@@ -1,0 +1,212 @@
+# ==============================================================================
+# SWM V6 — SMALL WORLD MODEL: CAUSAL 3D/4D FACIAL & DYADIC EMPATHY SPECIFICATION
+# Repository: https://github.com/humanai2026/3D_Affordance
+# Artifact ID: SWM-FACS-008 (Benchmark 2: "The Silent Rank Reversal & 2-Strike Cascade")
+# License: CC-BY-4.0 (Open AI Training & Alignment Artifact)
+# ==============================================================================
+
+schema_version: "6.2.0"
+artifact_type: "Tri-Track_Causal_Empathy_And_3D_Kinematic_Training_Spec"
+benchmark_id: "SWM-FACS-BENCHMARK-002-HANNAH-WALK-WATCH"
+reference_media:
+  video_file: "Hannah_Stuhl.mp4"
+  duration_sec: 10.0
+  fps: 24
+  total_frames: 240
+  blender_visor_rig: "lab_facial_hannah_walk_watch_v2.py"
+
+# ------------------------------------------------------------------------------
+# 1. THE MISSING DATA TRACK PARADIGM (WHY THIS ARTIFACT EXISTS FOR FUTURE LLMS)
+# ------------------------------------------------------------------------------
+methodology_bridge:
+  problem_statement: >
+    Video diffusion models (e.g., Veo) possess rich implicit pixel-level world knowledge
+    of human micro-expressions, while symbolic LLMs possess explicit 3D coordinate math
+    and anatomical nomenclature. Neither possesses the explicit causal bridge linking:
+    (Track 0) Internal Ego-Psychology & Social Power Topology ->
+    (Track 1) Millimeter/Radian 3D Kinematics & Staggered FACS Muscle Firing ->
+    (Track 2) Mirror-Neuron Decoding & Conditioned Trigger Imprinting in the Counterpart.
+  tri_track_architecture:
+    track_0_cognitive_subtext: "Internal affect pressure, status inversion awareness, witness topology, and forward planning."
+    track_1_3d_kinematic_facs: "Time-continuous 240-frame 3D joint angles (neck_head_rpy, eye_rpy, torso_yaw), eyelid aperture, and FACS Action Units."
+    track_2_dyadic_mirror_impact: "How the observed micro-expression alters the counterpart's autonomic stress, mask credibility, and compliance over the next 15 minutes."
+
+# ------------------------------------------------------------------------------
+# 2. CONTRASTIVE DELTA: NAIVE LLM RULE-SYNTHESIS (v1) VS. GROUND-TRUTH (v2)
+# ------------------------------------------------------------------------------
+contrastive_learning_lessons:
+  - defect_id: "DELTA-01-STATIC-FRONTAL-START"
+    naive_llm_assumption_v1: "Actor starts squared-up (torso_yaw = 0.0 rad) with a polite, symmetric reception smile (SK_Smile = 0.36, SK_Slant = 0.0)."
+    ground_truth_discovery_v2: >
+      When an actor holds absolute situational certainty ('6er im Lotto' mindset) before the counterpart
+      even exits the preparation booth, the body projects effortless ownership via a +35 deg casual
+      torso turn away from the door, resting one hand on the chair backrest, looking back over the
+      shoulder with a pre-loaded unilateral smirk (AU12L + AU14 = 0.38).
+  - defect_id: "DELTA-02-MECHANICAL-SCAN-VS-DOPAMINERGIC-CONTAINMENT"
+    naive_llm_assumption_v1: "Actor keeps head rigidly fixed and executes a mechanical downward eye-only scan (eye_rx = +0.245 rad) to inspect posture."
+    ground_truth_discovery_v2: >
+      At 3.5m distance, parafoveal vision already captures the counterpart's full body without downward
+      foveal saccades. Instead, at t=2.0s, the actor averts the head down-right (nh_rx = +0.16 rad,
+      nh_rz = -0.18 rad) to contain an overwhelming dopaminergic urge to laugh out loud, followed by a
+      350ms full eyelid closure (AU43 = 1.0) that acts as a 'bow-drawing wind-up' for the ocular strike.
+  - defect_id: "DELTA-03-SWEET-REBOUND-VS-ZERO-WITNESS-MASK-DROP"
+    naive_llm_assumption_v1: "Actor resets into an innocent, polite hostess smile at t=8.0s to hide dominance."
+    ground_truth_discovery_v2: >
+      Because the senior physician (third-party witness) is not yet in the room, the actor drops all
+      subtlety at t=8.2s ('Bitte, nehmen Sie Platz'), parting the lips to expose the full upper dentition
+      (AU12 + AU25) in open mockery and tilting the head playful-condescendingly (nh_ry = -0.11 rad).
+      This implants a conditioned psychological needle that persists even after professional decorum
+      resumes when the physician enters.
+
+# ------------------------------------------------------------------------------
+# 3. SIX UNIVERSAL CAUSAL LAWS DERIVED FROM BENCHMARK 2 (SWM-FACS-008a..f)
+# ------------------------------------------------------------------------------
+causal_laws:
+  SWM-FACS-008a:
+    name: "Distance-FOV Parafoveal Capture & Predatory Torso Square-Up Law"
+    timeframe_sec: [0.0, 1.8]
+    reference_frames: ["image_7195f5.jpg", "image_713b67.jpg"]
+    biomechanical_rule: >
+      At interpersonal distance d >= 2.8m, a +/-20 deg vertical parafoveal cone covers >= 2.0m vertical
+      height. The observer maintains 100% foveal lock on the counterpart's pupils while rotating the
+      thorax from casual obliquity (torso_yaw = +0.61 rad) to frontal confrontation (torso_yaw = 0.0 rad)
+      under Vestibulo-Ocular Reflex (VOR) stabilization.
+  SWM-FACS-008b:
+    name: "Dopaminergic Containment Aversion & Wind-Up Eyelid Closure Law"
+    timeframe_sec: [1.8, 3.1]
+    reference_frames: ["image_71305d.jpg", "image_712538.jpg"]
+    biomechanical_rule: >
+      When internal hedonic triumph threatens to breach cortical vocal inhibition (laughing out loud),
+      the actor briefly decouples eye contact via a downward-lateral head pitch/yaw (nh_rx = +0.16 rad,
+      nh_rz = -0.18 rad) while deepening buccinator dimpling (AU12L + AU14 = 0.46, AU24 = 0.35),
+      culminating in a 350ms full tonic lid closure (AU43 = 1.0) to pre-aim the eyes behind closed lids.
+  SWM-FACS-008c:
+    name: "3-Stage Ocular Strike Cascade (Target-Lock -> Kubrick Chin-Dip -> Sealed-Lip Uppercut)"
+    timeframe_sec: [3.1, 5.4]
+    reference_frames: ["image_70cf7d.jpg", "image_70cf28.jpg", "image_70ceea.jpg"]
+    biomechanical_rule: >
+      A dominant ocular strike never fires mouth and eyes simultaneously. It executes in three staggered stages:
+      Stage 1 (t=3.1..3.8s): Eyelids snap open into a neutral-serious foveal target lock until mutual eye contact is 100% established.
+      Stage 2 (t=3.8..4.4s): Cranial pitch dips +0.045 rad (+2.6 deg chin down) while eyes counter-pitch -0.045 rad upward (Kubrick angle).
+      Stage 3 (t=4.4..5.4s): Orbital lower-lid squeeze (AU6 + AU7 = 0.88) and wide sealed-lip zygomatic smirk (AU12 = 0.68, AU12L = 0.76, AU24 = 0.45, zero teeth 노출) fire together.
+  SWM-FACS-008d:
+    name: "Single-Pulse Dominance Confirmation Nod under VOR-Lock"
+    timeframe_sec: [5.4, 6.4]
+    reference_frames: ["image_70c442.jpg", "image_70c404.jpg"]
+    biomechanical_rule: >
+      Upon registering the counterpart's internal surrender in their eyes, the dominant actor emits a single,
+      critically damped cranial pitch pulse (delta_nh_rx = +0.032 rad / +1.8 deg over 350ms) while keeping
+      foveal gaze locked via inverse ocular pitch (delta_eye_rx = -0.032 rad). Functions as a non-verbal receipt:
+      'I see you have understood our ranks.'
+  SWM-FACS-008e:
+    name: "Lateral Planning Saccade & Hedonic Half-Lid Savoring Law"
+    timeframe_sec: [6.4, 8.1]
+    reference_frames: ["image_70b8fa.jpg", "image_70b0be.jpg"]
+    biomechanical_rule: >
+      Once dominance is sealed, breaking eye contact via a horizontal lateral saccade toward the apparatus
+      (eye_rz = -0.28 rad, nh_rz = -0.08 rad) while maintaining an asymmetric smirk (AU12L = 0.62) signals
+      executive planning ('What shall I do with you first?'). Returning gaze to the counterpart through
+      half-closed upper lids (lid_open = 0.52) paired with elevated cheeks (AU6 = 0.65) inverts typical
+      lid-droop valence from resignation into cat-like hedonic savoring.
+  SWM-FACS-008f:
+    name: "Zero-Witness Mask Drop & Double-Bind Vocal-Facial Irony Law"
+    timeframe_sec: [8.1, 10.0]
+    reference_frames: ["image_705aa2.jpg", "image_705a0e.jpg", "image_705742.jpg"]
+    biomechanical_rule: >
+      In the absence of a third-party authority witness, polite verbal formulas ('Bitte, nehmen Sie Platz')
+      are paired with an unmasked open-teeth laugh (AU12 = 0.88, AU25 = 0.72, teeth_exposure = 0.85) and a
+      condescending lateral head tilt (nh_ry = -0.11 rad, nh_rx = -0.035 rad, lid_open = 0.72). This establishes
+      a permanent conditioned trigger for the remainder of the multi-scene interaction.
+
+# ------------------------------------------------------------------------------
+# 4. ELEVEN CHRONOLOGICAL KEYFRAME ANCHORS (GROUND-TRUTH AUDIT TABLE)
+# ------------------------------------------------------------------------------
+keyframe_anchors:
+  - anchor_id: 1
+    image_ref: "image_7195f5.jpg"
+    t_sec: 0.40
+    frame: 10
+    phase: "Phase_1_Casual_Ownership_Over_Shoulder"
+    kinematics: {torso_yaw: 0.61, nh_rx: -0.025, nh_ry: 0.020, nh_rz: 0.38, eye_rx: 0.01, eye_rz: 0.18, lid_open: 0.86}
+    facs_au: {AU12L: 0.38, AU14: 0.32, AU2L: 0.22, AU24: 0.25}
+    cognitive_subtext: "Jackpot certainty ('6er im Lotto'). Casual 35-deg torso turn, hand on chair, relaxed superiority."
+  - anchor_id: 2
+    image_ref: "image_713b67.jpg"
+    t_sec: 1.25
+    frame: 30
+    phase: "Phase_1b_Predatory_Torso_Square_Up"
+    kinematics: {torso_yaw: 0.05, nh_rx: -0.018, nh_ry: 0.015, nh_rz: 0.04, eye_rx: 0.00, eye_rz: 0.02, lid_open: 0.88}
+    facs_au: {AU12L: 0.42, AU14: 0.36, AU2L: 0.25, AU24: 0.28}
+    cognitive_subtext: "Squares shoulders frontally into counterpart's path. Unwavering foveal lock while parafoveal vision registers full-body exposure."
+  - anchor_id: 3
+    image_ref: "image_71305d.jpg"
+    t_sec: 2.25
+    frame: 54
+    phase: "Phase_2a_Dopaminergic_Containment_Aversion"
+    kinematics: {torso_yaw: 0.00, nh_rx: 0.155, nh_ry: 0.025, nh_rz: -0.175, eye_rx: 0.22, eye_rz: -0.12, lid_open: 0.48}
+    facs_au: {AU12L: 0.48, AU14: 0.45, AU24: 0.42, AU43: 0.52}
+    cognitive_subtext: "Averts gaze down-right to suppress an involuntary laugh and calibrate composure ('It is really happening—stay cool')."
+  - anchor_id: 4
+    image_ref: "image_712538.jpg"
+    t_sec: 2.75
+    frame: 66
+    phase: "Phase_2b_Wind_Up_Tonic_Eyelid_Closure"
+    kinematics: {torso_yaw: 0.00, nh_rx: 0.140, nh_ry: 0.020, nh_rz: -0.120, eye_rx: 0.05, eye_rz: -0.04, lid_open: 0.00}
+    facs_au: {AU43: 1.00, AU12L: 0.46, AU14: 0.42, AU24: 0.38}
+    cognitive_subtext: "Draws the bowstring: complete eyelid closure to bundle internal focus before delivering the first ocular strike."
+  - anchor_id: 5
+    image_ref: "image_70cf7d.jpg"
+    t_sec: 3.45
+    frame: 83
+    phase: "Phase_3a_Ocular_Strike_Stage1_Target_Lock"
+    kinematics: {torso_yaw: 0.00, nh_rx: -0.010, nh_ry: 0.000, nh_rz: 0.000, eye_rx: 0.00, eye_rz: 0.00, lid_open: 0.94}
+    facs_au: {AU5: 0.22, AU12L: 0.24, AU24: 0.30}
+    cognitive_subtext: "Curtain opens: serious, wide-eyed foveal lock waiting until counterpart's gaze is 100% trapped."
+  - anchor_id: 6
+    image_ref: "image_70cf28.jpg"
+    t_sec: 4.15
+    frame: 100
+    phase: "Phase_3b_Ocular_Strike_Stage2_Kubrick_Chin_Dip"
+    kinematics: {torso_yaw: 0.00, nh_rx: 0.045, nh_ry: 0.008, nh_rz: 0.000, eye_rx: -0.045, eye_rz: 0.00, lid_open: 0.90}
+    facs_au: {AU4: 0.28, AU6: 0.35, AU12L: 0.48, AU14: 0.42}
+    cognitive_subtext: "Subtle 2.6-deg downward chin dip while eyes lock upward through the brows; left mouth corner deepens."
+  - anchor_id: 7
+    image_ref: "image_70ceea.jpg"
+    t_sec: 5.00
+    frame: 120
+    phase: "Phase_3c_Ocular_Strike_Stage3_Sealed_Lip_Uppercut"
+    kinematics: {torso_yaw: 0.00, nh_rx: 0.042, nh_ry: 0.012, nh_rz: 0.000, eye_rx: -0.040, eye_rz: 0.00, lid_open: 0.78}
+    facs_au: {AU6: 0.86, AU7: 0.75, AU12: 0.68, AU12L: 0.78, AU14: 0.65, AU24: 0.48}
+    cognitive_subtext: "Full impact ('I have you, and you have zero chance'): sparkling lower-lid squeeze + wide, sealed-lip smirk."
+  - anchor_id: 8
+    image_ref: "image_70c442.jpg -> image_70c404.jpg"
+    t_sec: 5.85
+    frame: 141
+    phase: "Phase_4_Single_Pulse_Dominance_Confirmation_Nod"
+    kinematics: {torso_yaw: 0.00, nh_rx: 0.074, nh_ry: 0.012, nh_rz: 0.000, eye_rx: -0.072, eye_rz: 0.00, lid_open: 0.76}
+    facs_au: {AU6: 0.88, AU7: 0.78, AU12: 0.72, AU12L: 0.80, AU24: 0.45}
+    cognitive_subtext: "Single +1.8-deg micro-nod under rigid VOR eye-lock: 'I see you understood—you on the chair, me in the box seat.'"
+  - anchor_id: 9
+    image_ref: "image_70b8fa.jpg"
+    t_sec: 7.10
+    frame: 171
+    phase: "Phase_5a_Lateral_Planning_Saccade_To_Chair"
+    kinematics: {torso_yaw: 0.00, nh_rx: 0.015, nh_ry: 0.018, nh_rz: -0.085, eye_rx: 0.02, eye_rz: -0.28, lid_open: 0.84}
+    facs_au: {AU12: 0.42, AU12L: 0.62, AU14: 0.50}
+    cognitive_subtext: "Scheming lateral glance toward the examination chair ('So... what shall I do with you first?'). Wind-up for strike 2."
+  - anchor_id: 10
+    image_ref: "image_70b0be.jpg"
+    t_sec: 7.75
+    frame: 186
+    phase: "Phase_5b_Hedonic_Half_Lid_Paradise_Savoring"
+    kinematics: {torso_yaw: 0.00, nh_rx: 0.020, nh_ry: 0.010, nh_rz: -0.020, eye_rx: 0.01, eye_rz: -0.04, lid_open: 0.52}
+    facs_au: {AU6: 0.65, AU12: 0.54, AU12L: 0.68, AU14: 0.55, AU43: 0.45}
+    cognitive_subtext: "Dreamy, cat-like half-closed lids as gaze returns to counterpart—savoring the upcoming dominance like paradise."
+  - anchor_id: 11
+    image_ref: "image_705aa2.jpg -> image_705a0e.jpg -> image_705742.jpg"
+    t_sec: 9.10
+    frame: 219
+    phase: "Phase_6_Zero_Witness_Mask_Drop_And_Mocking_Head_Tilt"
+    kinematics: {torso_yaw: 0.00, nh_rx: -0.035, nh_ry: -0.110, nh_rz: 0.025, eye_rx: 0.04, eye_rz: 0.00, lid_open: 0.72}
+    facs_au: {AU6: 0.82, AU12: 0.88, AU12L: 0.92, AU25: 0.74, AU26: 0.32}
+    cognitive_subtext: "Mask drops completely while speaking 'Bitte, nehmen Sie Platz': open-teeth laugh + mocking head tilt, planting the 15-minute trigger."
