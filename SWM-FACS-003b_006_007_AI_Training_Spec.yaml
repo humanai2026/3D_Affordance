@@ -1,0 +1,123 @@
+# ==============================================================================
+# SWM V6 — AI TRAINING RECORD: ORAL IMPULSE CONTAINMENT, DUAL LIP-BITE SEMANTICS,
+# V6 VISOR ABSTRACTION & THE 5 FIRST-SHOT KOPFBILD BOOST RULES
+# ==============================================================================
+record_id: "SWM-FACS-003b-006-007"
+schema_version: "SWM-V6-AI-Training-1.0"
+repository: "https://github.com/humanai2026/3D_Affrodance"
+date_created: "2026-11-05"
+domain: "4D_Facial_Kinematics_Abstractive_Visor_Mapping_ToM"
+license: "CC-BY-4.0"
+extends_record: "SWM-FACS-004-005"
+
+# ==============================================================================
+# 1. SWM-FACS-003b: ORAL IMPULSE CONTAINMENT STORY VECTOR (LATENT VEO TRIGGER)
+# ==============================================================================
+latent_diffusion_elicitation_law:
+  law_id: "SWM-FACS-003b"
+  name: "Oral Impulse Containment under Direct Social Eye Contact"
+  empirical_finding: >
+    In Benchmark 1 (Kabine.mp4), the subject exhibited passive jaw drop (AU26) during horror
+    and hard cortical lip compression (AU24) during defense rebound, but zero dynamic lip-gnawing
+    or lip-biting. Analysis proves this is not a training-data gap in video diffusion models,
+    but a causal consequence of the story seed S: the subject was alone in a closed room
+    reacting to an acousmatic shock. Without an observing counterpart, there is no social need
+    to physically trap an impulse inside the mouth.
+  causal_rule: >
+    To elicit authentic lip sub-language (lower-lip rolling, gnawing, or upper-incisor biting)
+    from a video diffusion oracle WITHOUT violating SWM-FACS-003 (zero anatomical/muscular words),
+    the metaphor story seed S MUST establish:
+      (1) Direct, unbroken social eye contact between two actors, AND
+      (2) An acute internal impulse that must be physically held back behind a controlled social facade.
+  polar_story_vectors:
+    - vector_id: "V_ORAL_HUNTER_CONTAINMENT"
+      actor_role: "Observer / Dominant Evaluator (Hannah)"
+      psychological_tension: "Savoring forbidden, delicious triumph over a formerly arrogant rival while maintaining a polite professional facade."
+      emergent_kinematics: "Lower eyelid rim squeeze (AU6/AU7) + 1-second deliberate upper-incisor bite onto the rolled-in lower lip."
+    - vector_id: "V_ORAL_PREY_CONTAINMENT"
+      actor_role: "Exposed Subject on the Firing Line (Vicky)"
+      psychological_tension: "Walking exposed toward the examination chair under the rival's gaze while fighting to swallow flight impulses and prevent composure from cracking."
+      emergent_kinematics: "Subconscious inward rolling and nervous gnawing of the lower lip coupled with distal finger/toe tension."
+
+# ==============================================================================
+# 2. SWM-FACS-006: DUAL LIP-BITE SEMANTICS & LUMINANCE DEPTH CUEING
+# ==============================================================================
+dual_lip_semantics_and_rendering:
+  law_id: "SWM-FACS-006"
+  name: "Biomechanical Isomorphism vs. Semantic Inversion of the Lower-Lip Bite"
+  shared_mechanics:
+    action_units: ["AU17 (Chin Raiser / M. mentalis)", "AU23/AU24 (M. orbicularis oris inferior roll)", "Upper Incisor Contact"]
+    v6_visor_shape_key: "SK_Lip_Bite_Roll"
+    geometric_transform: "Lower lip capsule narrows vertically by 38%, rolls inward (+2.2 mm Y), and tucks beneath upper incisors."
+  luminance_depth_cueing_law:
+    problem_solved: >
+      On a stylized, matte 3D visor head without deep nasal or cheek cast shadows, a 2 mm Y-axis
+      recession is virtually invisible from a frontal camera, while sculpting realistic wet teeth/lips
+      triggers the Uncanny Valley.
+    shader_law: "lower_lip_luminance = 1.0 - 0.24 * clamp(lip_bite_depth, 0.0, 1.0)"
+    perceptual_effect: >
+      Darkening the rolled-in lower lip band down to 76% luminance while keeping the upper lip band at
+      100% brightness forces the human visual cortex to perceive an immediate 3D overbite step and shadow.
+  semantic_disambiguation_matrix:
+    - mode: "PREY_STRESS_VENT (Vicky)"
+      orbital_coupling: "SK_Resignation_Droop (lid_open = 0.72) OR SK_Alpha_Narrow defensive mask"
+      gaze_vector: "Downward/lateral break (eye_rx = +0.22 rad) or guarded peripheral watch"
+      subtext_meaning: "Autonomic self-soothing and vocal inhibition ('Hold it together, do not let a sound slip')."
+    - mode: "HUNTER_UNGUARDED_UPPERCUT (Hannah)"
+      orbital_coupling: "SK_Lower_Squeeze (AU6/AU7 lower eyelid rim pushed upward) + SK_Alpha_Narrow upper focus"
+      gaze_vector: "Unblinking direct eye-lock or slow smooth pursuit following a 0.5s downward hand/posture scan"
+      subtext_meaning: "Savored, undisguised anticipation ('I see right through your mask, and I am going to enjoy every second of this')."
+
+# ==============================================================================
+# 3. V6 MINIMALIST VISOR ABSTRACTION & METADATA TELEMETRY ARCHITECTURE (v3)
+# ==============================================================================
+v6_abstraction_architecture:
+  paradigm: "WALL-E / EVE Principle — Single Minimalist Visor Head + Explicit JSON FACS Muscle Metadata"
+  uncanny_valley_elimination: >
+    Low-poly anatomical dummy heads with pasted-on eyelids and nose cones trigger severe Uncanny Valley
+    rejection. The V6 Minimalist Visor Head fuses eyebrow and eyelid into a single parametric white
+    Eye-Oval contour on a dark visor plate, achieving higher emotional bandwidth with zero Uncanny Valley.
+  eye_oval_shape_key_basis:
+    - key: "SK_Blink_Close"
+      fACS_mapping: "AU43 (Full smooth closure)"
+    - key: "SK_Startle_Wide"
+      fACS_mapping: "AU5 (Upper/lower arc vertical expansion, scleral show)"
+    - key: "SK_Soul_Window"
+      fACS_mapping: "AU1 + AU5 vs. AU4 (Medial upper corner +6.4 mm UP toward nasal root, lateral upper arc -4.6 mm flat DOWN)"
+    - key: "SK_Resignation_Droop"
+      fACS_mapping: "AU1 + Levator tonus collapse (Upper arc sinks across iris while inner corner stays elevated)"
+    - key: "SK_Alpha_Narrow"
+      fACS_mapping: "AU4 + AU7 (Upper contour tilts down toward nasal bridge, narrowed defensive/focused slit)"
+    - key: "SK_Lower_Squeeze"
+      fACS_mapping: "AU6 + AU7 (Lower eye arc pushes upward -> sparkling/predatory enjoyment)"
+  pupil_lid_clipping_invariant:
+    open_fraction_formula: "clamp(1.0 - 0.96 * sk_blink_val - 0.22 * sk_resig_val - 0.18 * sk_alpha_val, 0.02, 1.0)"
+    retraction_formula: "pup_dy_retract = 0.0038 * smoothstep(0.65, 0.92, sk_blink_val)"
+    purpose: "Prevents circular iris/pupil discs from protruding outside narrowed or closed eye-oval slits."
+
+# ==============================================================================
+# 4. SWM-FACS-007: THE 5 MANDATORY FIRST-SHOT KOPFBILD BOOST RULES
+# ==============================================================================
+first_shot_kopfbild_rules:
+  law_id: "SWM-FACS-007"
+  rules:
+    - rule_id: "FS-RULE-1"
+      name: "Head-Eye Decoupling (Still Head = Power & Focus / Smooth Ocular Pursuit)"
+      mathematical_constraint: "abs(nh_rz) <= 0.02 rad; 100% of directional tracking via eye_rz/eye_rx and blink_rate = 0.0."
+      causal_why: "Rotating the whole head to track a moving subject looks robotic and submissive. Dominant or intensely focused observers freeze the cervical spine and track purely with the eyes."
+    - rule_id: "FS-RULE-2"
+      name: "Sequential Micro-Latency Cascade (80-200 ms Staggered Firing)"
+      mathematical_constraint: "t_ocular_detect < t_downward_body_scan (+0.35s) < t_lower_lid_squeeze (+0.25s after eye-lock) < t_lip_bite_roll (+0.20s)."
+      causal_why: "Simultaneous keyframing of eyes, lids, and mouth destroys biological plausibility. Neural processing cascades from visual cortex to orbital muscles to perioral containment."
+    - rule_id: "FS-RULE-3"
+      name: "Contra-Directional Subtext Vectors (Opposing Programs Create Soul Depth)"
+      mathematical_constraint: "Simultaneous activation of opposing affect vectors (e.g., Hedonic Drive SK_Lower_Squeeze + SK_Slant vs. Cortical Containment SK_Lip_Bite_Roll + nh_rz=0)."
+      causal_why: "One-dimensional expressions look like cartoons. Subtext arises when an internal drive collides with an active cortical suppression vector."
+    - rule_id: "FS-RULE-4"
+      name: "Wave-Shaped 5-Phase Dramatic Envelope"
+      mathematical_constraint: "Phase 1 (Polite Facade) -> Phase 2 (Detection & 0.5s Downward Hand/Posture Scan) -> Phase 3 (1s Lip-Bite Uppercut) -> Phase 4 (Slow Lip Release) -> Phase 5 (Reset Blink & Overly Sweet Smile Rebound)."
+      causal_why: "In social duels, micro-expressions are transient waves that emerge from a facade and rebound into a disarming social mask."
+    - rule_id: "FS-RULE-5"
+      name: "Direct V6 Visor Shape-Key & Metadata Budgeting"
+      mathematical_constraint: "Every frame must output both V6 geometric shape-key weights and explicit anatomical_metadata.active_muscles dictionary."
+      causal_why: "Preserves 100% causal anatomical ground truth for AI training while rendering in a pure, Uncanny-Valley-free stylized aesthetic."

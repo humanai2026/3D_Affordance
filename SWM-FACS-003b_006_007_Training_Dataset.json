@@ -1,0 +1,150 @@
+{
+  "dataset_id": "SWM-FACS-003b-006-007-TRAINING-SET",
+  "schema_version": "SWM-V6-AI-Training-1.0",
+  "repository": "https://github.com/humanai2026/3D_Affrodance",
+  "date_created": "2026-11-05",
+  "extends_dataset": "SWM-FACS-004-005-TRAINING-SET",
+  "records": [
+    {
+      "sample_id": "SWM-FACS-TRAIN-004",
+      "task_type": "latent_diffusion_story_seed_engineering_SWM_FACS_003b",
+      "input_problem": {
+        "goal": "Elicit a 1-second predatory lower-lip bite and sparkling lower-eyelid squeeze from a video diffusion model (Veo) as Hannah watches Vicky walk toward the chair.",
+        "constraint": "SWM-FACS-003 Epistemic Non-Contamination Law strictly forbids any anatomical or muscular terms ('lip', 'bite', 'teeth', 'squint', 'eyelid').",
+        "prior_failure_analysis": "In Benchmark 1 (Kabine.mp4), no lip-play occurred because the protagonist was alone reacting to an auditory shock."
+      },
+      "target_reasoning_cot": "1. [Diagnose Causal Trigger for Oral Sub-Language]: Humans bite or gnaw their lower lip when they are in direct social eye contact and must physically trap an overwhelming internal impulse inside the mouth behind a polite facade.\n2. [Construct Structural Vectors]: Combine V1 (Direct Eye Contact during Approach), V2 (Detection of Rival's Vulnerability/Mask-Crack), V3 (Oral Impulse Containment: surging delicious anticipation barely held back behind polite composure), and V4 (Sweet Professional Rebound when rival arrives).",
+      "target_uncontaminated_story_seed_S": "Inside a bright, modern examination room, a young blonde assistant stands calmly beside a technical chair, waiting with a polite, innocent everyday smile. As the cabin door opens and her formerly arrogant acquaintance steps out and walks slowly toward her, the assistant catches a fleeting instant of helpless shock in the other woman's eyes. For a brief moment, the assistant's gaze flicks down to the woman's tensely held hands and back up into her eyes. A thrilling wave of quiet, delicious anticipation surges through the assistant—an unspoken 'now you are completely mine' that she savors and can barely hold back behind her polite composure for a second while locking eyes, before smoothing her expression back into an overly sweet, disarmingly friendly welcome as the woman reaches the chair."
+    },
+    {
+      "sample_id": "SWM-FACS-TRAIN-005",
+      "task_type": "first_shot_kopfbild_synthesis_SWM_FACS_007",
+      "input_context": {
+        "character": "Hannah (MTA_B, observer at chair)",
+        "duration_s": 10.0,
+        "fps": 24,
+        "rig_target": "V6 Minimalist Visor Head (v3) with JSON FACS Muscle Metadata",
+        "rules_applied": [
+          "FS-RULE-1 (Head-Eye Decoupling)",
+          "FS-RULE-2 (Micro-Latency Cascade)",
+          "FS-RULE-3 (Contra-Directional Subtext)",
+          "FS-RULE-4 (5-Phase Wave Envelope)",
+          "FS-RULE-5 (Luminance Depth Cueing & Pupil Clipping Invariant)"
+        ]
+      },
+      "target_5_phase_kinematic_plan": [
+        {
+          "phase": 1,
+          "time_window_s": [
+            0.0,
+            1.8
+          ],
+          "name": "Innocent_Polite_Reception_Facade",
+          "nh_rx": -0.015,
+          "nh_rz": 0.0,
+          "eye_rx": 0.0,
+          "eye_rz": -0.18,
+          "SK_Smile": 0.42,
+          "SK_Lower_Squeeze": 0.1,
+          "SK_Lip_Bite_Roll": 0.0,
+          "lower_lip_luminance": 1.0,
+          "active_muscles": [
+            "M_zygomaticus_major_polite_AU12"
+          ]
+        },
+        {
+          "phase": 2,
+          "time_window_s": [
+            1.8,
+            3.6
+          ],
+          "name": "Soul_Window_Detection_And_Downward_Hand_Scan",
+          "nh_rx": 0.005,
+          "nh_rz": 0.0,
+          "eye_rx_scan_peak": 0.24,
+          "eye_rz": -0.12,
+          "blink_rate": 0.0,
+          "SK_Smile": 0.15,
+          "SK_Alpha_Narrow": 0.35,
+          "SK_Lower_Squeeze": 0.25,
+          "active_muscles": [
+            "M_rectus_inferior_diagnostic_scan_SWM_FACS_005b",
+            "Cervical_isometric_dominance_freeze"
+          ]
+        },
+        {
+          "phase": 3,
+          "time_window_s": [
+            3.6,
+            5.6
+          ],
+          "name": "The_Unguarded_Uppercut_1s_Predatory_Lip_Bite",
+          "stagger_sequence": "t=3.65s SK_Lower_Squeeze ramps to 0.78 -> t=3.85s SK_Lip_Bite_Roll ramps to 0.88 & lower_lip_luminance drops to 0.78",
+          "nh_rx": 0.018,
+          "nh_ry": 0.025,
+          "nh_rz": 0.0,
+          "eye_rx": -0.02,
+          "eye_rz": -0.06,
+          "SK_Alpha_Narrow": 0.55,
+          "SK_Lower_Squeeze": 0.78,
+          "SK_Slant": 0.45,
+          "SK_Lip_Bite_Roll": 0.88,
+          "lower_lip_luminance": 0.7888,
+          "active_muscles": [
+            "M_orbicularis_oculi_palpebralis_AU6_AU7",
+            "M_mentalis_et_orbicularis_oris_inferior_roll",
+            "Upper_incisor_hedonic_containment_bite_SWM_FACS_006"
+          ]
+        },
+        {
+          "phase": 4,
+          "time_window_s": [
+            5.6,
+            7.8
+          ],
+          "name": "Savored_Lip_Release_And_Smooth_Ocular_Pursuit",
+          "nh_rx": 0.0,
+          "nh_rz": 0.0,
+          "eye_rx": 0.0,
+          "eye_rz": 0.0,
+          "SK_Lower_Squeeze": 0.45,
+          "SK_Slant": 0.35,
+          "SK_Lip_Bite_Roll": 0.15,
+          "lower_lip_luminance": 0.964,
+          "active_muscles": [
+            "M_rectus_medialis_smooth_pursuit",
+            "M_zygomaticus_major_asymmetric_smirk"
+          ]
+        },
+        {
+          "phase": 5,
+          "time_window_s": [
+            7.8,
+            10.0
+          ],
+          "name": "Reset_Blink_And_Overly_Sweet_Assistant_Smile_Rebound",
+          "reset_blink_t_s": 7.9,
+          "nh_rx": -0.025,
+          "nh_ry": -0.03,
+          "nh_rz": 0.0,
+          "eye_rx": 0.0,
+          "eye_rz": 0.0,
+          "SK_Smile": 0.75,
+          "SK_Lower_Squeeze": 0.55,
+          "SK_Lip_Bite_Roll": 0.0,
+          "lower_lip_luminance": 1.0,
+          "active_muscles": [
+            "M_zygomaticus_major_sweet_mask_AU12",
+            "M_orbicularis_oculi_AU6"
+          ]
+        }
+      ]
+    },
+    {
+      "sample_id": "SWM-FACS-TRAIN-006",
+      "task_type": "abstractive_visor_mapping_and_luminance_depth_cueing",
+      "input_question": "How can an AI world model render subtle 3D lip-biting and eyebrow/eyelid horror inversions on a minimalist robot visor head without triggering the Uncanny Valley or losing anatomical ground truth?",
+      "target_architectural_solution": "1. [Contour Fusion (The EVE Principle)]: Fuse eyebrow and eyelid into the outer boundary of a parametric white Eye-Oval mesh via 6 orthogonal Shape Keys (SK_Blink_Close, SK_Startle_Wide, SK_Soul_Window, SK_Resignation_Droop, SK_Alpha_Narrow, SK_Lower_Squeeze).\n2. [Pupil Clipping Invariant]: Scale pupil/iris vertical height by open_fraction and retract +3.8 mm along Y when closure exceeds 65% so circular discs never poke through narrowed or closed slits.\n3. [Luminance Depth Cueing]: Split the mouth into two volumetric capsule bands. When the lower lip rolls inward under the upper teeth (lip_bite_depth > 0), darken its shader luminance by up to 24% (lower_lip_luminance = 0.76) while keeping the upper lip at 100% brightness to synthesize an instant 3D shadow step.\n4. [Decoupled Metadata Telemetry]: Store the exact biological FACS Action Units and muscle names per frame in JSON metadata (anatomical_metadata.active_muscles) rather than rendering a second low-poly anatomical dummy head."
+    }
+  ]
+}
