@@ -1,0 +1,70 @@
+# SWM-3D-013: Multi-Agent Contact Kinematics & Bimanual Workspace Ergonomics
+# Repository: https://github.com/humanai2026/3D_Affordance
+record_id: SWM-3D-013
+title: >-
+  Egocentric Self-Contact Boundaries, Surface-Normal Wrist Leveling,
+  2D Caster-Seated Translation & Bimanual Midline End-Effector Convergence
+repository: https://github.com/humanai2026/3D_Affordance
+version: 6.4.1
+date: '2026-11-06'
+domain: >-
+  3D Humanoid Robotics, Inverse Kinematics (IK), Multi-Link Chain Budgeting
+  & Workspace Clearance Geometry
+
+causal_laws:
+  - law_id: SWM-3D-013a
+    name: Egocentric Self-Contact Boundary (Surface-Envelope Hard Stop)
+    problem_statement: >-
+      Interpolating wrist IK targets toward an internal skeletal center during
+      self-contact postures (e.g., akimbo hip rest) causes the distal hand mesh
+      to penetrate the solid torso/pelvis volume.
+    causal_law: >-
+      An agent's own body segments enforce the same 0.0 mm normal penetration
+      boundary as external rigid bodies. Inward trajectories must terminate at
+      the outer bounding-box tangent (|x_local| = W_segment/2 + d_palm_offset),
+      anchoring the first web space at the waist crease while the palm rests
+      tangentially (~45 deg) on the outer surface.
+
+  - law_id: SWM-3D-013b
+    name: Surface-Normal Wrist Leveling on Horizontal Supports
+    problem_statement: >-
+      When an elevated elbow sends the forearm vector downward at -26.6 deg
+      (-0.464 rad) onto a horizontal support pad, keeping the wrist joint
+      colinear with the forearm (wrist_rx = 0) drives a 15 cm hand 67.1 mm
+      downward through the support surface.
+    causal_law: >-
+      Upon surface contact, the radiocarpal joint must compensate for the incoming
+      forearm pitch via physiological dorsal extension (+28 to +32 deg / +0.49 to
+      +0.56 rad, well within the +75 deg anatomical limit) and forearm pronation
+      (+15 to +20 deg) so the palmar tangent plane aligns parallel to the support normal.
+
+  - law_id: SWM-3D-013c
+    name: 2D Low-Friction Base Translation over Shoulder Over-Extension
+    problem_statement: >-
+      A seated operator on a low-friction rolling base parked 15-20 cm outside
+      the optimal reach envelope suffers shoulder over-extension and vertical
+      target-height drift when interacting with an inclined work surface.
+    causal_law: >-
+      Low-friction casters decouple vertical gravity support (F_G = m*g, mu_R -> 0)
+      from horizontal positioning. Before extending the glenohumeral joint beyond
+      its ergonomic 90-100 deg elbow flexion window, the base-plus-pelvis system
+      translates +0.14 to +0.18 m horizontally into the work bay, while wrist Z-targets
+      track the inclined target plane normal.
+
+  - law_id: SWM-3D-013d
+    name: Bimanual Midline Fingertip Convergence & Proximal Elbow-Abduction Cascade
+    problem_statement: >-
+      Placing left and right wrist pivots near the sagittal midline (X = +/-0.025 m)
+      with a 35 deg inward forearm approach causes 15 cm hands to project 6.1 cm
+      across X = 0, intersecting both palms. Furthermore, isolated wrist joints
+      possess 0 deg axial roll DOF and radioulnar pronation saturates at +/-85 deg.
+    causal_law:
+      backward_chain_length_budgeting: >-
+        When distal fingertips are the active end-effectors meeting at X_tips = +/-0.015 m,
+        wrist pivots must remain laterally outside by L_hand * sin(alpha) at
+        |X_wrist| = 0.105..0.120 m.
+      proximal_elbow_cascade: >-
+        Orienting dorsal hand surfaces toward the midline requires proximal shoulder
+        internal rotation coupled with 30-40 deg lateral elbow abduction (wing-out
+        via the IK pole vector), which dictates a lateral elbow clearance corridor
+        of 63.6 to 71.2 cm.
