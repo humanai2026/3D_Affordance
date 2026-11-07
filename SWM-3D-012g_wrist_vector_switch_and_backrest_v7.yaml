@@ -1,0 +1,122 @@
+# ==============================================================================
+# SWM V6 CAUSAL AI-TRAINING RECORD FOR: https://github.com/humanai2026/3D_Affordance
+# Record ID: SWM-3D-012g / SWM-CAUSAL-D10e
+# Module: Spin-Off Lab I (Radlerhosenprojekt / hand_dexterity_lab.md)
+# Artifact: lab_backrest_push-v7.py
+# ==============================================================================
+
+record_id: SWM-3D-012g
+causal_discovery_id: SWM-CAUSAL-D10e
+lab_module: "Spin-Off Lab I: Radlerhosenprojekt (hand_dexterity_lab.md)"
+artifact_script: lab_backrest_push-v7.py
+date: "2026-11-07"
+repository: "https://github.com/humanai2026/3D_Affordance"
+title: "The Badminton-Climbing Wrist Vector-Switch Theorem & The Comfort-Driven Ulnar Shift Law (Backrest Release v6 -> v7)"
+
+executive_summary: >
+  Establishes the fundamental triadic division of labor between the macroscopic body chain,
+  the 3-DoF wrist complex (carpal flexion/extension, radial/ulnar deviation, and radioulnar
+  pronation/supination), and the 5-ray digital friction interface (thumb + 4 fingers).
+  Resolves the v6 thumb-penetration defect (-35.0 mm mesh penetration caused by forcing the
+  index and middle fingers onto the backrest release button at palm_yaw_chair = -3.0 deg)
+  by applying an ergonomic wrist bend (palm_yaw_chair = -16.0 deg, palm_roll_chair = +10.5 deg).
+  This shifts the thumb tangentially onto the upper-rear backrest rounding (+0.69 mm to +4.71 mm
+  clearance across all 240 frames) and transfers button actuation from the index/middle fingers
+  to the middle, ring, and pinky fingers.
+
+universal_biomechanical_laws:
+  Law_1_Badminton_Principle_Wrist_Vector_Switch:
+    german_name: "Das Badminton-Prinzip: Das Handgelenk als terminale Vektor-Weiche"
+    kinematic_hierarchy:
+      proximal_body_chain: >
+        Feet -> Legs -> Pelvis -> Torso -> Shoulder -> Elbow act as the macroscopic
+        kinetic energy and torque generator (Newton-meter pump), delivering momentum
+        along a global approach trajectory.
+      wrist_forearm_complex: >
+        The carpal wrist (Pitch rx, Yaw/Deviation rz) plus radioulnar twist (Roll/Pronation-Supination ry)
+        acts as a 3-DoF cardan vector-switch in the final 2 cm and final milliseconds before impact/contact.
+        It decouples the proximal body trajectory from the terminal tool/force vector (e.g., converting
+        a full-swing baseline clear into a short drop-shot solely via wrist angle and impedance modulation,
+        without altering macroscopic body motion).
+    ai_world_model_implication: >
+      Macroscopic IK (shoulder + elbow + wrist position) only encodes kinetic energy transport.
+      The true causal intent and force direction are encoded in the 3 rotational degrees of freedom
+      of the wrist (wrist_rpy).
+
+  Law_2_Climbing_Principle_Friction_And_CoM_Equilibrium_Bridge:
+    german_name: "Das Kletter-Prinzip: Maximale 5-Finger-Reibung & Handgelenks-Zugvektor über dem Fuß-Schwerpunkt"
+    kinematic_hierarchy:
+      distal_fingers_and_thumb: >
+        Fingers and thumb form the friction and form-closure interface (F_friction = mu * F_normal + Form_Closure).
+        Maximal stability requires coordinated contact area and pressure distribution across all participating rays.
+      wrist_as_pull_vector_director: >
+        When the body moves relative to a fixed world hold (standing up on a foothold while pulling on a handhold),
+        a rigid wrist would either pry the fingers off the hold's optimal surface normal or pull the body's
+        Center of Mass (CoM) away from the vertical plumb line over the standing foot (barn-door torque).
+        The wrist continuously articulates during locomotion so that (1) the fingers maintain their optimal
+        load angle on the hold surface AND (2) the resultant tensile force vector keeps the whole-body CoM
+        in equilibrium directly above the stabilizing foot.
+    ai_world_model_implication: >
+      In closed-chain human-object interactions, the wrist is a dynamic equilibrium hinge that bridges
+      fixed object surface normals at the fingertips with moving whole-body CoM constraints.
+
+  Law_3_Comfort_Driven_Ulnar_Shift_Button_vs_9Plus_Climbing:
+    german_name: "Das Ergonomie-vor-Maximalkraft-Gesetz: Knopf drücken statt 9+ Klettern (Ulnarer Finger-Shift)"
+    causal_rule: >
+      When task impedance is low-to-moderate (e.g., pressing a 5-15 N release button rather than holding
+      full body weight on a 9+ climbing hold), the human CNS prioritizes comfortable, collision-free wrist
+      and thumb posture (Rosenbaum End-State Comfort) over recruiting the strongest radial digits (Index + Middle).
+    trade_off_mechanics: >
+      By abducting/deviating the wrist slightly (-16.0 deg Yaw) and supinating the radial border (+10.5 deg Roll),
+      the thumb rests effortlessly and tangentially on the rear cushion contour without hyper-abduction or mesh penetration.
+      The human motor system gladly accepts the geometric trade-off that the Index finger shifts outward past the button
+      while the Middle, Ring, and Pinky fingers take over button depression.
+
+quantitative_delta_v6_to_v7:
+  defect_in_v6:
+    root_cause: "9+ Climbing Over-Optimization: forcing Index and Middle fingers onto button center (X = 0.001 m) with straight wrist (palm_yaw_chair = -3.0 deg)."
+    thumb_angles_v6_deg: {cmc_rx: -42.0, cmc_rz: -68.0, tmcp_rx: -8.0, tip_rx: -4.0}
+    thumb_tip_chair_pos_m: [0.045, -0.017, 0.548]
+    backrest_rear_wall_y_m: -0.052
+    mesh_penetration_mm: -35.0
+  verified_solution_in_v7:
+    wrist_orientation_chair_deg:
+      palm_pitch_chair: 40.0
+      palm_roll_chair: 10.5
+      palm_yaw_chair: -16.0
+    thumb_angles_v7_deg:
+      cmc_rx: -8.2
+      cmc_ry: 0.0
+      cmc_rz: -42.5
+      tmcp_rx: 4.5
+      tmcp_rz: 4.0
+      tip_rx: 2.0
+      tip_rz: 2.0
+    240_frame_surface_clearance_audit_mm:
+      Thenar_Pad: {frame_95_mm: 2.41, min_240f_mm: 0.69, min_frame: 102}
+      FDI_Muscle: {frame_95_mm: 13.17, min_240f_mm: 9.95, min_frame: 102}
+      Thumb_CMC:  {frame_95_mm: 11.35, min_240f_mm: 9.93, min_frame: 102}
+      Thumb_Meta: {frame_95_mm: 7.14, min_240f_mm: 6.02, min_frame: 102}
+      Thumb_MCP:  {frame_95_mm: 3.66, min_240f_mm: 2.56, min_frame: 140}
+      Thumb_Prox: {frame_95_mm: 2.50, min_240f_mm: 1.18, min_frame: 140}
+      Thumb_IP:   {frame_95_mm: 2.22, min_240f_mm: 0.70, min_frame: 140}
+      Thumb_Dist: {frame_95_mm: 3.16, min_240f_mm: 1.49, min_frame: 140}
+      Thumb_Tip:  {frame_95_mm: 4.71, min_240f_mm: 2.91, min_frame: 140}
+    ulnar_finger_shift_at_frame_95:
+      button_x_span_m: [-0.027, 0.029]
+      Index:  {tip_pos_m: [0.0525, 0.0459, 0.6123], on_button: false, press_scale: 0.15, blanching: "Passive (pink)"}
+      Middle: {tip_pos_m: [0.0267, 0.0462, 0.5883], on_button: true,  press_scale: 1.00, blanching: "Active (white blanching D1)"}
+      Ring:   {tip_pos_m: [0.0064, 0.0431, 0.5857], on_button: true,  press_scale: 1.00, blanching: "Active (white blanching D1, dead-center)"}
+      Pinky:  {tip_pos_m: [-0.0133, 0.0352, 0.5909], on_button: true, press_scale: 0.80, blanching: "Active (white blanching D1)"}
+
+transfer_to_upcoming_benchmarks:
+  Benchmark_2_Goepel_Clamping_Screw: >
+    Applies Climbing 5-ray friction at the star-knob flanks (Thumb + Index + Middle 3-jaw chuck)
+    combined with Badminton isolated wrist + radioulnar torque vector-switching to turn the screw
+    without proximal elbow flailing.
+  Benchmark_3_3D_Multi_Axis_Goepel_Shell_Adjustment: >
+    Applies Climbing dynamic wrist normal-tracking across Pitch, Roll, and Yaw so the thumb/web-space
+    L-stop and palmar support continuously follow the rotating shell rims.
+  Benchmark_4_Scene_4_Bimanual_Palpation_Twist: >
+    With the pelvis anchored stably on the rolling stool (the seated equivalent of the stable climbing foot),
+    the wrist acts as the precision vector-switch orienting the dorsal hand surfaces and differential finger pads.

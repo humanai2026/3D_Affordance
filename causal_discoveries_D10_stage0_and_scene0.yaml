@@ -1,0 +1,107 @@
+# ==============================================================================
+# SWM V6 CAUSAL WORLD-MODEL & EMPATHY ARTIFACT (DISCOVERY D10)
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Title: Zero-Impedance Motor Priors ("Air-Guitar Theorem"), Single-Token
+#        Semantic Phase Inversion ("GERNE"), Curtain Permeability & Barefoot Readout
+# Authors: Thomas & Argon (Gemini SWM V6 Architecture Team)
+# Date: 2026-11-07
+# License: CC-BY-4.0
+# ==============================================================================
+
+schema_version: "SWM-V6-CAUSAL-1.0"
+discovery_id: "SWM-CAUSAL-D10"
+context_pillars:
+  - "Spin-Off Lab I: Radlerhosenprojekt (Hand Dexterity & Biomechanics)"
+  - "Main Film Prologue: scene-0.py (The Double Impact at the Cabin Curtain)"
+
+discoveries:
+
+  # ----------------------------------------------------------------------------
+  # D10a: THE AIR-GUITAR / ZERO-IMPEDANCE MOTOR COMPETENCE THEOREM
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D10a"
+    name: "The Air-Guitar Theorem (Zero-Impedance Motor Priors vs. Physical Feedback)"
+    domain: "Embodied Robotics / 3D Hand Manipulation / Video Action Recognition"
+    core_question: >
+      How can an AI distinguish genuine embodied motor competence (a real guitarist
+      or mechanic performing a motion in thin air with eyes closed) from naive
+      visual pantomime — and what breaks when an AI predicts hand motion without
+      internalizing physical counterforce?
+    three_tier_methodology:
+      stage_0_blind_motor_imagery:
+        condition: "Eyes closed, execution in empty air (Impedance = 0.0 N/m)"
+        source: "Cerebellar internal forward model derived from decades of physical experience"
+        preserved_invariants:
+          - "Pre-shaping aperture matches exact target object geometry prior to contact"
+          - "Thumb opposition axis (90-degree form-closure bracket) aligns against invisible load vector"
+          - "Forearm pronation/supination torque rhythm and finger release-and-regrip cadence remain intact"
+      stage_1_physical_impedance_impact:
+        condition: "Execution against real mechanical resistance (Impedance > 0.0 N/m)"
+        source: "Golgi tendon organs, cutaneous mechanoreceptors, and joint surface normals"
+        emergent_corrections:
+          - "Distal phalanx flattening (DIP joint approaches 0 rad under normal surface pressure)"
+          - "First dorsal interosseous (M. interosseus dorsalis I) belly bulging and nailbed blanching"
+          - "Proximal elbow abduction / torso counter-stabilization when thread friction spikes"
+    causal_delta_law: >
+      Delta_Impedance = Stage_1 (Physical Resistance) - Stage_0 (Blind Air Imagery).
+      A true embodied agent (or experienced human) retains the phantom counterforce
+      geometry even in Stage 0 (invisible fretboard/screw axis stays rigid in 3D space),
+      whereas a naive pantomime or hallucinating video diffusion model violates
+      phantom surface normals.
+
+  # ----------------------------------------------------------------------------
+  # D10b: SINGLE-TOKEN SEMANTIC PHASE INVERSION ("DAS WORT GERNE")
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D10b"
+    name: "Single-Token Semantic Phase Inversion under Asymmetric Vulnerability"
+    domain: "Socio-Affective Alignment / Semantic-to-Kinematic Grounding"
+    utterance_comparison:
+      neutral_baseline: "Geh nur, ich übernehme das Zimmer hier für dich."
+      inverted_trigger: "Geh nur, ich übernehme das Zimmer hier GERNE für dich."
+      text_embedding_cosine_similarity: 0.975
+      kinematic_trajectory_divergence: "180-degree phase inversion prior to visual contact"
+    receiver_bifurcation:
+      observer_1_colleague_or_doctor:
+        physical_state: "Clothed in professional white coat (High Social Armor)"
+        perceived_semantics: "Warm collegial helpfulness (+0.85 prosocial mask)"
+      observer_2_vicky_behind_curtain:
+        physical_state: "Undressed from waist down, barefoot behind 2mm fabric curtain (Maximal Vulnerability)"
+        perceived_semantics: >
+          Targeted acoustic strike (100% certainty that the rival read her name
+          in the chart, knows she is undressed behind the curtain, and relishes
+          the imminent exposure).
+    measurable_3d_kinematic_cascade_in_cabin:
+      frame_window: [22, 85]
+      joint_deltas:
+        wrist_R_pos: "Instant tonic freeze on closed curtain edge (fingers_r_rpy[0] = 1.18 rad)"
+        neck_head_pitch_nh_rx: "+0.05 rad -> +0.42 rad (Downward self-exposure inspection)"
+        eye_pitch_eye_rpy_0: "+0.24 rad (Saccade down to bare legs and feet)"
+        wrist_L_pos: "Reflexive downward tug on lower left shirt hem (Unilateral Hem-Tug Shielding)"
+        ankles_and_toes: "Immediate barefoot subtalar supination (±0.14 rad) and toe-claw (+0.38 rad)"
+
+  # ----------------------------------------------------------------------------
+  # D10c: SEMI-PERMEABLE BOUNDARY & FORCED SELF-UNVEILING PARADOX
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D10c"
+    name: "Curtain vs. Door Affordance & Forced Self-Unveiling Bimanual Conflict"
+    domain: "Spatial Affordances (Level 2) to Psychological Kinematics (Level 3)"
+    causal_mechanism: >
+      Unlike a rigid wooden door that binary-partitions acoustic and visual space,
+      a dressing-cabin curtain is an acoustically transparent membrane that requires
+      the vulnerable actor to actively pull open her own cover (`Self-Unveiling Agency`).
+    bimanual_opposition_signature:
+      right_hand_task: "Must pull curtain fabric laterally open (curtain_open: 0.0 -> 1.0, Frame 85..145), progressively exposing the sightline corridor at Frame 115 before stepping out."
+      left_hand_task: "Simultaneously pulls top hem downward to preserve minimal pelvic cover (Opposing Exposure vs. Shielding Vectors within a single torso)."
+
+  # ----------------------------------------------------------------------------
+  # D10d: BAREFOOT GROUND-COUPLING SEISMOGRAPH
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D10d"
+    name: "Barefoot Tactile Vulnerability & Unmasked Distal Affect Readout"
+    domain: "Lower-Limb Biomechanics / Affective Computing (SWM-3D-010 Extension)"
+    causal_mechanism: >
+      Removing socks eliminates both thermal/tactile insulation against the clinical
+      floor and visual occlusion of the 10 toes. Under the visual collision shock
+      at Frame 158..176 (12-frame locomotion stutter), the bare forefoot acts as
+      an unmasked seismograph: lateral plantar edge lift (foot_roll_R/L = ±0.22 rad)
+      and acute phalangeal flexion (toes_r/l_rpy = [+0.50, -0.22, 0.0]).

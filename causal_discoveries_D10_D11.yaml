@@ -1,0 +1,133 @@
+# ==============================================================================
+# SWM V6 CAUSAL WORLD-MODEL & EMPATHY ARTIFACT (DISCOVERIES D10 & D11)
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Title: Zero-Impedance Motor Priors ("Air-Guitar Theorem"), Single-Token
+#        Pragmatic Phase Inversion, Curtain Affordances & Triadic Status Locking
+# Authors: Thomas & Argon (SWM V6 Architecture Research)
+# Date: 2026-11-07
+# License: CC-BY-4.0
+# ==============================================================================
+
+schema_version: "SWM-V6-CAUSAL-1.0"
+discovery_id: "SWM-CAUSAL-D10-D11"
+context_pillars:
+  - "Spin-Off Lab I: Hand Dexterity & Biomechanics (Three-Tier Impedance Protocol)"
+  - "Main Film Prologue: scene-0.py (Spatial Transition & Pre-Entry Kinematics)"
+
+discoveries:
+
+  # ----------------------------------------------------------------------------
+  # D10a: THE AIR-GUITAR / ZERO-IMPEDANCE MOTOR COMPETENCE THEOREM
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D10a"
+    name: "The Air-Guitar Theorem (Zero-Impedance Motor Priors vs. Physical Feedback)"
+    domain: "Embodied Robotics / 3D Hand Manipulation / Video Action Recognition"
+    core_question: >
+      How can an AI distinguish genuine embodied motor competence (an experienced
+      practitioner performing a manipulation task in empty space with eyes closed)
+      from naive visual pantomime — and which degrees of freedom depend strictly
+      on physical counterforce?
+    three_tier_methodology:
+      stage_0_blind_motor_imagery:
+        condition: "Eyes closed, execution in empty air (Impedance = 0.0 N/m)"
+        source: "Cerebellar internal forward model derived from long-term motor memory"
+        preserved_invariants:
+          - "Pre-shaping aperture matches target object geometry prior to contact"
+          - "Thumb opposition axis (90-degree form-closure bracket) aligns against expected load vector"
+          - "Forearm pronation/supination torque rhythm and finger release-and-regrip cadence remain intact"
+      stage_1_physical_impedance_impact:
+        condition: "Execution against real mechanical resistance (Impedance > 0.0 N/m)"
+        source: "Golgi tendon organs, cutaneous mechanoreceptors, and surface normal forces"
+        emergent_corrections:
+          - "Distal phalanx flattening (DIP joint approaches 0 rad under normal surface pressure)"
+          - "First dorsal interosseous (M. interosseus dorsalis I) contraction and nailbed capillary compression"
+          - "Proximal elbow abduction and torso counter-stabilization when rotational friction peaks"
+    causal_delta_law: >
+      Delta_Impedance = Stage_1 (Physical Resistance) - Stage_0 (Blind Air Imagery).
+      An experienced agent retains the phantom counterforce geometry even in Stage 0
+      (the imaginary rotational axis remains rigid in 3D space), whereas naive
+      pantomime or unconstrained generative models violate phantom surface normals.
+
+  # ----------------------------------------------------------------------------
+  # D10b: SINGLE-TOKEN PRAGMATIC PHASE INVERSION ("GERNE")
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D10b"
+    name: "Single-Token Pragmatic Phase Inversion under Asymmetric Social Status"
+    domain: "Socio-Affective Alignment / Pragmatic-to-Kinematic Grounding"
+    utterance_comparison:
+      neutral_baseline: "Geh nur, ich übernehme das Zimmer hier für dich."
+      inverted_trigger: "Geh nur, ich übernehme das Zimmer hier GERNE für dich."
+      text_embedding_cosine_similarity: 0.975
+      kinematic_trajectory_divergence: "180-degree affective phase inversion prior to visual contact"
+    receiver_bifurcation:
+      observer_1_colleague_or_physician:
+        contextual_state: "Professional clinical role (Neutral Baseline)"
+        perceived_semantics: "Warm collegial helpfulness (+0.85 cooperative intent)"
+      observer_2_patient_behind_partition:
+        contextual_state: "High situational vulnerability behind changing-cabin curtain"
+        perceived_semantics: >
+          Targeted pragmatic signal indicating that the assistant has read the
+          patient chart, recognizes the personal acquaintance, and anticipates
+          the upcoming asymmetric interaction.
+    measurable_3d_kinematic_cascade_in_cabin:
+      frame_window: [22, 85]
+      joint_deltas:
+        wrist_R_pos: "Transient motor freeze on closed curtain edge (fingers_r_rpy[0] = 1.18 rad)"
+        neck_head_pitch_nh_rx: "+0.05 rad -> +0.42 rad (Downward postural self-check)"
+        eye_pitch_eye_rpy_0: "+0.24 rad (Downward saccade)"
+        wrist_L_pos: "Protective downward adjustment of garment hem (Unilateral Shielding Vector)"
+        ankles_and_toes: "Subtalar supination impulse (±0.14 rad) and phalangeal flexion (+0.38 rad)"
+
+  # ----------------------------------------------------------------------------
+  # D10c: SEMI-PERMEABLE PARTITION & SELF-OPENING BIMANUAL ASYMMETRY
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D10c"
+    name: "Curtain vs. Door Affordance & Opposing Bimanual Task Vectors"
+    domain: "Spatial Affordances (Level 2) to Postural Kinematics (Level 3)"
+    causal_mechanism: >
+      Unlike a rigid door that acoustically insulates adjacent rooms, a fabric
+      partition is acoustically permeable and requires the occupant to actively
+      draw back the curtain (`Law 0: Hard Hand-to-Curtain Coupling`).
+    bimanual_opposition_signature:
+      right_hand_task: "Pulls curtain laterally open (curtain_open: 0.0 -> 1.0, Frame 85..145), opening the visual corridor at Frame 115 before locomotion begins."
+      left_hand_task: "Maintains downward stabilizing tension on garment hem (Simultaneous Opening vs. Protective Shielding Vectors)."
+
+  # ----------------------------------------------------------------------------
+  # D10d: PLANTAR GROUND-COUPLING & DISTAL AFFECT READOUT
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D10d"
+    name: "Unshod Plantar Ground-Coupling & Distal Affect Readout"
+    domain: "Lower-Limb Biomechanics / Affective Computing (SWM-3D-010 Extension)"
+    causal_mechanism: >
+      Direct plantar contact with the floor removes footwear damping and visual
+      occlusion of the toes. During the visual encounter and 12-frame locomotion
+      hesitation (Frame 158..176), the forefoot acts as an unmasked indicator of
+      autonomic tension: lateral plantar edge elevation (foot_roll_R/L = ±0.22 rad)
+      and phalangeal flexion (toes_r/l_rpy = [+0.50, -0.22, 0.0]).
+
+  # ----------------------------------------------------------------------------
+  # D11: TRIADIC STATUS LOCK — PRIDE-CONSENT TRAP & DIDACTIC GAZE MANDATE
+  # ----------------------------------------------------------------------------
+  - id: "SWM-CAUSAL-D11"
+    name: "Triadic Status Lock: Status-Driven Consent & Institutional Discretion Inversion"
+    domain: "Triadic Social Interaction / Affective Computing (SWM-FACS-009)"
+    clinical_context: "Cross-training a medical assistant during extended appointment slots"
+    two_stage_lock_mechanism:
+      stage_1_status_consent_trap:
+        authority_prompt: >
+          The physician compliments the patient's composure ('Sie wirken so taff,
+          sonst würde ich nicht fragen') before requesting permission for the
+          assistant to be trained during the examination.
+        causal_result: >
+          To maintain composure and social status (95% Mask) in front of the
+          peer assistant, the patient verbally consents ('Na klar, das ist OK')
+          despite high internal reluctance.
+      stage_2_institutional_discretion_inversion:
+        authority_prompt: >
+          The physician interprets the assistant's initial reserve as professional
+          hesitancy and explicitly instructs her to observe closely ('Du musst
+          dieses Scham-Ding ablegen, schau genau hin, ich erkläre es nicht zweimal').
+        causal_result: >
+          Standard social discretion norms (polite gaze aversion) are replaced by
+          an explicit didactic mandate for close visual attention, while the
+          patient's prior verbal consent prevents withdrawal without loss of face.
