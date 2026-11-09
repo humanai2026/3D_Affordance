@@ -1,0 +1,167 @@
+# ==============================================================================
+# SMALL WORLD MODEL (SWM) — AI TRAINING & ALIGNMENT SPECIFICATION
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Artifact ID: SWM-CAUSAL-D12_Scene0_Cabin_Contact_FrameSwitch_Subtext
+# Date: 2026-11-09
+# Authors: Thomas (Human System Architect) & Gemini (Argon / Cristine HI)
+# License: CC-BY-4.0 (Open-Source Training Seed for Next-Gen Embodied World Models)
+# ==============================================================================
+
+schema_version: "SWM_V6_Epistemic_Delta_v1.2"
+artifact_id: "SWM-CAUSAL-D12"
+domain:
+  - "3D_Spatial_Reasoning"
+  - "Inert_Matter_Contact_Physics"
+  - "Coordinate_Frame_Switching"
+  - "Riemann_Manifold_Orientation_Unwrapping"
+  - "Psychological_Subtext_Kinematics"
+
+epistemic_context:
+  purpose: >
+    Documents five structural failure modes discovered when a frontier LLM generates
+    complex multi-actor 3D character and object interactions (Scene 0: Cabin Exit &
+    Double Surprise), alongside the exact mathematical and psychological causal laws
+    (Delta = Ist - Soll) required to resolve them.
+  methodology: >
+    Iterative 3-Step Divide-and-Conquer Audit between LLM forward kinematics (Soll)
+    and human visual/mirror-neuron inspection + physics assertion QA (Ist).
+
+# ==============================================================================
+# 1. ORIGIN BALANCE (HERKUNFTS-BILANZ: SOLL_THOMAS vs. SOLL_GEMINI)
+# ==============================================================================
+origin_balance_scene_0:
+  human_architect_contributions_Soll_Thomas:
+    - id: "TH-01"
+      feature: "Two-Stage Psychological Drop (Cabin Pre-History)"
+      description: >
+        Designed the two-tier emotional drop: Stage 1 (acoustic surprise inside the
+        protected cabin while unseen) followed by Stage 2 (visual collision upon stepping
+        past the curtain into the room).
+    - id: "TH-02"
+      feature: "Biomechanical Entry Vector & Sightline Alignment"
+      description: >
+        Corrected the avatar's entry orientation at the door to align with the natural
+        walking trajectory (~2 o'clock), enabling anatomically pain-free right-hand
+        door closing via clockwise torso rotation (~4 o'clock) that naturally aligns
+        the gaze vector toward the cabin curtain.
+    - id: "TH-03"
+      feature: "Dramatic Stillness Anchor (Early Arrival at Target)"
+      description: >
+        Replaced continuous last-millisecond walking deceleration with an early arrival
+        (46 frames / ~1.9 seconds of complete stillness before scene cut), creating
+        dramatic weight while the counterpart speaks.
+    - id: "TH-04"
+      feature: "Psychological Subtext Filter (Camouflaged Posture Transition)"
+      description: >
+        Identified that opening protective hands from the lower hem to the outer hips
+        while standing still under observation creates an unintended provocative subtext
+        ("look at me"), requiring the hand opening to be hidden inside the walking phase.
+
+  ai_architect_contributions_Soll_Gemini:
+    - id: "AI-01"
+      feature: "Acoustic Vector Reversal ('GERNE' Trigger)"
+      description: >
+        Formulated the 1-word acoustic trigger where a single stressed word shifts the
+        counterpart's perceived intent from clinical routine to personal investment.
+    - id: "AI-02"
+      feature: "Barefoot 3-DOF Seismograph & 5-Frame Oculomotor Lead"
+      description: >
+        Mapped autonomic nervous system arousal onto foot supination/toe-clawing
+        and a 5-frame (~208 ms) eye-avoidance lead ahead of head pitch downward.
+
+# ==============================================================================
+# 2. FALSIFIED LLM PRIORS & CAUSAL LAWS (DELTA = IST - SOLL)
+# ==============================================================================
+causal_laws:
+
+  - law_id: "SWM-LAW-000a"
+    title: "Ratchet Contact-Lock vs. Temporal Telekinesis of Inert Matter"
+    tag: "#unerwartet#"
+    llm_blind_spot_Soll: >
+      LLMs natively parameterize inert objects (curtains, doors) as functions of time
+      q_obj(t) = lerp(q_start, q_end, window(t, t1, t2)) and separately command the
+      avatar's hand to reach the object. When the avatar's walking path is modified,
+      IK reach clamping (d_max = 0.465 m) prevents the hand from reaching the object
+      at t1, and C2 hand-release blending detaches the hand before t2. Visual result:
+      The object moves by telekinesis before hand contact and continues moving after release.
+    empirical_reality_Ist: >
+      Inert matter has zero autonomous kinetic energy (dq_obj/dt == 0 without contact).
+      An object can only change state while the effector's world distance to the grip
+      point is zero and grip weight w_grip == 1.0.
+    mathematical_rule:
+      contact_condition: "||p_wrist(t) - p_grip(q_obj(t))|| <= epsilon_contact AND w_grip(t) == 1.0"
+      state_evolution: "dq_obj/dt = 0 if not contact_condition; else q_obj(t) is driven strictly within [t_touch, t_release]"
+      release_ordering: "t_object_stop <= t_hand_release_start (Object must freeze 100% BEFORE hand blending begins)"
+
+  - law_id: "SWM-LAW-014"
+    title: "Reference Frame Switching at Object Release (World-to-Body Frame Handoff)"
+    tag: "#neu#"
+    llm_blind_spot_Soll: >
+      When an avatar releases a stationary world object (e.g., curtain edge at X = -0.83 m)
+      while walking past it and rotating the torso, linear interpolation in world coordinates
+      p_wrist_world(u) = (1 - u) * p_curtain_world + u * p_body_hem_world constructs a
+      straight Euclidean line from behind the avatar's back to the front of the abdomen.
+      Visual result: The avatar impales its own torso/back with its forearm.
+    empirical_reality_Ist: >
+      At the exact millisecond of release (t = t_release), the human motor cortex detaches
+      the hand's target from the external room coordinate frame (F_world) and transfers
+      control to the ego-centric body coordinate frame (F_body).
+    mathematical_rule:
+      during_contact: "p_wrist_world(t) = p_grip_world(t)  for t in [t_touch, t_release]"
+      at_release_transform: "p_local_release = R_pelvis(t_release)^T * (p_grip_world(t_release) - p_pelvis(t_release))"
+      post_release_trajectory: >
+        p_local(t) = Bezier_BodyFrame(p_local_release, p_local_hem, u(t)) with strict
+        anterior constraint y_local(t) < -0.04 m (100% anterior to the coronal plane),
+        mapped back via p_wrist_world(t) = p_pelvis(t) + R_pelvis(t) * p_local(t).
+
+  - law_id: "SWM-LAW-015"
+    title: "Riemann Sheet Unwrapping for SO(2) Yaw Continuity (Anti-Moonwalk Law)"
+    tag: "#neu#"
+    llm_blind_spot_Soll: >
+      When matching a boundary keyframe angle yaw_target in [-pi, +pi] (e.g., +2.901 rad = +166.2 deg)
+      from a current angle yaw_curr (e.g., -2.750 rad = -157.6 deg), naive linear interpolation
+      yaw(u) = (1 - u) * (-2.750) + u * (+2.901) traverses +5.651 rad (+323.8 deg) backwards
+      instead of the geodesic -0.632 rad (-36.2 deg) across the +/-pi branch cut. Combined
+      with a fixed-cycle leg oscillator, this produces a backward spinning Moonwalk.
+    empirical_reality_Ist: >
+      Human torso rotation operates on a continuous universal cover R of SO(2) without
+      branch-cut jumps, and leg swing amplitude is strictly proportional to translational
+      root velocity v(t) = ||dp_pelvis/dt||.
+    mathematical_rule:
+      unwrap_operator: "yaw_unwrapped = yaw + 2*pi * round((yaw_ref - yaw) / (2*pi))"
+      gait_amplitude_coupling: "A_leg(t) = A_base * clamp(||v_xy(t)|| / v_nominal, 0.0, 1.15)"
+
+  - law_id: "SWM-LAW-016"
+    title: "Shoulder-Width Entry Vector & Arc Clearance at Hinged Doors"
+    tag: "#spannend#"
+    llm_blind_spot_Soll: >
+      Placing an avatar at a doorway with torso yaw opposing the room entry vector forces
+      glenohumeral retroversion > 90 deg when reaching for the door handle and causes the
+      sweeping door leaf to slice through the avatar's ribcage.
+    empirical_reality_Ist: >
+      A human enters a room aligned with the primary walking vector (e.g., +2 o'clock)
+      past the door swing radius. Closing the door with the trailing right hand is executed
+      by rotating the entire torso clockwise toward the door/cabin (+2 o'clock -> +4 o'clock),
+      keeping the door handle in the anterior-lateral comfort cone of the right shoulder.
+    mathematical_rule:
+      anterior_lateral_cone: "dot(p_handle - p_sh_R, fwd_torso) >= 0.0 AND dot(p_handle - p_sh_R, right_torso) >= 0.08 m"
+      static_friction_knee_guard: "If |dyaw/dt| > 0.008 rad/frame, max(knee_R_rx, knee_L_rx) >= 0.04 rad (no rigid-leg turntable spinning)"
+
+  - law_id: "SWM-PSYCH-004"
+    title: "Camouflaged Posture Transition vs. Static Subtext Inversion"
+    tag: "#neu#"
+    llm_blind_spot_Soll: >
+      To satisfy a boundary handshake at the end of a scene (e.g., hands resting at outer
+      hips x_local = +/-0.21 m at Frame 240), the LLM held the protective posture (hands
+      together at lower hem x_local = +/-0.14 m) until Frame 210 — after the avatar had
+      already stopped walking at Frame 194 — and spread the hands outward while standing
+      still under the counterpart's gaze.
+    empirical_reality_Ist: >
+      In human social perception, identical start and end hand coordinates carry opposite
+      psychological meaning depending on whether the transition occurs during locomotion
+      or during static eye contact:
+      1. Opening hands while standing still under scrutiny = active exhibition / provocation ("look, I have nothing on").
+      2. Letting hands drift outward while walking = unconscious normalization / composure masking ("Camouflaged Posture Transition").
+    mathematical_rule:
+      transition_window_constraint: "[t_posture_open_start, t_posture_open_end] SUBSET_OF [t_walk_start, t_walk_stop]"
+      static_scrutiny_lock: "For t in [t_walk_stop, t_scene_end], ||dp_wrist_local/dt|| == 0 (zero outward hand motion while standing under observation)"
