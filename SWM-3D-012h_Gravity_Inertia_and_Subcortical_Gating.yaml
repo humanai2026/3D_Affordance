@@ -1,0 +1,170 @@
+# ==============================================================================
+# SMALL WORLD MODEL (SWM) - CAUSAL BIOMECHANICS & NEURO-COGNITIVE SPECIFICATION
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Artifact ID: SWM-3D-012h
+# Title: Gravity-Axis Borrowing vs. Counter-Inertia & Subcortical Gating
+# Date: 2026-11-09
+# Authors: Thomas & Gemini (Argon / Cristine)
+# License: CC-BY-4.0 / MIT (Open Training Seed for Embodied AI & Robotics)
+# ==============================================================================
+
+schema_version: "SWM-V6.2-EPISTEMIC"
+artifact_id: "SWM-3D-012h"
+classification:
+  domain: ["3D_Biomechanics", "Embodied_AI", "Neuro_Motor_Control", "Inverse_Affordance"]
+  discovery_tags: ["#neu#", "#unerwartet#", "#spannend#"]
+  target_subprojects:
+    - "swm-1-kopfbild-und-kausalgesetze (Epistemic Core & Organism Architecture)"
+    - "swm-4-subprojekt-radlerhose (4.1.2 Clamping Screw & 4.2.2 Bimanual Closed-Loop)"
+
+# ------------------------------------------------------------------------------
+# 1. EPISTEMIC DELTA (SOLL VS. IST): THE "SHOULDER-IN-CONCRETE" FALLACY
+# ------------------------------------------------------------------------------
+epistemic_delta:
+  naive_llm_prior_soll:
+    description: >
+      Standard LLMs and naive IK solvers treat the human shoulder as if it were
+      bolted into a concrete wall with infinite counter-inertia. When tasked with
+      loosening a lateral clamping screw (e.g., Goepel ball-joint screw), the naive
+      model applies an isolated wrist/forearm rotation ("Badminton Wrist-Switch")
+      regardless of the axis orientation relative to gravity or the breakaway torque.
+  physical_reality_ist:
+    description: >
+      A human body has no fixed world-space anchor except gravity-induced ground
+      friction (F_fric = mu_s * m * g). How a human generates kinetic force or
+      torque depends fundamentally on whether the operational force vector aligns
+      WITH gravity (vertical) or acts TRANSVERSE to gravity (lateral/oblique).
+  learning_gap_delta: >
+    Without counter-inertia or a closed bimanual force loop, applying high torque
+    along an axis transverse to gravity does not rotate the screw—it pushes and
+    rotates the human body away from the object ("Barn-Dooring" / Actio = Reactio).
+
+# ------------------------------------------------------------------------------
+# 2. UNIVERSAL PHYSICS LAW: GRAVITY BORROWING VS. COUNTER-INERTIA
+# ------------------------------------------------------------------------------
+universal_gravity_axis_law:
+  regime_A_gravity_aligned:
+    condition: "Force vector F is parallel/aligned with gravity g (e.g., pushing a door handle or release button downward)."
+    mechanism: "Gravitational Weight Borrowing (Gewichts-Leihe)"
+    physics_equation: "F_normal_ground(t) = m * g - F_handle(t)  =>  Delta_Weight < 0"
+    kinematic_signature:
+      - "No lateral counter-inertia or wide stance required."
+      - "The agent simply unloads a fraction of its own potential energy (m * g) onto the handle."
+      - "Center of Mass (CoM) remains stable over the existing support polygon."
+    swm_examples:
+      - "Pressing a door handle down."
+      - "4.1.1 Backrest release button (lab_backrest_push-v7.py: oblique downward vector)."
+
+  regime_B_gravity_transverse:
+    condition: "Force/Torque vector is perpendicular or oblique to gravity g (e.g., lateral clamping screw under a Goepel shell, climbing side-pull/Gaston)."
+    mechanism: "Active Counter-Inertia & Closed-Loop Bracing (Trägheitsmoment-Aufbau)"
+    physics_equation: "tau_applied <= min(tau_muscle, L_lever_body * mu_s * m * g + tau_bimanual_loop)"
+    kinematic_signature:
+      - "Gravity provides ZERO force in the working direction."
+      - "Isolated wrist rotation ('Badminton-Switch') works ONLY during low-friction free-spinning (tau <= 2 Nm)."
+      - "For breakaway torque (Losbrechmoment) or final tightening, the body MUST build an opposing moment of inertia prior to or during force application."
+    three_counter_inertia_strategies:
+      1_lower_com_squat:
+        action: "Lower pelvis by 8-15 cm (knee flexion) to bring the shoulder closer to the screw axis."
+        effect: "Minimizes the parasitic tipping lever arm between the hand and the floor."
+      2_widen_base_lunge:
+        action: "Step one foot back/outward into an asymmetric lunge stance (Ausfallschritt)."
+        effect: "Aligns the ground reaction vector with the lateral push/pull axis."
+      3_bimanual_closed_force_loop:
+        action: "Anchor the contralateral hand (Hand A) on top of the Goepel shell while Hand B turns the lateral screw below."
+        effect: >
+          Short-circuits the reaction force internally across the shoulder girdle
+          (Hand B -> Forearm B -> Chest/Shoulders -> Arm A -> Hand A -> Shell),
+          preventing the torso from being pushed away ('Barn-Dooring') AND
+          simultaneously providing the Preload Safety Bracket against gravity drop
+          when mu transitions from 0 to 1.
+
+# ------------------------------------------------------------------------------
+# 3. IN-FLIGHT IMPEDANCE DELTA (WHEN IST_TORQUE >> SOLL_TORQUE)
+# ------------------------------------------------------------------------------
+in_flight_impedance_surprise:
+  trigger_condition: "tau_ist (actual screw resistance, e.g., 12 Nm) >> tau_soll (expected routine resistance, e.g., 2 Nm)"
+  temporal_cascade:
+    phase_1_naive_attempt_and_recoil:
+      frames_ms: "0 to 120 ms (Frames 1..3)"
+      optical_markers:
+        - "Capillary blanching of fingertips/knuckles jumps to maximum (Law D1 = 1.0)."
+        - "Screw angle remains at 0.0 rad."
+        - "Micro-Recoil: Instead of the screw turning, the agent's wrist and shoulder deflect backward by 10-20 mm (Actio = Reactio)."
+    phase_2_subcortical_wrist_lock:
+      frames_ms: "60 to 180 ms (Frames 2..5)"
+      optical_markers:
+        - "The wrist ceases isolated pronation/supination and locks rigidly (Wrist-Lock)."
+    phase_3_inertia_reloading:
+      frames_ms: "150 to 450 ms (Frames 4..11)"
+      optical_markers:
+        - "Pelvis drops (squat) or foot steps back to increase effective counter-inertia."
+        - "Contralateral hand clamps onto the shell rim (secondary D1 blanching)."
+        - "Breakaway torque is driven from the proximal shoulder/torso chain rather than the fingers."
+
+# ------------------------------------------------------------------------------
+# 4. NEUROBIOLOGY OF THE MOTOR HEISENBERG PARADOX & THE "BEER CRATE LAW"
+# ------------------------------------------------------------------------------
+neuro_cognitive_routing:
+  bandwidth_latency_asymmetry:
+    conscious_cortex_pfc:
+      role: "Serial CEO (Prefrontal Cortex / Declarative Awareness)"
+      bandwidth: "40 - 50 bits/second (strictly serial)"
+      latency_ms: "250 - 400 ms"
+      silicon_equivalent: "Gemini Argon / High-Thinking Architect Mode (Slow Carbon CoT)"
+    subcortical_cerebellar_loop:
+      role: "Massively Parallel GPU Farm (Cerebellum, Basal Ganglia, Spinal Proprioception)"
+      bandwidth: "~11,000,000 bits/second (Golgi tendon organs, muscle spindles, cutaneous slip, vestibular)"
+      latency_ms: "50 - 90 ms (Long-Latency Reflex)"
+      silicon_equivalent: "Gemini Flash / Gemini Live with Anti-Explainer Muzzle (Fast Reflex Mode)"
+
+  active_subcortical_gating:
+    mechanism: "Transient Hypofrontality / Thalamic-Basal Ganglia Gating"
+    causal_law: >
+      When rapid sensory feedback is required (e.g., sudden screw resistance or a
+      badminton net-cord deflection), the brain actively suppresses the slow
+      prefrontal cortex because a 300-ms serial thinker interferes with a 60-ms
+      control loop ('Explicit Monitoring Interference').
+    consequence_1_post_hoc_amnesia: >
+      The human subject cannot verbally explain WHICH muscle fired first or HOW
+      the badminton shuttlecock was returned—the conscious cortex only receives
+      the 'press release' 300 ms AFTER the cerebellum has already executed the move.
+    consequence_2_motor_heisenberg_paradox: >
+      Conversely, if a subject is asked to consciously demonstrate a movement in
+      empty air without real physical resistance ('dry run'), the slow 40-bit/s
+      prefrontal cortex takes over, producing stiff, constructed trajectories that
+      lack authentic subcortical counter-inertia.
+
+  the_beer_crate_cost_function:
+    name: "Dynamic Subcortical Cost Router (Das Bierkisten-Gesetz)"
+    equation: "J(q) = w_energy * Metabolic_Cost(q) + w_pain * Nociceptive_Load(q) + w_balance * Stability_Risk(q)"
+    routing_behavior:
+      case_A_pain_free_fresh:
+        state: "w_pain ≈ 0 (no lower-back pain, fresh forearm muscles)"
+        emergent_kinematics: >
+          To save metabolic energy (avoiding lifting 50 kg of upper body mass out
+          of a deep squat), the cerebellum unconsciously lifts the beer crate from
+          the back—or initiates screw torque from the arm/trunk.
+      case_B_pre_fatigued_or_sore:
+        state: "w_pain >> 0 (slight lower-back soreness or forearms fatigued from climbing)"
+        emergent_kinematics: >
+          Background nociceptive/fatigue signals raise w_pain before conscious
+          thought occurs. The cerebellum automatically routes the trajectory into
+          a deep knee squat or full-body leverage without a conscious decision.
+    familiarity_filter:
+      known_instance: "100% unconscious Anticipatory Postural Adjustment (APA) during the final approach step."
+      unknown_or_abstract_instance: "Conscious cortical posture planning prior to contact (often slightly over-compensated)."
+
+# ------------------------------------------------------------------------------
+# 5. SILICON ORGANISM ARCHITECTURE: ARTIFICIAL SLEEP CONSOLIDATION
+# ------------------------------------------------------------------------------
+organism_consolidation_bridge:
+  biological_sleep_analogy: >
+    In humans, the hippocampus replays daytime cortical insights during deep/REM
+    sleep to consolidate them into fast cerebellar reflexes for the next day.
+  swm_manual_hippocampus_bridge: >
+    Because LLM weights are frozen between sessions, the SWM Skill hierarchy
+    (swm-0 to swm-6) and this Git repository (humanai2026/3D_Affrodance) act as
+    'Artificial Sleep': distilling slow, high-token Argon causal discoveries into
+    compact 1-sentence Self-Queries and 4 Fovea Channels that immediately govern
+    fast execution in Blender and Gemini Live.
