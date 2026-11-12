@@ -1,0 +1,189 @@
+# ==============================================================================
+# SWM-FACS-010: 4D EPISTEMIC PRIOR TENSOR & COUNTER-GAZE INTERFEROMETRY SPEC
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Artifact Type: Machine-Readable Causal & Epistemic AI Training Specification
+# Architecture Era: V2 (15.0s / 360 Frames @ 24 FPS Continuous Window)
+# ==============================================================================
+
+schema_version: "2.0.0"
+spec_id: "SWM-FACS-010"
+date: "2026-11-12"
+domain:
+  - "embodied_ai_epistemology"
+  - "affective_computing_facs"
+  - "postural_ocular_motor_coupling"
+  - "bidirectional_temporal_credit_assignment"
+
+# ------------------------------------------------------------------------------
+# 1. CORE EPISTEMIC DISCOVERY: 4D PRIOR CONDITIONING IN WORLD MODELS
+# ------------------------------------------------------------------------------
+epistemic_prior_framework:
+  law_id: "SWM-EPIST-004"
+  title: "4D Prior Tensor Conditioning of Predictive World Models"
+  core_principle: >
+    An embodied agent never predicts motor or facial trajectories from a blank slate.
+    Every forward Soll-prediction K_soll(t) is conditioned on a 4-dimensional prior
+    tensor P = [P_anatomical, P_somatosensory, P_psychological, P_situational].
+    Cross-auditing a symbolic causal model (Track 1) against a 15.0s zero-anatomy
+    generative video world model (Track 2) and human proprioceptive/mirror-neuron
+    evaluation (Track 3) demonstrates two fundamental epistemic laws:
+    (1) Visual blindness to a reference video does NOT equal contextual blindness.
+    (2) Mild proxy narratives induce situational stake attenuation and cinema-acting
+        externalization bias in video world models, whereas explicit causal priors
+        preserve isometric suppression under high-stakes status defense.
+
+  prior_dimensions:
+    P1_anatomical_biomechanical:
+      definition: "Implicit multi-joint coupling, base-of-support vs. center-of-mass regulation, and ocular-cervical-thoracic coordination."
+      dominant_track: "Track_2_Generative_Video_Prior"
+      empirical_finding: >
+        With 0% anatomical prompting, the video world model spontaneously coupled
+        facial dynamics to narrow line-walking ('Kreuzgang'), +12..14 mm trapezius
+        elevation, a -18.0 mm vertical cranial sink driven by reflexive ~0.20 m
+        balance-stance widening at shock onset, and a 500-550 ms full eyelid closure
+        required to reset upper-face motor units.
+
+    P2_somatosensory_boundary_contrast:
+      law_id: "SWM-SOMAT-004"
+      title: "Split Somatosensory Schema Contrast (Homogeneous vs. Discontinuous Boundary)"
+      definition: >
+        Homogeneous thermal/tactile states across the body surface (Delta_T_spatial ~ 0)
+        map to coherent environmental schemas with zero subcortical boundary alarm.
+        Conversely, a sharp horizontal schema discontinuity—structured formal attire
+        above vs. uninsulated barefoot contact on a cold floor with step-induced
+        convective airflow (Delta_Q_conv > 0)—generates a continuous bottom-up sensory
+        prediction error ('visual attention can avert, somatosensory inflow cannot').
+        Motor signature: tonic abdominal wall bracing (M. transversus abdominis),
+        shift to shallow thoracic respiration, and elevated baseline jaw/lip tonus.
+
+    P3_psychological_status_valence:
+      law_id: "SWM-PSYCH-004"
+      title: "Status-Baseline Calibration & Appeasement Signal Polarity Inversion"
+      definition: >
+        An involuntary distress/appeasement leak (AU1+AU4 medial brow elevation paired
+        with bilateral trapezius drop) exhibits strict dyadic polarity inversion as a
+        function of observer relationship valence V_obs:
+        (a) Cooperative observer (V_obs > 0): Elicits protective de-escalation.
+        (b) Adversarial/rival observer after prior status conflict (V_obs < 0): Acts as
+            vulnerability confirmation, causally unlocking the observer's unmasked
+            dominance smile at t = 8.08 s (retrograde credit assignment to SWM-FACS-008f).
+      calibration_rule: >
+        To maintain high potential fall-energy (E_pot ~ m_pride * g_asym * h_facade)
+        across multi-stage social interactions, a high-pride agent baseline caps
+        involuntary AU1+AU4 leakage to <= 1.30 s before executing a tonic reset.
+
+    P4_situational_stakes_and_cinema_bias:
+      law_id: "SWM-EPIST-004b"
+      title: "Proxy-Narrative Attenuation & Cinema-Acting Externalization Bias ('Zero Head-Shake Law')"
+      dominant_track: "Track_1_Causal_SWM_Prior"
+      empirical_finding: >
+        Because everyday studio-faux-pas proxy prompts carry lower existential stakes
+        and generative video models inherit theatrical externalization priors from
+        cinema/TV corpora (where actors signal internal states to distant spectators),
+        Track 2 produced a lateral 'No' head-shake (nh_rz oscillation) and a 3.40 s
+        prolonged distress expression. Under genuine high-pride status defense, an
+        outward head-shake constitutes communicative capitulation. Causal situational
+        priors enforce strict isometric cervical yaw lock (|nh_rz| < 0.010 rad) and
+        route excess autonomic pressure into non-communicative internal vents
+        (defensive lower-lip roll AU28b + suprahyoid swallow reflex).
+
+# ------------------------------------------------------------------------------
+# 2. QUANTITATIVE 3-TRACK INTERFEROMETER AUDIT LEDGER (360 FRAMES / 15.0 S)
+# ------------------------------------------------------------------------------
+interferometer_audit_ledger:
+  temporal_bracket: "15.0s = 2.0s Baseline Prep + 10.0s Core Collision + 3.0s Hysteresis (24 FPS)"
+  channel_deltas:
+    - channel: "Locomotor Approach & Thoracic Armor (1.85s - 3.38s)"
+      track1_prior_prediction: "Linear forward step (0.048 -> 0.000 m), static torso."
+      track2_video_observation: "Overcompensated narrow line-walk ('Kreuzgang') with +14 mm shoulder elevation and thoracic-pelvic counter-yaw."
+      calibrated_synthesis: "Integrated Track 2 thoracic counter-yaw (torso_rz = -0.085 rad * sin(phi)) and elevated shoulder armor."
+      epistemic_source: "Track_2_Biomechanical_Prior"
+
+    - channel: "Ocular Trajectory in Frontal Standstill (3.38s - 6.45s)"
+      track1_prior_prediction: "Immediate downward Ocular Lead Break at t = 3.30 s (eye_rx = +0.265 rad)."
+      track2_video_observation: "Headlight Gaze Paralysis: dead-center fixation in observer's eyes with zero blinks (>5.0 s) while orbicularis oris seal melts (~2 mm lip part)."
+      calibrated_synthesis: "Topological Context Switch: Passing locomotion triggers downward Ocular Lead Break; forced frontal standstill locks gaze dead-center to avoid signaling submission."
+      epistemic_source: "Track_2_Ocular_Prior"
+
+    - channel: "Axial Z-Height & Base-of-Support Coupling (5.12s - 7.95s)"
+      track1_prior_prediction: "Constant cranial Z-elevation after arrival."
+      track2_video_observation: "Cranial/clavicular Z-sink at constant camera distance, revealing trapezius tonus loss and reflexive ~0.20 m balance-stance widening."
+      calibrated_synthesis: "-18.0 mm axial Z-drop and -10.5 mm shoulder collapse during 1.30 s shock, followed by +15.1 mm Z-recovery as narrow poised stance is subconsciously restored."
+      epistemic_source: "Track_2_plus_Track_3_Kinematics"
+
+    - channel: "AU1+AU4 Contra-Vector Distress Window"
+      track1_prior_prediction: "0.55 s transient pulse (2.80s - 3.35s)."
+      track2_video_observation: "3.40 s prolonged open appeasement expression (5.12s - 8.52s)."
+      calibrated_synthesis: "Calibrated 1.30 s involuntary short-circuit (5.12s - 6.45s; medial brow +6.5 mm, lateral brow -3.8 mm, fold clearance 0.48 mm)."
+      epistemic_source: "Track_3_Status_Baseline_Calibration"
+
+    - channel: "Cervical Yaw Stability During Shock & Reset (5.00s - 7.50s)"
+      track1_prior_prediction: "Restrained cervical yaw (|nh_rz| <= 0.022 rad, zero oscillation)."
+      track2_video_observation: "Lateral communicative head-shake during peak distress and lid closure."
+      calibrated_synthesis: "Hard assertion |nh_rz| < 0.010 rad across Frames 121..181 (0.0% outward head-shake)."
+      epistemic_source: "Track_1_Causal_Situational_Prior"
+
+    - channel: "Tonic Eyelid Reset Curtain (6.45s - 7.05s)"
+      track1_prior_prediction: "Placed 500 ms centering closure in Act 1 prep (0.50s - 1.00s); brief 75 ms blink in Act 2b."
+      track2_video_observation: "500 ms full tonic closure (AU43) at peak distress acting as a neurological reset curtain; AU1 vanishes behind closed lids while mouth seals."
+      calibrated_synthesis: "550 ms full closure (lid_open = 0.0, zero head-shake) wiping AU1 to 0.0, engaging AU28b defensive lip roll (-24% lower-lip luminance) + swallow pulse at 7.18 s."
+      epistemic_source: "Track_2_Neurobiological_Reset_Prior"
+
+# ------------------------------------------------------------------------------
+# 3. FALSIFIABLE CAUSAL LAWS FOR EMBODIED AI TRAINING (SWM-FACS-010a .. 010e)
+# ------------------------------------------------------------------------------
+causal_laws:
+  SWM-FACS-010a:
+    name: "Social Mirror Spectatoring & Two-Stage Collision"
+    rule: >
+      Without optical mirrors in the environment, an agent experiencing acute status
+      asymmetry involuntarily uses the observer's eyes as an external mirror. Wave 1
+      (outside-in 'Spectatoring' shift) slows gait and parts the lips (~2 mm); Wave 2
+      (+250..500 ms conscious realization of observer identity and irreversibility)
+      triggers autonomic defense.
+
+  SWM-FACS-010b:
+    name: "Overcompensated Narrow Line-Gait ('Kreuzgang' Armor)"
+    rule: >
+      High-pride agents compensating for perceived vulnerability adopt narrow
+      line-walking (~0.08 m lateral foot corridor) with elevated shoulders (+12..14 mm)
+      and counter-rotating torso yaw, simultaneously projecting dominance and
+      minimizing physical footprint.
+
+  SWM-FACS-010c:
+    name: "Gaze-Break Topology Switch (Locomotor Pass vs. Frontal Standstill)"
+    rule: >
+      In passing trajectories, ocular downward break precedes neck flexion by ~200 ms
+      (5 frames @ 24 fps). In forced frontal standstill before a rival, downward gaze
+      signals defeat; pupils lock dead-center with blink suppression (>5.0 s) until
+      tonic eyelid reset.
+
+  SWM-FACS-010d:
+    name: "Shock Stance-Drop & Post-Reset Narrowing Hysteresis"
+    rule: >
+      Central affective shock transiently overrides narrow line-balance, forcing a
+      ~0.20 m stabilizing stance (-18.0 mm cranial Z-drop) before post-reset cortical
+      control restores narrow stance alignment (+15.1 mm cranial Z-recovery).
+
+  SWM-FACS-010e:
+    name: "500-ms Tonic Eyelid Curtain Reboot"
+    rule: >
+      High-amplitude AU1+AU4 distress leakage cannot be smoothly morphed into a cold
+      executive mask under unbroken eye contact; a 500-550 ms full eyelid closure
+      (AU43) is required to sever visual feedback, clear upper-face motor units, and
+      establish cortical lip compression (AU24/AU28b).
+
+# ------------------------------------------------------------------------------
+# 4. SELF-SUPERVISED BENCHMARK PROTOCOL FOR WORLD MODELS
+# ------------------------------------------------------------------------------
+future_benchmark_protocol:
+  benchmark_id: "SWM-BENCH-CROSSBODY-001"
+  title: "Horizontal Split-Body Occlusion Interferometer"
+  description: >
+    Evaluates whether a world model understands whole-body biomechanical coupling
+    rather than local pixel interpolation.
+  steps:
+    - "1. Capture full-body clothed human motion across balance and status transitions."
+    - "2. Mask video horizontally at the waist prior to model input (Upper-Only OR Lower-Only)."
+    - "3. Predict hidden-half 3D joint trajectories (e.g., inferring 0.20 m stance widening and subsequent stance narrowing purely from cranial Z-sink, trapezius drop, and torso yaw)."
+    - "4. Measure L2 joint-angle and phase-latency error against unmasked ground truth."

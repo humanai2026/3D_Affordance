@@ -1,0 +1,52 @@
+# ==============================================================================
+# STATELESS V2 INTEGRATION INTENT CONTRACT: VICKY COUNTER-GAZE & STEP-OUT
+# Target Pipeline: SWM V6 Modular 1200-Frame Master -> V2 Incremental Upgrade
+# Reference Implementation: lab_facial_vicky_countergaze_v4.py
+# ==============================================================================
+
+intent_id: "V2-INTENT-S0S1-COUNTERGAZE"
+engine_era: "V2 (Carbon + OMNI 1.2)"
+date: "2026-11-12"
+source_benchmark: "SWM-FACS-010 / Sub-Project Face 5.3"
+target_scenes:
+  - "scene-0.py (Frames 126..240: Curtain release, step-out curve, gaze collision & arrival)"
+  - "scene-1.py (Frames 1..95: Post-reboot pride walk to examination chair)"
+
+boundary_lock:
+  scene_0_frame_1: "LOCKED (0.0000 mm/rad delta)"
+  scene_0_to_scene_1_handshake_f240_f1: "PRESERVE_OR_SYNC_PAIR (0.0000 mm/rad stitch continuity mandatory)"
+  camouflaged_hand_transition_law_6c: "ACTIVE (Hands must settle to neutral side handshake during final walking frames 150..192, NEVER during standstill)"
+
+cristine_gate:
+  status: "APPROVED"
+  psychological_calibration: >
+    Calibrated to the unrepentant high-pride character baseline ('Sharpest Chili'):
+    preserves dignified agency and high fall-height (E_pot) by banning submissive
+    head-shaking (0.0% nh_rz oscillation) and capping the involuntary AU1+AU4
+    vulnerability leak + shoulder/stance drop to ~1.3s before the 550ms Iron Curtain
+    eyelid reboot restores cold composure for Scene 3's Toughness Trap.
+
+v2_kinematic_channels_to_patch:
+  1_tightrope_crosswalk_stepout:
+    window_scene_0: "Frames 128..162"
+    why: "Overcompensated superiority + closed-thigh thermal/exposure protection (SWM-FACS-010b)"
+    parameters:
+      shoulder_elev_z: "+0.012 to +0.014 m"
+      step_lateral_width: "Narrow line-walk (~0.08 m foot X-corridor)"
+      torso_pelvis_counter_yaw: "torso_rz = -0.085 rad * sin(phi), pelvis_rz = +0.095 rad * sin(phi)"
+
+  2_two_stage_collision_and_stance_drop:
+    window_scene_0: "Frames 154..186"
+    why: "Outside-in mirror shock + brief balance override enabling rival's 8.08s mask drop (SWM-FACS-010a/d)"
+    parameters:
+      soul_window_leak_au1_au4: "1.3s involuntary flare (SK_Soul_Window = 1.0, mouth_open = 0.24)"
+      axial_shock_drop: "pelvis_z -0.018 m, shoulder_elev_z -0.010 m, stance widens to ~0.20 m"
+      cervical_anti_headshake_guard: "abs(Delta_nh_rz) < 0.010 rad (STRICTLY NO HEAD-SHAKE)"
+
+  3_iron_curtain_eyelid_reboot_and_adduction_recovery:
+    window_scene_0: "Frames 186..240 (into scene-1.py Frames 1..45)"
+    why: "550ms tonic closure wipes AU1 clean and re-seals posture without outward defeat (SWM-FACS-010e)"
+    parameters:
+      tonic_lid_reboot: "13 frames (540ms) lid_open = 0.0 with rigid neck"
+      post_reboot_alpha_mask: "nh_rx = -0.036 rad (chin +2 deg up), SK_Lip_Bite_Roll = 0.86 (-24% lower lip luminance), swallow pulse at +4 frames"
+      subconscious_leg_reclosure: "Pelvis Z recovers +0.015 m; standing foot_roll / internal thigh adduction bias active"
