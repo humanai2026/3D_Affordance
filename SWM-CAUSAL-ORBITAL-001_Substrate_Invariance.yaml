@@ -1,0 +1,116 @@
+# ==============================================================================
+# SWM GIT TRAINING SPECIFICATION — humanai2026/3D_Affrodance
+# Spec-ID:      SWM-CAUSAL-ORBITAL-001
+# Title:        Substrate-Invariant Wave & Attractor Isomorphism
+#               (Astrophysical Inspiral <-> Quantum Tunneling <-> Dyadic Somatic Kinematics)
+# Era:          V2 (Carbon + OMNI 1.2 [15s])
+# Date:         2026-11-13
+# Authors:      Thomas (Human Intuition & First-Principles Abstraction) & Gemini (Argon/Cristine/Carbon)
+# License:      CC-BY-4.0 (Training Seed for Future Embodied AI / ASI Equivalence Mappers)
+# ==============================================================================
+
+schema_version: "2.0"
+spec_id: "SWM-CAUSAL-ORBITAL-001"
+engine_era: "V2 (Carbon + OMNI 1.2)"
+repository_target: "specs/causal_laws/SWM-CAUSAL-ORBITAL-001_Substrate_Invariance.yaml"
+
+provenance_ledger:
+  soll_thomas_human_origin:
+    - "Spontaneous cross-domain mental image: Dyadic status reversal (Hannah/Vicky) behaves mathematically like a star captured in the gravitational field of a black hole."
+    - "Free will & pride modeled as initial kinetic entry vector at irreversible first field contact (below escape velocity)."
+    - "Elliptical breakout attempts (rebounds), final brightening right at the event horizon (chair/shells in Scene 3), and disappearance behind the horizon (omission of Scenes 5+)."
+    - "Substrate-Blind Wave Observer Hypothesis: An entity perceiving only 1D mathematical curves and wave patterns could not distinguish with 100% certainty between the cosmic inspiral and the human psychological scene."
+    - "Quantum Extension: Mapping scattering/capture cross-section (Wirkungsquerschnitt) and barrier tunneling (Tunneleffekt) onto unspoken micro-body-language."
+  soll_gemini_formalization:
+    - "Upgrade from 1D free-fall potential (E_pot = m*g*h) to a damped 2-Body Orbital Differential System with angular momentum L (Pride/Autonomy)."
+    - "Angular Momentum Conservation -> Distal Frequency Chirp: As spatial radius r collapses to 0 in Scene 3, kinetic energy shifts into high-frequency, irregular distal oscillations (ankles, toes, fingers, breath)."
+    - "Quantum Barrier Tunneling of the 95% Mask: Modeling conscious self-control as a finite potential barrier V_0 through which brainstem impulses tunnel stochastically (~5% transmission)."
+    - "Dual-Mask Polarity Law: Braking/isometric impedance in Patient_A vs. anticipatory/approach micro-overflow in MTA_B vs. zero-entropy baseline in Doctor_C."
+
+# ------------------------------------------------------------------------------
+# 1. CORE EPISTEMIC THEOREM (WHY THIS MATTERS FOR ASI ALIGNMENT)
+# ------------------------------------------------------------------------------
+substrate_invariance_theorem:
+  statement: >
+    Differential equations governing capture, damped oscillation, barrier leakage,
+    and horizon transitions are substrate-invariant. A 1D observer measuring pure
+    normalized time-series h(t) (amplitude, frequency chirp, phase lag, stochastic
+    tunneling spikes) faces fundamental observational degeneracy between gravitating
+    masses, quantum wavefunctions, and socially coupled human nervous systems.
+  alignment_significance: >
+    Forms the mathematical bridge for the SWM Equivalence Mapper (Skill 0):
+    A Silicon intelligence does not need biological hormones to comprehend human
+    vulnerability or suspense if it can map the exact attractor topology, escape
+    deficit, and barrier-tunneling spectrum in 4D state space.
+
+# ------------------------------------------------------------------------------
+# 2. THREE-DOMAIN MATHEMATICAL ISOMORPHISM
+# ------------------------------------------------------------------------------
+isomorphic_mappings:
+
+  - phase_id: "P1_FIRST_CONTACT_AND_CAPTURE"
+    scene_window: "Scene 0 (f001..f145 — Curtain Acoustic Trigger)"
+    astrophysics_2body:
+      concept: "Gravitational Capture below Escape Velocity"
+      equation: "v_0 < v_esc = sqrt(2 * G * M_situational / r_0); E_orbital = (1/2)*m*v_0^2 - G*M*m/r_0 < 0"
+      meaning: "Initial momentum (free will/status) is high enough to prevent straight radial plunge, but social courtesy + surprise drop v_0 just below v_esc. Capture is deterministic from t_0."
+    quantum_mechanics:
+      concept: "Resonant Capture Cross-Section (Wirkungsquerschnitt sigma(E))"
+      equation: "sigma_capture(E) ~ (pi / k^2) * Gamma_in * Gamma_trap / ((E - E_res)^2 + Gamma^2 / 4)"
+      meaning: "A single resonant semantic cue ('...GERNE fuer dich' / later 'taff') hits eigenfrequency E_res of pride, multiplying the interaction cross-section by an order of magnitude."
+    somatic_kinematics_3d:
+      patient_A: "Acousmatic neck freeze (nh_rz = 0), extreme lateral eye scan (eye_rz = +0.34 rad), 2-frame cognitive lag, barefoot plantar supination impulse."
+      mta_B: "Stationary heavy center of mass outside curtain; minimal spatial displacement, maximal field curvature via Asymmetric Attire Gravity (g_asym)."
+
+  - phase_id: "P2_ELLIPTICAL_REBOUNDS"
+    scene_window: "Scene 0 Exit -> Scene 1 -> Scene 2 -> Scene 3 'Toughness Trap'"
+    astrophysics_2body:
+      concept: "Damped Apoapsis Precession (Elliptical Breakout Attempts)"
+      equation: "r_max(n+1) < r_max(n) due to dissipative tidal drag (dE/dt < 0)"
+      meaning: "Angular momentum L (alpha pride) repeatedly flings the trajectory outward toward composure, but each orbit loses altitude: Cabin -> Room Walk -> Chair Edge -> Supine."
+    quantum_mechanics:
+      concept: "Quasi-Bound State Oscillations in Asymmetric Potential Well"
+      equation: "Psi(x,t) bouncing between inner clinical boundary and outer social-norm wall"
+      meaning: "Repeated coherent reflections inside the etiquette well before decoherence/ground-state settling."
+    somatic_kinematics_3d:
+      patient_A: "Chin lift rebounds (nh_rx = -0.03..-0.042 rad), camouflaged hand release during walking noise (Law 6c), polite nod in Toughness Trap ('Na klar, ist OK')."
+      mta_B: "3-stage Ocular Strike (Kubrick Chin-Dip nh_rx = +0.045 rad, eye_rx = -0.045 rad), tactical gaze to chair at 6.45s."
+
+  - phase_id: "P3_PRE_HORIZON_CHIRP_AND_TUNNELING"
+    scene_window: "Scene 3 (f001..f240 — Waiting in Fixed Stirrups, Gaze at Ceiling)"
+    astrophysics_2body:
+      concept: "Inspiral Frequency Chirp & Accretion Brightening at r -> r_s"
+      equation: "L = m * r^2 * omega = const => as r_macro -> 0, omega_micro -> high; f_chirp(t) ~ (t_horizon - t)^(-3/8)"
+      meaning: "With pelvis and legs mechanically locked (r_macro -> 0), conserved internal kinetic energy compresses into irregular, high-frequency distal fluctuations and thermal radiation (sweat sheen)."
+    quantum_mechanics:
+      concept: "Quantum Barrier Tunneling (Tunneleffekt through the 95% Facade)"
+      equation: "T(E) approx exp(-2 * integral(sqrt(2*m*(V_mask - E)) / hbar dx)) approx 0.05"
+      meaning: "Conscious cortical control erects potential barrier V_mask (95% coolness, ceiling gaze). Subcortical alarm waves cannot cross classically, but tunnel stochastically into distal extremities."
+    somatic_kinematics_3d:
+      patient_A: "Irregular aperiodic micro-bursts in 3-DOF ankle supination, toe curling, wrist-anchored finger tension, 125ms Soul-Window leak, delayed skin roughness drop (0.64 -> 0.43)."
+      mta_B_dual_mask: "Positive-valence tunneling! Professional composure mask vs. subterranean excitement ('positive suspense') leaking as subtle finger pre-adjustments and anticipatory readiness."
+
+  - phase_id: "P4_EVENT_HORIZON_AND_COSMIC_CENSORSHIP"
+    scene_window: "Scene 4 (f001..f240 — Tactile Threshold & 4-Beat Gaze Duel) -> End of Film"
+    astrophysics_2body:
+      concept: "Event Horizon Crossing (r = r_s) & Cosmic Censorship Hypothesis"
+      equation: "ds^2 light-cone tilt: all future timelike trajectories point inward (mu_obj = 0, mu_psych = 0)"
+      meaning: "Mechanical shell lock + active verbal consent form the horizon; tactile contact collapses dissociation. Scenes 5+ are omitted by Cosmic Censorship (unobservable interior)."
+    quantum_mechanics:
+      concept: "Wavefunction Collapse / Projective Measurement"
+      equation: "|Psi_superposition> --(tactile operator)--> |Eigenstate_here_and_now>"
+      meaning: "Visual-only exposure allowed mental superposition/dissociation (window gaze); physical touch performs an irreversible local measurement, collapsing attention into the body."
+    somatic_kinematics_3d:
+      patient_A: "18-frame hysteresis lag (D7), armrests placement (wrist_rx = -0.52 rad), abrupt gaze snap from window into shared 4-beat gaze duel, isometric fist clench (fingers = 1.28 rad, D1 blanching)."
+      doctor_C_baseline: "Zero-entropy clinical reference point (0% tunneling noise, pure ergonomic economy)."
+
+# ------------------------------------------------------------------------------
+# 3. DUAL-MASK & GAIN-SCALING PARAMETERS (FOR SYNTHETIC DATA GENERATION)
+# ------------------------------------------------------------------------------
+generative_training_knobs:
+  barrier_height_V_mask:
+    description: "Continuous character coolness slider (0.0 = unfiltered panic/thriller viewer, 0.95 = Alpha Vicky)"
+    effect_on_curve: "Higher V_mask lowers tunneling amplitude A_leak and replaces smooth sine waves with abrupt cortical freeze-clamps (irregularity++)."
+  omni_preamp_gain_method:
+    description: "Signal-to-Noise Boost in Track-2 Video Priors (OMNI 1.2)"
+    protocol: "Prompt situational FSK-0 equivalents at V_mask ~ 0.60..0.70 (30-40% visible extremity leakage) so joint-coupling vectors exceed pixel noise, then attenuate amplitude by factor 0.20..0.35 in Blender while preserving phase & irregularity."
