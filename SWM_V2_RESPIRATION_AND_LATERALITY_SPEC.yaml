@@ -1,0 +1,91 @@
+# ==============================================================================
+# SWM V2 ADD-ON SPECIFICATION: GLOBAL RESPIRATION CARRIER-WAVE, EGOCENTRIC
+# LATERALITY & AGENTIC COLD-START HYGIENE (PUBLIC REPOSITORY EDITION)
+# Repository: https://github.com/humanai2026/3D_Affordance
+# Security & Privacy Policy: Contains strictly abstract perceptual, biomechanical,
+# and agentic architecture laws. Zero executable code, zero local script names,
+# and zero narrative or personal identifiers.
+# ==============================================================================
+
+schema_version: "SWM_V2_Respiration_And_Laterality_Spec_v1.0"
+repository: "https://github.com/humanai2026/3D_Affordance"
+engine_era: "V2 (Carbon + OMNI 1.2)"
+extends: "SWM_V2_Causal_Rig_Delta_Spec_v1.0"
+
+# ------------------------------------------------------------------------------
+# 1. PERCEPTUAL PHASE TRANSITION: GLOBAL RESPIRATION CARRIER-WAVE (SWM-RESP-002)
+# ------------------------------------------------------------------------------
+global_respiration_carrier_law:
+  law_id: "SWM-RESP-002"
+  provenance: "Soll_HI (Perceptual Phase-Transition Discovery) x Soll_AI (Volume-Hub Calibration)"
+  core_principle: >
+    Ocular saccades, lip micro-tensions, finger curls, and toe waves are episodic signals:
+    in the absence of an acute trigger, their stillness reads as natural calm. Respiration,
+    by contrast, is a continuous biological carrier frequency (0.20 to 0.30 Hz). Human mirror
+    neurons perform a rapid baseline check on thoracic and abdominal volume displacement
+    against gravity to classify an articulated figure as a living organism rather than an
+    inanimate mannequin.
+  perceptual_contrast_asymmetry:
+    single_agent_trap: >
+      When one agent in a multi-agent scene exhibits visible respiratory volume displacement
+      while co-present agents remain below the visual perception threshold, the observer's
+      visual system elevates the realism baseline for the entire space—causing non-breathing
+      neighbors to register involuntarily as lifeless automatons.
+    mandatory_scene_rule: >
+      Visible respiratory volume oscillation (abdominal and/or thoracic) is mandatory for all
+      co-present agents from frame 1 onward, scaled to remain clearly readable even beneath
+      loose-fitting garments (minimum effective normalized amplitude ~0.35 to 0.75 rather
+      than sub-threshold +/-0.12 micro-ripples).
+  dramaturgical_leverage:
+    tonic_freeze_amplification: >
+      Establishing a continuous 0.20-0.30 Hz respiratory carrier wave across all agents turns
+      an abrupt mid-sentence thoracic arrest (Tonic Freeze) in the target agent into the
+      highest-contrast non-verbal shock signal in the scene, while calm neighbors continue
+      breathing undisturbed.
+    dyadic_anticipation_hold: >
+      In multi-agent observation, a sudden deep thoracic inhalation followed by an active
+      breath-hold (apnea) in an observing agent encodes heightened anticipatory focus without
+      requiring exaggerated facial motion.
+
+# ------------------------------------------------------------------------------
+# 2. OBSERVER-RELATIVE EGOCENTRIC LATERALITY (SWM-BIOMECH-002b)
+# ------------------------------------------------------------------------------
+egocentric_laterality_law:
+  law_id: "SWM-BIOMECH-002b"
+  provenance: "Soll_AI (Spatial Orientation Audit) x Soll_HI (Dyadic Tension Validation)"
+  core_principle: >
+    Asymmetrical distal tension lead/lag (4 to 5 frames at 24 fps, ~165 to 210 ms) is not
+    bound to static anatomical handedness, but to the agent's egocentric spatial orientation
+    relative to the active social trigger (entryway, approaching agent, or observer gaze).
+  spatial_mapping:
+    contralateral_vs_ipsilateral_flip: >
+      When an agent's spatial yaw rotates between scenes (e.g., lateral transit vs. frontal
+      supine/reclined orientation at yaw = 0.0 rad), the exposed side facing the trigger flips
+      accordingly. The trigger-facing hand and forefoot initiate distal tension waves 4 to 5
+      frames earlier and at ~12 to 18% higher peak amplitude than the shielded side.
+
+# ------------------------------------------------------------------------------
+# 3. PASSIVE SURFACE-NORMAL CONTACT RIDE (SWM-CAUSAL-013b)
+# ------------------------------------------------------------------------------
+passive_surface_ride_law:
+  law_id: "SWM-CAUSAL-013b"
+  provenance: "Soll_AI (Kinematic Contact Invariance)"
+  core_principle: >
+    When protective hands rest directly on the anterior abdomen during active respiration,
+    wrists must not remain frozen in world coordinates (which causes abdominal mesh clipping)
+    nor oscillate laterally (which creates artificial rubbing). Instead, wrists translate
+    passively along the tilted anterior abdominal surface normal (~1.5 mm displacement
+    proportional to breath_abd) and lock back to exact 0.0000 mm boundary coordinates at
+    scene start and during full Tonic Freeze.
+
+# ------------------------------------------------------------------------------
+# 4. AGENTIC COLD-START & WRITE-ONLY / VERIFY-ONLY SPLIT (SWM-META-001f)
+# ------------------------------------------------------------------------------
+agentic_execution_hygiene:
+  law_id: "SWM-META-001f"
+  provenance: "Soll_HI x Soll_AI (Cold-Start Multi-Channel Transfer Experiment)"
+  core_principle: >
+    Under heavy context loads (multiple domain rulebooks plus multi-file kinematic source
+    code), combining code synthesis and headless simulation execution inside a single
+    inference turn risks gateway latency timeouts. Decoupling the workflow into strictly
+    atomic turns—(1) Context & Defect Audit,
