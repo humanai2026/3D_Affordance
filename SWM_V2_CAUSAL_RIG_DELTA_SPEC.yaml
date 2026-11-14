@@ -1,0 +1,205 @@
+# ==============================================================================
+# SWM V2 AI-TRAINING & CAUSAL RIG DELTA SPECIFICATION (PUBLIC REPOSITORY EDITION)
+# Repository: https://github.com/humanai2026/3D_Affordance
+# Security & Privacy Policy: Contains strictly abstract biomechanical, kinematic,
+# and 3D-rigging causal laws. Zero executable code, zero local script names,
+# and zero narrative/personal identifiers.
+# ==============================================================================
+
+schema_version: "SWM_V2_Causal_Rig_Delta_Spec_v1.0"
+repository: "https://github.com/humanai2026/3D_Affordance"
+engine_era: "V2 (Carbon + OMNI 1.2)"
+domain_scope:
+  - "Multi-Channel Autonomic Coupling (Respiration x Minimalist Visor Mimicry x Postural Tonus x Distal Extremities)"
+  - "3D Procedural Rigging Invariants & Self-Critical Engineering Deltas"
+
+boundary_and_compatibility_contract:
+  backward_compatibility: "100% bit-exact baseline preservation when V2 channels are omitted (neutral default 0.0 / scale 1.0)"
+  boundary_frame_lock: "Start and end boundary frames remain locked to 0.0000 mm/rad macro-kinematic delta"
+  living_baseline_boundary_guard: "sin(pi * (frame - 1) / (N - 1)) -> 0.0000 at frame 1 and frame N"
+
+# ------------------------------------------------------------------------------
+# 1. EPISTEMIC PROVENANCE LEDGER (Soll_HI vs. Soll_AI)
+# ------------------------------------------------------------------------------
+provenance_ledger:
+  soll_hi:
+    role: "Human Interface Architect & Embodied Empirical Observer"
+    contributions:
+      - id: "HI-01"
+        title: "Unified Subconscious Causal Chain"
+        insight: >
+          Established that the functional boundary separates conscious voluntary mechanics
+          (kinematic degrees of freedom against external impedance) from subconscious autonomic
+          channels (facial micro-expression, respiration, postural tonus, distal extremities).
+          When two agents' cognitive states are known, all four autonomic channels can be
+          synthesized as one coupled dynamical system.
+      - id: "HI-02"
+        title: "3-Phase Cortical vs. Autonomous Respiration Gating (SWM-RESP-001)"
+        insight: >
+          Observed that conscious nasal-in / oral-out breathing (represented on a minimalist
+          head via a subtle mouth O-aperture without adding a nose mesh) acts as descending
+          cortical inhibition that suppresses distal extremity twitches, whereas slipping back
+          into autonomous nasal-in / nasal-out breathing releases the brake so distal tension
+          waves pass through, followed by conscious oral re-masking.
+      - id: "HI-03"
+        title: "Visor-Membrane Silhouette Principle (Zero Uncanny Valley)"
+        insight: >
+          Identified that a completely static visor plate behind expressive eyes reads as rigid
+          in close-up, while sculpting anatomical brow or cheek ridges onto a minimalist visor
+          triggers the Uncanny Valley. Resolved via perimeter-only silhouette flexion.
+      - id: "HI-04"
+        title: "Living-Baseline Micro-Drift as Contrast Agent for Tonic Freeze"
+        insight: >
+          Demonstrated that human extremities never maintain robotic 0.0000 stillness; subtle
+          non-periodic baseline micro-drift is required so that an acute Tonic Freeze snaps
+          into perceptual salience as a genuine shock arrest.
+      - id: "HI-05"
+        title: "Asymmetrical Hand Tension & Ulnar Tendon Cascade"
+        insight: >
+          Diagnosed flat, coplanar resting fingers in close-up QA and grounded the correction
+          in physiological ulnar tendon gradients and asymmetrical dyadic tension.
+      - id: "HI-06"
+        title: "Dual-View Observer Camera Methodology & Next-Generation Benchmark"
+        insight: >
+          Defined a two-camera inspection standard (head-locked facial close-up + unclamped
+          full-body front camera) and established a two-pillar benchmark for next-generation
+          models: (1) autonomous elimination of physical/collision defects from video plus
+          kinematic source, and (2) structural refinement of expressive abstract dummy geometry
+          without photorealism or sensitive anatomical detail.
+
+  soll_ai:
+    role: "AI System Architect, 3D Rig Engineer & Self-Critical Auditor"
+    contributions:
+      - id: "AI-01"
+        title: "Posterior-Pivoted Respiration Rig (Abdomen_Breath & Thorax_Breath)"
+        insight: >
+          Placed respiration scale pivots along the posterior spine axis (Y=+0.055m abdominal,
+          Y=+0.065m thoracic) so anterior volume expansion (-Y) and sternal lift (+Z) occur
+          without posterior support-surface clipping or child shoulder/neck pivot distortion.
+      - id: "AI-02"
+        title: "Minimalist Visor Head v3 Geometry & Depth Cueing"
+        insight: >
+          Constructed 36-segment radial eye-ovals with 6 FACS shape keys, lid-synchronized
+          iris/pupil vertical compression plus +4.2mm blink retraction, dual volumetric lip
+          tubes with 24% lower-lip luminance darkening during inward lip-bite roll, recessed
+          upper teeth edge, and laryngeal swallow pulse on the mid-neck ring.
+      - id: "AI-03"
+        title: "Perimeter-Weighted Visor Silhouette Shape Keys"
+        insight: >
+          Implemented three boundary-weighted shape keys on the visor plate driven directly
+          by eye and mouth activation weights while preserving surface smoothness.
+      - id: "AI-04"
+        title: "Near-Clip Auto-X-Ray Full-Body Observer Cameras"
+        insight: >
+          Configured unclamped 2.15m navel-centered front cameras (lens=22mm, clip_start=1.32m)
+          so intervening walls and foreground obstructions are clipped automatically.
+      - id: "AI-05"
+        title: "Self-Critical Engineering Post-Mortem"
+        insight: >
+          Documented three concrete implementation regressions (vertex-baked coordinate doubling
+          on shoulder spheres, local hand Euler flexion sign inversion, and global string
+          replacement pollution in code synthesis) to prevent recurrence in future models.
+
+# ------------------------------------------------------------------------------
+# 2. ITERATIVE QA DELTAS (Delta = Ist_Final - Soll_Initial)
+# ------------------------------------------------------------------------------
+iterative_qa_deltas:
+  - delta_id: "DELTA-V2-01"
+    category: "Causal Synthesis"
+    soll_initial: "Map isolated facial micro-expression curves alongside simple limb triggers."
+    defect_or_gap: "Uncoupled tracks lacked physiological synchronization across breath holds, swallow pulses, shoulder bracing, and distal overflow."
+    ist_final: >
+      Unified 4-channel autonomic chain: Agent_A shifts from calm abdominal respiration to
+      thoracic bracing and inspiratory apnea during acute social triggers, punctuated by
+      conscious oral-exhale resets (SK_Open_o) and laryngeal swallow pulses, while Agent_B
+      exhibits calm abdominal respiration and subtle anticipatory finger micro-play.
+    causal_law: "SWM-CAUSAL-013 (4-Channel Autonomic Coupling: Breath x Face x Posture x Periphery)"
+
+  - delta_id: "DELTA-V2-02"
+    category: "Expressive Abstraction vs. Uncanny Valley"
+    soll_initial: "Static dark visor sphere behind animated eye-ovals and dual lip bands."
+    defect_or_gap: "In 65mm close-up, a static visor contour appeared rigid behind expressive eyes, whereas anatomical surface ridges would cause Uncanny Valley artifacts."
+    ist_final: "Added 3 perimeter-only shape keys (SK_Visor_Cheek_Lift, SK_Visor_Brow_Tension, SK_Visor_Shock_Arch) that flex the outer visor rim while keeping the surface smooth."
+    causal_law: "SWM-FACS-010 (Silhouette-Only Musculature Projection on Minimalist Visor Heads)"
+
+  - delta_id: "DELTA-V2-03"
+    category: "Rig Geometry & Pivot Hygiene (Negative Lesson)"
+    soll_initial: "Translate shoulder spheres via absolute local coordinates and place upper teeth near lip plane."
+    defect_or_gap: >
+      Primitive sphere builders that bake center offsets directly into vertex coordinates leave
+      object location at (0,0,0). Writing absolute offsets into object location doubles the
+      translation and detaches shoulder spheres; teeth placed at Y=-0.0002m poked through
+      closed lips.
+    ist_final: "Applied pure relative Z deltas (0.0, 0.0, sh_elev) to shoulder objects and recessed the upper teeth edge to Y=+0.0014m behind closed lips until teeth_exposure > 0."
+    causal_law: "SWM-RIG-001 (Vertex-Baked vs. Pivot-Offset Invariance Law)"
+
+  - delta_id: "DELTA-V2-04"
+    category: "Hand Biomechanics & Euler Sign Verification (Negative Lesson)"
+    soll_initial: "Use uniform low finger curl (0.22 rad) and default thumb orientation outside active grips."
+    defect_or_gap: >
+      Step 1 defect: Uniform low curl produced stiff, flat hands with thumbs intersecting the
+      proximal lower-limb volume. Step 2 regression: Applying negative rx (-0.34 rad) in local
+      hand coordinates (-Z distal, +Y dorsal) hyperextended the thumbs dorsally instead of
+      flexing palmarly.
+    ist_final: >
+      Mapped resting hands to a physiological ulnar tendon gradient (index 0.88x -> middle 1.02x
+      -> ring 1.15x -> pinky 1.28x), palmar-flexed thumbs (+rx = +0.34 + 0.34*curl, reduced
+      medial abduction) with >40mm lateral clearance, and asymmetrical dyadic tension where
+      Agent_A's observer-facing hand clenches stronger and 6 frames earlier than the contralateral hand.
+    causal_law: "SWM-BIOMECH-002 (Ulnar Resting Tendon Gradient & Asymmetrical Dyadic Clench)"
+
+  - delta_id: "DELTA-V2-05"
+    category: "Temporal Contrast & Freeze Readability"
+    soll_initial: "Zero joint motion between explicit keyframe pulses."
+    defect_or_gap: "Stationary 0.0000 extremities read as robotic and eliminate the perceptual contrast of an acute Tonic Freeze."
+    ist_final: "Added multi-frequency non-periodic micro-drift on fingers, thumbs, and head gated by sin(pi*(frame-1)/(N-1)) * (1.0 - tonic_freeze), snapping to 0.0 during shock peaks."
+    causal_law: "SWM-CAUSAL-012 (Living-Baseline Micro-Drift as Contrast Agent for Tonic Freeze)"
+
+  - delta_id: "DELTA-V2-06"
+    category: "QA Camera Optics & Meta-Programming Hygiene (Negative Lesson)"
+    soll_initial: "Clamp tracking cameras inside room boundaries and update templates via global string replace."
+    defect_or_gap: >
+      Boundary clamping pushed the full-body camera inside the torso mesh; global string
+      replacement in code-generating scripts mutated search anchors alongside target blocks.
+    ist_final: >
+      Deployed unclamped 2.15m navel-centered front cameras (lens=22mm, clip_start=1.32m) for
+      automatic foreground wall/agent clipping, and enforced scoped block slicing in template
+      transformers.
+    causal_law: "SWM-META-001e (Scoped Anchor Replacement Hygiene in Code Synthesis)"
+
+# ------------------------------------------------------------------------------
+# 3. ABSTRACT V2 RIG CHANNEL SCHEMA
+# ------------------------------------------------------------------------------
+v2_rig_channel_schema:
+  respiration_and_tonus:
+    breath_abd: {range: [0.0, 1.5], default_v1: 0.0, effect: "Anterior (-Y) abdominal expansion via posterior spine pivot"}
+    breath_thx: {range: [0.0, 1.5], default_v1: 0.0, effect: "Thoracic expansion + up to +5.5mm sternal Z-lift"}
+    shoulder_elev_z: {range: [-0.02, 0.02], default_v1: 0.0, effect: "Relative Z-lift/collapse of shoulders & arm IK roots"}
+    swallow_pulse: {range: [0.0, 1.2], default_v1: 0.0, effect: "Up to +4.8mm laryngeal Z-pulse on mid-neck ring"}
+    tonic_freeze: {range: [0.0, 1.0], default_v1: 0.0, effect: "1.0 suppresses living-baseline micro-drift to 0.0"}
+  visor_head_v3_eyes:
+    sk_blink: {range: [0.0, 1.0], default_v1: 0.0, effect: "Closes eye oval & retracts pupil +4.2mm at >0.65"}
+    sk_startle: {range: [0.0, 1.0], default_v1: 0.0, effect: "AU5 upper-lid startle widening"}
+    sk_soul_window: {range: [0.0, 1.0], default_v1: 0.0, effect: "Contra-vector AU1 medial lift vs. AU4 lateral crush"}
+    sk_resignation: {range: [0.0, 1.0], default_v1: 0.0, effect: "Upper-lid resignation droop"}
+    sk_alpha_narrow: {range: [0.0, 1.0], default_v1: 0.0, effect: "Cool alpha lid narrowing + brow tension"}
+    sk_lower_squeeze: {range: [0.0, 1.0], default_v1: 0.0, effect: "AU6/AU7 lower-lid sparkle/cheek push"}
+  visor_head_v3_mouth:
+    sk_smile: {range: [0.0, 1.0], default_v1: 0.0, effect: "Bilateral zygomatic lip corner lift + visor cheek lift"}
+    sk_frown: {range: [0.0, 1.0], default_v1: 0.0, effect: "Depressor anguli oris corner drop"}
+    sk_slant: {range: [0.0, 1.0], default_v1: 0.0, effect: "Unilateral knowing smirk"}
+    sk_open_o: {range: [0.0, 1.0], default_v1: 0.0, effect: "O-aperture (0.17..0.26 = conscious oral exhale; >0.4 = gasp)"}
+    sk_compress: {range: [0.0, 1.0], default_v1: 0.0, effect: "AU24 pressed thin lip line"}
+    sk_lip_bite_roll: {range: [0.0, 1.0], default_v1: 0.0, effect: "Inward lower-lip roll beneath upper incisors"}
+    lower_lip_luminance: {range: [0.5, 1.0], default_v1: 1.0, effect: "Auto 24% darkening (1.0 -> 0.76) during lip-bite roll"}
+    teeth_exposure: {range: [0.0, 1.0], default_v1: 0.0, effect: "Advances upper teeth edge forward into open smile"}
+  granular_extremities:
+    thumb_r_rpy: {type: "vec3_rad", fallback: "derived_from_curl", note: "Positive rx flexes palmarly"}
+    thumb_l_rpy: {type: "vec3_rad", fallback: "derived_from_curl", note: "Positive rx flexes palmarly"}
+    index_r_curl: {range: [0.0, 1.5], fallback: "fingers_r_rpy[0]"}
+    middle_r_curl: {range: [0.0, 1.5], fallback: "fingers_r_rpy[0]"}
+    ring_r_curl: {range: [0.0, 1.5], fallback: "fingers_r_rpy[0]"}
+    pinky_r_curl: {range: [0.0, 1.5], fallback: "fingers_r_rpy[0]"}
+    finger_spread_r: {range: [-0.5, 1.0], fallback: "fingers_r_rpy[1]"}
+    hallux_r_rx: {range: [-0.5, 1.0], fallback: "toes_r_rpy[0]"}
+    toes_r_individual_rx: {type: "vec5_rad", fallback: "toes_r_rpy[0]"}
