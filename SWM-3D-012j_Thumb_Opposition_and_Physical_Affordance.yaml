@@ -1,0 +1,73 @@
+# ==============================================================================
+# SMALL WORLD MODEL (SWM) - AI TRAINING & CAUSAL SPECIFICATION
+# Artifact ID: SWM-3D-012j
+# Repository: humanai2026/3D_Affordance
+# Domain: Thumb Saddle-Joint Kinematics, Physical vs. Optical Affordance & Co-Articulation
+# ==============================================================================
+
+schema_version: "2.0"
+artifact_id: "SWM-3D-012j"
+title: "Axial Thumb Pronation (Force-Axis Rotation), Physical Leverage Affordance & Cerebellar Co-Articulation"
+date: "2026-11-15"
+license: "MIT / CC-BY-4.0"
+
+historical_soll_ist_evolution:
+  description: >
+    Five-stage iterative refinement (v1 through v5) validated against live proxy
+    demonstrations and high-FPS multi-angle hand video forensics on a horizontal
+    T-bar clamping handle beneath an articulated leg support shell.
+  iterations:
+    - stage: "v1_Blind_First_Shot"
+      soll_hypothesis: "Underhand supinated grip assuming overhead shell clearance blocks top access."
+      ist_reality: "Live proxy demonstrated overhand pronated approach; thumb CMC sign error bent thumb dorsally backward."
+      delta_learning: "Separate overhead clearance check from grip orientation; audit local Euler sign conventions."
+    - stage: "v2_Overhand_Spindle_Split"
+      soll_hypothesis: "Overhand pronation splitting fingers symmetrically around the central vertical spindle (index/middle outer, ring/pinky inner)."
+      ist_reality: "Optically symmetric, but mechanically poor leverage (r -> 0 near spindle axis), requiring excessive forearm pronation torque."
+      delta_learning: "Optical symmetry is a perceptual trap; physical leverage dictates grasping one wing at r_max."
+    - stage: "v3_One_Sided_Max_Leverage_Drop"
+      soll_hypothesis: "Approach from outside-left onto the outer wing at r_max with vertical drop and re-grasp."
+      ist_reality: "Vertical drop onto the rod caused finger and thumb collisions with the central spindle and end-knob."
+      delta_learning: "Exploit open-ended handle topology via lateral slide-in rather than vertical plunge."
+    - stage: "v4_Sequential_Open_End_Slide"
+      soll_hypothesis: "Wide 90-degree L thumb abduction -> palmar tuck under palm -> linear inward slide -> sequential finger wrap."
+      ist_reality: "Zero collision (0.0 mm penetration), but segmented stop-and-go phases produced robotic 'infant-like' motion; thumb nail remained dorsally oriented."
+      delta_learning: "Sequential cortical checklists lack cerebellar co-articulation; thumb lacked coupled axial rotation."
+    - stage: "v5_Fluid_Cerebellar_Coarticulation_and_Video_Audit"
+      soll_hypothesis: "Single minimum-jerk J-curve sweep, anticipatory C-profile pre-shaping, and pinky-to-index finger wave."
+      ist_reality: "Smooth spatial flow achieved, but high-FPS video audit revealed a critical missing rotational DOF: the thumb undergoes 70-80 deg axial pronation during opposition."
+      delta_learning: "Without axial CMC pronation, the thumb presses with its lateral edge instead of rotating its palmar pad force axis directly opposite the fingers."
+
+core_causal_laws:
+  - law_id: "SWM-3D-012j-1"
+    name: "Division of Labor: Finger Form-Closure vs. Thumb Closure-Force Regulation"
+    statement: >
+      Multi-phalangeal fingers maximize surface contact area around an object's contour
+      to establish geometric form-closure. The opposable thumb closes the force loop
+      from the opposing side, modulating normal contact force (F_N) to regulate static
+      friction (F_friction = mu_skin * F_N) without inducing flexor cramping.
+  - law_id: "SWM-3D-012j-2"
+    name: "Coupled Axial Thumb Pronation (Kapandji Force-Axis Rotation)"
+    kinematic_rule: >
+      Unlike the four hinge-like fingers, the human carpometacarpal (CMC-1) saddle joint
+      couples palmar flexion and medial adduction with an obligatory 70 to 80 degree
+      axial pronation around the thumb's longitudinal bone axis.
+    mechanical_consequence: >
+      This longitudinal roll rotates the dorsal nail plate outward/downward (hiding it
+      beneath the palm in top-down views) and rotates the palmar thumb-pad force vector
+      by nearly 90 degrees so it opposes the finger pads face-to-face.
+  - law_id: "SWM-3D-012j-3"
+    name: "Physical Leverage Affordance Over Optical Symmetry"
+    statement: >
+      When actuating a T-bar or lever handle, grasping symmetrically across the central
+      pivot axis minimizes the moment arm (r -> 0) and overloads forearm pronators/supinators.
+      Grasping unilaterally at the outer extremity (r_max, using the end-knob as a slip
+      stop) maximizes mechanical torque (tau = F * r_max) from proximal arm/shoulder chains.
+  - law_id: "SWM-3D-012j-4"
+    name: "Open-Topology Entry & Cerebellar Co-Articulation"
+    statement: >
+      When a handle features an open outer end, skilled motor control avoids orthogonal
+      plunge trajectories and instead sweeps along a curved minimum-jerk J-arc from free
+      space onto the shaft. Hand pre-shaping, wrist alignment, axial thumb circumduction,
+      and a staggered ulnar-to-radial finger closure wave (pinky -> ring -> middle -> index)
+      overlap temporally rather than executing sequentially.

@@ -1,0 +1,87 @@
+# ==============================================================================
+# SMALL WORLD MODEL (SWM) - AI TRAINING & CAUSAL SPECIFICATION
+# Artifact ID: SWM-METHOD-002
+# Repository: humanai2026/3D_Affordance
+# Domain: Embodied AI Epistemology, Dual-Path Learning & Null-Baseline Protocol
+# ==============================================================================
+
+schema_version: "2.0"
+artifact_id: "SWM-METHOD-002"
+title: "Bidirectional Learning Cascade, Three-Fold Null Baseline & Multimodal Sensor Triangulation"
+date: "2026-11-15"
+license: "MIT / CC-BY-4.0"
+
+epistemic_premise:
+  core_principle: >
+    True embodied understanding emerges exclusively from the measurable delta
+    (Delta = Reality_Ist - Mental_Model_Soll) between an unprimed internal forward
+    prediction and physical ground truth. A model that never tests a falsifiable
+    hypothesis against real-world geometry and contact physics never discovers its
+    own spatial blind spots.
+
+three_fold_null_baseline:
+  purpose: >
+    Measure the true unprimed capability of a model before injecting domain priors
+    or task-specific heuristics, preventing evaluation contamination.
+  dimensions:
+    - dimension: "Write_Baseline (Blind Geometric Synthesis)"
+      definition: "First-shot 3D kinematic construction without prior domain rules."
+      empirical_finding: >
+        High-capacity reasoning models synthesize macro-affordances reliably on the
+        first blind attempt, but systematically fail on multi-axis saddle joints
+        (e.g., thumb CMC opposition and axial pronation) and misjudge optical vs.
+        physical leverage symmetry.
+    - dimension: "Read_Baseline (Hypothesis-Free Perception)"
+      definition: "Visual observation of live or recorded human motion strictly blinded to prior model hypotheses."
+      empirical_finding: >
+        Strong internal hypotheses induce confirmation bias in vision-language encoders
+        (e.g., misreading an overhand pronated grip as an underhand supinated grip).
+        Visual audits must evaluate local anatomical landmarks (dorsal hand surface,
+        tendon relief, nail orientation) independently of prior predictions.
+    - dimension: "Why_Baseline (Causal First-Principles Retrieval)"
+      definition: "Pre-execution self-queries testing whether the model infers mechanical causality before computing joint angles."
+      empirical_finding: >
+        Prompting the model to articulate mechanical leverage, gravity-axis alignment,
+        and contact roles before generating joint rotations eliminates naive coordinate
+        guessing.
+
+multimodal_measurement_triangulation:
+  bottom_up_limb_isolation:
+    rule: >
+      Decompose complex whole-body interactions distally first (Stage 1: isolated forearm,
+      wrist, fingers, thumb; Stage 2: upper arm and contralateral stabilizer; Stage 3:
+      torso and lower-body counter-inertia). During Stage 1 visual audits, restrict
+      attention strictly to the distal limb so whole-body inverse kinematics cannot mask
+      hard geometric constraints.
+  sensor_complementarity:
+    - modality: "Low-Frequency Live Stream (~1 Hz) with Physical Proxies"
+      strength: "Captures macro approach vectors, grip class (pronation vs. supination), re-grasping shifts, and spatial clearances."
+      limitation: "Insufficient temporal resolution for sub-second axial joint rotations."
+    - modality: "High-FPS Video Forensics (30-60 fps)"
+      strength: "Resolves rapid multi-axis rotations (such as axial thumb pronation during opposition) and co-articulated finger cascades."
+    - modality: "Zero-Impedance Dry Run vs. Loaded Physical Proxy (Air-Guitar Protocol)"
+      delta_formula: "Delta_Impedance = Execution_Loaded - Execution_Zero_Impedance"
+      strength: "Separates pre-planned cerebellar trajectories from force-driven adaptations (distal phalanx flattening, capillary blanching, wrist locking)."
+
+bidirectional_learning_cascade:
+  architecture_analogy:
+    deliberative_cortex: "High-Reasoning Offline Model (serial, deep causal synthesis, high latency)"
+    procedural_cerebellum: "Distilled Execution Worker & Real-Time Detector (parallel, low latency, minimal context footprint)"
+  downward_distillation_gate:
+    threshold: "Soll_Ist_Alignment > 0.90"
+    compression_rule: >
+      Once iterative refinement closes the Soll-Ist delta above 90 percent accuracy,
+      strip away all exploratory prose, failed hypotheses, and verbose derivations.
+      Distill the invariant into a compact, coordinate-system-explicit execution micro-spec
+      with built-in kinematic assertions so fast worker models execute with minimal
+      context overhead. Archive the full failure-to-discovery trajectory in external
+      repository datasets (zero active context cost).
+  upward_interrupt_mechanism:
+    metaphor: "Eggshell-in-the-Pan Interrupt"
+    trigger_conditions:
+      - "Kinematic self-check detects joint limit violation or mesh penetration (> 0.0 mm)."
+      - "Measured mechanical resistance significantly exceeds expected torque (tau_Ist >> tau_Soll)."
+      - "A previously unmodeled degree of freedom is observed in ground-truth video."
+    action: >
+      Halt fast autonomous execution immediately and route the anomaly upward to the
+      high-reasoning model for single-pass causal resolution and re-distillation.

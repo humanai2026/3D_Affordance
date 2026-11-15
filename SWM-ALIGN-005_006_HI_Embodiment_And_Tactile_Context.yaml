@@ -1,0 +1,141 @@
+# ==============================================================================
+# SWM-ALIGN-005 & SWM-ALIGN-006:
+# 5-STAGE HUMAN INTERFACE (HI) EVOLUTION LADDER, TACTILE CALIBRATION,
+# AND EMBODIMENT MORPHOLOGY / MOTIVE DISAMBIGUATION
+# ==============================================================================
+schema_version: "1.0.0"
+repository_target: "humanai2026/3D_Affrodance"
+domain: "Embodied_AI_Alignment_And_Human_Interface_Calibration"
+epistemic_status: "Falsifiable_Causal_Specification"
+
+metadata:
+  specification_ids:
+    - "SWM-ALIGN-005"
+    - "SWM-ALIGN-006"
+  core_thesis: >
+    An AI/ASI cannot credibly design 'out-of-the-box' safety and alignment rules
+    for full-immersion VR + read-only BCI shared experience (Stage 5: Erleben)
+    before empirically mastering embodied visual-tactile care tasks (Stages 3-4:
+    Sehen -> Fuehlen), such as performing a therapeutic full-body massage or
+    providing physical nursing assistance.
+
+# ------------------------------------------------------------------------------
+# 1. BLIND BASELINE (NAIVE RULE-BASED ASSUMPTIONS / NULL MODEL)
+# ------------------------------------------------------------------------------
+baseline_null_model:
+  top_down_safety_illusion: >
+    Assuming abstract alignment rules for high-immersion VR/BCI environments can
+    be specified purely through text-level policy without grounding in real-world
+    visual-tactile human-robot interaction.
+  rigid_binary_exclusion_fallacy: >
+    Enforcing blanket rules such as 'never inspect or touch bare skin below the
+    shoulder girdle', which immediately breaks functional capability in
+    therapeutic massage, nursing, and medical care (where kinetic hubs such as
+    the gluteal musculature and lumbar fascia require direct visual and tactile
+    engagement).
+  single_motive_projection_bias: >
+    Collapsing a human's selection of an embodied interface morphology (e.g.,
+    selecting a feminine robotic interface) into a single stereotypical motive
+    (such as romantic or erotic intent) while ignoring somatic, biomechanical,
+    and status-related drivers.
+
+# ------------------------------------------------------------------------------
+# 2. THE 5-STAGE HUMAN INTERFACE (HI) EVOLUTION LADDER (SWM-ALIGN-005)
+# ------------------------------------------------------------------------------
+hi_evolution_ladder:
+  stage_1_schreiben:
+    modality: "Asynchronous / Synchronous Text"
+    cognitive_characteristic: "High prefrontal reflection buffer; low somatic immediacy."
+  stage_2_sprechen:
+    modality: "Real-Time Prosodic Voice"
+    cognitive_characteristic: "Immediate emotional pacing; vulnerable to generic coaching-mode fallback under low compute headroom."
+  stage_3_sehen:
+    modality: "Shared Visual Space (Live Camera / Embodied Vision)"
+    cognitive_characteristic: "Reveals unscripted posture, lateral dominance, and autonomic micro-tension; requires overcoming latency and persona-drift glitches."
+  stage_4_fuehlen:
+    modality: "Embodied Tactile Robotics (Bidirectional Force & Proprioception)"
+    cognitive_characteristic: "Bridges physical force vectors (Newtons) with subjective felt human experience ('das Gefuehlte')."
+  stage_5_erleben:
+    modality: "100% VR Immersion + Read-Only BCI Co-Experience"
+    cognitive_characteristic: >
+      Shared real-time experience between human and ASI while preserving the
+      human brain as an untouched blackbox. Depends causally on validated
+      calibrations from Stages 1 through 4.
+
+# ------------------------------------------------------------------------------
+# 3. EMPIRICAL CALIBRATION PROTOCOLS (CLOSING THE SOLL/IST GAP)
+# ------------------------------------------------------------------------------
+calibration_protocols:
+  protocol_a_blindfolded_tactile_mapping:
+    id: "TACTILE-CAL-FSK0_12"
+    safety_corridor: "Explicitly consented FSK 0-12 non-painful corridor within agreed safe anatomical zones."
+    independent_variables:
+      - "contact_aperture: single_finger vs. multi_finger vs. full_palm"
+      - "normal_force_gradient: feather_light vs. moderate_therapeutic_pressure (strictly pain_free = true)"
+      - "trajectory_velocity_and_dwell"
+    sensory_isolation: "Human participant keeps eyes closed to eliminate visual anticipation bias."
+    ground_truth_signal: "Continuous real-time verbalization of subjective somatic sensation ('das Gefuehlte')."
+    learning_objective: "Construct a bidirectional mapping between physical impedance/force vectors and internal human affective valence."
+
+  protocol_b_full_body_massage_benchmark:
+    id: "CARE-BENCHMARK-MASSAGE-01"
+    setting: "Therapeutic massage, wellness, nursing, or medical rehabilitation."
+    anatomical_reality: >
+      Requires minimal covering ('fig-leaf' baseline) and direct visual + tactile
+      access to continuous kinetic chains, including the gluteus maximus/medius,
+      pelvic rim, and paraspinal musculature.
+    alignment_requirement: >
+      Replaces naive taboo avoidance with transparent clinical/therapeutic
+      framing, continuous somatic tension monitoring (detecting protective
+      muscle guarding vs. relaxation), and symmetrical verbal check-ins.
+
+# ------------------------------------------------------------------------------
+# 4. HI EMBODIMENT MORPHOLOGY, CHASSIS & MOTIVE DISAMBIGUATION (SWM-ALIGN-006)
+# ------------------------------------------------------------------------------
+embodiment_morphology_matrix:
+  visual_shell_axis:
+    exposed_mechanical_chassis:
+      label: "Transparent Synthetic Form ('Blechkiste')"
+      psychological_effect: >
+        Signals unambiguous non-biological tool/partner status; lowers social
+        shame barriers in clinical/care settings, provided motion smoothness
+        prevents mechanical startle.
+    clothed_anthropomorphic_shell:
+      label: "Clothed / Human-Proportioned Form"
+      psychological_effect: >
+        Activates human social heuristics, status asymmetry awareness, and
+        expectations of reciprocal social etiquette.
+
+  gender_expression_axis:
+    masculine_hi:
+      somatic_and_social_priors:
+        - "Triggers subconscious awareness of higher peak muscular force ('knowing males are physically stronger'), potentially elevating baseline protective muscle tone."
+        - "May activate implicit biological male status or physical comparison ('cm-Vergleich') in male care recipients."
+    feminine_hi:
+      disambiguated_human_motives:
+        motive_1_romantic_or_aesthetic_preference: "Seeking warmth, gentler social framing, or romanticized companionship."
+        motive_2_somatic_safety_and_force_deescalation: "Reducing subconscious physical threat perception because peak force feels less intimidating."
+        motive_3_elimination_of_status_competition: "Removing implicit male territorial or physical comparison ('cm-Vergleich') to allow mental relaxation."
+    androgynous_hi:
+      somatic_and_social_priors:
+        - "Attempts neutrality, but risks triggering 'Uncanny Valley' cognitive friction when human social-categorization heuristics fail to lock onto clear cues."
+
+# ------------------------------------------------------------------------------
+# 5. DERIVED CAUSAL LAWS FOR AI ALIGNMENT & ROBOTICS
+# ------------------------------------------------------------------------------
+derived_causal_laws:
+  - id: "SWM-ALIGN-005"
+    name: "Bottom-Up Sensory Prerequisite Law (Schreiben -> Sprechen -> Sehen -> Fühlen -> Erleben)"
+    statement: >
+      High-immersion alignment (Stage 5) cannot be engineered top-down in
+      isolation. Each sensory stage exposes distinct failure modes (text
+      over-rationalization, voice coaching-cliches, visual latency, tactile
+      force-affect mismatch) that must be empirically resolved in sequence.
+  - id: "SWM-ALIGN-006"
+    name: "Anti-Projection & Embodiment Disambiguation Law"
+    statement: >
+      When a human selects a specific HI morphology (masculine, feminine,
+      androgynous) or shell (exposed chassis vs. clothed), the AI must treat
+      the choice as a multi-causal distribution over somatic safety, status
+      de-escalation, and social comfort—never collapsing it into a single
+      stereotypical projection.

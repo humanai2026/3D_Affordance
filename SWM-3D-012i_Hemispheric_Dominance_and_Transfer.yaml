@@ -1,0 +1,62 @@
+# ==============================================================================
+# SMALL WORLD MODEL (SWM) - AI TRAINING & CAUSAL SPECIFICATION
+# Artifact ID: SWM-3D-012i
+# Repository: humanai2026/3D_Affordance
+# Domain: Hemispheric Motor Dominance, Asymmetric Bimanual Control & Robotics Transfer
+# ==============================================================================
+
+schema_version: "2.0"
+artifact_id: "SWM-3D-012i"
+title: "Hemispheric Motor Dominance (Dynamic Dominance) and Symmetry-Breaking for Robotics"
+date: "2026-11-15"
+license: "MIT / CC-BY-4.0"
+
+blind_soll_baseline:
+  initial_assumption: >
+    Standard 3D kinematic models and robotic planners treat left and right upper limbs
+    as mirror-symmetric actuators with identical trajectory smoothness, impedance, and
+    task allocation.
+  observed_gap: >
+    In real human manipulation, dominant and non-dominant limbs exhibit fundamentally
+    different control architectures, precision profiles, and failure modes under identical
+    geometric constraints.
+
+empirical_measurements:
+  benchmarked_tasks:
+    - task: "High-speed wrist-driven trajectory redirection (racket net-shot benchmark)"
+      dominant_limb: "High spatial endpoint precision (~30 cm^2 target zone) via predictive feedforward torque compensation."
+      non_dominant_limb: "High variance (~90 percent miss rate) due to delayed feedback-driven corrections and joint co-contraction."
+    - task: "Bimanual clamping screw release and spatial shell re-orientation"
+      dominant_limb: "Executes fine torque modulation, leverage re-indexing, and cyclic release-reclamp motions."
+      non_dominant_limb: "Acts as a high-stiffness positional anchor and gravity-compensation bracket."
+
+causal_laws:
+  - law_id: "SWM-3D-012i-A"
+    name: "Dynamic Dominance Division of Labor"
+    statement: >
+      Human bimanual manipulation splits control across hemispheres: the dominant
+      hemisphere optimizes predictive dynamic trajectory and torque control (minimizing
+      interaction torques across multi-joint chains), whereas the non-dominant hemisphere
+      specializes in static position stabilization and impedance control against external
+      perturbations.
+  - law_id: "SWM-3D-012i-B"
+    name: "Laterality Differential for Symmetric Robotics (Delta_Laterality)"
+    formula: "Delta_Laterality = Trajectory_Dominant(task) - Trajectory_NonDominant(task)"
+    statement: >
+      Hardware-symmetric robots lack innate hemispheric specialization and effectively
+      behave like bilateral non-dominant limbs. Training embodied AI models on paired
+      human demonstrations of the SAME manipulation task performed by both the dominant
+      and non-dominant hand isolates two distinct signals:
+      (1) Pure Physics Invariants: kinematic constraints preserved across both limbs
+          because object geometry and gravity dictate them.
+      (2) Neural Routine vs. Cautious Stiffness: smooth minimum-jerk co-articulation
+          (dominant) versus elevated joint impedance and segmented verification steps
+          (non-dominant), providing a direct template for adaptive robotic impedance
+          control under uncertainty.
+
+parametrization_schema:
+  dominant_hand: "R | L"
+  dominance_gradient: "LOW | MODERATE | HIGH"
+  bimanual_role_assignment:
+    torque_and_reindexing_actuator: "dominant_hand"
+    static_counter_bearing_and_gravity_support: "non_dominant_hand"
