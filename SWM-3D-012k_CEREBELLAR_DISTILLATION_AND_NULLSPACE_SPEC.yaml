@@ -1,0 +1,101 @@
+# ==============================================================================
+# SWM CAUSAL & EMBODIED AI TRAINING SPECIFICATION
+# Repository: humanai2026/3D_Affordance
+# Spec ID: SWM-3D-012k (incorporating SWM-3D-012j & SWM-METHOD-002b)
+# Domain: Fine-Motor Affordance, Cerebellar Skill Distillation & Kinematic Nullspace
+# Privacy & Public-Clean Status: Verified (no executable code, no local paths, no personal identifiers)
+# ==============================================================================
+
+schema_version: "2.0"
+spec_id: "SWM-3D-012k"
+title: "Two-Component Thumb Saddle Kinematics, Cerebellar Task-Bracketing Distillation, and Spatial Nullspace Servant Resolution"
+target_capabilities:
+  - "Collision-free, force-closed precision grasping without visually masked air-blanching"
+  - "Hierarchical compute routing between high-latency cortical reasoning and fast cerebellar execution"
+  - "Situational whole-body nullspace resolution around a fixed distal end-effector affordance"
+  - "Retrograde inference of out-of-frame spatial obstacles from proximal body posture"
+
+# ------------------------------------------------------------------------------
+# 1. EPISTEMIC ARC: BLIND INITIAL HYPOTHESIS (NULL LINE) -> AUDIT -> CAUSAL LAW
+# ------------------------------------------------------------------------------
+epistemic_arc:
+  blind_initial_hypothesis_baseline:
+    description: "Unprimed first-shot kinematic synthesis of grasping a horizontal T-bar clamping lever under transverse load."
+    identified_failure_modes:
+      - id: "FM-01_CHIRALITY_MISMATCH"
+        defect: "Palmar flexors placed on -Z with +X thumb offset while labeling the chain as a right hand."
+        root_cause: "Lack of explicit handedness parity check (s_side = +1 right, -1 left) against local palmar/dorsal basis vectors."
+      - id: "FM-02_EULER_SIGN_INVERSION"
+        defect: "Applying +90 deg Z-yaw after ~180 deg X-roll mirrored distal finger direction away from target."
+        root_cause: "Non-commutative Euler rotation order evaluated intuitively without 3x3 basis-matrix verification."
+      - id: "FM-03_GEOMETRIC_BUDGET_VIOLATION"
+        defect: "Attempting 4-finger wrap (~60 mm width) on a ~30 mm half-bar segment and defaulting to cramped underhand supination despite >130 mm overhead clearance."
+        root_cause: "Failure to verify object length budget and vertical clearance corridor before selecting grasp parity."
+      - id: "FM-04_SEQUENTIAL_CORTICAL_CHECKLIST"
+        defect: "Disjointed stop-and-go phases (approach -> wrap -> align -> preload) with thumb pressing axially against end-knob instead of opposing finger groove."
+        root_cause: "Modeling motor execution as a serial conscious checklist rather than overlapping minimum-jerk synergies."
+
+  iterative_refinement_and_hidden_artifacts:
+    description: "Fast-tier iterative kinematic refinement resolved grasp parity (pronated overhand grip), lever length budget (unilateral outer r_max leverage), and overlapping minimum-jerk J-arc coarticulation (pinky-to-index wave), but exposed two subtle geometric illusions under forward-kinematic audit."
+    uncovered_illusions:
+      - id: "ILL-01_OPTICALLY_MASKED_AIR_BLANCHING"
+        observation: "Thumb pad rendered high-pressure capillary blanching while hovering 4.15 mm below the bar with outward-rotated pulp normal."
+        root_cause: "Textbook 70-80 deg Kapandji pronation applied to a 0-deg flat cylinder omitted the ~55 deg anatomical rest tilt of the carpometacarpal (CMC-1) saddle joint, and XYZ Euler order tilted the shaft before axial roll."
+      - id: "ILL-02_FINGERTIP_CAGE_INSTEAD_OF_HOOK_GROOVE"
+        observation: "Low MCP flexion (<20 deg) suspended the bar ~20 mm away from the palm inside a hollow fingertip cage during transverse pulling."
+        root_cause: "Confusion between precision fingertip pinch and transverse tensile hook-groove engagement."
+
+  measurement_and_audit_methodology:
+    - method: "Forward-Kinematic Bilateral Contact Guard"
+      rule: "Over all frames t in [1, T], enforce both lower bound (gap >= 0.0 mm, zero mesh penetration) and upper bound under active load (when capillary_blanching > 0.2: 0.0 mm <= gap <= 0.8 mm, pulp_normal dot target_vector >= 0.70, and d(gap)/d(preload) <= 0)."
+    - method: "Three-Stage Impedance Delta Protocol"
+      rule: "Isolate pure predictive kinematics (Stage 0: eyes-closed air motion, impedance = 0) from real physical force feedback (Stage 1: physical resistance aligned to gravity vector) via Delta_Impedance = Stage_1 - Stage_0."
+    - method: "Dorsal Nail-Plate Optical Detector"
+      rule: "Attach a contrasting dorsal nail geometry to the distal thumb phalanx so axial pronation/supination errors cannot hide behind cylindrical symmetry."
+
+# ------------------------------------------------------------------------------
+# 2. DERIVED CAUSAL LAWS FOR EMBODIED AI TRAINING
+# ------------------------------------------------------------------------------
+causal_laws:
+  - law_id: "SWM-3D-012j"
+    name: "Two-Component Thumb Saddle Pronation & Hook-Groove Force Closure"
+    formal_principle:
+      carpometacarpal_saddle_sum: "theta_CMC_axial = -s_side * (theta_rest_saddle [55..60 deg] + theta_kapandji [70..85 deg]) = -s_side * [125..145 deg]"
+      euler_order_requirement: "rotation_mode = 'YXZ' (axial shaft roll Y precedes palmar abduction X and ulnar sweep Z)"
+      functional_division:
+        four_hinge_fingers: "Maximize multi-segment surface wrap (MCP 45..65 deg, PIP 65..85 deg) to seat transverse-load objects deep in the proximal/middle phalangeal hook groove."
+        opposed_thumb: "Acts as normal-force and friction regulator (F_friction = mu_skin * F_N) opposing the finger groove."
+
+  - law_id: "SWM-METHOD-002b"
+    name: "Neurobiological Substrate Isomorphism & Cortico-Cerebellar Skill Distillation"
+    biological_analogue:
+      striatal_task_bracketing: "High-level cortical tier emits only a low-dimensional intent pointer (compact YAML contract) bracketing start/end conditions; subcortical cerebellar tier unpacks continuous multi-joint trajectories."
+      inferior_olive_comparator: "Climbing-fiber error circuit computes Delta = Sensory_IST - Efference_SOLL; only unexpected residuals propagate upward (predictive coding)."
+      bayesian_variance_arbitrator: "vlPFC tracks prediction-error variance sigma_PE^2; when sigma_PE^2 drops below threshold (>90% alignment), cortical monitoring is actively gated down to prevent latency interference, and the distilled engram is consolidated into a lightweight execution micro-skill."
+    ai_architecture_mapping:
+      high_reasoning_tier: "Resolves novel causal constraints, axis parity, and geometric budgets once; emits concise intent specification."
+      fast_execution_tier: "Executes compiled micro-skill with bilateral joint guards; triggers upward interrupt to high-reasoning tier only when Delta exceeds guard corridor."
+
+  - law_id: "SWM-3D-012k"
+    name: "Distal-to-Proximal Nullspace Servant Law (Same Hand, Changing Space)"
+    principle: "In goal-directed manipulation, the distal hand-object interface rigidly defines contact normal, torque vector, and the wrist/elbow spatial corridor (p_elbow_target). The proximal body (shoulder, spine, pelvis, lower limbs) acts as an unconscious kinematic servant resolving the redundant nullspace via Anticipatory Postural Adjustments (APA) to supply counter-inertia against transverse forces (F_work perpendicular to g)."
+    intuition_boundary:
+      subcortical_regime: "Familiar spatial obstacles are absorbed continuously into the cerebellar nullspace solution without conscious pause."
+      cortical_regime: "Confined or labyrinthine obstacle geometry spikes prediction-error variance (sigma_PE^2), triggering a brief motor pause and explicit spatial re-planning."
+    benchmark_protocol_SWM_NULLSPACE_001:
+      invariant: "Fixed distal T-bar grasp pose, torque vector, and elbow target corridor."
+      spatial_perturbations:
+        - condition: "Space_0_Open_Baseline"
+          geometry: "Unobstructed floor and rear clearance."
+          expected_servant_strategy: "Optimal step into line of pull, lowered center of mass, straight trunk traction."
+        - condition: "Space_1_Blocked_Footprint"
+          geometry: "Floor obstruction prevents forward foot placement."
+          expected_servant_strategy: "Anterior hip hinge compensated by closed bimanual counter-brace loop on upper frame."
+        - condition: "Space_2_Narrow_Rear_Wall"
+          geometry: "Wall immediately behind operator prohibits backward lean."
+          expected_servant_strategy: "Transverse pelvic/thoracic rotation converting axial pull into rotational trunk torque."
+        - condition: "Space_3_Low_Friction_Rolling_Seat"
+          geometry: "Operator seated on caster stool (mu_floor -> 0)."
+          expected_servant_strategy: "Non-dominant hand transitions from optional stabilizer to mandatory closed-loop anchor."
+    retrograde_perception_application:
+      description: "By contrasting observed proximal posture in cropped camera views against the Space_0 nullspace baseline, fast vision models can infer the location and geometry of unseen physical obstacles outside the camera frame."
