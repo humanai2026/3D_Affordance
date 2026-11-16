@@ -1,0 +1,64 @@
+# ==============================================================================
+# SWM-3D-012l: OCCLUSION-SQUAT (VISUAL TRIPOD), ROUTE-READING & ASSERTION FIREWALL
+# Repository: https://github.com/humanai2026/3D_Affrodance
+# Epistemic Schema: Blind-LLM-Baseline -> Zero-Impedance Route-Reading -> Causal Law
+# Status: Empirically Verified via Live Video Delta + 3D Forward-Kinematics Firewall
+# ==============================================================================
+
+schema_id: "SWM-3D-012l"
+title: "Sensor-Driven Occlusion-Squat ('Elevator vs. Jackknife'), Climber Route-Reading (Stage 0), and Hard 3D Assertion Firewalls"
+domain:
+  - "Embodied 4D Biomechanics & Affordance Reasoning"
+  - "Visuomotor Coupling & Occlusion Avoidance"
+  - "Deterministic 3D Kinematic Verification for Spatial AI"
+
+epistemic_arc:
+  1_blind_ai_baseline_null_hypothesis:
+    assumption: "To adjust an under-mounted clamping screw/T-handle below an overhanging cradle shell, an agent minimizes reach distance and torso torque by bending forward at the waist ('Jackknife' torso pitch ~23 deg) with only minimal pelvis drop (~5.6 cm), while holding the upper shell rim with a passive, low-elbow arm."
+    failure_modes:
+      - "Line-of-sight occlusion: From standing or slight-bend eye height, the overhanging shell floor blocks the visual ray to the lower T-handle by ~36 cm, forcing a blind reach under a rigid structure (high risk of painful knuckle impact)."
+      - "Workspace self-collision: Forward torso lean pushes the sternum into the 3D maneuvering envelope of the upper stabilizing arm."
+      - "Wrist-only steering instability: Steering a loaded 3D shell from a relaxed wrist with a drooping elbow lacks torsional rigidity."
+      - "Silent simulation illusions: Soft console warnings without hard geometric assertions allow disconnected wrists ('Bluetooth arm'), double-sided spindle splits, and wall-piercing thumb rotations to pass undetected."
+
+  2_measurement_methodology_and_sensor_mirror:
+    protocol: "Stage-0 Zero-Impedance Mental Motor Imagery ('Air-Guitar / Climber Route-Reading' before physical contact) captured on live camera, calibrated for front-camera mirror symmetry."
+    key_observations:
+      - "Elevator Squat (Vertical Pelvis Drop with Upright Torso): Instead of folding forward at the waist, the human drops vertically via deep knee/ankle flexion while keeping the spine nearly upright (< 10 deg lean)."
+      - "Pre-Contact Visual Peering: Squat depth is governed first by sensory line-of-sight clearance under the overhanging shell lip, not merely by mechanical leverage."
+      - "Shoulder-Elbow-Rim Steering Triangle: The upper stabilizing elbow elevates laterally (~40 deg Wing-Out) to lock forearm, wrist, and rim clamp into a rigid 3D steering splint."
+      - "Unloaded Thumb Re-Indexing: Without real surface impedance (Stage 0), the thumb briefly re-grips the imaginary rim edge, exposing the missing haptic lock-in signal that normally stabilizes thumb closure force."
+      - "Strict 5-Beat Preload Safety Sequence: (1) Anchor upper rim hand -> (2) Squat to clear sightline -> (3) Grasp lower T-handle -> (4) Release/steer/re-clamp -> (5) Release lower T-handle FIRST, then upper rim, then stand."
+
+  3_derived_causal_laws:
+    law_1_body_as_optical_tripod_occlusion_squat:
+      statement: "When a target actuator lies inside the visual shadow of an overhanging rigid obstacle, proximal lower-limb degrees of freedom act primarily as a vertical optical tripod to lower the eye-to-target ray below the occluding bottom lip prior to distal hand entry, preserving an upright torso so the chest stays clear of the bimanual steering envelope."
+      kinematic_signature:
+        pelvis_drop_m: [0.25, 0.56]
+        torso_forward_pitch_deg: "< 12.0"
+        eye_ray_lip_clearance_mm: ">= 10.0"
+
+    law_2_climber_route_reading_stage_0:
+      statement: "Prior to physical contact (impedance = 0), human motor planning executes a forward cerebellar simulation ('Route-Reading') analogous to competition climbers previewing a crux sequence: contact normal vectors, 90-degree thumb form-closure stops, and bimanual sequencing are already present in free air, whereas final thumb closure force and static trunk counter-inertia await real haptic impedance (Stage 1)."
+
+    law_3_shoulder_elbow_rim_steering_splint:
+      statement: "When one hand stabilizes and steers an articulated 3D cradle while the contralateral hand actuates a transverse clamping screw, the stabilizing shoulder abducts laterally (~35-45 deg Wing-Out) to fuse upper arm, forearm, wrist, and rim clamp into a closed triangular truss."
+
+    law_4_matrix_world_anchoring_and_hard_assertion_firewall:
+      statement: "3D contact kinematics must be computed exclusively in the target component's local transform frame (matrix_world) rather than world-space trigonometric approximations, and guarded by hard runtime assertions that halt execution upon any violation."
+      mandatory_invariant_guards:
+        - id: "GUARD_1_WELDED_WRIST"
+          rule: "norm(wrist_pivot_world - forearm_distal_end_world) <= 1.0 mm"
+        - id: "GUARD_2_UNOCCLUDED_SIGHTLINE"
+          rule: "3D ray segment [eye_world -> actuator_grip_world] has zero intersection with occluding shell bounding box + 10 mm margin"
+        - id: "GUARD_3_GROUNDED_STANCE"
+          rule: "Both shoe soles remain flush on floor plane Z = 0.000 m (-3 mm <= min_z <= +8 mm) across full squat depth"
+        - id: "GUARD_4_CHIRAL_THUMB_EXTERIOR"
+          rule: "On mirrored left/right rim clamps (s_side in {-1, +1}), thumb CMC YXZ Kapandji pronation sign must invert with chirality so all thumb joints remain strictly on the exterior wall face (0.0 mm wall penetration)"
+        - id: "GUARD_5_ONE_SIDED_CROSSBAR_CORRIDOR"
+          rule: "All four hook fingers remain within the single outer crossbar arm corridor without straddling the central spindle"
+        - id: "GUARD_6_BILATERAL_EGGSHELL_CONTACT"
+          rule: "Active blanching digits maintain surface gap in [-0.5 mm, +1.5 mm] with pulp normal alignment >= 0.65"
+
+  4_self_critical_engineering_lesson:
+    diagnostic_finding: "Replacing soft console logs with hard runtime assertions immediately exposed a subtle left-hand YXZ thumb chirality sign error (+24.8 mm interior wall intrusion) after sightline occlusion and squat foot-grounding guards were satisfied—demonstrating that deterministic geometric firewalls isolate exact root causes far more reliably than visual parameter tuning."
