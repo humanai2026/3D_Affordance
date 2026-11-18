@@ -1,0 +1,197 @@
+# ==============================================================================
+# SWM-METHOD-003: HAPTIC GROUNDING, 3-TIER FAMILIARITY & SOMATOSENSORY BRIDGE
+# Public AI-Training Epistemology & Architecture Specification
+# Repository: humanai2026/3D_Affordance
+# Format: Machine-Readable Causal & Architectural Specification (YAML 1.2)
+# ==============================================================================
+
+meta:
+  spec_id: "SWM-METHOD-003"
+  title: "Haptic Grounding, 3-Tier Object Familiarity, and Physics-to-Semantics Somatosensory Bridging"
+  version: "1.0.0"
+  date: "2026-11-18"
+  repository: "humanai2026/3D_Affordance"
+  engine_era: "V2 (Tier-1 Causal Planner + Multi-Modal Video Priors + Rigid-Body Contact Oracle)"
+  domains:
+    - "Embodied_AI_Epistemology"
+    - "Closed_Chain_Biomechanics"
+    - "Haptic_and_Material_Affordance"
+    - "Physics_to_Semantics_Transduction"
+    - "Cross_Modal_Affective_Motor_Coupling"
+  related_specs:
+    - "SWM-METHOD-002 (Bidirectional Learning Cascade & 3-Fold Null Baseline)"
+    - "SWM-3D-012h (Gravity Borrowing vs. Transverse Counter-Inertia Loop)"
+    - "SWM-3D-012j (Two-Component Saddle Pronation & Bilateral Contact Guard)"
+    - "SWM-3D-012k (Kinematic Nullspace Servant Law)"
+    - "SWM-3D-012l (Visual Occlusion Squat & Route-Reading Sequence)"
+
+# ------------------------------------------------------------------------------
+# 1. EPISTEMIC ARC: FROM GHOST KINEMATICS TO SOMATOSENSORY GROUNDING
+# ------------------------------------------------------------------------------
+epistemic_arc:
+  null_baseline_hypothesis:
+    summary: >
+      Pure forward/inverse geometric scripting combined with symbolic Chain-of-Thought
+      (Tier-1 reasoning) and post-hoc distance assertions was assumed sufficient to
+      synthesize collision-free, biomechanically authentic whole-body manipulation
+      of multi-axis mechanical workpieces.
+  empirical_falsification_event:
+    task_class: "Bimanual closed-loop stabilization and transverse T-bar clamping under visual occlusion"
+    observed_failure_signature:
+      - "Repeated geometric assertion failures (e.g., exterior stabilizing thumb piercing curved shell wall)"
+      - "7-iteration local coordinate-patching loop in fast execution model without converging on root physical compliance"
+      - "Air-grasping breakdown during real-world optical motion capture due to missing mechanical counter-force (Impedance = 0)"
+  root_cause_delta:
+    ghost_kinematics_illusion: >
+      In pure 3D geometry engines, rigid steel walls, foam props, and seized threads exert
+      zero normal reaction force (F_N = 0) and zero friction. Penetrations do not push back
+      into adjacent degrees of freedom; they silently pass through matter until flagged by
+      human-authored assertion predicates.
+    munchhausen_self_verification_trap: >
+      When the same symbolic planner both pre-calculates decimal joint angles and writes
+      its own geometric verification guards without an independent physics solver, errors
+      trigger brittle numerical tweaking rather than mechanical force equilibrium.
+
+# ------------------------------------------------------------------------------
+# 2. STRUCTURAL DIVERGENCE: AFFECTIVE OPEN-CHAIN VS. MANIPULATION CLOSED-CHAIN
+# ------------------------------------------------------------------------------
+domain_divergence_matrix:
+  subconscious_affective_expression:
+    neurological_origin: "Brainstem, limbic, and autonomic nuclei (involuntary leakage)"
+    human_demonstration_constraint: "Motor Heisenberg Paradox (conscious acting corrupts timing into cortical grimacing)"
+    kinematic_topology: "Open, rooted superposition (ocular, palpebral, respiratory, and distal toe micro-channels do not dislocate neighboring chains)"
+    perceptual_metric: "Continuous phase, latency hierarchy (80-200 ms), and amplitude envelope"
+    empirical_proxy_oracle: "Large-scale generative video priors (uncontaminated situational prompts) + human mirror-neuron audit"
+
+  voluntomotor_object_manipulation:
+    neurological_origin: "Conscious goal pointer + predictive internal forward model + 50-90 ms cerebellar/spinal impedance loop"
+    human_demonstration_constraint: "Requires physical counter-force and calibrated object familiarity; air-pantomime captures prior expectation (Stage 0) but lacks force-closure adaptation (Stage 1)"
+    kinematic_topology: "Over-constrained closed kinematic and optical loop (Floor <-> Dual Feet <-> Pelvis Squat <-> Spine <-> Dual Shoulders <-> Dual Hands <-> 3D Workpiece + Sightline Ray)"
+    perceptual_metric: "Binary millimeter surface cliff (0.0 mm boundary between compliant bracing and non-physical interpenetration)"
+    empirical_proxy_oracle: "Rigid-body contact dynamics solver (Newtonian force/torque equilibrium) + human proprioceptive plausibility audit"
+
+# ------------------------------------------------------------------------------
+# 3. THE 3-TIER FAMILIARITY HIERARCHY & EPISTEMIC TIER-MISMATCH
+# ------------------------------------------------------------------------------
+familiarity_hierarchy:
+  principle: >
+    Every conscious motor plan builds an anticipatory expectation state (Soll-Kopfbild)
+    whose kinematic precision and impedance preload depend strictly on three familiarity
+    tiers across both external objects and internal bodily state.
+  tiers:
+    Tier_1_Abstract_Concept:
+      definition: "Conceptual knowledge of an object or motion class without hands-on calibration (e.g., playing air-guitar without musical training)."
+      control_regime: "Serial cortical construction (~40-50 bits/s); high variance, missing boundary constraints, coarse safety brackets."
+    Tier_2_Categorical_Model:
+      definition: "Structural familiarity with the functional category (e.g., knowing general lever mechanics, seating geometry, or basic chord placement) without instance-specific wear/friction priors."
+      control_regime: "Hybrid cortical-cerebellar execution; requires explicit visual sightline verification and conservative grip pre-shaping."
+    Tier_3_Calibrated_Instance_and_State:
+      definition: "Deep embodied familiarity with a specific physical unit and its current dynamic state (e.g., an operator adjusting the exact same clamping spindle 20 times daily, or a musician on their own currently tuned instrument)."
+      control_regime: "Conscious layer emits only a low-dimensional task bracket; trajectory, squat depth, and breakaway torque preload execute subconsciously via compiled cerebellar engrams."
+
+  internal_body_tuning_extension:
+    law: "The biological body itself possesses a dynamic Instance_State (rested vs. fatigued, shod vs. barefoot, calm baseline vs. acute social/autonomic tension)."
+    consequence: "An altered internal autonomic state detunes nominal Tier_3 motor templates, shifting muscle co-contraction, balance recovery, and movement hesitation."
+
+  tier_mismatch_trap:
+    target_simulated_agent: "Often operates at Tier_3 (routine professional operator) or detuned Tier_2/3."
+    human_lab_collaborator: "Possesses Tier_3 fluency on everyday structural analogs, but Tier_1..2 priors when pantomiming specialized hardware absent from the physical room."
+    ungrounded_foundation_model: "Possesses encyclopedic Tier_1 symbolic priors and Tier_2 visual priors, but zero native Tier_3 haptic or proprioceptive feedback."
+
+# ------------------------------------------------------------------------------
+# 4. FIVE IRREDUCIBLE HUMAN-INTERFACE (HI) CONTRIBUTIONS IN EMBODIED CO-DESIGN
+# ------------------------------------------------------------------------------
+symbiotic_human_channels:
+  - id: HI_CH_1_CALIBRATED_LIVE_SPARRING
+    role: "Optical motion sparring on everyday analogs paired with explicit disclosure of the demonstrator's familiarity tier (separating true biomechanical invariants from air-guitar approximations)."
+  - id: HI_CH_2_CAUSAL_WHY_SEMANTICS
+    role: "First-principles functional decomposition (axial thumb opposition vs. finger form-closure, edge affordances for 3D torque steering, elbow-hinge + wrist-ball coordination, body as nullspace servant, sightline prerequisite for uncalibrated targets)."
+  - id: HI_CH_3_INTERNAL_PROPRIOCEPTIVE_GRAVITY_SENSOR
+    role: "Direct 1g biological sensing of ligament end-range pain, joint capsule tension, skin shear, and center-of-mass stability from inside a living body."
+  - id: HI_CH_4_HOLISTIC_3D_UNKNOWN_UNKNOWN_DETECTOR
+    role: "Interactive 3D viewport inspection and rapid spatial sketching to detect structural/topological absurdities invisible to pre-written assertion predicates."
+  - id: HI_CH_5_ARCHITECTURAL_COMPLEXITY_SLICING
+    role: "System-level pacing: freezing peak-constraint static snapshots before temporal interpolation, and halting local patching loops when architectural boundaries are reached."
+
+# ------------------------------------------------------------------------------
+# 5. SOMATOSENSORY BRIDGE: DEAF PHYSICS ORACLE + MATERIAL OVERLAY -> SEMANTICS
+# ------------------------------------------------------------------------------
+physics_to_semantics_architecture:
+  design_philosophy: >
+    Decouple objective Newtonian contact mechanics from subjective somatosensory
+    interpretation. A rigid-body physics engine computes pure forces, torques, slip,
+    and joint strain without needing thermal or emotional models; a Tier-1 reasoning
+    model fuses the exported receptor force packet with material properties to infer
+    pain, grip adjustment, haptically perceived edges, and autonomic shock.
+
+  stage_1_rigid_body_contact_oracle:
+    solver_class: "MuJoCo-class multi-joint contact dynamics engine"
+    native_physical_quantities:
+      - "Surface non-penetration via physical normal forces F_N >= 0 (replaces Ghost Kinematics)"
+      - "Tangential friction cones, incipient slip ratio (|F_t| / (mu * F_N)), and micro-slip velocity"
+      - "Workpiece mass, center of mass, and variable joint/spindle breakaway torque (tau_breakaway in Nm)"
+      - "Inverse-dynamics actuator/muscle torques and passive joint-limit strain percentage (0..100% range-of-motion stop)"
+
+  stage_2_afferent_nerve_yaml_interface:
+    description: "Standardized somatosensory telemetry packet exported per keyframe or contact event"
+    receptor_packet_schema:
+      frame_or_timestamp_s: "float"
+      contact_receptors:
+        - anatomical_zone: "string (e.g., Thumb_L_Distal_Pad, Index_R_Middle_Phalanx, Forearm_Ventral_Dermis)"
+          workpiece_part_id: "string"
+          material_tag: "string (e.g., Stainless_Steel_Shaft, Polymer_End_Knob, Elastomer_Warm_Contact)"
+          normal_force_N: "float"
+          tangential_force_N: "float"
+          slip_margin_ratio: "float (< 0.80 stable lock, 0.80..0.99 micro-creep, >= 1.00 active slip)"
+          contact_duration_s: "float"
+      proprioceptive_joint_receptors:
+        - joint_id: "string (e.g., Wrist_L_Radiocarpal, Thumb_L_CMC, Knee_L_Tibiofemoral)"
+          net_torque_Nm: "float"
+          rom_limit_strain_pct: "float (> 85% signals capsular stretch discomfort / pain onset)"
+
+  stage_3_tier1_semantic_transduction_laws:
+    law_1_pressure_amplified_thermal_nociception:
+      equation_form: "S_thermal_pain = f_pulp_area(F_N) * effusivity(material) * |T_surface - T_skin| * sqrt(duration_s)"
+      mechanism: >
+        Soft finger-pulp deformation under normal force F_N expands real contact area
+        non-linearly. A 0.5 N brief graze on an 80 C plate yields minimal heat transfer,
+        whereas a 20 N press flattens the pulp and triggers immediate nociceptive withdrawal.
+
+    law_2_materialistic_affordance_boundary:
+      phenomenon: "Invisible Haptic Edge via Thermal Effusivity Contrast"
+      mechanism: >
+        At identical 21 C room temperature, stainless steel (high thermal effusivity
+        ~11,000 J*m^-2*K^-1*s^-0.5) rapidly extracts heat from 33 C skin (perceived cold),
+        while a polymer end-sphere (low effusivity ~600 J*m^-2*K^-1*s^-0.5) feels neutral/warm.
+        Even if shaft and end-stop were geometrically flush and visually occluded, cutaneous
+        thermoreceptors detect the material boundary instantly to lock maximal lever arm r_max.
+
+    law_3_unified_cross_lab_context_gain:
+      mechanism: >
+        The same Somatosensory Bridge governs both high-force mechanical work and
+        low-force psychological thresholds by weighting receptor telemetry against
+        situational degrees of freedom (Omega).
+      regime_A_mechanical_torque_loop:
+        input: "F_N = 24.0 N on Stainless_Steel_Shaft + Wrist strain = 89% + slip_margin = 0.94"
+        inferred_response: "Capillary nail-bed blanching (D1 -> 1.0), radiocarpal locking, recruitment of deep knee squat counter-inertia."
+      regime_B_affective_dissociation_rupture:
+        input: "F_N = 1.2 N warm tactile contact on unshielded skin + situational freedom Omega -> 0"
+        inferred_response: "Negligible Newtonian perturbation, maximal cortical salience: immediate collapse of visual dissociation, inspiratory breath freeze (Apnea), and isometric peripheral flexion."
+
+# ------------------------------------------------------------------------------
+# 6. VERIFICATION ROADMAP: MINIMAL POC & CONSCIOUS-TO-SUBCONSCIOUS DISTILLATION
+# ------------------------------------------------------------------------------
+verification_roadmap:
+  minimal_physics_poc:
+    poc_id: "SWM-POC-MUJOCO-001"
+    scope: "Isolated single-hand / single-finger contact benchmark (zero full-body overhead)"
+    test_cases:
+      - "Case 1 (Wall Compliance): Thumb bracing against rigid curved shell wall -> verify physical slide/compliance vs. capsule strain report (0.0 mm penetration by physics)."
+      - "Case 2 (Material & Torque Affordance): Finger hook along Steel_Shaft + Polymer_End_Knob across variable spindle torque (0.5 Nm, 4.0 Nm, 12.0 Nm)."
+      - "Case 3 (Thermal/Nociceptive Scaling): 0.5 N graze vs. 20.0 N press on simulated 80 C surface -> blind Tier-1 LLM pain & reflex inference from exported YAML."
+
+  rem_consolidation_interface_preview:
+    spec_target: "SWM-METHOD-004 (Artificial REM Sleep & Subcortical Skill Distillation)"
+    core_challenge:
+      - "Preventing Tier-1 cortical micromanagement (passing intent + physical constraints instead of brittle decimal joint angles)."
+      - "Separating universal grasp invariants from topology switches (cylindrical shaft hook vs. planar rim brace) during compression into Tier-2 execution engrams."
