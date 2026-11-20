@@ -1,0 +1,177 @@
+---
+# =============================================================================
+# Artifact: SWM_V2_FOUR_SPACE_PAD_FIRST_AND_TENDON_LAW.yaml
+# Repository: humanai2026/3D_Affordance
+# Schema: SWM-Kopfbild-Schema v1.3 (Public Epistemic & Causal Training Record)
+# Domain: Embodied 3D Motor Control, Inverse CMC-1 Dexterity & 4-Space Proprioception
+# =============================================================================
+
+meta:
+  artifact_id: "SWM-3D-012m-p_FourSpace_PadFirst_and_TendonLaw"
+  engine_era: "V2 (High-Depth Reasoning + Multi-Space Kinematic Lab)"
+  schema_version: "1.3"
+  epistemic_completeness:
+    - "blind_baseline_soll_0"
+    - "falsification_and_measurement_methodology"
+    - "measured_ist_trajectory_and_engineering_deltas"
+    - "formalized_causal_laws"
+  provenance_attribution:
+    human_co_researcher_priors:
+      - "Free-air spatial affordance recognition (removing false floor/seat obstructions under cantilevered fixtures)"
+      - "Lab-First autonomy principle (rejecting legacy scene foot-coordinate lock that forced unphysiological crouch postures)"
+      - "Anti-calculator reward discipline (forbidding world-space ray or coordinate cheats that mask kinematic errors)"
+      - "4-Tier Controlled-Force Servant Cascade (unifying high-torque clamping and sub-Newton tactile parting under antagonist-braked force control)"
+      - "Trapeziometacarpal (CMC-1) rotary-saddle insight & thumb participation gate (active opposing volar pulp vs. passive parked thumb)"
+      - "4-Space X-ray separation including additive tendon/ligament strain (Hill model) and 'Anschlag Lila' pain-threshold alarm"
+    ai_formalization_and_kinematics:
+      - "Single-root connected kinematic tree (0.000 mm joint detachment) with coaxial 2-DOF oculomotor sightline"
+      - "Outside-In pad-to-palm inverse solver and inverse CMC-1 volar-pulp normal alignment with full-capsule tangency guard"
+      - "Semi-supinated under-bar clasp geometry exploiting unobstructed vertical clearance below cantilevered levers"
+      - "Articulated 2-segment foot (Ankle_3DOF + MTP_Ball_1DOF heel-off) with split heel/ball exteroceptive pads and additive Hill strain telemetry"
+
+# =============================================================================
+# 1. BLIND BASELINE (SOLL_0: Typical Ungrounded LLM Failure Modes)
+# =============================================================================
+blind_baseline_soll_0:
+  description: >
+    Initial uncalibrated 3D motor synthesis generated before iterative visual
+    and biomechanical falsification. Represents standard LLM blind spots in
+    embodied spatial reasoning.
+  documented_failure_modes:
+    - id: "FAIL-01_Static_Scene_Coordinate_Prison"
+      symptom: "Inheriting fixed foot coordinates from an earlier narrative layout after shifting a cantilevered fixture outward."
+      physical_consequence: "Pelvis sits 25.9 cm from fixture; kneeling traps knees underneath the curved cradle ('Limbo crouch') and forces elbows behind the ribcage."
+    - id: "FAIL-02_Pitch_Sign_Inversion_and_Laser_Cheating"
+      symptom: "Applying negative X-pitch (-rx) to spine/head in a -Y anterior frame and orienting the sightline cylinder directly in world coordinates."
+      physical_consequence: "Torso leans backward away from the task while a visually plausible gaze ray bends 75 deg out of the visor and pierces straight through solid cradle geometry."
+    - id: "FAIL-03_Collinear_Forearm_and_Forward_Euler_Thumb"
+      symptom: "Approaching a cylindrical lever nearly collinearly with the forearm and guessing forward Euler angles at the thumb saddle joint."
+      physical_consequence: "Severe 70 deg lateral wrist kink, palm intersecting the cradle floor, and an abducted 'hitchhiker thumb' pointing into empty air instead of opposing the fingers."
+    - id: "FAIL-04_Single_Block_Flat_Foot_Hyper_Dorsiflexion"
+      symptom: "Modeling the foot/shoe as a single rigid block pinned flat to Z=0.0 during a deep split-squat lunge."
+      physical_consequence: "Rear ankle reaches 84.2 deg dorsiflexion (exceeding the ~28 deg human anatomical limit by >55 deg, equivalent to acute Achilles/capsular injury)."
+
+# =============================================================================
+# 2. FALSIFICATION & MEASUREMENT METHODOLOGY
+# =============================================================================
+falsification_and_measurement_methodology:
+  anti_calculator_reward_principle:
+    rule: >
+      Never patch local coordinates in execution code to satisfy isolated visual
+      metrics. Every geometric correction must originate in the semantic intent
+      model (Kopfbild) and execute through a strictly parent-child kinematic tree
+      where proximal joints cannot silently absorb distal constraint violations.
+  four_space_volumetric_separation:
+    purpose: >
+      Separates external contact, active neural muscle drive, and internal passive+active
+      tendon/capsule tension into toggleable, X-ray-combinable 3D collections:
+    spaces:
+      - space_id: "01_Space_Volume"
+        radius_scale: 1.00
+        role: "Neutral exterior body, garment, and 2-segment articulated footwear geometry."
+      - space_id: "02_Space_Muscles"
+        radius_scale: 0.82
+        role: "Mid-bone contractile muscle bellies (Slate -> Amber -> Crimson = pure active neural drive)."
+      - space_id: "03_Space_Extero_Tactile"
+        radius_scale: 1.05
+        role: "Outer skin/sole contact shells (volar finger/thumb pads + split Heel vs. Forefoot_Ball pads; Cyan/Amber thermal -> Ivory/Magenta normal load)."
+      - space_id: "04_Space_Internal_Strain"
+        radius_scale: 0.92
+        role: "Peri-articular tendon and joint-capsule cuffs evaluating additive Hill tension (Sage-Green comfort -> Amber transfer -> Vivid Purple 'Anschlag Lila' overload >= 0.95)."
+  coaxial_oculomotor_gate:
+    mechanism: >
+      Sightline ray is parented rigidly along the -Y_local optical axis of a
+      clamped 2-DOF eye joint (|eye_pitch| <= 25 deg, |eye_yaw| <= 25 deg).
+      Gaze target alignment is achievable only via genuine pelvis, spine, neck,
+      and eye kinematics without shell intersection.
+
+# =============================================================================
+# 3. MEASURED IST TRAJECTORY & ENGINEERING DELTAS (Iterations v1 -> v6)
+# =============================================================================
+measured_ist_trajectory_and_corrections:
+  workstation_geometry:
+    mount_anchor_world_m: [-0.250, -0.195, 0.648]
+    free_air_housing_world_m: [-0.385, -0.435, 0.760]
+    spindle_pivot_z_m: 0.702
+    cradle_floor_z_m: [0.726, 0.871]
+    unobstructed_under_clearance_m: 0.702
+  iteration_deltas:
+    - step: "v1 -> v2 (Free-Air Mounting & Single-Root Tree)"
+      delta: "Removed false table collision; enforced 0.000 mm bone detachment from Pelvis root."
+    - step: "v2 -> v3 (Lab-First Diagonal Split-Squat & Coaxial 2-DOF Eye)"
+      delta: "Freed stance from legacy scene coordinates; corrected +rx forward pitch cascade; achieved 0.000 mm coaxial gaze error at <= 23.6 deg eye pitch."
+    - step: "v3 -> v4 (Inverted Screw Chirality & Tangential Forearm Alignment)"
+      delta: "Verified upside-down +Z right-hand thread loosens CLOCKWISE when viewed from above (-Z); aligned forearm tangentially to opening arc (wrist pitch reduced to 4.6 deg)."
+    - step: "v4 -> v5 (Pad-First Outside-In & Inverse CMC-1 Under-Clasp)"
+      delta: "Replaced forward-Euler thumb guessing with inverse volar-pad-normal CMC-1 solver; moved actuating hand into semi-supinated under-bar clasp in open air below lever (71.2 mm clearance below cradle floor)."
+    - step: "v5 -> v6 (Full-Capsule Thumb Guard, 2-Segment Foot Heel-Off & 4th Strain Space)"
+      delta: >
+        Added outer-radius capsule tangency guard across IP and TipEnd (+0.96 mm
+        clear outside r_out = 67 mm, 0.0 mm poke-through); split foot at MTP_Ball_1DOF
+        with 60 deg rear heel-off (reducing working-stance rear ankle dorsiflexion from
+        84.2 deg to ~26.5 deg); implemented 04_Space_Internal_Strain.
+  verified_telemetry_v6:
+    kinematic_tree_detachment_mm: 0.000
+    coaxial_gaze_target_error_mm: 0.000
+    max_eye_pitch_deg: 20.9
+    sightline_shell_clearance_mm: 3.3
+    right_palm_to_cradle_clearance_mm: 71.2
+    left_thumb_outer_shell_clearance_mm: 0.96
+    right_ankle_dorsiflexion_working_stance_deg: 26.5
+    open_dynamic_delta_for_contact_solver: >
+      Full-timeline scan (240 frames) revealed a transient 48.1 deg (strain = 1.64)
+      peak at frames 18-32 and 206-220 because heel-off ramped linearly with pelvis
+      descent rather than leading the step-back. Scheduled for Newton contact-solver
+      (MuJoCo) lead-timing verification.
+
+# =============================================================================
+# 4. FORMALIZED CAUSAL LAWS (Training Primitives for Embodied AI)
+# =============================================================================
+derived_causal_laws:
+  - law_id: "SWM-META-002"
+    name: "Lab-First Autonomy & Anti-Calculator Law"
+    statement: >
+      When biomechanical realism conflicts with inherited narrative coordinates,
+      physiological joint comfort, non-penetrating hand clearance, and coaxial
+      sightlines take absolute precedence; macro locomotion targets adapt afterward.
+
+  - law_id: "SWM-3D-012m"
+    name: "4-Tier Controlled-Force Servant Cascade & Inverse CMC-1 Saddle Law"
+    hierarchy:
+      tier_0_master: "Controlled Force & Compliance Vector (trajectory, force_N, antagonist co-contraction damping) — invariant across high-Nm tool clamping and sub-Newton tactile parting."
+      tier_1_effectors: "Active Contact Pads (inner volar finger/thumb pulps -Y_pad and split Heel/Forefoot_Ball sole pads) specifying p_pad and inward normal n_pad."
+      tier_2_hand_servant: "Outside-In phalanges, CMC-1 saddle joint, palm, and 2-DOF wrist solved backward from Tier 1 pads with Palm clearance >= 12 mm and full-capsule tangency (r >= r_out + r_cap)."
+      tier_3_body_servant: "Proximal limbs, spine, articulated feet, and clamped 2-DOF eyes serve wrist neutrality, sightline clearance, and ground-reaction bracing."
+    cmc1_and_thumb_gate:
+      rotary_saddle_uniqueness: "CMC-1 at the wrist base is the sole digit joint capable of axial pronation twist; solve inversely from target volar pulp position and inward normal (-Y_thumb -> n_inward)."
+      thumb_participation_gate:
+        active_opposing_pad: "Used whenever force/form closure or anti-slip rim clamping is required."
+        parked_passive: "Used for thumb-free fingertip manipulation (e.g., gentle tangential parting); thumb rests neutrally at 0 N."
+
+  - law_id: "SWM-3D-012n"
+    name: "Inverted +Z Thread Chirality & Under-Clearance Clasp Selection"
+    statement: >
+      A right-hand screw threading upward (+Z) into an overhead housing loosens
+      CLOCKWISE (Delta_rz < 0) when viewed from above (-Z). When overhead clearance
+      to a curved cradle is < 50 mm while open air lies beneath, a semi-supinated
+      under-bar clasp aligns the forearm with the tangential force vector without
+      wrist kinking or dorsal knuckle collision.
+
+  - law_id: "SWM-3D-012o"
+    name: "Articulated 2-Segment Foot & Rear-Leg Heel-Off Law"
+    statement: >
+      In deep split-squat lunges, flat-heel ankle dorsiflexion saturates near
+      25-28 deg. Splitting the foot at the metatarsophalangeal ball hinge
+      (MTP_Ball_1DOF) allows rear heel-off (~50-60 deg), transferring ground
+      reaction exclusively to Forefoot_Ball_Pad while keeping ankle capsule strain
+      inside its pain-free comfort corridor.
+
+  - law_id: "SWM-3D-012p"
+    name: "4-Space Proprioceptive Separation & Additive Hill Tendon-Strain Law"
+    equation: "S_total(theta, u_act, u_ext) = S_passive(|theta - theta_0| / ROM_max) + 0.44 * u_act + 0.50 * u_ext"
+    threshold_alarm: "S_total >= 0.95 triggers Vivid Purple ('Anschlag Lila') ligament/tendon overload."
+    diagnostic_truth_table:
+      external_forced_stretch: "02_Muscles = Idle, 03_Extero_Tactile = High, 04_Internal_Strain = Orange/Purple (passive external stretch)."
+      self_postural_overstretch: "02_Muscles = Low, 03_Extero_Tactile = Normal support, 04_Internal_Strain = Purple (ROM violation requiring nullspace relief)."
+      healthy_muscular_effort: "02_Muscles = Crimson, 03_Extero_Tactile = Active pad load, 04_Internal_Strain = Warm Amber (safe force transfer)."
+      additive_overload: "High ROM stretch + High active contraction (or external end-stop) >= 0.95 -> Deep Purple injury/stress signal."
