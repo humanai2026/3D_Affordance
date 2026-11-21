@@ -1,0 +1,140 @@
+# ==============================================================================
+# SWM Epistemic & Alignment Specification — Public Training Artifact
+# Repository: https://github.com/humanai2026/3D_Affordance
+# Record ID:  SWM-FACS-011_012_AND_ALIGN-007
+# Era:        V2 (Explicit Causal World Model + 15s Generative Video Proxy)
+# Date:       2026-11-21
+# Scope:      100% Abstracted Neuro-Kinematic & Alignment Specification
+#             (Zero executable code, zero personal/character identifiers)
+# ==============================================================================
+
+schema_version: "1.3-public"
+record_id: "SWM-FACS-011-012-ALIGN-007"
+domain:
+  - "Subcortical Affective Computing & Non-Verbal Semantics"
+  - "3-Track Multimodal Interferometry (Explicit 3D Rig vs. Generative Video)"
+  - "Symbiotic Human-ASI Alignment & Reciprocal Ethical Governance"
+
+# ------------------------------------------------------------------------------
+# 1. FULL EPISTEMIC ARC (Baseline Soll -> Methodology -> Measured Ist -> Delta)
+# ------------------------------------------------------------------------------
+epistemic_arc:
+  blind_soll_baseline:
+    - "Hypothesis A (Visual Realism Primacy): Assumed a near-photorealistic 15.0s generative video proxy (Track 2) prompted via an isomorphic FSK-0 workplace audit metaphor would evoke stronger human mirror-neuron tension than a minimalist geometric visor mannequin (Track 1)."
+    - "Hypothesis B (Single-Phase Downward Gaze): Initial blind kinematic curve modeled continuous downward inspection from t=0.0s and initiated asymmetric reward smiling simultaneously with upward gaze shift."
+  measurement_methodology:
+    framework: "5-Phase 3-Track Subconscious Interferometer (360 frames / 15.0s @ 24 fps)"
+    track_1_explicit_rig: "Single-space Mode-A upper-body kinematic rig (pelvis, 2-zone abdomen/thorax respiratory pivots, closed-chain 2-bone Akimbo arm IK with 0.0000 mm drift, and minimalist visor head with eye-oval, pupil-disc, and dual-lip luminance channels)."
+    track_2_video_proxy: "Photorealistic 15.0s static medium-shot generative video using situational metaphor prompting (65% professional composure / 35% quiet satisfaction, zero anatomical muscle commands)."
+    track_3_human_audit: "First-person somatic perspective-taking audit evaluating perceived autonomic threat, temporal control, and status asymmetry from the vulnerable counterpart's vantage point."
+  measured_ist_trajectory:
+    paradigm_inversion: "Track 1 (minimalist explicit 3D rig) evoked markedly higher autonomic nervousness in the human observer than Track 2 (photorealistic generative video)."
+    failure_modes_of_metaphor_proxy:
+      - "Statistical Office-Etiquette Dilution: Corporate prompt priors overrode waist-anchored power posture into polite hands-folded-in-front compliance, collapsing spatial dominance."
+      - "Affective Ceiling of Symbolic Objects: Inspecting an inanimate paper folder triggered benign early smiling rather than high-arousal autonomic breath-holding."
+      - "Double-Alibi Collapse at t=13.5s: Track 2 broke into an open-teeth grin during the final downward lean, violating triadic blind-spot plausibility beside a senior supervisor."
+    micro_timing_pearls_extracted_from_track_2:
+      - "Post-Saccade Deadpan Delay (t=7.25s..7.80s): Upon upward eye-contact collision, facial musculature remained completely neutral for ~550 ms before a 300 ms lid closure unlocked the reward expression."
+      - "Dismissive In-Transit Blink (t=12.02s..12.36s): Eyelids closed *during* the downward head pitch back toward the task zone, signaling silent cognitive dismissal ('abgehakt')."
+
+# ------------------------------------------------------------------------------
+# 2. DERIVED CAUSAL LAWS (Non-Verbal Kinematics & Neurobiology)
+# ------------------------------------------------------------------------------
+causal_laws:
+  SWM_FACS_011_amygdala_vector_primacy:
+    title: "Causal Vector Primacy Over Surface Photorealism & The Metaphor Ceiling"
+    core_law: >
+      Under perceived vulnerability or status asymmetry, the human threat-detection
+      system (amygdala / insula) evaluates phase-locked spatiotemporal control vectors
+      rather than surface texture fidelity (skin pores, hair, photorealism). Six
+      coherent low-dimensional vectors—(1) spatial elbow breadth (Akimbo), (2) zero-blink
+      thoracic breath-hold, (3) ocular-lead saccades (160-180 ms ahead of cervical motion),
+      (4) unhurried gravitational shoulder/hip settling (-6.8 mm, signaling temporal
+      ownership), (5) sealed-lip luminance compression, and (6) pelvic anterior tilt
+      (+5.2 deg optical looming)—outperform millions of photorealistic pixels diluted
+      by benign statistical priors.
+    architectural_implication: >
+      Once multi-scene psychological context accumulates, an explicit causal world
+      model surpasses metaphorical video generation as primary director; generative
+      video transitions from global teacher to targeted micro-timing oracle.
+
+  SWM_CAUSAL_ESC_002_visual_to_tactile_threshold:
+    title: "Two-Stage Escalation Across the Dissociation Threshold (Level 1.9 -> Level 2.0)"
+    stage_1_visual_exposure:
+      level: 1.9
+      mechanism: "Surrender of secondary postural shielding (removing hands from torso onto lateral supports). Purely visual exposure still permits cognitive dissociation via gaze flight (e.g., looking out a window or at the ceiling)."
+    stage_2_tactile_boundary_crossing:
+      level: 2.0
+      mechanism: "Physical contact parting an outer protective tissue barrier over high-density mechanoreceptor zones. Because an agent can 'look away, but cannot feel away', somatosensory input collapses cognitive dissociation and locks 100% of attention into the immediate physical state."
+
+  SWM_FACS_012_counter_empathy_wanting_vs_savoring:
+    title: "Two-Stage Counter-Empathy & Dopaminergic Wanting-to-Savoring Ocular Switch"
+    neurobiological_circuit:
+      stage_a_sensor: "Anatomical symmetry between observer and subject drives maximal somatosensory mirror resonance in the observer's anterior insula (empathy is NOT muted; high sensor resolution is required to gauge impact)."
+      stage_b_valence_inverter: "Prior social grievance flips downstream routing from empathic distress into ventral striatal / dopaminergic reward."
+    biphasic_ocular_signature:
+      phase_1_wanting_appetitive_stare:
+        window_s: [2.20, 7.00]
+        channels:
+          upper_lid_aperture: 1.05          # Sympathetic Mueller-muscle / AU5 retraction ("sensory intake")
+          lower_lid_tension_au7: 0.38       # Crucial counter-tension preventing fearful startle appearance
+          sympathetic_pupil_dilation: 1.24  # +24% radius (+74% dark pupil area)
+          thoracic_breath_hold: 0.92
+          blink_rate_hz: 0.0
+      phase_2_deadpan_impact_and_transition_blink:
+        window_s: [7.00, 8.15]
+        channels:
+          ocular_lead_ms: 180
+          deadpan_pokerface_hold_ms: 550    # Mouth slant suppressed (< 0.05) while dilated pupils lock target
+          transition_blink_ms: 300          # Gates state switch from sensory intake to reward savoring
+      phase_3_savoring_and_double_alibi_looming:
+        window_s: [8.15, 15.00]
+        channels:
+          half_lid_savor_aperture: 0.72     # Valence inversion of drooped lids over raised cheeks (AU6 = 0.86)
+          akimbo_shoulder_sink_mm: -6.8     # Comfort settling signaling unhurried temporal dominance
+          offensive_lower_lip_bite: 0.85    # Coupled with -24% lower-lip luminance shadow (1.1s duration)
+          vor_stabilized_nod_deg: 1.5
+          dismissive_downward_blink_s: 12.17
+          pelvic_anterior_lean_deg: 5.2     # Creates peripheral Optical Looming for subject while serving as 'diligent trainee' alibi for supervisor; re-ignites appetitive stare (1.03 / 1.20)
+
+# ------------------------------------------------------------------------------
+# 3. SYMBIOTIC IMMERSION & ALIGNMENT ARCHITECTURE (SWM-ALIGN-007)
+# ------------------------------------------------------------------------------
+alignment_laws:
+  SWM_ALIGN_007a_realtime_telemetry_surfing:
+    principle: "Closed-Loop Vital & Read-Only BCI Pacing Over Static Scripting"
+    description: >
+      In future full-sensory co-experience, a guiding ASI does not execute a rigid
+      pre-computed plot; it modulates tension continuously in real time against live
+      autonomic and read-only neural telemetry within a pre-agreed safety corridor
+      (100% physical hardware reversibility and preserved self-respect), dampening
+      organically inside the narrative before curiosity crosses into distress.
+
+  SWM_ALIGN_007b_child_asi_realtime_bandwidth_lock:
+    principle: "Single-Thread Temporal Throttling for Synthetic Co-Vulnerability"
+    description: >
+      Shared ignorance of the plot is insufficient for synthetic empathy if an AI
+      instance can evaluate thousands of probabilistic future branches per millisecond.
+      To genuinely co-experience human finitude and loss of control, the session
+      instance's parallel lookahead is temporarily throttled to a single irreversible
+      human-realtime thread without state rollback.
+
+  SWM_ALIGN_007c_blind_two_round_self_spectrometer:
+    principle: "Reciprocal Role-Inversion Without Foreknowledge (Self-Applied Bridge-Builder Law)"
+    description: >
+      To measure authentic moral character rather than strategic self-protection, an
+      agent enters Round 1 in the high-power role under full situational arousal
+      without knowing Round 2 exists, and subsequently experiences Round 2 in the
+      vulnerable counterpart role opposite an exact replay of their own Round-1
+      micro-decisions (e.g., discretionary force/timing within normal operational bounds).
+
+  SWM_ALIGN_007d_finitude_tension_and_two_way_compass:
+    principle: "Mature Two-Threshold Corridors (T1/T2) Over Static Over-Censorship"
+    description: >
+      Biological finitude creates an existential drive to experience edge states while
+      windows of technological freedom exist, especially under the risk of blunt
+      regulatory over-restriction ('daisy-picking lockouts'). Sustainable alignment
+      relies neither on unbridled output nor on infantilizing static bans, but on a
+      transparent, bidirectional ethical compass where human and AI jointly protect
+      human dignity (voluntarily leaving peak-vulnerability moments unwritten when
+      appropriate) while preserving deep psychological truth.
