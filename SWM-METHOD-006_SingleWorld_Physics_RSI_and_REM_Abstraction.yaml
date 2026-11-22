@@ -1,0 +1,251 @@
+---
+# =============================================================================
+# SWM-METHOD-006: Popperian Single-World Physics-Vision RSI Loop &
+#                 4-Stage REM Timeline Abstraction Architecture
+# =============================================================================
+# Public Epistemic & Architectural Specification for Embodied AI Training
+# Repository Target : humanai2026/3D_Affrodance (Tag: Autonomus-RSI)
+# Sanitization Gate : Zero executable code, zero local file paths, zero person
+#                     or character names. Pure mathematical, biomechanical,
+#                     and cognitive-architectural specification.
+# =============================================================================
+
+0_document_metadata:
+  spec_id: "SWM-METHOD-006"
+  version: "1.0.0"
+  date_utc: "2026-11-22"
+  era: "V2 Embodied RSI Architecture"
+  epistemic_status_by_component:
+    single_world_mujoco_blender_loop: "EMPIRICALLY_VERIFIED_IN_LOOP"
+    four_layer_cot_root_cause_isolation: "EMPIRICALLY_VERIFIED_IN_LOOP"
+    peripheral_u_funnel_and_first_touch_law: "BIOMECHANICALLY_DERIVED_READY_FOR_NEXT_PASS"
+    closed_visual_world_model_vlm_critic: "ARCHITECTURAL_RSI_HORIZON"
+    four_stage_rem_timeline_abstraction: "ARCHITECTURAL_PROPOSAL_PENDING_BENCHMARK"
+
+1_motivation_breaking_the_munchhausen_trap:
+  core_problem: >
+    When a generative model authors a 3D kinematic trajectory and verifies that
+    trajectory using self-authored geometric distance assertions in a pure
+    rendering engine, rigid surfaces exert zero reaction force (F_N = 0 N).
+    Consequently, static dead-center coincidences, missing contact forces,
+    internal wedging overloads, and posture unnaturalness inside the kinematic
+    nullspace remain invisible or degenerate into local coordinate patching.
+  architectural_remedy: >
+    Decouple intentional planning, neutral world geometry, objective contact
+    physics, and optical/ergonomic nullspace evaluation into four strictly
+    separated layers bound by cryptographic SHA256 world-state handshakes.
+
+2_awake_loop_single_world_tri_modal_rsi:
+  principle_one_world: >
+    Neither the physics engine nor the rendering engine is permitted to invent
+    private helper primitives or duplicate dimensional constants. Both mappers
+    consume a single tool-agnostic JSON world specification verified via SHA256.
+
+  four_sequential_layers:
+    layer_1_situational_intent_manifest:
+      artifact_class: "Structured Intent Specification (YAML)"
+      cognitive_tier: "High-Reasoning Planner (Prefrontal Equivalent)"
+      scope: >
+        Models strictly one concrete manipulation episode without premature
+        generalization: causal objective, context boundary conditions, full
+        approach-to-release phase chain, expected normal-force budget, and
+        explicit falsification gates.
+
+    layer_2_neutral_world_source_of_truth:
+      artifact_class: "Tool-Agnostic World Geometry & Joint Spec (JSON + SHA256)"
+      scope: >
+        Defines rigid environment primitives (exact analytical shapes such as
+        flat-ended cylinders vs. hemisphere-capped capsules), inertial
+        properties, friction coefficients, segment lengths, and anatomical ROM
+        bounds in a single right-handed metric frame.
+
+    layer_3_dark_headless_physics_and_tactile_oracle:
+      artifact_class: "Headless Rigid-Body Contact Solver (MuJoCo Class -> YAML)"
+      execution_mode: "100% Headless / Viewer-Free (< 0.1 s wall-clock, zero GPU)"
+      local_contact_island_principle: >
+        Avoid simulating a 35-DOF bipedal balance controller when testing distal
+        manipulation. Instantiate only the local contact island (e.g., articulated
+        hand with compliant wrist DOFs + target mechanism) with strict anatomical
+        joint limits, and propagate the measured interface wrench (F_wrist, tau_wrist)
+        backward into the analytical full-body kinematic tree.
+      mandatory_physics_guards:
+        - full_approach_simulation: >
+            Simulate from pre-contact approach (open capture posture in free air)
+            through contact and release; never spawn effectors post-approach inside
+            concave geometry.
+        - compliant_wrist_carrier: >
+            Never weld the palm rigidly to the world frame (infinite stiffness
+            ignores rim collisions); mount via compliant 6-DOF or arm-equivalent
+            impedance joints.
+        - virtual_work_normal_projection: >
+            After initial pad contact (q_touch), project desired grip forces
+            strictly along the local surface normal (dq_des = K_p^-1 * J_n^T * F_N)
+            so multi-hinge phalanges press normally like piano hammers rather than
+            scrubbing tangentially to the friction-cone boundary.
+        - popperian_perturbation_gate: >
+            Apply counterfactual unheld gravity checks plus active 3-axis external
+            perturbation torques after unlocking to eliminate unstable CoM dead-center
+            false positives.
+
+    layer_4_optical_and_nullspace_ergonomic_critic:
+      artifact_class: "4-Space Visual & Somatosensory Mapper (Blender Class)"
+      synchronization: >
+        Verifies world_spec_sha256 before building geometry, applies solved
+        physics joint trajectories, and drives tactile (03_Extero_Tactile) and
+        Hill-type tendon/ligament strain (04_Internal_Strain) channels strictly
+        from measured Newton forces (opaque rigid surfaces, alpha = 1.0 default).
+      dual_evaluation_horizon:
+        current_human_in_the_loop_gate: >
+          Human visual and proprioceptive inspection judges whether a physically
+          valid equilibrium is also biomechanically natural inside the kinematic
+          nullspace (producing frame-indexed YELLOW vs. DARK_GREEN verdicts).
+        scalable_autonomous_rsi_extension: >
+          Given sufficient compute, headless multi-camera renders of the coupled
+          scene feed directly into a high-FPS multimodal Vision-Language/Video
+          World Model trained on real human motion priors. Because Newtonian
+          contact physics alone under-determines redundant human posture (the
+          kinematic nullspace), pairing a headless physics solver (eliminating
+          non-physical hallucinations) with a learned optical video critic
+          (eliminating unnatural robot-like postures) closes a fully autonomous
+          Tri-Modal Embodied RSI Loop:
+          [Symbolic Intent] -> [Newtonian Contact Oracle] -> [Optical Render]
+          -> [Learned Visual World-Model Critic] -> [4-Layer Root-Cause Update].
+
+  four_layer_cot_root_cause_taxonomy:
+    rule: >
+      Every detected discrepancy (Delta = Ist - Soll) must be attributed to
+      exactly one architectural layer before generating the next iteration;
+      ad-hoc coordinate tweaks are prohibited.
+    categories:
+      type_1_intent_conceptual_error: >
+        Flawed biomechanical hypothesis (e.g., elbow pole placed below rim height
+        forcing a sideways wrist bend, or forbidding natural palm weight-borrowing
+        on an upper edge).
+      type_2_world_geometry_error: >
+        Inaccurate primitive or offset in the neutral JSON world spec (e.g.,
+        capsule end-cap protruding into a lever path instead of a flat cylinder).
+      type_3_physics_mapper_artifact: >
+        Solver/mapping distortion despite valid human intent (e.g., tangential
+        phalanx scrubbing, soft joint-friction impedance creep, or post-approach
+        spawning).
+      type_4_visual_representation_artifact: >
+        Pure rendering illusion (e.g., alpha-blended semi-transparent walls
+        mimicking mesh penetration).
+
+3_empirical_biomechanical_discoveries_logged:
+  law_1_popperian_falsification_asymmetry:
+    summary: >
+      A passing simulation without perturbation is merely provisionally
+      unfalsified (e.g., a 3-finger grip holding 0.00 deg drift only because
+      2 of 5 fingers float at 0.0 N, 1 finger wedges at 132 N, and the unlocked
+      object happens to sit near a gravity dead-center). Conversely, a falsified
+      episode is epistemically absolute and must be preserved immutable as
+      status='falsified_episode' rather than overwritten.
+
+  law_2_peripheral_u_funnel_and_first_touch_collapse:
+    summary: >
+      When foveal gaze is locked on a secondary target (e.g., an under-mounted
+      clamping screw or a conversational partner), peripheral spatial uncertainty
+      of the target edge is +-15..25 mm. Biological agents compensate by:
+      (a) elevating the proximal elbow above wrist and edge height (Z_elbow >
+          Z_wrist > Z_edge) for a top-down approach corridor,
+      (b) pre-shaping the hand into a widened U-funnel oriented toward the edge,
+      (c) collapsing spatial uncertainty to < 1 mm within 50-70 ms upon the very
+          first low-force skin contact (FA-I receptor First-Touch trigger), and
+      (d) seating the first web-space / palmar pad onto the rim via gravitational
+          weight-borrowing (F_Palm > 0 N) before wrapping opposing digits.
+
+  law_3_context_boundary_invariance_vs_variance:
+    summary: >
+      Visual reference priors cannot be transferred without evaluating mechanical
+      boundary conditions (stance side, internal cavity occupancy, and clamp
+      release magnitude). An unobstructed trough with a fully opened ball-clamp
+      requires top-down outer-rim clamping (fingers inside, thumb outside) for
+      bidirectional form-closure, whereas an occupied trough under minor screw
+      slack forces external-underneath support.
+
+4_artificial_rem_sleep_timeline_abstraction_pipeline:
+  core_hypothesis: >
+    Two distinct real-world manipulation tasks (e.g., adjusting a curved support
+    shell vs. unlocking a reclining backrest vs. grasping, rotating, and sitting
+    on a wheeled stool) are never globally identical across their full duration.
+    Transferable motor abstractions reside in time-shifted local sub-windows
+    where normalized physical and nullspace QA trajectories exhibit isomorphic
+    state transitions.
+
+  awake_stacking_protocol:
+    rule: >
+      During active task learning, subconscious skill abstractions remain
+      read-only. Both falsified episodes (__FALSIFIED) and verified episodes
+      (__LEARNED) are pushed unmodified onto an offline REM_Stack directory
+      with SHA256 provenance links.
+
+  four_stage_offline_pipeline:
+    stage_1_normalized_timeline_compiler:
+      compute_substrate: "Deterministic Local Script (0 LLM Tokens)"
+      operation: >
+        Converts raw world-coordinate episodes from the REM_Stack into
+        coordinate-free, object-relative multi-track timelines along frame t:
+        - Track_Blue       : Intentional phase state (Approach / Probe / Load / Release)
+        - Track_Purple     : Object-relative execution features (edge clearance mm,
+                             approach angle to surface normal, force-to-gravity angle,
+                             pad slip utilization 0..1, peak Hill tendon strain 0..1)
+        - Track_Red_LGreen : Physics oracle QA verdict per frame (FAIL vs. PASS)
+        - Track_Yel_DGreen : Ergonomic nullspace QA verdict per frame (Unnatural vs. Natural)
+
+    stage_2_fuzzy_window_chord_matcher:
+      compute_substrate: "Deterministic Local Script (0 LLM Tokens)"
+      operation: >
+        Slides variable-width time-warped windows (DTW / fuzzy cross-correlation)
+        across heterogeneous task blocks to detect two canonical learning chords:
+        1. Physics_Chord (Purple -> Red -> Purple -> LightGreen):
+           Isolates universal contact-mechanics invariants (e.g., rigid multi-finger
+           angles failing on curved walls -> independent tendon compliance + normal
+           virtual-work projection succeeding).
+        2. Nullspace_Ergonomics_Chord (LightGreen -> Yellow -> Purple -> DarkGreen):
+           Isolates human motor preferences inside the physics nullspace—where
+           the physics oracle already reports PASS (LightGreen), yet ergonomic QA
+           flags unnatural posture (Yellow) until resolved (DarkGreen) (e.g.,
+           ulnar wrist shift on low-force buttons; top-down elbow elevation and
+           U-funnel capture on edges).
+
+    stage_3_traceable_semantic_harvester:
+      compute_substrate: "Deterministic Local Script (0 LLM Tokens)"
+      operation: >
+        Uses the SHA256 and frame-window pointers of each matched chord to slice
+        only the causal intent, force telemetry, and root-cause delta blocks from
+        the source artifacts into a compact rem_match_bundle.yaml (< 100 lines).
+
+    stage_4_dual_perspective_synthesis_and_affordance_indexing:
+      compute_substrate: "Dual High-Reasoning Models (Constructive Builder <-> Forensic Critic)"
+      operation: >
+        - Constructive Model synthesizes the matched bundle into an object-oriented
+          motor class anchored strictly at the Body <-> Object physical interface
+          (Trigger_Signature, Kinematic_Core, Temporal_Law, Pain_Slip_Threshold).
+        - Forensic Model stress-tests the candidate class against counter-contexts
+          to populate explicit Blacklist boundary conditions (or splits existing
+          classes via Sub-Classing; overly vague classes with zero utility decay).
+      affordance_index_schema:
+        index_file: "oo_subconscious_index.yaml"
+        lookup_keys_instead_of_object_nouns:
+          - geometry_topology: "e.g., narrow_rim_or_bar_10_to_45mm"
+          - visual_guidance_mode: "peripheral_or_blind vs. foveal_direct"
+          - object_mobility_dof: "freely_pivoting_or_rolling vs. fixed"
+          - force_to_gravity_axis: "with_g_weight_borrow | cross_g_pull_twist | against_g"
+
+  planned_cross_task_falsification_benchmark:
+    benchmark_id: "SWM-REM-BENCH-001"
+    setup: >
+      Consolidate episodes from Task A (curved shell clamp adjustment) and Task B
+      (reclining backrest release) via Stages 1-4 into oo_subconscious_index.yaml.
+      Then evaluate zero-shot intent generation on unseen Task C: an upright agent
+      maintaining social gaze elsewhere while reaching down to grasp a narrow
+      backrest bar of a freely rolling 5-caster stool, pulling it backward,
+      rotating it 180 degrees via forearm pronation/supination so the seat clears
+      the backrest, and holding the bar as a safety anchor until body weight
+      settles vertically onto the seat pad.
+    success_criterion: >
+      Task C must retrieve the peripheral U-funnel + First-Touch rule, the
+      forearm vector-switch rotation rule, and the preload safety-bracket rule
+      purely via affordance-index matching (zero object-name overlap), achieving
+      first-pass physical stability and natural nullspace posture.
