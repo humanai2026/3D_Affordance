@@ -1,0 +1,129 @@
+---
+# File: SWM-METHOD-007_Autonomous_RSI_Embodied_Data_Synthesis.yaml
+# Repository: humanai2026/3D_Affrodance
+# Category: Epistemology, Autonomous Embodied RSI, Synthetic 4D Data Generation
+# Era: V2 (Multi-Substrate Cross-Supervision: Reasoning + Contact Physics + Active Vision)
+---
+0_meta:
+  spec_id: "SWM-METHOD-007"
+  title: "Intrinsic Cross-Modal RSI: Synthesizing Missing Embodied 4D Training Spaces Without Physical Teleoperation"
+  version: "1.0.0"
+  date: "2026-11-23"
+  status: "verified_methodology"
+  public_clean_compliance: true
+  core_thesis: >
+    Internet-scale pretraining covers text and 2D pixels, but leaves critical embodied data
+    spaces completely empty: synchronized internal tendon strain, multi-digit normal vs.
+    tangential contact forces, subcortical first-touch reflex transitions, and explicit
+    falsified counterfactual boundaries. By orchestrating orthogonal priors that already
+    exist across reasoning LLMs, headless rigid-body contact solvers, deterministic Nyquist
+    kinematic guards, and unprimed multi-view/ego-view vision models, an AI system can
+    intrinsically bootstrap ~95% of physical and ergonomic verification before requiring
+    human nullspace arbitration.
+
+1_the_empty_data_space_bottleneck:
+  missing_in_wild_corpora:
+    - "Synchronized causal intention ('Why' cost function) coupled to 3D full-body kinematics ('How')."
+    - "Ground-truth per-digit normal forces (N) and 2D friction-disk utilization during non-foveal grasping."
+    - "Disambiguated active muscle drive vs. passive/external tendon and capsule strain (ligament overload boundaries)."
+    - "Popperian negative training anchors (falsified episodes proving *why* a seemingly plausible trajectory fails)."
+  intrinsic_bootstrapping_lever:
+    principle: "Cross-Modal Latent Triangulation"
+    mechanism: >
+      A single model checking its own coordinates suffers from Munchausen self-deception.
+      However, coupling (A) semantic biomechanical meta-queries, (B) deaf Newtonian contact
+      physics, (C) 24-FPS angular-velocity continuity math, and (D) unprimed visual gestalt
+      inspection from both external observer cameras and 1st-person ego-cameras forces latent
+      world-knowledge islands to falsify each other until all empty data spaces converge
+      consistently.
+
+2_autonomous_rsi_pipeline_architecture:
+  stage_0_intentional_kopfbild_and_single_world:
+    cognitive_role: "High-Reasoning Architect"
+    inputs:
+      - "Task goal, boundary conditions (e.g., exterior vs. interior stance, empty vs. loaded receptacle, full vs. partial unclamp)."
+      - "Targeted biomechanical self-queries (gravity loan vs. counter-inertia loop, peripheral aperture scaling, end-state comfort)."
+      - "Affordance-indexed reusable motor classes from prior consolidation."
+    outputs:
+      - "Situational Intention Spec (YAML: Why, What, 4-tier outside-in servant cascade, falsification gates)."
+      - "Tool-agnostic Single-World Geometry Contract (JSON, SHA-256 locked across physics and rendering engines)."
+
+  stage_1_rsi_1_0_dark_tactile_physics_loop:
+    cognitive_role: "Deaf Somatosensory & Newtonian Oracle (100% Headless, < 0.1s/run)"
+    scope: "Isolated local contact island (e.g., 6-DOF compliant wrist + 2-DOF condyloid MCP digits + articulated workpiece)."
+    autonomous_self_correction_capabilities:
+      - "Simulates complete free-air approach (peripheral U-funnel) through First-Touch uncertainty collapse into steady preload."
+      - "Projects desired squeeze along real-time contact normals via analytical Jacobians with 1D nullspace posture stabilization."
+      - "Recruits 2-DOF condyloid MCP abduction/adduction (interossei mechanics) bounded strictly within a 2D friction disk."
+      - "Executes Popperian counterfactual unheld collapse checks and 3-axis external perturbation hold gates."
+    emitted_trace: "Frame-exact joint angles, 6-DOF wrist compliance offsets, per-zone Newton forces, and slip utilization ratios."
+
+  stage_2a_deterministic_nyquist_kinematics_guard:
+    cognitive_role: "Continuous High-Frequency Mathematical Watchdog (All Frames @ 24+ FPS)"
+    discovery_origin: >
+      Discrete frame sampling in vision LLMs (4-6 FPS without motion blur) creates a Nyquist
+      blind spot: single-frame 240-degree Euler/modulo forearm flips (e.g., > 2400 deg/s)
+      occurring between sampled frames remain invisible to video models while immediately
+      violating human visual perception.
+    mandatory_assertions:
+      - "Continuous Riemann-sheet unwrapping relative to the preceding frame (never static center-angle modulo cuts)."
+      - "Hard angular-velocity gate across every body and hand joint (|delta_q| <= 8.0 deg/frame @ 24 FPS)."
+      - "Hard foot-swing vertical clearance gate (>= 0.05 m lift) whenever horizontal foot translation exceeds 0.05 m."
+
+  stage_2b_rsi_2_0_dark_active_vision_loop:
+    cognitive_role: "Unprimed Visual Real-World Gestalt Auditor (Zero Code/Hypothesis Contamination)"
+    fast_render_protocol:
+      engine: "Hardware-accelerated Workbench / OpenGL with Studio lighting, Cavity shading, and 1px object outlines (~5-10s per 240 frames)."
+      layer_isolation: "Renders pure 100% outer volume geometry (hiding 105% tactile halo overlays) in neutral high-contrast robotics dummy colors."
+    active_camera_modalities:
+      exo_observer_cameras: >
+        Complementary full-body and rim-aligned macro cameras. If limb trajectories occlude
+        a contact zone, the visual auditor autonomously requests new camera coordinates for Round 2.
+      ego_first_person_camera: >
+        Coaxial camera parented directly to the character's 2-DOF eye rig. Simultaneously
+        verifies unobstructed foveal target lock (e.g., clamping lever below an opaque shell)
+        and proves when a grasping hand operates in peripheral vision (causally necessitating
+        wide U-funnel pre-shaping).
+    emitted_trace: "Frame-stamped GREEN/YELLOW realism intervals and causal anomaly tickets."
+
+  stage_3_human_nullspace_arbiter_and_rem_consolidation:
+    cognitive_role: "Final ~5% Human Somatosensory & Aesthetic Calibration + Offline Abstraction"
+    mechanism: >
+      Human review is invoked only after Stages 1, 2a, and 2b pass. Both falsified iterations
+      (sealed as immutable negative boundary anchors) and verified iterations feed an offline
+      Dynamic-Time-Warping (DTW) timeline matcher ('REM Sleep') that extracts coordinate-free,
+      reusable object-oriented motor classes.
+
+3_empirical_validation_trace:
+  benchmark_task: "Bimanual 3D adjustment of an empty curved support shell (11 mm wall) with an overhead clamping spindle."
+  epistemic_progression:
+    blind_baseline_gaps:
+      - "Lateral low-elbow approach slicing fingers sideways through solid shell wall."
+      - "Artificial 0-N palm hover instead of top-down gravitational loan on the upper rim."
+      - "Hemispherical capsule housing obscuring free spindle neck clearance."
+    rsi_1_0_autonomous_convergence:
+      iterations_to_pass: 4
+      autonomous_discoveries:
+        - "Curved-wedge upward reaction (+6.25 N) lifting compliant palm off the rim unless preloaded prior to finger closure."
+        - "1-DOF finger hinge out-of-plane wedging (10.8 deg wall obliquity) resolved via 2-DOF condyloid MCP interossei alignment."
+        - "Full-rank 3x4 Jacobian control with 2D friction-disk clipping -> 7/7 physics gates PASS (0.77 deg drift vs. 82.8 deg unheld collapse, max slip 0.648)."
+    rsi_2_0_and_nyquist_audit_on_physics_pass:
+      blind_visual_score_0_to_10: 3.2
+      visual_anomalies_caught_autonomously:
+        - "Pre-hover (f015..018) and post-release (f200..216) finger wall slicing outside the physics window."
+        - "Swan-neck wrist flexion (-50.6 deg) with 27 mm palm-center air gap despite edge contact satisfying the 1D force sensor."
+        - "Rear-foot horizontal sliding across the floor due to insufficient vertical swing arc."
+        - "6.0-second torso/pelvis statue freeze lacking bimanual counter-torque micro-dynamics."
+        - "Self-occlusion in initial macro camera triggering autonomous Round-2 camera repositioning."
+      nyquist_anomaly_caught_by_24fps_continuity:
+        - "Two 1-frame 240-degree forearm supination/pronation modulo flips (106.4 deg/frame at f009->010 and 102.8 deg/frame at f224->225) invisible to sub-sampled video frames."
+
+4_synthesized_4d_training_tuple_schema:
+  synchronization_axis: "Frame index f in [1..N] @ 24 FPS + SHA-256 Single-World Geometry Reference"
+  populated_channels:
+    00_intentional_causal_chain: "Goal, context filter, active meta-queries, phase state machine."
+    01_kinematic_and_visual_space: "Connected single-root joint transforms + multi-angle Exo-Observer & 1st-Person Ego-View streams."
+    02_active_muscular_drive: "Normalized agonist/antagonist co-contraction effort [0.0..1.0]."
+    03_exteroceptive_tactile_newtons: "Per-pad normal force (N), tangential shear (N), and friction-cone utilization [0.0..1.0]."
+    04_internal_structural_strain: "Additive Hill passive-ROM + active-muscle + external-load tendon/capsule strain (< 0.95 pain threshold)."
+    05_popperian_falsification_ledger: "Time-windowed RED (physics), YELLOW (visual/Nyquist), and DARK_GREEN (human-verified) labels for contrastive motor learning."
