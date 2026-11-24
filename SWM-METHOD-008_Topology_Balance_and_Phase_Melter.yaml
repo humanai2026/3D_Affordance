@@ -1,0 +1,86 @@
+---
+# Public Causal & Architectural Specification for humanai2026/3D_Affordance
+# Strictly abstract & public-clean: no executable code, local filenames, or personal/role identifiers.
+
+meta:
+  spec_id: "SWM-METHOD-008"
+  title: "Topological Mental Models, Support-Triangle Balance, and Semi-Conscious Phase Optimization in Embodied Motor Learning"
+  repository: "humanai2026/3D_Affordance"
+  domain: "Embodied AI / Neuro-Symbolic Motor Control / Complementary Learning Systems"
+  version: "1.0.0"
+  date_utc: "2026-11-24"
+  tags:
+    - "Autonomus-RSI"
+    - "Embodied-Motor-Control"
+    - "Topology-Over-Trigonometry"
+    - "Support-Triangle-Balance"
+    - "REM-Consolidation"
+    - "Minimum-Intervention-Coarticulation"
+
+epistemic_arc:
+  1_blind_baseline_soll:
+    problem: "High-reasoning language models (serial prefrontal-style Chain-of-Thought, ~40-50 bits/s) attempt to pre-calculate multi-joint kinematics, spinal torsion, and contact forces to millimeter precision before physics execution."
+    failure_mode: "Combinatorial backtracking cascades in closed kinematic chains, computational timeouts, and unnatural step-by-step via-point stuttering (executing adult tool manipulation like a hesitant beginner)."
+  2_measurement_methodology:
+    approach: "Decouple coarse spatial topology in the reasoning model from fast 50 ms rigid-body contact & balance simulation, followed by a two-pass progression (isolated sequential verification -> greedy phase-overlap optimization)."
+    falsification_principle: "Asymmetric Popperian evaluation: painful or unstable physical failures (tendon strain >= 0.95, wall collisions, center-of-mass balance loss) act as immediate one-shot boundary vetoes, whereas high-surprise successes define the constructive kinematic corridor."
+  3_empirical_delta:
+    findings:
+      - "Mental planning only requires coarse centimeter/hand-width topology ('should-work' direction, approach side, and support-polygon assignment); exact equilibrium angles and contact normal forces emerge naturally in the contact solver."
+      - "Coupling upper-body Center of Mass (CoM) to the 2-foot base plus active hand contacts unlocks realistic weight-leaning economy (15-25 N onto rigid hardware) while automatically penalizing leaning onto a fixture at the instant its lock releases."
+      - "Adult motor fluency emerges when a premotor cost/vigor optimizer gradually overlaps sequential sub-phases and shaves safety clearance arcs until right before the physics solver triggers a boundary contact."
+
+causal_laws:
+  - law_id: "SWM-METHOD-008a"
+    name: "Baby-Step Topology Law (Topology in Mind, Trigonometry in Physics)"
+    principle: >
+      Just as a toddler learns to walk by choosing a coarse 'should-work' direction and letting gravity
+      and fast subcortical reflexes resolve equilibrium (including harmlessly landing on the floor),
+      a reasoning agent must restrict pre-contact planning to <= 8 topological steps:
+      (1) collision-free approach side relative to walls/rims,
+      (2) qualitative force direction relative to gravity, and
+      (3) support-polygon assignment. Exact joint equilibria and failure thresholds are delegated to
+      the fast physics solver.
+    anti_pattern: "Pre-computing multi-vertebra angles, clavicle offsets, and contact forces in text Chain-of-Thought."
+
+  - law_id: "SWM-3D-012u"
+    name: "Foothold-Tripod Balance & Phase-Transition Unloading Law"
+    analogy: "Rock-climbing balance on a minimal foothold ('Spax-step' friction cone)."
+    principle: >
+      In standing manipulation, hands act primarily as fine Center-of-Mass (CoM) reins rather than
+      load-bearing cranes, keeping the CoM projection inside the foot support cone.
+      (a) Free-air approach & retreat: 0 N object support; CoM must remain strictly inside the 2-foot polygon.
+      (b) Locked-contact economy: Once a hand contacts rigid or locked structure, the body forms a 3D
+          support tripod and may economically lean 15-25 N (~1.5-2.5 kg) forward into the contact.
+      (c) Critical transition unloading: Milliseconds before unlocking a movable fixture ('loose-hold moment')
+          and before releasing grip at task completion, net CoM lean must transfer off the movable fixture
+          and back over the feet or rigid housing to prevent balance collapse.
+
+  - law_id: "SWM-METHOD-005c"
+    name: "Five-Stage Motor Learning Loop with Semi-Conscious Phase Optimizer & Pain Flight-Recorder"
+    stages:
+      stage_1_conscious_baby_steps:
+        parameter: "routine_overlap = 0.0"
+        behavior: "Execute sub-phases sequentially with explicit via-points (stance -> clear obstacle -> pre-shape hand -> descend to First-Touch) so any physical failure isolates cleanly to one sub-skill."
+      stage_2_offline_rem_consolidation:
+        surprise_u_curve:
+          routine_middle: "Zero consolidation priority; expected trajectories undergo synaptic downscaling ('noise decay')."
+          stick_falsified_veto: "Painful or unstable failures (ligament/tendon strain >= 0.95, obstacle impact, CoM tip-over) trigger immediate D2-No-Go boundary fences (Blacklist / hard safety guards)."
+          carrot_learned_corridor: "Unexpectedly successful executions trigger D1-Go reinforcement to build the constructive kinematic core (Whitelist)."
+          contrast_pairs: "In noradrenaline-free REM synthesis, adjacent FALSIFIED and LEARNED episodes are compared to sharpen the exact physical cliff edge between safe economy and collision."
+      stage_3_subconscious_index_lookup:
+        behavior: "Retrieve candidate object-oriented motor schemas via 4 physical-anatomical affordance keys: geometry_type, gaze_mode, object_dof_state, and force_to_gravity_relation."
+      stage_4_semi_conscious_phase_melter:
+        parameter: "routine_overlap: 0.0 -> 0.40 -> 0.70"
+        neurobiological_correlate: "Premotor cortex (SMA) & basal ganglia vigor/minimum-intervention optimizer."
+        behavior: >
+          With rising instance familiarity (Tier 3), the optimizer blends adjacent phases concurrently
+          (lunge descent, thoracic spine torsion, arm transport, and Jeannerod grip pre-shaping peaking at
+          ~70% transport path) while iteratively rounding down safety clearance arcs to save time and energy.
+      stage_5_pain_flight_recorder_interrupt:
+        neurobiological_correlate: "Anterior cingulate (dACC) prediction-error interrupt + short-term efference-copy buffer."
+        behavior: >
+          If greedy corner-cutting grazes a sharp edge or triggers internal tendon strain ('stubbed-toe effect'),
+          a pain interrupt wakes full conscious inspection, compares the last ~1.0 s efference-copy flight recorder
+          against the retrieved schema, and pins a localized No-Go guard at that exact obstacle while keeping
+          all safe phase overlaps fluid.
